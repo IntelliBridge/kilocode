@@ -47,6 +47,8 @@ export class SpeechService extends EventEmitter {
 		overlapDurationSeconds: 1,
 		language: "en",
 		maxChunks: 0,
+		hotWordEnabled: false,
+		hotWordPhrase: "send the command",
 	}
 
 	private constructor(providerSettingsManager: ProviderSettingsManager) {
@@ -108,6 +110,8 @@ export class SpeechService extends EventEmitter {
 				overlapDurationSeconds: config?.overlapDurationSeconds ?? 1,
 				language: config?.language ?? "en",
 				maxChunks: config?.maxChunks ?? 0,
+				hotWordEnabled: config?.hotWordEnabled ?? false,
+				hotWordPhrase: config?.hotWordPhrase ?? "send the command",
 			}
 
 			if (this.streamingConfig.overlapDurationSeconds >= this.streamingConfig.chunkDurationSeconds) {
@@ -141,6 +145,12 @@ export class SpeechService extends EventEmitter {
 			this.recordingStartTime = Date.now()
 			this.processedChunks = 0
 			this.streamingManager.reset()
+
+			// Configure hot word detection in streaming manager
+			this.streamingManager.configureHotWord(
+				this.streamingConfig.hotWordEnabled,
+				this.streamingConfig.hotWordPhrase,
+			)
 
 			// Start watching for chunks with event-driven processor
 			this.chunkProcessor.startWatching(this.ffmpegProcess, this.streamingDir)
@@ -312,6 +322,17 @@ export class SpeechService extends EventEmitter {
 
 			// Deduplicate and add to session
 			const deduplicatedText = this.streamingManager.addChunkText(chunkId, rawText)
+
+			// Check for hot word detection
+			const hotWordCheck = this.streamingManager.checkHotWord()
+			if (hotWordCheck.detected) {
+				console.log("[SpeechService] Hot word detected - triggering auto-send")
+				// Emit hot word detected event with cleaned text
+				this.emit("hotWordDetected", hotWordCheck.cleanedText)
+				// Auto-stop recording after hot word detection
+				await this.stopStreamingRecording()
+				return
+			}
 
 			// Emit progressive update
 			const result: ProgressiveResult = {

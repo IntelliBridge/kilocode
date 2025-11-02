@@ -19,6 +19,8 @@ export interface StreamingConfig {
 	overlapDurationSeconds?: number // default 1
 	language?: string
 	maxChunks?: number
+	hotWordEnabled?: boolean // default false - enable auto-send on hot word detection
+	hotWordPhrase?: string // default "send the command" - phrase to trigger auto-send
 }
 
 /**
@@ -110,7 +112,9 @@ export interface IChunkProcessor {
  * Streaming manager interface
  */
 export interface IStreamingManager {
+	configureHotWord(enabled: boolean, phrase?: string): void
 	addChunkText(chunkId: number, text: string): string
+	checkHotWord(): { detected: boolean; cleanedText: string }
 	getSessionText(): string
 	getPreviousChunkText(): string
 	reset(): void

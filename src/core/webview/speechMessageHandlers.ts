@@ -55,6 +55,23 @@ export async function handleStartStreamingSpeech(provider: ClineProvider): Promi
 			})
 		}
 
+		const hotWordDetectedHandler = (cleanedText: string) => {
+			// Hot word detected - send message with cleaned text and auto-submit
+			provider.postMessageToWebview({
+				type: "speechHotWordDetected",
+				text: cleanedText,
+				values: {
+					timestamp: Date.now(),
+					autoSend: true,
+				},
+			})
+			// Clean up listeners
+			speechService.off("progressiveUpdate", progressiveUpdateHandler)
+			speechService.off("hotWordDetected", hotWordDetectedHandler)
+			speechService.off("streamingComplete", streamingCompleteHandler)
+			speechService.off("streamingError", streamingErrorHandler)
+		}
+
 		const streamingCompleteHandler = (finalText: string, totalChunks: number) => {
 			provider.postMessageToWebview({
 				type: "speechStreamingStopped",
@@ -66,6 +83,7 @@ export async function handleStartStreamingSpeech(provider: ClineProvider): Promi
 			})
 			// Clean up listeners
 			speechService.off("progressiveUpdate", progressiveUpdateHandler)
+			speechService.off("hotWordDetected", hotWordDetectedHandler)
 			speechService.off("streamingComplete", streamingCompleteHandler)
 			speechService.off("streamingError", streamingErrorHandler)
 		}
@@ -77,20 +95,24 @@ export async function handleStartStreamingSpeech(provider: ClineProvider): Promi
 			})
 			// Clean up listeners
 			speechService.off("progressiveUpdate", progressiveUpdateHandler)
+			speechService.off("hotWordDetected", hotWordDetectedHandler)
 			speechService.off("streamingComplete", streamingCompleteHandler)
 			speechService.off("streamingError", streamingErrorHandler)
 		}
 
 		// Attach listeners
 		speechService.on("progressiveUpdate", progressiveUpdateHandler)
+		speechService.on("hotWordDetected", hotWordDetectedHandler)
 		speechService.on("streamingComplete", streamingCompleteHandler)
 		speechService.on("streamingError", streamingErrorHandler)
 
-		// Start streaming
+		// Start streaming with hot word detection enabled
 		const result = await speechService.startStreamingRecording({
 			chunkDurationSeconds: 3,
 			overlapDurationSeconds: 1,
 			language: "en",
+			hotWordEnabled: true,
+			hotWordPhrase: "send the command",
 		})
 
 		if (result.success) {
@@ -109,6 +131,7 @@ export async function handleStartStreamingSpeech(provider: ClineProvider): Promi
 			})
 			// Clean up listeners on failure
 			speechService.off("progressiveUpdate", progressiveUpdateHandler)
+			speechService.off("hotWordDetected", hotWordDetectedHandler)
 			speechService.off("streamingComplete", streamingCompleteHandler)
 			speechService.off("streamingError", streamingErrorHandler)
 		}

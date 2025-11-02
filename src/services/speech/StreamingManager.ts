@@ -9,16 +9,30 @@ import { IStreamingManager } from "./types"
  * - Session text accumulation
  * - Word-level deduplication between overlapping chunks
  * - Previous chunk text tracking for overlap detection
+ * - Hot word detection for auto-send functionality
  */
 export class StreamingManager implements IStreamingManager {
 	private sessionText: string = ""
 	private previousChunkText: string = ""
+	private hotWordEnabled: boolean = false
+	private hotWordPhrase: string = "send the command"
 
 	/**
-	 * Add new chunk text with deduplication
+	 * Configure hot word detection
+	 * @param enabled Whether hot word detection is enabled
+	 * @param phrase The phrase to detect (default: "send the command")
+	 */
+	configureHotWord(enabled: boolean, phrase: string = "send the command"): void {
+		this.hotWordEnabled = enabled
+		this.hotWordPhrase = phrase.toLowerCase()
+		console.log(`[StreamingManager] Hot word detection ${enabled ? "enabled" : "disabled"}: "${phrase}"`)
+	}
+
+	/**
+	 * Add new chunk text with deduplication and hot word detection
 	 * @param chunkId Chunk identifier (for logging)
 	 * @param text Raw transcribed text from chunk
-	 * @returns Deduplicated text that was added to session
+	 * @returns Object with deduplicated text and hot word detection result
 	 */
 	addChunkText(chunkId: number, text: string): string {
 		// Deduplicate with previous chunk
@@ -42,6 +56,34 @@ export class StreamingManager implements IStreamingManager {
 	}
 
 	/**
+	 * Check if hot word is detected in the current session text
+	 * @returns Object with detection status and cleaned text (with hot word removed)
+	 */
+	checkHotWord(): { detected: boolean; cleanedText: string } {
+		if (!this.hotWordEnabled || !this.sessionText) {
+			return { detected: false, cleanedText: this.sessionText }
+		}
+
+		const lowerText = this.sessionText.toLowerCase()
+		const hotWordIndex = lowerText.indexOf(this.hotWordPhrase)
+
+		if (hotWordIndex !== -1) {
+			// Hot word detected - remove it from the text
+			const beforeHotWord = this.sessionText.substring(0, hotWordIndex)
+			const afterHotWord = this.sessionText.substring(hotWordIndex + this.hotWordPhrase.length)
+			// Combine and normalize multiple spaces to single space
+			const cleanedText = (beforeHotWord + " " + afterHotWord).replace(/\s+/g, " ").trim()
+
+			console.log(`[StreamingManager] Hot word detected: "${this.hotWordPhrase}"`)
+			console.log(`[StreamingManager] Cleaned text: "${cleanedText}"`)
+
+			return { detected: true, cleanedText }
+		}
+
+		return { detected: false, cleanedText: this.sessionText }
+	}
+
+	/**
 	 * Get accumulated session text
 	 */
 	getSessionText(): string {
@@ -56,7 +98,7 @@ export class StreamingManager implements IStreamingManager {
 	}
 
 	/**
-	 * Reset all state
+	 * Reset all state (preserves hot word configuration)
 	 */
 	reset(): void {
 		this.sessionText = ""

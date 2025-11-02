@@ -167,6 +167,7 @@ export interface ExtensionMessage {
 		| "speechStreamingProgress" // kilocode_change: Progressive text update during streaming
 		| "speechStreamingStopped" // kilocode_change: Real-time streaming recording stopped
 		| "speechStreamingError" // kilocode_change: Real-time streaming error occurred
+		| "speechHotWordDetected" // kilocode_change: Hot word detected - auto-send triggered
 	text?: string
 	// kilocode_change start
 	payload?:

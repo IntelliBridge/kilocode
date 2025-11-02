@@ -237,6 +237,18 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 					setStreamingText(cumulativeText)
 					// Update the actual input value with cumulative text
 					setInputValue(cumulativeText)
+				} else if (message.type === "speechHotWordDetected") {
+					// Hot word detected - set cleaned text and auto-send
+					setIsRecording(false)
+					setStreamingText("")
+					const cleanedText = message.text || ""
+					setInputValue(cleanedText)
+					// Auto-send the message after a brief delay to ensure state updates
+					setTimeout(() => {
+						if (cleanedText.trim()) {
+							onSend()
+						}
+					}, 100)
 				} else if (message.type === "speechStreamingStopped") {
 					setIsRecording(false)
 					// Final text is already in inputValue from progressive updates
@@ -251,7 +263,7 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 
 			window.addEventListener("message", messageHandler)
 			return () => window.removeEventListener("message", messageHandler)
-		}, [setInputValue, searchRequestId, streamingText, inputValue])
+		}, [setInputValue, searchRequestId, streamingText, inputValue, onSend])
 
 		const [isDraggingOver, setIsDraggingOver] = useState(false)
 		// kilocode_change start: pull slash commands from Cline
