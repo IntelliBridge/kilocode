@@ -361,8 +361,6 @@ export class ManagedIndexer implements vscode.Disposable {
 	}
 
 	async onEvent(event: GitWatcherEvent): Promise<void> {
-		console.log("[ManagedIndexer] Event", event)
-
 		if (!this.isActive) {
 			return
 		}
@@ -493,8 +491,6 @@ export class ManagedIndexer implements vscode.Disposable {
 				})
 			}
 		}
-
-		console.log("[ManagedIndexer] end state", state)
 	}
 
 	async onDidChangeWorkspaceFolders(e: vscode.WorkspaceFoldersChangeEvent) {
