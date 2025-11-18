@@ -33,6 +33,16 @@
  *
  * The scanner implementation should be updated to be able to introspect
  *
+ * State for each workspace folder:
+ *   - git branch
+ *   - projectId
+ *   - manifest
+ *   - is indexing
+ *
+ * Things we want in the UI:
+ *
+ * - For each project ID
+ * - Indexing status (currently )
  *
  * -----------------------------------------------------------------------------
  *
@@ -51,17 +61,26 @@ import type { ClineProvider } from "../../../core/webview/ClineProvider"
 import { KiloOrganization } from "../../../shared/kilocode/organization"
 import { OrganizationService } from "../../kilocode/OrganizationService"
 import { GitWatcher, GitWatcherFileEvent } from "../../../shared/GitWatcher"
-import { isGitRepository } from "./git-utils"
+import { getCurrentBranch, isGitRepository } from "./git-utils"
 import { getKilocodeConfig } from "../../../utils/kilo-config-file"
 import { getGitRepositoryInfo } from "../../../utils/git"
-import { upsertFile } from "./api-client"
+import { getServerManifest, upsertFile } from "./api-client"
 import { logger } from "../../../utils/logging"
 import { MANAGED_MAX_CONCURRENT_FILES } from "../constants"
+import { ServerManifest } from "./types"
 
 interface ManagedIndexerConfig {
 	kilocodeToken: string | null
 	kilocodeOrganizationId: string | null
 	kilocodeTesterWarningsDisabledUntil: number | null
+}
+
+interface ManagedIndexerWorkspaceFolderState {
+	gitBranch: string
+	projectId: string
+	manifest: ServerManifest
+	isIndexing: boolean
+	watcher: GitWatcher
 }
 
 export class ManagedIndexer implements vscode.Disposable {
@@ -71,16 +90,10 @@ export class ManagedIndexer implements vscode.Disposable {
 	config: ManagedIndexerConfig | null = null
 	organization: KiloOrganization | null = null
 	isActive = false
+	workspaceFolderState: Map<string, ManagedIndexerWorkspaceFolderState> = new Map()
 
 	// Concurrency limiter for file upserts
 	private readonly fileUpsertLimit = pLimit(MANAGED_MAX_CONCURRENT_FILES)
-
-	// config: ManagedIndexerConfig = {
-	// 	kilocodeOrganizationId: null,
-	// 	kilocodeToken: null,
-	// }
-
-	// organization: KiloOrganization | null = null
 
 	constructor(
 		/**
@@ -90,7 +103,7 @@ export class ManagedIndexer implements vscode.Disposable {
 		public provider: ClineProvider,
 	) {}
 
-	// TODO: The fetchConfig and fetchOrganization functions are sort of spaghetti
+	// TODO: The fetchConfig, fetchOrganization, and isEnabled functions are sort of spaghetti
 	// code right now. We need to clean this up to be more stateless or better rely
 	// on proper memoization/invalidation techniques
 
@@ -154,6 +167,14 @@ export class ManagedIndexer implements vscode.Disposable {
 			return
 		}
 
+		// TODO: Plumb kilocodeTesterWarningsDisabledUntil through
+		const { kilocodeOrganizationId, kilocodeToken } = this.config ?? {}
+
+		if (!kilocodeOrganizationId || !kilocodeToken) {
+			console.log("[ManagedIndexer] No organization ID or token found, skipping managed indexing")
+			return
+		}
+
 		this.isActive = true
 		this.watchers = await Promise.all(
 			vscode.workspace.workspaceFolders.map(async (folder) => {
@@ -163,8 +184,11 @@ export class ManagedIndexer implements vscode.Disposable {
 					return null
 				}
 
-				const gitConfig = await getGitRepositoryInfo(cwd)
-				const config = await getKilocodeConfig(cwd, gitConfig.repositoryUrl)
+				const [{ repositoryUrl }, branch] = await Promise.all([
+					getGitRepositoryInfo(cwd),
+					getCurrentBranch(cwd),
+				])
+				const config = await getKilocodeConfig(cwd, repositoryUrl)
 				const watcher = new GitWatcher({ cwd })
 				const projectId = config?.project?.id
 
@@ -172,8 +196,9 @@ export class ManagedIndexer implements vscode.Disposable {
 					console.log("[ManagedIndexer] No project ID found for workspace folder", cwd)
 					return null
 				}
+				const manifest = await getServerManifest(kilocodeOrganizationId, projectId, branch, kilocodeToken)
 
-				watcher.onFile((event) => this.onFile(projectId, event))
+				watcher.onFile((event) => this.onFile(Object.assign(event, { projectId, manifest, config })))
 
 				// Perform an initial scan
 				await watcher.scan()
@@ -193,12 +218,25 @@ export class ManagedIndexer implements vscode.Disposable {
 		this.isActive = false
 	}
 
-	async onFile(projectId: string, { branch, filePath, fileHash, isBaseBranch, watcher }: GitWatcherFileEvent) {
+	async onFile({
+		branch,
+		filePath,
+		fileHash,
+		isBaseBranch,
+		projectId,
+		manifest,
+		watcher,
+	}: GitWatcherFileEvent & { projectId: string; manifest: ServerManifest }) {
 		if (!this.isActive) {
 			return
 		}
 
-		// Wrap the file processing in the concurrency limiter
+		// Already indexed
+		if (manifest.files.some((f) => f.filePath === filePath && f.fileHash === f.fileHash)) {
+			return
+		}
+
+		// Concurrently process the file
 		return this.fileUpsertLimit(async () => {
 			try {
 				// Ensure we have the necessary configuration
@@ -239,8 +277,9 @@ export class ManagedIndexer implements vscode.Disposable {
 		await this.start()
 	}
 
-	onDidChangeWorkspaceFolders(e: vscode.WorkspaceFoldersChangeEvent) {
-		// Cleanup any watchers and ongoing scans for removed folders
-		// Instantiate watchers and start scans for new folders
+	async onDidChangeWorkspaceFolders(e: vscode.WorkspaceFoldersChangeEvent) {
+		// TODO we could more intelligently handle this instead of going scorched earth
+		this.dispose()
+		await this.start()
 	}
 }
