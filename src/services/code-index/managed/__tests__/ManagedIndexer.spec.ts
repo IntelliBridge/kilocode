@@ -320,21 +320,24 @@ describe("ManagedIndexer", () => {
 			await indexer.start()
 
 			const mockWatcher = indexer.workspaceFolderState[0].watcher
-			expect(mockWatcher.onEvent).toHaveBeenCalled()
+			expect(mockWatcher).toBeDefined()
+			expect(mockWatcher!.onEvent).toHaveBeenCalled()
 		})
 
 		it("should perform initial scan for each watcher", async () => {
 			await indexer.start()
 
 			const mockWatcher = indexer.workspaceFolderState[0].watcher
-			expect(mockWatcher.scan).toHaveBeenCalled()
+			expect(mockWatcher).toBeDefined()
+			expect(mockWatcher!.scan).toHaveBeenCalled()
 		})
 
 		it("should start each watcher", async () => {
 			await indexer.start()
 
 			const mockWatcher = indexer.workspaceFolderState[0].watcher
-			expect(mockWatcher.start).toHaveBeenCalled()
+			expect(mockWatcher).toBeDefined()
+			expect(mockWatcher!.start).toHaveBeenCalled()
 		})
 
 		it("should handle multiple workspace folders", async () => {
@@ -359,6 +362,82 @@ describe("ManagedIndexer", () => {
 			expect(indexer.workspaceFolderState[0].projectId).toBe("project-1")
 			expect(indexer.workspaceFolderState[1].projectId).toBe("project-2")
 		})
+
+		describe("error handling", () => {
+			it("should capture git errors and create state with error", async () => {
+				vi.mocked(git.getGitRepositoryInfo).mockRejectedValue(new Error("Git command failed"))
+
+				await indexer.start()
+
+				expect(indexer.workspaceFolderState).toHaveLength(1)
+				const state = indexer.workspaceFolderState[0]
+				expect(state.error).toBeDefined()
+				expect(state.error?.type).toBe("git")
+				expect(state.error?.message).toContain("Failed to get git information")
+				expect(state.error?.timestamp).toBeDefined()
+				expect(state.gitBranch).toBeNull()
+				expect(state.projectId).toBeNull()
+				expect(state.manifest).toBeNull()
+				expect(state.watcher).toBeNull()
+			})
+
+			it("should capture manifest fetch errors and create partial state", async () => {
+				vi.mocked(apiClient.getServerManifest).mockRejectedValue(new Error("API error"))
+
+				await indexer.start()
+
+				expect(indexer.workspaceFolderState).toHaveLength(1)
+				const state = indexer.workspaceFolderState[0]
+				expect(state.error).toBeDefined()
+				expect(state.error?.type).toBe("manifest")
+				expect(state.error?.message).toContain("Failed to fetch server manifest")
+				expect(state.error?.context?.branch).toBe("main")
+				expect(state.gitBranch).toBe("main")
+				expect(state.projectId).toBe("test-project-id")
+				expect(state.manifest).toBeNull()
+				expect(state.watcher).toBeNull()
+			})
+
+			it("should capture watcher start errors and create partial state", async () => {
+				vi.mocked(GitWatcher).mockImplementation(() => {
+					throw new Error("Watcher initialization failed")
+				})
+
+				await indexer.start()
+
+				expect(indexer.workspaceFolderState).toHaveLength(1)
+				const state = indexer.workspaceFolderState[0]
+				expect(state.error).toBeDefined()
+				expect(state.error?.type).toBe("scan")
+				expect(state.error?.message).toContain("Failed to start file watcher")
+				expect(state.gitBranch).toBe("main")
+				expect(state.projectId).toBe("test-project-id")
+				expect(state.manifest).toBeDefined()
+				expect(state.watcher).toBeNull()
+			})
+
+			it("should include error details in error object", async () => {
+				const testError = new Error("Test error")
+				testError.stack = "Error: Test error\n    at test.ts:1:1"
+				vi.mocked(git.getGitRepositoryInfo).mockRejectedValue(testError)
+
+				await indexer.start()
+
+				const state = indexer.workspaceFolderState[0]
+				expect(state.error?.details).toContain("Error: Test error")
+				expect(state.error?.details).toContain("at test.ts:1:1")
+			})
+
+			it("should handle non-Error objects in catch blocks", async () => {
+				vi.mocked(git.getGitRepositoryInfo).mockRejectedValue("String error")
+
+				await indexer.start()
+
+				const state = indexer.workspaceFolderState[0]
+				expect(state.error?.message).toContain("String error")
+				expect(state.error?.details).toBeUndefined()
+			})
+		})
 	})
 
 	describe("dispose", () => {
@@ -367,10 +446,11 @@ describe("ManagedIndexer", () => {
 			await indexer.start()
 
 			const mockWatcher = indexer.workspaceFolderState[0].watcher
+			expect(mockWatcher).toBeDefined()
 
 			indexer.dispose()
 
-			expect(mockWatcher.dispose).toHaveBeenCalled()
+			expect(mockWatcher!.dispose).toHaveBeenCalled()
 		})
 
 		it("should clear workspaceFolderState", async () => {
@@ -750,11 +830,12 @@ describe("ManagedIndexer", () => {
 			const state2 = indexer.workspaceFolderState[1]
 
 			// Start scan on first workspace
+			expect(state1.watcher).toBeDefined()
 			await indexer.onEvent({
 				type: "scan-start",
 				branch: "main",
 				isBaseBranch: true,
-				watcher: state1.watcher,
+				watcher: state1.watcher!,
 			})
 
 			expect(state1.isIndexing).toBe(true)
@@ -765,7 +846,7 @@ describe("ManagedIndexer", () => {
 				type: "scan-end",
 				branch: "main",
 				isBaseBranch: true,
-				watcher: state1.watcher,
+				watcher: state1.watcher!,
 			})
 
 			expect(state1.isIndexing).toBe(false)

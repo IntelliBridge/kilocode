@@ -1,57 +1,4 @@
 // kilocode_change new file
-/**
- * When extension activates, we need to instantiate the ManagedIndexer and then
- * fetch the api configuration deets and then fetch the organization to see
- * if the feature is enabled for the organization. If it is, then we will
- * instantiate a git-watcher for every folder in the workspace. We will also
- * want to initiate a scan of every folder in the workspace. git-watcher's
- * responsibility is to to alert the ManagedIndexer on branch/commit changes
- * for a given workspace folder. The ManagedIndexer can then run a new scan
- * for that workspace folder. If there is an on-going scan for that particular
- * workspace folder, then we will cancel the on-going scan and start a new one.
- *
- * Scans should be cancellable. The ManagedIndexer should track ongoing scans
- * so that they can be cancelled when the ManagedIndexer is disposed or if the
- * workspace folder is removed, or if the git-watcher detects a change.
- *
- * Git Watchers too can be disposed in the case of the ManagedIndexer being
- * disposed or the workspace folder being removed.
- *
- * Questions:
- *   - How do we communicate state to the webview?
- *   - Should we pass in an instance of ClineProvider or should we pass
- *     ManagedIndexer into ClineProvider?
- *   - How do we populate prompts and provide the tool definitions?
- *   - How do we translate a codebase_search tool call to ManagedIndexer?
- *   - If we're supporting multiple workspace folders, how do we represent
- *     that in the webview UI?
- *
- *
- * The current git watcher implementation is too tied to the managed indexing
- * concept and should be abstracted to be a regular ol' dispoable object that
- * can be instantiated based on a cwd.
- *
- * The scanner implementation should be updated to be able to introspect
- *
- * State for each workspace folder:
- *   - git branch
- *   - projectId
- *   - manifest
- *   - is indexing
- *
- * Things we want in the UI:
- *
- * - For each project ID
- * - Indexing status (currently )
- *
- * -----------------------------------------------------------------------------
- *
- * We can think of ManagedIndexer as a few components:
- *
- * 1. Inputs - Workspace Folders and Profile/Organization
- * 2. Derived values - Project Config and Organization/Profile (is feature enabled)
- * 3. Git Watchers
- */
 
 import * as vscode from "vscode"
 import * as path from "path"
@@ -75,13 +22,34 @@ interface ManagedIndexerConfig {
 	kilocodeTesterWarningsDisabledUntil: number | null
 }
 
+/**
+ * Serializable error information for managed indexing operations
+ */
+interface ManagedIndexerError {
+	/** Error type for categorization */
+	type: "setup" | "scan" | "file-upsert" | "git" | "manifest" | "config"
+	/** Human-readable error message */
+	message: string
+	/** ISO timestamp when error occurred */
+	timestamp: string
+	/** Optional context about what was being attempted */
+	context?: {
+		filePath?: string
+		branch?: string
+		operation?: string
+	}
+	/** Original error details if available */
+	details?: string
+}
+
 interface ManagedIndexerWorkspaceFolderState {
-	gitBranch: string
-	projectId: string
-	manifest: ServerManifest
-	isIndexing: boolean
-	watcher: GitWatcher
 	workspaceFolder: vscode.WorkspaceFolder
+	gitBranch: string | null
+	projectId: string | null
+	manifest: ServerManifest | null
+	isIndexing: boolean
+	watcher: GitWatcher | null
+	error?: ManagedIndexerError
 }
 
 export class ManagedIndexer implements vscode.Disposable {
@@ -186,44 +154,106 @@ export class ManagedIndexer implements vscode.Disposable {
 			vscode.workspace.workspaceFolders.map(async (workspaceFolder) => {
 				const cwd = workspaceFolder.uri.fsPath
 
+				// Initialize state with workspace folder
+				const state: ManagedIndexerWorkspaceFolderState = {
+					workspaceFolder,
+					gitBranch: null,
+					projectId: null,
+					manifest: null,
+					isIndexing: false,
+					watcher: null,
+				}
+
+				// Check if it's a git repository
 				if (!(await isGitRepository(cwd))) {
 					return null
 				}
 
-				const [{ repositoryUrl }, gitBranch] = await Promise.all([
-					getGitRepositoryInfo(cwd),
-					getCurrentBranch(cwd),
-				])
-				const config = await getKilocodeConfig(cwd, repositoryUrl)
-				const projectId = config?.project?.id
+				// Step 1: Get git information
+				try {
+					const [{ repositoryUrl }, gitBranch] = await Promise.all([
+						getGitRepositoryInfo(cwd),
+						getCurrentBranch(cwd),
+					])
+					state.gitBranch = gitBranch
 
-				if (!projectId) {
-					console.log("[ManagedIndexer] No project ID found for workspace folder", cwd)
-					return null
+					// Step 2: Get project configuration
+					const config = await getKilocodeConfig(cwd, repositoryUrl)
+					const projectId = config?.project?.id
+
+					if (!projectId) {
+						console.log("[ManagedIndexer] No project ID found for workspace folder", cwd)
+						return null
+					}
+					state.projectId = projectId
+
+					// Step 3: Fetch server manifest
+					try {
+						state.manifest = await getServerManifest(
+							kilocodeOrganizationId,
+							projectId,
+							gitBranch,
+							kilocodeToken,
+						)
+					} catch (error) {
+						const errorMessage = error instanceof Error ? error.message : String(error)
+						logger.error(`[ManagedIndexer] Failed to fetch manifest for ${cwd}: ${errorMessage}`)
+						state.error = {
+							type: "manifest",
+							message: `Failed to fetch server manifest: ${errorMessage}`,
+							timestamp: new Date().toISOString(),
+							context: {
+								operation: "fetch-manifest",
+								branch: gitBranch,
+							},
+							details: error instanceof Error ? error.stack : undefined,
+						}
+						return state
+					}
+
+					// Step 4: Create and start git watcher
+					try {
+						const watcher = new GitWatcher({ cwd })
+						state.watcher = watcher
+
+						// Register event handler
+						watcher.onEvent(this.onEvent.bind(this))
+
+						// Perform an initial scan
+						await watcher.scan()
+						// Then start the watcher
+						await watcher.start()
+					} catch (error) {
+						const errorMessage = error instanceof Error ? error.message : String(error)
+						logger.error(`[ManagedIndexer] Failed to start watcher for ${cwd}: ${errorMessage}`)
+						state.error = {
+							type: "scan",
+							message: `Failed to start file watcher: ${errorMessage}`,
+							timestamp: new Date().toISOString(),
+							context: {
+								operation: "start-watcher",
+								branch: gitBranch,
+							},
+							details: error instanceof Error ? error.stack : undefined,
+						}
+						return state
+					}
+
+					return state
+				} catch (error) {
+					const errorMessage = error instanceof Error ? error.message : String(error)
+					logger.error(`[ManagedIndexer] Failed to get git info for ${cwd}: ${errorMessage}`)
+					state.error = {
+						type: "git",
+						message: `Failed to get git information: ${errorMessage}`,
+						timestamp: new Date().toISOString(),
+						context: {
+							operation: "get-git-info",
+						},
+						details: error instanceof Error ? error.stack : undefined,
+					}
+					return state
 				}
-
-				const manifest = await getServerManifest(kilocodeOrganizationId, projectId, gitBranch, kilocodeToken)
-				const watcher = new GitWatcher({ cwd })
-
-				// Create the state object
-				const state: ManagedIndexerWorkspaceFolderState = {
-					gitBranch,
-					projectId,
-					manifest,
-					isIndexing: false,
-					watcher,
-					workspaceFolder,
-				}
-
-				// Register event handler that includes state context
-				watcher.onEvent(this.onEvent.bind(this))
-
-				// Perform an initial scan
-				await watcher.scan()
-				// Then start the watcher
-				await watcher.start()
-
-				return state
 			}),
 		)
 
@@ -235,7 +265,7 @@ export class ManagedIndexer implements vscode.Disposable {
 		this.workspaceFoldersListener = null
 
 		// Dispose all watchers from workspaceFolderState
-		this.workspaceFolderState.forEach((state) => state.watcher.dispose())
+		this.workspaceFolderState.forEach((state) => state.watcher?.dispose())
 		this.workspaceFolderState = []
 
 		this.isActive = false
@@ -248,16 +278,23 @@ export class ManagedIndexer implements vscode.Disposable {
 
 		const state = this.workspaceFolderState.find((s) => s.watcher === event.watcher)
 
-		if (!state) {
+		if (!state || !state.watcher) {
 			logger.warn("[ManagedIndexer] Received event for unknown watcher")
+			return
+		}
+
+		// Skip processing if state is not fully initialized
+		if (!state.projectId || !state.manifest || !state.gitBranch) {
+			logger.warn("[ManagedIndexer] Received event for incompletely initialized workspace folder")
 			return
 		}
 
 		// Handle different event types
 		switch (event.type) {
 			case "scan-start":
-				// Update isIndexing state
+				// Update isIndexing state and clear any previous errors
 				state.isIndexing = true
+				state.error = undefined
 				logger.info(`[ManagedIndexer] Scan started on branch ${event.branch}`)
 				break
 
@@ -311,9 +348,27 @@ export class ManagedIndexer implements vscode.Disposable {
 						logger.info(
 							`[ManagedIndexer] Successfully upserted file: ${relativeFilePath} (branch: ${branch})`,
 						)
+
+						// Clear any previous file-upsert errors on success
+						if (state.error?.type === "file-upsert") {
+							state.error = undefined
+						}
 					} catch (error) {
 						const errorMessage = error instanceof Error ? error.message : String(error)
 						logger.error(`[ManagedIndexer] Failed to upsert file ${filePath}: ${errorMessage}`)
+
+						// Store the error in state
+						state.error = {
+							type: "file-upsert",
+							message: `Failed to upsert file: ${errorMessage}`,
+							timestamp: new Date().toISOString(),
+							context: {
+								filePath,
+								branch,
+								operation: "file-upsert",
+							},
+							details: error instanceof Error ? error.stack : undefined,
+						}
 					}
 				})
 			}
