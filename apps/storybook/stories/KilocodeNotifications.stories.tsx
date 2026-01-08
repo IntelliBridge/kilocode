@@ -10,9 +10,6 @@ const meta = {
 			dismissedNotificationIds: [],
 		},
 	},
-	args: {
-		onDismiss: fn(),
-	},
 } satisfies Meta<typeof KilocodeNotifications>
 
 export default meta

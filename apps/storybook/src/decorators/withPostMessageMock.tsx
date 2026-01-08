@@ -28,7 +28,7 @@ export const withPostMessageMock: Decorator = (Story, context) => {
 		}
 
 		const timers: NodeJS.Timeout[] = []
-		messages.forEach((message, index) => {
+		messages.forEach((message) => {
 			const event = new MessageEvent("message", { data: message })
 			const timer = setTimeout(() => {
 				window.dispatchEvent(event)
