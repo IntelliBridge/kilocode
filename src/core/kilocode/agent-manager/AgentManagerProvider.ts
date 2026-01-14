@@ -26,14 +26,10 @@ import { getNonce } from "../../webview/getNonce"
 import { getViteDevServerConfig } from "../../webview/getViteDevServerConfig"
 import { getRemoteUrl } from "../../../services/code-index/managed/git-utils"
 import { normalizeGitUrl } from "./normalizeGitUrl"
-// kilocode_change start - reuse extractRepositoryName for cloud agent
 import { extractRepositoryName } from "../../../utils/git"
-// kilocode_change end
 import type { ClineMessage } from "@roo-code/types"
 import type { ProviderSettings } from "@roo-code/types"
-// kilocode_change start - cloud agent support
 import { CloudAgentService } from "../../../services/kilocode/CloudAgentService"
-// kilocode_change end
 import {
 	captureAgentManagerOpened,
 	captureAgentManagerSessionStarted,
@@ -250,11 +246,9 @@ export class AgentManagerProvider implements vscode.Disposable {
 				case "agentManager.startSession":
 					void this.handleStartSession(message)
 					break
-				// kilocode_change start - cloud agent support
 				case "agentManager.startCloudSession":
 					void this.handleStartCloudSession(message)
 					break
-				// kilocode_change end
 				case "agentManager.stopSession":
 					this.stopAgentSession(message.sessionId as string)
 					break
@@ -1828,7 +1822,6 @@ export class AgentManagerProvider implements vscode.Disposable {
 		}
 	}
 
-	// kilocode_change start - cloud agent support
 	/**
 	 * Handle starting a cloud agent session.
 	 * Validates the user has a kilocodeToken, then prepares and initiates a cloud session.
@@ -1954,5 +1947,4 @@ export class AgentManagerProvider implements vscode.Disposable {
 			this.postMessage({ type: "agentManager.startSessionFailed" })
 		}
 	}
-	// kilocode_change end
 }

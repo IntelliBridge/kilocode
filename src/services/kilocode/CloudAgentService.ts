@@ -87,8 +87,8 @@ export class CloudAgentService {
 						errorMessage += `: ${detailMessages.join(", ")}`
 					}
 				}
-			} catch {
-				// Ignore JSON parse errors, use default message
+			} catch (parseError) {
+				console.warn("[CloudAgentService] Failed to parse error response:", parseError)
 			}
 			throw new Error(errorMessage)
 		}

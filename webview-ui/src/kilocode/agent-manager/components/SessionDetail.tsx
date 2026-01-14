@@ -29,7 +29,7 @@ import {
 	Layers,
 	X,
 	Terminal,
-	Cloud, // kilocode_change - added Cloud icon for cloud agent mode
+	Cloud,
 } from "lucide-react"
 import DynamicTextArea from "react-textarea-autosize"
 import { cn } from "../../../lib/utils"
@@ -248,10 +248,8 @@ function NewAgentForm() {
 	const startSessionFailedCounter = useAtomValue(startSessionFailedCounterAtom)
 
 	// Multi-version mode forces worktree mode (cloud mode is independent)
-	// kilocode_change start - cloud mode support
 	const isMultiVersion = versionCount > 1
 	const effectiveRunMode = runMode === "cloud" ? "cloud" : isMultiVersion ? "worktree" : runMode
-	// kilocode_change end
 
 	// Reset loading state when session start fails (e.g., no workspace folder)
 	useEffect(() => {
@@ -300,7 +298,6 @@ function NewAgentForm() {
 
 		setIsStarting(true)
 
-		// kilocode_change start - cloud mode support
 		if (effectiveRunMode === "cloud") {
 			// Start cloud agent session
 			vscode.postMessage({
@@ -309,7 +306,6 @@ function NewAgentForm() {
 			})
 			return
 		}
-		// kilocode_change end
 
 		// Generate labels for multi-version mode
 		const labels = isMultiVersion ? generateVersionLabels(trimmedPrompt.slice(0, 50), versionCount) : undefined
@@ -408,7 +404,6 @@ function NewAgentForm() {
 					/>
 
 					<div className="absolute bottom-2 right-2 z-30 flex items-center gap-2">
-						{/* kilocode_change start - cloud mode dropdown */}
 						<div ref={dropdownRef} className="am-run-mode-dropdown-inline relative">
 							<StandardTooltip
 								content={
@@ -478,7 +473,6 @@ function NewAgentForm() {
 								</div>
 							)}
 						</div>
-						{/* kilocode_change end */}
 
 						<div ref={versionDropdownRef} className="am-run-mode-dropdown-inline relative">
 							<StandardTooltip content={t("sessionDetail.versionsTooltip")}>
