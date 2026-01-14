@@ -3265,6 +3265,9 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 									// kilocode_change start
 									completionTime: performance.now() - apiRequestStartTime,
 									inferenceProvider,
+									apiProvider: this.apiConfiguration.apiProvider,
+									modelId: cachedModelId,
+									success: true,
 									// kilocode_change end
 								})
 							}
