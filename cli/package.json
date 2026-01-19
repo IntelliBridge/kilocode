@@ -1,7 +1,7 @@
 {
 	"name": "@kilocode/cli",
 	"version": "0.23.1",
-	"description": "Terminal User Interface for Kilo Code",
+	"description": "Terminal User Interface for Codeforce",
 	"type": "module",
 	"main": "dist/index.js",
 	"bin": {

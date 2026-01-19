@@ -1,10 +1,10 @@
 {
 	"input": {
-		"task_prompt": "Què vols que faci Kilo Code?",
+		"task_prompt": "Què vols que faci Codeforce?",
 		"task_placeholder": "Assistent de codificació de IA de codi obert per planificar, crear i corregir codi."
 	},
 	"extension": {
-		"name": "Kilo Code",
+		"name": "Codeforce",
 		"description": "Agent de programació d'IA de codi obert que genera codi a partir de llenguatge natural, automatitza tasques i executa ordres de terminal. Inclou autocompletat en línia, automatització del navegador, refactorització automàtica i modes personalitzats per a planificació, programació i depuració. Compatible amb més de 500 models d'IA, incloent Claude (Anthropic), Gemini, Grok, GPT, Codex i GLM."
 	},
 	"number_format": {
@@ -160,7 +160,7 @@
 	"warnings": {
 		"no_terminal_content": "No s'ha seleccionat contingut de terminal",
 		"missing_task_files": "Els fitxers d'aquesta tasca falten. Vols eliminar-la de la llista de tasques?",
-		"auto_import_failed": "Ha fallat la importació automàtica de la configuració de Kilo Code: {{error}}"
+		"auto_import_failed": "Ha fallat la importació automàtica de la configuració de Codeforce: {{error}}"
 	},
 	"info": {
 		"no_changes": "No s'han trobat canvis.",
@@ -169,7 +169,7 @@
 		"custom_storage_path_set": "Ruta d'emmagatzematge personalitzada establerta: {{path}}",
 		"default_storage_path": "S'ha reprès l'ús de la ruta d'emmagatzematge predeterminada",
 		"settings_imported": "Configuració importada correctament.",
-		"auto_import_success": "Configuració de Kilo Code importada automàticament des de {{filename}}",
+		"auto_import_success": "Configuració de Codeforce importada automàticament des de {{filename}}",
 		"share_link_copied": "Enllaç de compartició copiat al portapapers",
 		"image_copied_to_clipboard": "URI de dades de la imatge copiada al portapapers",
 		"image_saved": "Imatge desada a {{path}}",

@@ -1,5 +1,5 @@
 /**
- * Colorblind-friendly theme for Kilo Code CLI
+ * Colorblind-friendly theme for Codeforce CLI
  *
  * Designed for users with various forms of color vision deficiency.
  * Uses high contrast colors and patterns to ensure accessibility.

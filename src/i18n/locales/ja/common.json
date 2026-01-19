@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Kilo Code",
+		"name": "Codeforce",
 		"description": "自然言語からコードを生成し、タスクを自動化し、ターミナルコマンドを実行するオープンソースAIコーディングエージェント。インライン自動補完、ブラウザ自動化、自動リファクタリング、計画・コーディング・デバッグ用のカスタムモードを搭載。Claude (Anthropic)、Gemini、Grok、GPT、Codex、GLMを含む500以上のAIモデルに対応。"
 	},
 	"number_format": {
@@ -156,7 +156,7 @@
 	"warnings": {
 		"no_terminal_content": "選択されたターミナルコンテンツがありません",
 		"missing_task_files": "このタスクのファイルが見つかりません。タスクリストから削除しますか？",
-		"auto_import_failed": "Kilo Code設定の自動インポートに失敗しました：{{error}}"
+		"auto_import_failed": "Codeforce設定の自動インポートに失敗しました：{{error}}"
 	},
 	"info": {
 		"no_changes": "変更は見つかりませんでした。",
@@ -165,7 +165,7 @@
 		"custom_storage_path_set": "カスタムストレージパスが設定されました：{{path}}",
 		"default_storage_path": "デフォルトのストレージパスに戻りました",
 		"settings_imported": "設定が正常にインポートされました。",
-		"auto_import_success": "Kilo Code設定が{{filename}}から自動インポートされました",
+		"auto_import_success": "Codeforce設定が{{filename}}から自動インポートされました",
 		"share_link_copied": "共有リンクがクリップボードにコピーされました",
 		"image_copied_to_clipboard": "画像データURIがクリップボードにコピーされました",
 		"image_saved": "画像を{{path}}に保存しました",
@@ -203,7 +203,7 @@
 		"enter_valid_path": "有効なパスを入力してください"
 	},
 	"input": {
-		"task_prompt": "Kilo Codeにどんなことをさせますか？",
+		"task_prompt": "Codeforceにどんなことをさせますか？",
 		"task_placeholder": "タスクをここに入力してください"
 	},
 	"settings": {

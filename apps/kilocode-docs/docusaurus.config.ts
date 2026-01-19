@@ -20,8 +20,8 @@ import {
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-	title: "Kilo Code Docs",
-	tagline: "Kilo Code Documentation",
+	title: "Codeforce Docs",
+	tagline: "Codeforce Documentation",
 	favicon: "img/favicon.ico",
 
 	// Set the production url of your site here
@@ -265,9 +265,9 @@ const config: Config = {
 	themeConfig: {
 		image: "img/kilo-v1.svg",
 		navbar: {
-			title: "Kilo Code",
+			title: "Codeforce",
 			logo: {
-				alt: "Kilo Code Logo",
+				alt: "Codeforce Logo",
 				src: "img/kilo-v1.svg",
 				srcDark: "img/kilo-v1-white.svg",
 				href: "/",

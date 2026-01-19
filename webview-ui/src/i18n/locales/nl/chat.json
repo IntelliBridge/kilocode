@@ -1,5 +1,5 @@
 {
-	"greeting": "Welkom bij Kilo Code",
+	"greeting": "Welkom bij Codeforce",
 	"task": {
 		"title": "Taak",
 		"expand": "Taak uitvouwen",
@@ -21,7 +21,7 @@
 		"sharePublicly": "Openbaar delen",
 		"sharePubliclyDescription": "Iedereen met de link kan toegang krijgen",
 		"connectToCloud": "Verbind met Cloud",
-		"connectToCloudDescription": "Meld je aan bij Kilo Code Cloud om taken te delen",
+		"connectToCloudDescription": "Meld je aan bij Codeforce Cloud om taken te delen",
 		"sharingDisabledByOrganization": "Delen uitgeschakeld door organisatie",
 		"shareSuccessOrganization": "Organisatielink gekopieerd naar klembord",
 		"shareSuccessPublic": "Openbare link gekopieerd naar klembord",
@@ -115,7 +115,7 @@
 		"title": "Modi",
 		"marketplace": "Modus Marktplaats",
 		"settings": "Modus Instellingen",
-		"description": "Gespecialiseerde persona's die het gedrag van Kilo Code aanpassen.",
+		"description": "Gespecialiseerde persona's die het gedrag van Codeforce aanpassen.",
 		"searchPlaceholder": "Zoek modi...",
 		"noResults": "Geen resultaten gevonden",
 		"organizationModes": "Organisatiemodi"
@@ -177,48 +177,48 @@
 		"current": "Huidig"
 	},
 	"instructions": {
-		"wantsToFetch": "Kilo Code wil gedetailleerde instructies ophalen om te helpen met de huidige taak"
+		"wantsToFetch": "Codeforce wil gedetailleerde instructies ophalen om te helpen met de huidige taak"
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code wil dit bestand lezen",
-		"wantsToReadOutsideWorkspace": "Kilo Code wil dit bestand buiten de werkruimte lezen",
-		"didRead": "Kilo Code heeft dit bestand gelezen",
-		"wantsToEdit": "Kilo Code wil dit bestand bewerken",
-		"wantsToEditOutsideWorkspace": "Kilo Code wil dit bestand buiten de werkruimte bewerken",
-		"wantsToEditProtected": "Kilo Code wil een beveiligd configuratiebestand bewerken",
-		"wantsToCreate": "Kilo Code wil een nieuw bestand aanmaken",
-		"wantsToSearchReplace": "Kilo Code wil zoeken en vervangen in dit bestand",
-		"didSearchReplace": "Kilo Code heeft zoeken en vervangen uitgevoerd op dit bestand",
-		"wantsToInsert": "Kilo Code wil inhoud invoegen in dit bestand",
-		"wantsToInsertWithLineNumber": "Kilo Code wil inhoud invoegen in dit bestand op regel {{lineNumber}}",
-		"wantsToInsertAtEnd": "Kilo Code wil inhoud toevoegen aan het einde van dit bestand",
-		"wantsToReadAndXMore": "Kilo Code wil dit bestand en nog {{count}} andere lezen",
-		"wantsToReadMultiple": "Kilo Code wil meerdere bestanden lezen",
-		"wantsToApplyBatchChanges": "Kilo Code wil wijzigingen toepassen op meerdere bestanden",
-		"wantsToGenerateImage": "Kilo Code wil een afbeelding genereren",
-		"wantsToGenerateImageOutsideWorkspace": "Kilo Code wil een afbeelding genereren buiten de werkruimte",
-		"wantsToGenerateImageProtected": "Kilo Code wil een afbeelding genereren op een beschermde locatie",
-		"didGenerateImage": "Kilo Code heeft een afbeelding gegenereerd",
-		"wantsToDelete": "Kilo Code wil dit bestand verwijderen",
-		"wantsToDeleteDirectory": "Kilo Code wil deze map verwijderen"
+		"wantsToRead": "Codeforce wil dit bestand lezen",
+		"wantsToReadOutsideWorkspace": "Codeforce wil dit bestand buiten de werkruimte lezen",
+		"didRead": "Codeforce heeft dit bestand gelezen",
+		"wantsToEdit": "Codeforce wil dit bestand bewerken",
+		"wantsToEditOutsideWorkspace": "Codeforce wil dit bestand buiten de werkruimte bewerken",
+		"wantsToEditProtected": "Codeforce wil een beveiligd configuratiebestand bewerken",
+		"wantsToCreate": "Codeforce wil een nieuw bestand aanmaken",
+		"wantsToSearchReplace": "Codeforce wil zoeken en vervangen in dit bestand",
+		"didSearchReplace": "Codeforce heeft zoeken en vervangen uitgevoerd op dit bestand",
+		"wantsToInsert": "Codeforce wil inhoud invoegen in dit bestand",
+		"wantsToInsertWithLineNumber": "Codeforce wil inhoud invoegen in dit bestand op regel {{lineNumber}}",
+		"wantsToInsertAtEnd": "Codeforce wil inhoud toevoegen aan het einde van dit bestand",
+		"wantsToReadAndXMore": "Codeforce wil dit bestand en nog {{count}} andere lezen",
+		"wantsToReadMultiple": "Codeforce wil meerdere bestanden lezen",
+		"wantsToApplyBatchChanges": "Codeforce wil wijzigingen toepassen op meerdere bestanden",
+		"wantsToGenerateImage": "Codeforce wil een afbeelding genereren",
+		"wantsToGenerateImageOutsideWorkspace": "Codeforce wil een afbeelding genereren buiten de werkruimte",
+		"wantsToGenerateImageProtected": "Codeforce wil een afbeelding genereren op een beschermde locatie",
+		"didGenerateImage": "Codeforce heeft een afbeelding gegenereerd",
+		"wantsToDelete": "Codeforce wil dit bestand verwijderen",
+		"wantsToDeleteDirectory": "Codeforce wil deze map verwijderen"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code wil de bovenliggende bestanden in deze map bekijken",
-		"didViewTopLevel": "Kilo Code heeft de bovenliggende bestanden in deze map bekeken",
-		"wantsToViewRecursive": "Kilo Code wil alle bestanden in deze map recursief bekijken",
-		"didViewRecursive": "Kilo Code heeft alle bestanden in deze map recursief bekeken",
-		"wantsToViewDefinitions": "Kilo Code wil broncode-definitienamen bekijken die in deze map worden gebruikt",
-		"didViewDefinitions": "Kilo Code heeft broncode-definitienamen bekeken die in deze map worden gebruikt",
-		"wantsToSearch": "Kilo Code wil deze map doorzoeken op <code>{{regex}}</code>",
-		"didSearch": "Kilo Code heeft deze map doorzocht op <code>{{regex}}</code>",
-		"wantsToSearchOutsideWorkspace": "Kilo Code wil deze map (buiten werkruimte) doorzoeken op <code>{{regex}}</code>",
-		"didSearchOutsideWorkspace": "Kilo Code heeft deze map (buiten werkruimte) doorzocht op <code>{{regex}}</code>",
-		"wantsToViewTopLevelOutsideWorkspace": "Kilo Code wil de bovenliggende bestanden in deze map (buiten werkruimte) bekijken",
-		"didViewTopLevelOutsideWorkspace": "Kilo Code heeft de bovenliggende bestanden in deze map (buiten werkruimte) bekeken",
-		"wantsToViewRecursiveOutsideWorkspace": "Kilo Code wil alle bestanden in deze map (buiten werkruimte) recursief bekijken",
-		"didViewRecursiveOutsideWorkspace": "Kilo Code heeft alle bestanden in deze map (buiten werkruimte) recursief bekeken",
-		"wantsToViewDefinitionsOutsideWorkspace": "Kilo Code wil broncode-definitienamen bekijken die in deze map (buiten werkruimte) worden gebruikt",
-		"didViewDefinitionsOutsideWorkspace": "Kilo Code heeft broncode-definitienamen bekeken die in deze map (buiten werkruimte) worden gebruikt"
+		"wantsToViewTopLevel": "Codeforce wil de bovenliggende bestanden in deze map bekijken",
+		"didViewTopLevel": "Codeforce heeft de bovenliggende bestanden in deze map bekeken",
+		"wantsToViewRecursive": "Codeforce wil alle bestanden in deze map recursief bekijken",
+		"didViewRecursive": "Codeforce heeft alle bestanden in deze map recursief bekeken",
+		"wantsToViewDefinitions": "Codeforce wil broncode-definitienamen bekijken die in deze map worden gebruikt",
+		"didViewDefinitions": "Codeforce heeft broncode-definitienamen bekeken die in deze map worden gebruikt",
+		"wantsToSearch": "Codeforce wil deze map doorzoeken op <code>{{regex}}</code>",
+		"didSearch": "Codeforce heeft deze map doorzocht op <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "Codeforce wil deze map (buiten werkruimte) doorzoeken op <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "Codeforce heeft deze map (buiten werkruimte) doorzocht op <code>{{regex}}</code>",
+		"wantsToViewTopLevelOutsideWorkspace": "Codeforce wil de bovenliggende bestanden in deze map (buiten werkruimte) bekijken",
+		"didViewTopLevelOutsideWorkspace": "Codeforce heeft de bovenliggende bestanden in deze map (buiten werkruimte) bekeken",
+		"wantsToViewRecursiveOutsideWorkspace": "Codeforce wil alle bestanden in deze map (buiten werkruimte) recursief bekijken",
+		"didViewRecursiveOutsideWorkspace": "Codeforce heeft alle bestanden in deze map (buiten werkruimte) recursief bekeken",
+		"wantsToViewDefinitionsOutsideWorkspace": "Codeforce wil broncode-definitienamen bekijken die in deze map (buiten werkruimte) worden gebruikt",
+		"didViewDefinitionsOutsideWorkspace": "Codeforce heeft broncode-definitienamen bekeken die in deze map (buiten werkruimte) worden gebruikt"
 	},
 	"commandOutput": "Commando-uitvoer",
 	"commandExecution": {
@@ -246,18 +246,18 @@
 		"youSaid": "Jij zei"
 	},
 	"mcp": {
-		"wantsToUseTool": "Kilo Code wil een tool gebruiken op de {{serverName}} MCP-server",
-		"wantsToAccessResource": "Kilo Code wil een bron benaderen op de {{serverName}} MCP-server"
+		"wantsToUseTool": "Codeforce wil een tool gebruiken op de {{serverName}} MCP-server",
+		"wantsToAccessResource": "Codeforce wil een bron benaderen op de {{serverName}} MCP-server"
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code wil overschakelen naar {{mode}} modus",
-		"wantsToSwitchWithReason": "Kilo Code wil overschakelen naar {{mode}} modus omdat: {{reason}}",
-		"didSwitch": "Kilo Code is overgeschakeld naar {{mode}} modus",
-		"didSwitchWithReason": "Kilo Code is overgeschakeld naar {{mode}} modus omdat: {{reason}}"
+		"wantsToSwitch": "Codeforce wil overschakelen naar {{mode}} modus",
+		"wantsToSwitchWithReason": "Codeforce wil overschakelen naar {{mode}} modus omdat: {{reason}}",
+		"didSwitch": "Codeforce is overgeschakeld naar {{mode}} modus",
+		"didSwitchWithReason": "Codeforce is overgeschakeld naar {{mode}} modus omdat: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code wil een nieuwe subtaak aanmaken in {{mode}} modus",
-		"wantsToFinish": "Kilo Code wil deze subtaak voltooien",
+		"wantsToCreate": "Codeforce wil een nieuwe subtaak aanmaken in {{mode}} modus",
+		"wantsToFinish": "Codeforce wil deze subtaak voltooien",
 		"newTaskContent": "Subtaak-instructies",
 		"completionContent": "Subtaak voltooid",
 		"resultContent": "Subtaakresultaten",
@@ -265,7 +265,7 @@
 		"completionInstructions": "Subtaak voltooid! Je kunt de resultaten bekijken en eventuele correcties of volgende stappen voorstellen. Als alles goed is, bevestig dan om het resultaat terug te sturen naar de hoofdtaak."
 	},
 	"questions": {
-		"hasQuestion": "Kilo Code heeft een vraag"
+		"hasQuestion": "Codeforce heeft een vraag"
 	},
 	"taskCompleted": "Taak voltooid",
 	"error": "Fout",
@@ -279,7 +279,7 @@
 	"diffError": {
 		"title": "Bewerking mislukt"
 	},
-	"troubleMessage": "Kilo Code ondervindt problemen...",
+	"troubleMessage": "Codeforce ondervindt problemen...",
 	"errorDetails": {
 		"link": "Details",
 		"title": "Foutdetails",
@@ -357,7 +357,7 @@
 	},
 	"browser": {
 		"session": "Browsersessie",
-		"rooWantsToUse": "Kilo Code wil de browser gebruiken",
+		"rooWantsToUse": "Codeforce wil de browser gebruiken",
 		"consoleLogs": "Console-logboeken",
 		"noNewLogs": "(Geen nieuwe logboeken)",
 		"screenshot": "Browserschermopname",
@@ -405,24 +405,24 @@
 	"profileViolationWarning": "Het huidige profiel is niet compatibel met de instellingen van uw organisatie",
 	"shellIntegration": {
 		"title": "Waarschuwing commando-uitvoering",
-		"description": "Je commando wordt uitgevoerd zonder VSCode-terminal shell-integratie. Om deze waarschuwing te onderdrukken kun je shell-integratie uitschakelen in het gedeelte <strong>Terminal</strong> van de <settingsLink>Kilo Code-instellingen</settingsLink> of de VSCode-terminalintegratie oplossen via de onderstaande link.",
+		"description": "Je commando wordt uitgevoerd zonder VSCode-terminal shell-integratie. Om deze waarschuwing te onderdrukken kun je shell-integratie uitschakelen in het gedeelte <strong>Terminal</strong> van de <settingsLink>Codeforce-instellingen</settingsLink> of de VSCode-terminalintegratie oplossen via de onderstaande link.",
 		"troubleshooting": "Klik hier voor shell-integratie documentatie."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Limiet voor automatisch goedgekeurde verzoeken bereikt",
-			"description": "Kilo Code heeft de automatisch goedgekeurde limiet van {{count}} API-verzoek(en) bereikt. Wil je de teller resetten en doorgaan met de taak?",
+			"description": "Codeforce heeft de automatisch goedgekeurde limiet van {{count}} API-verzoek(en) bereikt. Wil je de teller resetten en doorgaan met de taak?",
 			"button": "Resetten en doorgaan"
 		},
 		"autoApprovedCostLimitReached": {
 			"title": "Limiet voor automatisch goedgekeurde kosten bereikt",
 			"button": "Resetten en doorgaan",
-			"description": "Kilo Code heeft de automatisch goedgekeurde kostenlimiet van ${{count}} bereikt. Wilt u de kosten resetten en doorgaan met de taak?"
+			"description": "Codeforce heeft de automatisch goedgekeurde kostenlimiet van ${{count}} bereikt. Wilt u de kosten resetten en doorgaan met de taak?"
 		}
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Kilo Code wil de codebase doorzoeken op <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Kilo Code wil de codebase doorzoeken op <code>{{query}}</code> in <code>{{path}}</code>",
+		"wantsToSearch": "Codeforce wil de codebase doorzoeken op <code>{{query}}</code>",
+		"wantsToSearchWithPath": "Codeforce wil de codebase doorzoeken op <code>{{query}}</code> in <code>{{path}}</code>",
 		"didSearch_one": "1 resultaat gevonden",
 		"didSearch_other": "{{count}} resultaten gevonden",
 		"resultTooltip": "Gelijkenisscore: {{score}} (klik om bestand te openen)"
@@ -487,8 +487,8 @@
 		"clickToEdit": "Klik om bericht te bewerken"
 	},
 	"slashCommand": {
-		"wantsToRun": "Kilo Code wil een slash commando uitvoeren",
-		"didRun": "Kilo Code heeft een slash commando uitgevoerd"
+		"wantsToRun": "Codeforce wil een slash commando uitvoeren",
+		"didRun": "Codeforce heeft een slash commando uitgevoerd"
 	},
 	"todo": {
 		"partial": "{{completed}} van {{total}} to-do's voltooid",

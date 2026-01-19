@@ -69,7 +69,7 @@
 		"apiRequest": "API-запит",
 		"taskCompleted": "Завдання виконано",
 		"error": "Помилка",
-		"question": "У Kilo Code є питання",
+		"question": "У Codeforce є питання",
 		"command": "Kilo хоче виконати команду",
 		"tool": "Kilo хоче використати інструмент",
 		"usingTool": "Використання інструменту: **{{tool}}** {{details}}",

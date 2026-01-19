@@ -1,5 +1,5 @@
 {
-	"greeting": "Добро пожаловать в Kilo Code",
+	"greeting": "Добро пожаловать в Codeforce",
 	"task": {
 		"title": "Задача",
 		"expand": "Развернуть задачу",
@@ -21,7 +21,7 @@
 		"sharePublicly": "Поделиться публично",
 		"sharePubliclyDescription": "Любой, у кого есть ссылка, может получить доступ",
 		"connectToCloud": "Подключиться к облаку",
-		"connectToCloudDescription": "Войди в Kilo Code Cloud, чтобы делиться задачами",
+		"connectToCloudDescription": "Войди в Codeforce Cloud, чтобы делиться задачами",
 		"sharingDisabledByOrganization": "Обмен отключен организацией",
 		"shareSuccessOrganization": "Ссылка организации скопирована в буфер обмена",
 		"shareSuccessPublic": "Публичная ссылка скопирована в буфер обмена",
@@ -177,48 +177,48 @@
 		"current": "Текущая"
 	},
 	"instructions": {
-		"wantsToFetch": "Kilo Code хочет получить подробные инструкции для помощи с текущей задачей"
+		"wantsToFetch": "Codeforce хочет получить подробные инструкции для помощи с текущей задачей"
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code хочет прочитать этот файл",
-		"wantsToReadOutsideWorkspace": "Kilo Code хочет прочитать этот файл вне рабочей области",
-		"didRead": "Kilo Code прочитал этот файл",
-		"wantsToEdit": "Kilo Code хочет отредактировать этот файл",
-		"wantsToEditOutsideWorkspace": "Kilo Code хочет отредактировать этот файл вне рабочей области",
-		"wantsToEditProtected": "Kilo Code хочет отредактировать защищённый файл конфигурации",
-		"wantsToCreate": "Kilo Code хочет создать новый файл",
-		"wantsToSearchReplace": "Kilo Code хочет выполнить поиск и замену в этом файле",
-		"didSearchReplace": "Kilo Code выполнил поиск и замену в этом файле",
-		"wantsToInsert": "Kilo Code хочет вставить содержимое в этот файл",
-		"wantsToInsertWithLineNumber": "Kilo Code хочет вставить содержимое в этот файл на строку {{lineNumber}}",
-		"wantsToInsertAtEnd": "Kilo Code хочет добавить содержимое в конец этого файла",
-		"wantsToReadAndXMore": "Kilo Code хочет прочитать этот файл и еще {{count}}",
-		"wantsToReadMultiple": "Kilo Code хочет прочитать несколько файлов",
-		"wantsToApplyBatchChanges": "Kilo Code хочет применить изменения к нескольким файлам",
-		"wantsToGenerateImage": "Kilo Code хочет сгенерировать изображение",
-		"wantsToGenerateImageOutsideWorkspace": "Kilo Code хочет сгенерировать изображение вне рабочего пространства",
-		"wantsToGenerateImageProtected": "Kilo Code хочет сгенерировать изображение в защищённом месте",
-		"didGenerateImage": "Kilo Code сгенерировал изображение",
-		"wantsToDelete": "Kilo Code хочет удалить этот файл",
-		"wantsToDeleteDirectory": "Kilo Code хочет удалить эту директорию"
+		"wantsToRead": "Codeforce хочет прочитать этот файл",
+		"wantsToReadOutsideWorkspace": "Codeforce хочет прочитать этот файл вне рабочей области",
+		"didRead": "Codeforce прочитал этот файл",
+		"wantsToEdit": "Codeforce хочет отредактировать этот файл",
+		"wantsToEditOutsideWorkspace": "Codeforce хочет отредактировать этот файл вне рабочей области",
+		"wantsToEditProtected": "Codeforce хочет отредактировать защищённый файл конфигурации",
+		"wantsToCreate": "Codeforce хочет создать новый файл",
+		"wantsToSearchReplace": "Codeforce хочет выполнить поиск и замену в этом файле",
+		"didSearchReplace": "Codeforce выполнил поиск и замену в этом файле",
+		"wantsToInsert": "Codeforce хочет вставить содержимое в этот файл",
+		"wantsToInsertWithLineNumber": "Codeforce хочет вставить содержимое в этот файл на строку {{lineNumber}}",
+		"wantsToInsertAtEnd": "Codeforce хочет добавить содержимое в конец этого файла",
+		"wantsToReadAndXMore": "Codeforce хочет прочитать этот файл и еще {{count}}",
+		"wantsToReadMultiple": "Codeforce хочет прочитать несколько файлов",
+		"wantsToApplyBatchChanges": "Codeforce хочет применить изменения к нескольким файлам",
+		"wantsToGenerateImage": "Codeforce хочет сгенерировать изображение",
+		"wantsToGenerateImageOutsideWorkspace": "Codeforce хочет сгенерировать изображение вне рабочего пространства",
+		"wantsToGenerateImageProtected": "Codeforce хочет сгенерировать изображение в защищённом месте",
+		"didGenerateImage": "Codeforce сгенерировал изображение",
+		"wantsToDelete": "Codeforce хочет удалить этот файл",
+		"wantsToDeleteDirectory": "Codeforce хочет удалить эту директорию"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code хочет просмотреть файлы верхнего уровня в этой директории",
-		"didViewTopLevel": "Kilo Code просмотрел файлы верхнего уровня в этой директории",
-		"wantsToViewRecursive": "Kilo Code хочет рекурсивно просмотреть все файлы в этой директории",
-		"didViewRecursive": "Kilo Code рекурсивно просмотрел все файлы в этой директории",
-		"wantsToViewDefinitions": "Kilo Code хочет просмотреть имена определений исходного кода в этой директории",
-		"didViewDefinitions": "Kilo Code просмотрел имена определений исходного кода в этой директории",
-		"wantsToSearch": "Kilo Code хочет выполнить поиск в этой директории по <code>{{regex}}</code>",
-		"didSearch": "Kilo Code выполнил поиск в этой директории по <code>{{regex}}</code>",
-		"wantsToSearchOutsideWorkspace": "Kilo Code хочет выполнить поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
-		"didSearchOutsideWorkspace": "Kilo Code выполнил поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
-		"wantsToViewTopLevelOutsideWorkspace": "Kilo Code хочет просмотреть файлы верхнего уровня в этой директории (вне рабочего пространства)",
-		"didViewTopLevelOutsideWorkspace": "Kilo Code просмотрел файлы верхнего уровня в этой директории (вне рабочего пространства)",
-		"wantsToViewRecursiveOutsideWorkspace": "Kilo Code хочет рекурсивно просмотреть все файлы в этой директории (вне рабочего пространства)",
-		"didViewRecursiveOutsideWorkspace": "Kilo Code рекурсивно просмотрел все файлы в этой директории (вне рабочего пространства)",
-		"wantsToViewDefinitionsOutsideWorkspace": "Kilo Code хочет просмотреть имена определений исходного кода в этой директории (вне рабочего пространства)",
-		"didViewDefinitionsOutsideWorkspace": "Kilo Code просмотрел имена определений исходного кода в этой директории (вне рабочего пространства)"
+		"wantsToViewTopLevel": "Codeforce хочет просмотреть файлы верхнего уровня в этой директории",
+		"didViewTopLevel": "Codeforce просмотрел файлы верхнего уровня в этой директории",
+		"wantsToViewRecursive": "Codeforce хочет рекурсивно просмотреть все файлы в этой директории",
+		"didViewRecursive": "Codeforce рекурсивно просмотрел все файлы в этой директории",
+		"wantsToViewDefinitions": "Codeforce хочет просмотреть имена определений исходного кода в этой директории",
+		"didViewDefinitions": "Codeforce просмотрел имена определений исходного кода в этой директории",
+		"wantsToSearch": "Codeforce хочет выполнить поиск в этой директории по <code>{{regex}}</code>",
+		"didSearch": "Codeforce выполнил поиск в этой директории по <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "Codeforce хочет выполнить поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "Codeforce выполнил поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
+		"wantsToViewTopLevelOutsideWorkspace": "Codeforce хочет просмотреть файлы верхнего уровня в этой директории (вне рабочего пространства)",
+		"didViewTopLevelOutsideWorkspace": "Codeforce просмотрел файлы верхнего уровня в этой директории (вне рабочего пространства)",
+		"wantsToViewRecursiveOutsideWorkspace": "Codeforce хочет рекурсивно просмотреть все файлы в этой директории (вне рабочего пространства)",
+		"didViewRecursiveOutsideWorkspace": "Codeforce рекурсивно просмотрел все файлы в этой директории (вне рабочего пространства)",
+		"wantsToViewDefinitionsOutsideWorkspace": "Codeforce хочет просмотреть имена определений исходного кода в этой директории (вне рабочего пространства)",
+		"didViewDefinitionsOutsideWorkspace": "Codeforce просмотрел имена определений исходного кода в этой директории (вне рабочего пространства)"
 	},
 	"commandOutput": "Вывод команды",
 	"commandExecution": {
@@ -247,18 +247,18 @@
 		"youSaid": "Вы сказали"
 	},
 	"mcp": {
-		"wantsToUseTool": "Kilo Code хочет использовать инструмент на сервере MCP {{serverName}}",
-		"wantsToAccessResource": "Kilo Code хочет получить доступ к ресурсу на сервере MCP {{serverName}}"
+		"wantsToUseTool": "Codeforce хочет использовать инструмент на сервере MCP {{serverName}}",
+		"wantsToAccessResource": "Codeforce хочет получить доступ к ресурсу на сервере MCP {{serverName}}"
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code хочет переключиться в режим {{mode}}",
-		"wantsToSwitchWithReason": "Kilo Code хочет переключиться в режим {{mode}}, потому что: {{reason}}",
-		"didSwitch": "Kilo Code переключился в режим {{mode}}",
-		"didSwitchWithReason": "Kilo Code переключился в режим {{mode}}, потому что: {{reason}}"
+		"wantsToSwitch": "Codeforce хочет переключиться в режим {{mode}}",
+		"wantsToSwitchWithReason": "Codeforce хочет переключиться в режим {{mode}}, потому что: {{reason}}",
+		"didSwitch": "Codeforce переключился в режим {{mode}}",
+		"didSwitchWithReason": "Codeforce переключился в режим {{mode}}, потому что: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code хочет создать новую подзадачу в режиме {{mode}}",
-		"wantsToFinish": "Kilo Code хочет завершить эту подзадачу",
+		"wantsToCreate": "Codeforce хочет создать новую подзадачу в режиме {{mode}}",
+		"wantsToFinish": "Codeforce хочет завершить эту подзадачу",
 		"newTaskContent": "Инструкции по подзадаче",
 		"completionContent": "Подзадача завершена",
 		"resultContent": "Результаты подзадачи",
@@ -266,7 +266,7 @@
 		"completionInstructions": "Подзадача завершена! Вы можете просмотреть результаты и предложить исправления или следующие шаги. Если всё в порядке, подтвердите для возврата результата в родительскую задачу."
 	},
 	"questions": {
-		"hasQuestion": "У Kilo Code есть вопрос"
+		"hasQuestion": "У Codeforce есть вопрос"
 	},
 	"taskCompleted": "Задача завершена",
 	"error": "Ошибка",
@@ -280,7 +280,7 @@
 	"diffError": {
 		"title": "Не удалось выполнить редактирование"
 	},
-	"troubleMessage": "У Kilo Code возникли проблемы...",
+	"troubleMessage": "У Codeforce возникли проблемы...",
 	"errorDetails": {
 		"link": "Подробности",
 		"title": "Детали ошибки",
@@ -358,7 +358,7 @@
 	},
 	"browser": {
 		"session": "Сеанс браузера",
-		"rooWantsToUse": "Kilo Code хочет использовать браузер",
+		"rooWantsToUse": "Codeforce хочет использовать браузер",
 		"consoleLogs": "Логи консоли",
 		"noNewLogs": "(Новых логов нет)",
 		"screenshot": "Скриншот браузера",
@@ -406,13 +406,13 @@
 	"profileViolationWarning": "Текущий профиль несовместим с настройками вашей организации",
 	"shellIntegration": {
 		"title": "Предупреждение о выполнении команды",
-		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Kilo Code</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
+		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Codeforce</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
 		"troubleshooting": "Нажмите здесь для просмотра документации по интеграции оболочки."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Достигнут лимит автоматически одобренных запросов",
-			"description": "Kilo Code достиг автоматически одобренного лимита в {{count}} API-запрос(ов). Хотите сбросить счетчик и продолжить задачу?",
+			"description": "Codeforce достиг автоматически одобренного лимита в {{count}} API-запрос(ов). Хотите сбросить счетчик и продолжить задачу?",
 			"button": "Сбросить и продолжить"
 		},
 		"autoApprovedCostLimitReached": {
@@ -422,8 +422,8 @@
 		}
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Kilo Code хочет выполнить поиск в кодовой базе по <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Kilo Code хочет выполнить поиск в кодовой базе по <code>{{query}}</code> в <code>{{path}}</code>",
+		"wantsToSearch": "Codeforce хочет выполнить поиск в кодовой базе по <code>{{query}}</code>",
+		"wantsToSearchWithPath": "Codeforce хочет выполнить поиск в кодовой базе по <code>{{query}}</code> в <code>{{path}}</code>",
 		"didSearch_one": "Найден 1 результат",
 		"didSearch_other": "Найдено {{count}} результатов",
 		"resultTooltip": "Оценка схожести: {{score}} (нажмите, чтобы открыть файл)"
@@ -488,8 +488,8 @@
 		"clickToEdit": "Нажмите, чтобы редактировать сообщение"
 	},
 	"slashCommand": {
-		"wantsToRun": "Kilo Code хочет выполнить слеш-команду",
-		"didRun": "Kilo Code выполнил слеш-команду"
+		"wantsToRun": "Codeforce хочет выполнить слеш-команду",
+		"didRun": "Codeforce выполнил слеш-команду"
 	},
 	"todo": {
 		"partial": "{{completed}} из {{total}} задач выполнено",
