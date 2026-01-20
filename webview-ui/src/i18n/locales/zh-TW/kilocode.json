@@ -1,7 +1,7 @@
 {
 	"welcome": {
-		"greeting": "歡迎使用 Codeforce！",
-		"introText1": "Codeforce 是一個免費的開源 AI 程式設計代理。",
+		"greeting": "歡迎使用 Builder！",
+		"introText1": "Builder 是一個免費的開源 AI 程式設計代理。",
 		"introText2": "它適用於最新的 AI 模型，如 Claude Sonnet 4.5、Gemini 2.5 Pro、GPT-5 以及 450 多個其他模型。",
 		"introText3": "建立免費帳戶，首次儲值即可獲得 20 美元獎勵額度。",
 		"ctaButton": "開始使用",
@@ -11,7 +11,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "添加額度",
-		"lowBalance": "你的 Codeforce 餘額不足",
+		"lowBalance": "你的 Builder 餘額不足",
 		"newOrganization": "將 Kilo 用於工作？"
 	},
 	"invalidModel": {
@@ -38,26 +38,26 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "允許超大檔案讀取",
-				"description": "啟用後，Codeforce 將執行超大檔案或 MCP 輸出讀取，即使存在高機率溢出上下文視窗（內容大小 >80% 的上下文視窗）。"
+				"description": "啟用後，Builder 將執行超大檔案或 MCP 輸出讀取，即使存在高機率溢出上下文視窗（內容大小 >80% 的上下文視窗）。"
 			}
 		},
 		"systemNotifications": {
 			"label": "啟用系統通知",
-			"description": "啟用後 Codeforce 將發送系統通知，提醒工作完成或錯誤等重要事件。",
+			"description": "啟用後 Builder 將發送系統通知，提醒工作完成或錯誤等重要事件。",
 			"testButton": "測試通知",
-			"testTitle": "Codeforce",
-			"testMessage": "這是來自 Codeforce 的測試通知。"
+			"testTitle": "Builder",
+			"testMessage": "這是來自 Builder 的測試通知。"
 		},
 		"provider": {
-			"account": "Codeforce 帳戶",
-			"apiKey": "Codeforce API 金鑰",
-			"login": "登入 Codeforce",
-			"logout": "登出 Codeforce",
+			"account": "Builder 帳戶",
+			"apiKey": "Builder API 金鑰",
+			"login": "登入 Builder",
+			"logout": "登出 Builder",
 			"providerRouting": {
 				"title": "供應商路由",
 				"managedByOrganization": "管理組織層級供應商路由",
 				"createOrganization": "建立組織以管理供應商路由",
-				"description": "Codeforce 將請求路由到您模型的最佳可用供應商。預設情況下，請求會在頂級供應商之間進行負載平衡，以最大化正常執行時間。但是，您可以選擇要用於此模型的特定供應商。",
+				"description": "Builder 將請求路由到您模型的最佳可用供應商。預設情況下，請求會在頂級供應商之間進行負載平衡，以最大化正常執行時間。但是，您可以選擇要用於此模型的特定供應商。",
 				"sorting": {
 					"default": "預設供應商排序",
 					"price": "偏好較低價格的供應商",
@@ -72,12 +72,12 @@
 					"zdr": "零資料保留"
 				}
 			},
-			"automaticFetch": "最新模型會自動在 Codeforce 中提供。如果您不確定要選擇哪個模型，Codeforce 與列在頂部<strong>粗體</strong>顯示的推薦模型搭配使用效果最佳。"
+			"automaticFetch": "最新模型會自動在 Builder 中提供。如果您不確定要選擇哪個模型，Builder 與列在頂部<strong>粗體</strong>顯示的推薦模型搭配使用效果最佳。"
 		},
 		"modelInfo": {
 			"contextWindow": "上下文視窗",
 			"providerBreakdown": "供應商價格與功能明細",
-			"averageKiloCodeCost": "這是過去一週 Codeforce 使用此模型的平均實際花費。由於提示詞快取的使用，可能低於列出的價格。",
+			"averageKiloCodeCost": "這是過去一週 Builder 使用此模型的平均實際花費。由於提示詞快取的使用，可能低於列出的價格。",
 			"table": {
 				"provider": "供應商",
 				"context": "端點可以處理這個數量的 Token（輸入 + 輸出）。",
@@ -113,7 +113,7 @@
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Codeforce 想要壓縮你的對話",
+			"wantsToCondense": "Builder 想要壓縮你的對話",
 			"condenseConversation": "壓縮對話"
 		},
 		"seeNewChanges": "顯示新變更",
@@ -144,15 +144,15 @@
 	},
 	"docs": "文件",
 	"rules": {
-		"tooltip": "管理 Codeforce 規則和工作流程",
-		"ariaLabel": "Codeforce 規則",
+		"tooltip": "管理 Builder 規則和工作流程",
+		"ariaLabel": "Builder 規則",
 		"tabs": {
 			"rules": "規則",
 			"workflows": "工作流程"
 		},
 		"description": {
-			"rules": "規則允許你為 Codeforce 提供在所有模式和所有提示中都應遵循的指令。它們是在你的工作空間或全域範圍內為所有對話包含上下文和偏好的持久方式。",
-			"workflows": "工作流程是為對話準備的範本。工作流程允許你定義經常使用的提示，並可以包含一系列步驟來指導 Codeforce 完成重複性任務，如部署服務或提交 PR。要調用工作流程，請輸入",
+			"rules": "規則允許你為 Builder 提供在所有模式和所有提示中都應遵循的指令。它們是在你的工作空間或全域範圍內為所有對話包含上下文和偏好的持久方式。",
+			"workflows": "工作流程是為對話準備的範本。工作流程允許你定義經常使用的提示，並可以包含一系列步驟來指導 Builder 完成重複性任務，如部署服務或提交 PR。要調用工作流程，請輸入",
 			"workflowsInChat": "在聊天中。"
 		},
 		"sections": {
@@ -259,7 +259,7 @@
 			},
 			"noCredits": {
 				"title": "您的帳戶沒有額度",
-				"description": "您的 Codeforce 帳戶沒有額度。若要使用自動補全，請為您的帳戶儲值。",
+				"description": "您的 Builder 帳戶沒有額度。若要使用自動補全，請為您的帳戶儲值。",
 				"buyCredits": "購買額度 →"
 			},
 			"codeEditorSuggestions": "Code Editor Suggestions",
@@ -316,7 +316,7 @@
 		"shareModesNewBanner": "新功能：通过创建组织共享模式"
 	},
 	"deviceAuth": {
-		"title": "登入 Codeforce",
+		"title": "登入 Builder",
 		"step1": "在瀏覽器中開啟以下 URL",
 		"step2": "驗證代碼並在瀏覽器中授權此裝置",
 		"scanQr": "或用手機掃描此 QR 碼",

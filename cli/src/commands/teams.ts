@@ -7,7 +7,7 @@ import type { UserOrganization } from "../state/atoms/profile.js"
 
 /**
  * Normalize team name to lowercase with dashes
- * Example: "Codeforce" -> "kilo-code"
+ * Example: "Builder" -> "kilo-code"
  */
 function normalizeTeamName(name: string): string {
 	return name
@@ -64,7 +64,7 @@ async function listTeams(context: CommandContext): Promise<void> {
 		addMessage({
 			id: Date.now().toString(),
 			type: "system",
-			content: `You're currently not a part of any Codeforce teams. Go to https://app.kilo.ai/get-started/teams to get started with Codeforce for Teams!`,
+			content: `You're currently not a part of any Builder teams. Go to https://app.kilo.ai/get-started/teams to get started with Builder for Teams!`,
 			ts: Date.now(),
 		})
 		return
@@ -276,7 +276,7 @@ export const teamsCommand: Command = {
 		{
 			name: "team-name",
 			description:
-				"Team name in lowercase with dashes (e.g., 'kilo-code' for 'Codeforce') or 'personal' (for select subcommand)",
+				"Team name in lowercase with dashes (e.g., 'kilo-code' for 'Builder') or 'personal' (for select subcommand)",
 			required: false,
 			conditionalProviders: [
 				{

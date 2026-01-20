@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Codeforce",
+		"name": "Builder",
 		"description": "ओपन सोर्स AI कोडिंग एजेंट जो प्राकृतिक भाषा से कोड जनरेट करता है, कार्यों को स्वचालित करता है, और टर्मिनल कमांड चलाता है। इनलाइन ऑटोकम्प्लीट, ब्राउज़र ऑटोमेशन, स्वचालित रीफैक्टरिंग, और प्लानिंग, कोडिंग और डिबगिंग के लिए कस्टम मोड शामिल हैं। Claude (Anthropic), Gemini, Grok, GPT, Codex और GLM सहित 500+ AI मॉडल का समर्थन करता है।"
 	},
 	"number_format": {
@@ -156,7 +156,7 @@
 	"warnings": {
 		"no_terminal_content": "कोई टर्मिनल सामग्री चयनित नहीं",
 		"missing_task_files": "इस टास्क की फाइलें गायब हैं। क्या आप इसे टास्क सूची से हटाना चाहते हैं?",
-		"auto_import_failed": "Codeforce सेटिंग्स का स्वचालित आयात विफल: {{error}}"
+		"auto_import_failed": "Builder सेटिंग्स का स्वचालित आयात विफल: {{error}}"
 	},
 	"info": {
 		"no_changes": "कोई परिवर्तन नहीं मिला।",
@@ -165,7 +165,7 @@
 		"custom_storage_path_set": "कस्टम स्टोरेज पाथ सेट किया गया: {{path}}",
 		"default_storage_path": "डिफ़ॉल्ट स्टोरेज पाथ का उपयोग पुनः शुरू किया गया",
 		"settings_imported": "सेटिंग्स सफलतापूर्वक इम्पोर्ट की गईं।",
-		"auto_import_success": "Codeforce सेटिंग्स {{filename}} से स्वचालित रूप से आयात की गईं",
+		"auto_import_success": "Builder सेटिंग्स {{filename}} से स्वचालित रूप से आयात की गईं",
 		"share_link_copied": "साझा लिंक क्लिपबोर्ड पर कॉपी किया गया",
 		"image_copied_to_clipboard": "छवि डेटा URI क्लिपबोर्ड में कॉपी की गई",
 		"image_saved": "छवि {{path}} में सहेजी गई",
@@ -203,7 +203,7 @@
 		"enter_valid_path": "कृपया एक वैध पाथ दर्ज करें"
 	},
 	"input": {
-		"task_prompt": "Codeforce को क्या करना है?",
+		"task_prompt": "Builder को क्या करना है?",
 		"task_placeholder": "अपना कार्य यहाँ लिखें"
 	},
 	"settings": {

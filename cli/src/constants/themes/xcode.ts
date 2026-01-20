@@ -1,5 +1,5 @@
 /**
- * Xcode theme for Codeforce CLI
+ * Xcode theme for Builder CLI
  *
  * Based on the Xcode color scheme
  */

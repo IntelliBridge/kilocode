@@ -13,7 +13,7 @@
 		"cancel": "キャンセル"
 	},
 	"ui": {
-		"initializing": "Codeforceを初期化しています...",
+		"initializing": "Builderを初期化しています...",
 		"systemInformation": "システム情報"
 	}
 }

@@ -1,7 +1,7 @@
 {
 	"welcome": {
-		"greeting": "Benvenuto in Codeforce!",
-		"introText1": "Codeforce è un agente di coding AI gratuito e open source.",
+		"greeting": "Benvenuto in Builder!",
+		"introText1": "Builder è un agente di coding AI gratuito e open source.",
 		"introText2": "Funziona con i più recenti modelli AI come Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5, e oltre 450 altri.",
 		"introText3": "Crea un account gratuito e ottieni $20 di crediti bonus quando ricarichi per la prima volta.",
 		"ctaButton": "Inizia",
@@ -11,7 +11,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Aggiungi credito",
-		"lowBalance": "Il tuo saldo Codeforce è basso",
+		"lowBalance": "Il tuo saldo Builder è basso",
 		"newOrganization": "Usi Kilo per lavoro?"
 	},
 	"pagination": {
@@ -41,16 +41,16 @@
 			"mcp": "Server MCP"
 		},
 		"provider": {
-			"account": "Account Codeforce",
-			"apiKey": "Chiave API Codeforce",
-			"login": "Accedi a Codeforce",
-			"logout": "Disconnetti da Codeforce",
-			"automaticFetch": "I modelli più recenti sono automaticamente disponibili in Codeforce. Se non sei sicuro di quale modello scegliere, Codeforce funziona meglio con i modelli consigliati elencati in alto in <strong>grassetto</strong>.",
+			"account": "Account Builder",
+			"apiKey": "Chiave API Builder",
+			"login": "Accedi a Builder",
+			"logout": "Disconnetti da Builder",
+			"automaticFetch": "I modelli più recenti sono automaticamente disponibili in Builder. Se non sei sicuro di quale modello scegliere, Builder funziona meglio con i modelli consigliati elencati in alto in <strong>grassetto</strong>.",
 			"providerRouting": {
 				"title": "Routing dei provider",
 				"managedByOrganization": "Gestisci routing dei provider a livello di organizzazione",
 				"createOrganization": "Crea organizzazione per gestire routing dei provider",
-				"description": "Codeforce instrada le richieste ai migliori provider disponibili per il tuo modello. Per impostazione predefinita, le richieste vengono bilanciate tra i provider principali per massimizzare i tempi di attività. Tuttavia, puoi scegliere un provider specifico da utilizzare per questo modello.",
+				"description": "Builder instrada le richieste ai migliori provider disponibili per il tuo modello. Per impostazione predefinita, le richieste vengono bilanciate tra i provider principali per massimizzare i tempi di attività. Tuttavia, puoi scegliere un provider specifico da utilizzare per questo modello.",
 				"sorting": {
 					"default": "Ordinamento predefinito dei provider",
 					"price": "Preferisci provider con prezzo più basso",
@@ -69,7 +69,7 @@
 		"modelInfo": {
 			"contextWindow": "Finestra di contesto",
 			"providerBreakdown": "Ripartizione Prezzi e Funzionalità dei Provider",
-			"averageKiloCodeCost": "Questo è il costo medio effettivo sostenuto da Codeforce utilizzando questo modello nell'ultima settimana. Potrebbe essere inferiore al prezzo indicato grazie all'utilizzo della cache dei prompt.",
+			"averageKiloCodeCost": "Questo è il costo medio effettivo sostenuto da Builder utilizzando questo modello nell'ultima settimana. Potrebbe essere inferiore al prezzo indicato grazie all'utilizzo della cache dei prompt.",
 			"table": {
 				"provider": "Provider",
 				"context": "L'endpoint può elaborare questo numero di token (input + output).",
@@ -82,15 +82,15 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "Consenti letture di file molto grandi",
-				"description": "Quando abilitato, Codeforce eseguirà letture di file o output MCP molto grandi anche se c'è un'alta probabilità di superare la finestra di contesto (dimensione del contenuto >80% della finestra di contesto)."
+				"description": "Quando abilitato, Builder eseguirà letture di file o output MCP molto grandi anche se c'è un'alta probabilità di superare la finestra di contesto (dimensione del contenuto >80% della finestra di contesto)."
 			}
 		},
 		"systemNotifications": {
 			"label": "Attiva notifiche di sistema",
-			"description": "Quando abilitato, Codeforce invierà notifiche di sistema per eventi importanti come il completamento di attività o errori.",
+			"description": "Quando abilitato, Builder invierà notifiche di sistema per eventi importanti come il completamento di attività o errori.",
 			"testButton": "Testa notifica",
-			"testTitle": "Codeforce",
-			"testMessage": "Questa è una notifica di test da Codeforce."
+			"testTitle": "Builder",
+			"testMessage": "Questa è una notifica di test da Builder."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -111,7 +111,7 @@
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Codeforce vuole condensare la tua conversazione",
+			"wantsToCondense": "Builder vuole condensare la tua conversazione",
 			"condenseConversation": "Condensa Conversazione"
 		},
 		"seeNewChanges": "Mostra Nuove Modifiche",
@@ -142,15 +142,15 @@
 	},
 	"docs": "Documentazione",
 	"rules": {
-		"tooltip": "Gestisci Regole e Flussi di Lavoro di Codeforce",
-		"ariaLabel": "Regole di Codeforce",
+		"tooltip": "Gestisci Regole e Flussi di Lavoro di Builder",
+		"ariaLabel": "Regole di Builder",
 		"tabs": {
 			"rules": "Regole",
 			"workflows": "Flussi di Lavoro"
 		},
 		"description": {
-			"rules": "Le regole ti permettono di fornire a Codeforce istruzioni che deve seguire in tutte le modalità e per tutti i prompt. Sono un modo persistente per includere contesto e preferenze per tutte le conversazioni nel tuo workspace o globalmente.",
-			"workflows": "I flussi di lavoro sono un template preparato per una conversazione. I flussi di lavoro ti permettono di definire prompt che usi frequentemente, e possono includere una serie di passaggi per guidare Codeforce attraverso attività ripetitive, come distribuire un servizio o inviare una PR. Per invocare un flusso di lavoro, digita",
+			"rules": "Le regole ti permettono di fornire a Builder istruzioni che deve seguire in tutte le modalità e per tutti i prompt. Sono un modo persistente per includere contesto e preferenze per tutte le conversazioni nel tuo workspace o globalmente.",
+			"workflows": "I flussi di lavoro sono un template preparato per una conversazione. I flussi di lavoro ti permettono di definire prompt che usi frequentemente, e possono includere una serie di passaggi per guidare Builder attraverso attività ripetitive, come distribuire un servizio o inviare una PR. Per invocare un flusso di lavoro, digita",
 			"workflowsInChat": "nella chat."
 		},
 		"sections": {
@@ -221,11 +221,11 @@
 			"keybindingDescription": "Le funzionalità Autocomplete possono essere attivate tramite comandi. Puoi configurare le <DocsLink>Scorciatoie da Tastiera qui</DocsLink>.",
 			"enableAutoTrigger": {
 				"label": "Pausa per Completare",
-				"description": "Quando abilitato, Codeforce attiverà automaticamente Autocomplete quando smetti di digitare. Questo può essere utile per correzioni rapide e suggerimenti."
+				"description": "Quando abilitato, Builder attiverà automaticamente Autocomplete quando smetti di digitare. Questo può essere utile per correzioni rapide e suggerimenti."
 			},
 			"autoTriggerDelay": {
 				"label": "Ritardo Attivazione Automatica",
-				"description": "Il ritardo in secondi prima che Codeforce attivi Autocomplete dopo che hai smesso di digitare. Un ritardo più breve significa suggerimenti più veloci, ma può essere più intensivo in termini di risorse."
+				"description": "Il ritardo in secondi prima che Builder attivi Autocomplete dopo che hai smesso di digitare. Un ritardo più breve significa suggerimenti più veloci, ma può essere più intensivo in termini di risorse."
 			},
 			"enableSmartInlineTaskKeybinding": {
 				"label": "Completamento Automatico Manuale ({{keybinding}})",
@@ -237,7 +237,7 @@
 			"provider": "Provider",
 			"enableChatAutocomplete": {
 				"label": "Completamento Automatico dell'Input della Chat",
-				"description": "Quando abilitato, Codeforce suggerirà completamenti mentre digiti nell'area di chat. Premi Tab per accettare i suggerimenti."
+				"description": "Quando abilitato, Builder suggerirà completamenti mentre digiti nell'area di chat. Premi Tab per accettare i suggerimenti."
 			},
 			"snooze": {
 				"label": "Sospendi Autocomplete",
@@ -260,7 +260,7 @@
 			},
 			"noCredits": {
 				"title": "Nessun credito nel tuo account",
-				"description": "Il tuo account Codeforce non ha crediti. Per utilizzare l'autocompletamento, aggiungi crediti al tuo account.",
+				"description": "Il tuo account Builder non ha crediti. Per utilizzare l'autocompletamento, aggiungi crediti al tuo account.",
 				"buyCredits": "Acquista crediti →"
 			}
 		}
@@ -317,7 +317,7 @@
 		"shareModesNewBanner": "Novità: Condividi le modalità creando un'organizzazione"
 	},
 	"deviceAuth": {
-		"title": "Accedi a Codeforce",
+		"title": "Accedi a Builder",
 		"step1": "Apri il seguente URL nel tuo browser",
 		"step2": "Verifica il codice e autorizza questo dispositivo nel tuo browser",
 		"scanQr": "Oppure scansiona questo codice QR con il tuo telefono",

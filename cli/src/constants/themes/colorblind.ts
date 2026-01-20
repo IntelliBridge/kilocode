@@ -1,5 +1,5 @@
 /**
- * Colorblind-friendly theme for Codeforce CLI
+ * Colorblind-friendly theme for Builder CLI
  *
  * Designed for users with various forms of color vision deficiency.
  * Uses high contrast colors and patterns to ensure accessibility.

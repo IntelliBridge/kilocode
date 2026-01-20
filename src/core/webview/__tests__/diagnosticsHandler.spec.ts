@@ -85,7 +85,7 @@ describe("generateErrorDiagnostics", () => {
 		// taskId.slice(0, 8) = "test-tas" from "test-task-id"
 		expect(String(writtenPath)).toContain("kilo-diagnostics-test-tas")
 		expect(String(writtenContent)).toContain(
-			"// Please share this file with Codeforce Support (support@kilo.ai) to diagnose the issue faster",
+			"// Please share this file with Builder Support (support@kilo.ai) to diagnose the issue faster",
 		)
 		expect(String(writtenContent)).toContain('"error":')
 		expect(String(writtenContent)).toContain('"history":')

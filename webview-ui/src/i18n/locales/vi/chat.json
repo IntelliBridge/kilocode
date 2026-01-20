@@ -1,5 +1,5 @@
 {
-	"greeting": "Codeforce có thể giúp gì cho bạn?",
+	"greeting": "Builder có thể giúp gì cho bạn?",
 	"task": {
 		"title": "Nhiệm vụ",
 		"expand": "Mở rộng nhiệm vụ",
@@ -21,7 +21,7 @@
 		"sharePublicly": "Chia sẻ công khai",
 		"sharePubliclyDescription": "Bất kỳ ai có liên kết đều có thể truy cập",
 		"connectToCloud": "Kết nối với Cloud",
-		"connectToCloudDescription": "Đăng nhập vào Codeforce Cloud để chia sẻ tác vụ",
+		"connectToCloudDescription": "Đăng nhập vào Builder Cloud để chia sẻ tác vụ",
 		"sharingDisabledByOrganization": "Chia sẻ bị tổ chức vô hiệu hóa",
 		"shareSuccessOrganization": "Liên kết tổ chức đã được sao chép vào clipboard",
 		"shareSuccessPublic": "Liên kết công khai đã được sao chép vào clipboard",
@@ -95,7 +95,7 @@
 	"scrollToBottom": "Cuộn xuống cuối cuộc trò chuyện",
 	"about": "Tạo, tái cấu trúc và gỡ lỗi mã bằng sự hỗ trợ của AI. Xem <DocsLink>tài liệu</DocsLink> của chúng tôi để tìm hiểu thêm.",
 	"docs": "Kiểm tra <DocsLink>tài liệu</DocsLink> của chúng tôi để tìm hiểu thêm.",
-	"onboarding": "<strong>Danh sách nhiệm vụ của bạn trong không gian làm việc này trống.</strong> Bắt đầu bằng cách nhập nhiệm vụ bên dưới. Bạn không chắc chắn nên bắt đầu như thế nào? Đọc thêm về những gì Codeforce có thể làm cho bạn trong <DocsLink>tài liệu</DocsLink>.",
+	"onboarding": "<strong>Danh sách nhiệm vụ của bạn trong không gian làm việc này trống.</strong> Bắt đầu bằng cách nhập nhiệm vụ bên dưới. Bạn không chắc chắn nên bắt đầu như thế nào? Đọc thêm về những gì Builder có thể làm cho bạn trong <DocsLink>tài liệu</DocsLink>.",
 	"rooTips": {
 		"customizableModes": {
 			"title": "Chế độ có thể tùy chỉnh",
@@ -124,7 +124,7 @@
 		"title": "Chế độ",
 		"marketplace": "Chợ Chế độ",
 		"settings": "Cài đặt Chế độ",
-		"description": "Các nhân cách chuyên biệt điều chỉnh hành vi của Codeforce.",
+		"description": "Các nhân cách chuyên biệt điều chỉnh hành vi của Builder.",
 		"searchPlaceholder": "Tìm kiếm chế độ...",
 		"noResults": "Không tìm thấy kết quả nào",
 		"organizationModes": "Chế độ của tổ chức"
@@ -139,7 +139,7 @@
 	"diffError": {
 		"title": "Chỉnh sửa không thành công"
 	},
-	"troubleMessage": "Codeforce đang gặp sự cố...",
+	"troubleMessage": "Builder đang gặp sự cố...",
 	"apiRequest": {
 		"title": "Yêu cầu API",
 		"failed": "Yêu cầu API thất bại",
@@ -182,48 +182,48 @@
 		"current": "Hiện tại"
 	},
 	"instructions": {
-		"wantsToFetch": "Codeforce muốn lấy hướng dẫn chi tiết để hỗ trợ nhiệm vụ hiện tại"
+		"wantsToFetch": "Builder muốn lấy hướng dẫn chi tiết để hỗ trợ nhiệm vụ hiện tại"
 	},
 	"fileOperations": {
-		"wantsToRead": "Codeforce muốn đọc tệp này",
-		"wantsToReadOutsideWorkspace": "Codeforce muốn đọc tệp này bên ngoài không gian làm việc",
-		"didRead": "Codeforce đã đọc tệp này",
-		"wantsToEdit": "Codeforce muốn chỉnh sửa tệp này",
-		"wantsToEditOutsideWorkspace": "Codeforce muốn chỉnh sửa tệp này bên ngoài không gian làm việc",
-		"wantsToEditProtected": "Codeforce muốn chỉnh sửa tệp cấu hình được bảo vệ",
-		"wantsToCreate": "Codeforce muốn tạo một tệp mới",
-		"wantsToSearchReplace": "Codeforce muốn thực hiện tìm kiếm và thay thế trong tệp này",
-		"didSearchReplace": "Codeforce đã thực hiện tìm kiếm và thay thế trong tệp này",
-		"wantsToInsert": "Codeforce muốn chèn nội dung vào tệp này",
-		"wantsToInsertWithLineNumber": "Codeforce muốn chèn nội dung vào dòng {{lineNumber}} của tệp này",
-		"wantsToInsertAtEnd": "Codeforce muốn thêm nội dung vào cuối tệp này",
-		"wantsToReadAndXMore": "Codeforce muốn đọc tệp này và {{count}} tệp khác",
-		"wantsToReadMultiple": "Codeforce muốn đọc nhiều tệp",
-		"wantsToApplyBatchChanges": "Codeforce muốn áp dụng thay đổi cho nhiều tệp",
-		"wantsToGenerateImage": "Codeforce muốn tạo một hình ảnh",
-		"wantsToGenerateImageOutsideWorkspace": "Codeforce muốn tạo hình ảnh bên ngoài không gian làm việc",
-		"wantsToGenerateImageProtected": "Codeforce muốn tạo hình ảnh ở vị trí được bảo vệ",
-		"didGenerateImage": "Codeforce đã tạo một hình ảnh",
-		"wantsToDelete": "Codeforce muốn xóa tệp này",
-		"wantsToDeleteDirectory": "Codeforce muốn xóa thư mục này"
+		"wantsToRead": "Builder muốn đọc tệp này",
+		"wantsToReadOutsideWorkspace": "Builder muốn đọc tệp này bên ngoài không gian làm việc",
+		"didRead": "Builder đã đọc tệp này",
+		"wantsToEdit": "Builder muốn chỉnh sửa tệp này",
+		"wantsToEditOutsideWorkspace": "Builder muốn chỉnh sửa tệp này bên ngoài không gian làm việc",
+		"wantsToEditProtected": "Builder muốn chỉnh sửa tệp cấu hình được bảo vệ",
+		"wantsToCreate": "Builder muốn tạo một tệp mới",
+		"wantsToSearchReplace": "Builder muốn thực hiện tìm kiếm và thay thế trong tệp này",
+		"didSearchReplace": "Builder đã thực hiện tìm kiếm và thay thế trong tệp này",
+		"wantsToInsert": "Builder muốn chèn nội dung vào tệp này",
+		"wantsToInsertWithLineNumber": "Builder muốn chèn nội dung vào dòng {{lineNumber}} của tệp này",
+		"wantsToInsertAtEnd": "Builder muốn thêm nội dung vào cuối tệp này",
+		"wantsToReadAndXMore": "Builder muốn đọc tệp này và {{count}} tệp khác",
+		"wantsToReadMultiple": "Builder muốn đọc nhiều tệp",
+		"wantsToApplyBatchChanges": "Builder muốn áp dụng thay đổi cho nhiều tệp",
+		"wantsToGenerateImage": "Builder muốn tạo một hình ảnh",
+		"wantsToGenerateImageOutsideWorkspace": "Builder muốn tạo hình ảnh bên ngoài không gian làm việc",
+		"wantsToGenerateImageProtected": "Builder muốn tạo hình ảnh ở vị trí được bảo vệ",
+		"didGenerateImage": "Builder đã tạo một hình ảnh",
+		"wantsToDelete": "Builder muốn xóa tệp này",
+		"wantsToDeleteDirectory": "Builder muốn xóa thư mục này"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Codeforce muốn xem các tệp cấp cao nhất trong thư mục này",
-		"didViewTopLevel": "Codeforce đã xem các tệp cấp cao nhất trong thư mục này",
-		"wantsToViewRecursive": "Codeforce muốn xem đệ quy tất cả các tệp trong thư mục này",
-		"didViewRecursive": "Codeforce đã xem đệ quy tất cả các tệp trong thư mục này",
-		"wantsToViewDefinitions": "Codeforce muốn xem tên định nghĩa mã nguồn được sử dụng trong thư mục này",
-		"didViewDefinitions": "Codeforce đã xem tên định nghĩa mã nguồn được sử dụng trong thư mục này",
-		"wantsToSearch": "Codeforce muốn tìm kiếm trong thư mục này cho <code>{{regex}}</code>",
-		"didSearch": "Codeforce đã tìm kiếm trong thư mục này cho <code>{{regex}}</code>",
-		"wantsToSearchOutsideWorkspace": "Codeforce muốn tìm kiếm trong thư mục này (ngoài không gian làm việc) cho <code>{{regex}}</code>",
-		"didSearchOutsideWorkspace": "Codeforce đã tìm kiếm trong thư mục này (ngoài không gian làm việc) cho <code>{{regex}}</code>",
-		"wantsToViewTopLevelOutsideWorkspace": "Codeforce muốn xem các tệp cấp cao nhất trong thư mục này (ngoài không gian làm việc)",
-		"didViewTopLevelOutsideWorkspace": "Codeforce đã xem các tệp cấp cao nhất trong thư mục này (ngoài không gian làm việc)",
-		"wantsToViewRecursiveOutsideWorkspace": "Codeforce muốn xem đệ quy tất cả các tệp trong thư mục này (ngoài không gian làm việc)",
-		"didViewRecursiveOutsideWorkspace": "Codeforce đã xem đệ quy tất cả các tệp trong thư mục này (ngoài không gian làm việc)",
-		"wantsToViewDefinitionsOutsideWorkspace": "Codeforce muốn xem tên định nghĩa mã nguồn được sử dụng trong thư mục này (ngoài không gian làm việc)",
-		"didViewDefinitionsOutsideWorkspace": "Codeforce đã xem tên định nghĩa mã nguồn được sử dụng trong thư mục này (ngoài không gian làm việc)"
+		"wantsToViewTopLevel": "Builder muốn xem các tệp cấp cao nhất trong thư mục này",
+		"didViewTopLevel": "Builder đã xem các tệp cấp cao nhất trong thư mục này",
+		"wantsToViewRecursive": "Builder muốn xem đệ quy tất cả các tệp trong thư mục này",
+		"didViewRecursive": "Builder đã xem đệ quy tất cả các tệp trong thư mục này",
+		"wantsToViewDefinitions": "Builder muốn xem tên định nghĩa mã nguồn được sử dụng trong thư mục này",
+		"didViewDefinitions": "Builder đã xem tên định nghĩa mã nguồn được sử dụng trong thư mục này",
+		"wantsToSearch": "Builder muốn tìm kiếm trong thư mục này cho <code>{{regex}}</code>",
+		"didSearch": "Builder đã tìm kiếm trong thư mục này cho <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "Builder muốn tìm kiếm trong thư mục này (ngoài không gian làm việc) cho <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "Builder đã tìm kiếm trong thư mục này (ngoài không gian làm việc) cho <code>{{regex}}</code>",
+		"wantsToViewTopLevelOutsideWorkspace": "Builder muốn xem các tệp cấp cao nhất trong thư mục này (ngoài không gian làm việc)",
+		"didViewTopLevelOutsideWorkspace": "Builder đã xem các tệp cấp cao nhất trong thư mục này (ngoài không gian làm việc)",
+		"wantsToViewRecursiveOutsideWorkspace": "Builder muốn xem đệ quy tất cả các tệp trong thư mục này (ngoài không gian làm việc)",
+		"didViewRecursiveOutsideWorkspace": "Builder đã xem đệ quy tất cả các tệp trong thư mục này (ngoài không gian làm việc)",
+		"wantsToViewDefinitionsOutsideWorkspace": "Builder muốn xem tên định nghĩa mã nguồn được sử dụng trong thư mục này (ngoài không gian làm việc)",
+		"didViewDefinitionsOutsideWorkspace": "Builder đã xem tên định nghĩa mã nguồn được sử dụng trong thư mục này (ngoài không gian làm việc)"
 	},
 	"commandOutput": "Kết quả lệnh",
 	"commandExecution": {
@@ -252,18 +252,18 @@
 		"youSaid": "Bạn đã nói"
 	},
 	"mcp": {
-		"wantsToUseTool": "Codeforce muốn sử dụng một công cụ trên máy chủ MCP {{serverName}}",
-		"wantsToAccessResource": "Codeforce muốn truy cập một tài nguyên trên máy chủ MCP {{serverName}}"
+		"wantsToUseTool": "Builder muốn sử dụng một công cụ trên máy chủ MCP {{serverName}}",
+		"wantsToAccessResource": "Builder muốn truy cập một tài nguyên trên máy chủ MCP {{serverName}}"
 	},
 	"modes": {
-		"wantsToSwitch": "Codeforce muốn chuyển sang chế độ <code>{{mode}}</code>",
-		"wantsToSwitchWithReason": "Codeforce muốn chuyển sang chế độ <code>{{mode}}</code> vì: {{reason}}",
-		"didSwitch": "Codeforce đã chuyển sang chế độ <code>{{mode}}</code>",
-		"didSwitchWithReason": "Codeforce đã chuyển sang chế độ <code>{{mode}}</code> vì: {{reason}}"
+		"wantsToSwitch": "Builder muốn chuyển sang chế độ <code>{{mode}}</code>",
+		"wantsToSwitchWithReason": "Builder muốn chuyển sang chế độ <code>{{mode}}</code> vì: {{reason}}",
+		"didSwitch": "Builder đã chuyển sang chế độ <code>{{mode}}</code>",
+		"didSwitchWithReason": "Builder đã chuyển sang chế độ <code>{{mode}}</code> vì: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Codeforce muốn tạo một nhiệm vụ phụ mới trong chế độ <code>{{mode}}</code>",
-		"wantsToFinish": "Codeforce muốn hoàn thành nhiệm vụ phụ này",
+		"wantsToCreate": "Builder muốn tạo một nhiệm vụ phụ mới trong chế độ <code>{{mode}}</code>",
+		"wantsToFinish": "Builder muốn hoàn thành nhiệm vụ phụ này",
 		"newTaskContent": "Hướng dẫn nhiệm vụ phụ",
 		"completionContent": "Nhiệm vụ phụ đã hoàn thành",
 		"resultContent": "Kết quả nhiệm vụ phụ",
@@ -271,7 +271,7 @@
 		"completionInstructions": "Nhiệm vụ phụ đã hoàn thành! Bạn có thể xem lại kết quả và đề xuất các sửa đổi hoặc bước tiếp theo. Nếu mọi thứ có vẻ tốt, hãy xác nhận để trả kết quả về nhiệm vụ chính."
 	},
 	"questions": {
-		"hasQuestion": "Codeforce có một câu hỏi"
+		"hasQuestion": "Builder có một câu hỏi"
 	},
 	"taskCompleted": "Nhiệm vụ hoàn thành",
 	"modelResponseIncomplete": "Phản hồi của mô hình không đầy đủ",
@@ -358,7 +358,7 @@
 	},
 	"browser": {
 		"session": "Phiên trình duyệt",
-		"rooWantsToUse": "Codeforce muốn sử dụng trình duyệt",
+		"rooWantsToUse": "Builder muốn sử dụng trình duyệt",
 		"consoleLogs": "Nhật ký bảng điều khiển",
 		"noNewLogs": "(Không có nhật ký mới)",
 		"screenshot": "Ảnh chụp màn hình trình duyệt",
@@ -406,24 +406,24 @@
 	"profileViolationWarning": "Hồ sơ hiện tại không tương thích với cài đặt của tổ chức của bạn",
 	"shellIntegration": {
 		"title": "Cảnh báo thực thi lệnh",
-		"description": "Lệnh của bạn đang được thực thi mà không có tích hợp shell terminal VSCode. Để ẩn cảnh báo này, bạn có thể vô hiệu hóa tích hợp shell trong phần <strong>Terminal</strong> của <settingsLink>cài đặt Codeforce</settingsLink> hoặc khắc phục sự cố tích hợp terminal VSCode bằng liên kết bên dưới.",
+		"description": "Lệnh của bạn đang được thực thi mà không có tích hợp shell terminal VSCode. Để ẩn cảnh báo này, bạn có thể vô hiệu hóa tích hợp shell trong phần <strong>Terminal</strong> của <settingsLink>cài đặt Builder</settingsLink> hoặc khắc phục sự cố tích hợp terminal VSCode bằng liên kết bên dưới.",
 		"troubleshooting": "Nhấp vào đây để xem tài liệu tích hợp shell."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Đã Đạt Giới Hạn Yêu Cầu Tự Động Phê Duyệt",
-			"description": "Codeforce đã đạt đến giới hạn tự động phê duyệt là {{count}} yêu cầu API. Bạn có muốn đặt lại bộ đếm và tiếp tục nhiệm vụ không?",
+			"description": "Builder đã đạt đến giới hạn tự động phê duyệt là {{count}} yêu cầu API. Bạn có muốn đặt lại bộ đếm và tiếp tục nhiệm vụ không?",
 			"button": "Đặt lại và Tiếp tục"
 		},
 		"autoApprovedCostLimitReached": {
 			"button": "Đặt lại và Tiếp tục",
 			"title": "Đã Đạt Giới Hạn Chi Phí Tự Động Phê Duyệt",
-			"description": "Codeforce đã đạt đến giới hạn chi phí tự động phê duyệt là ${{count}}. Bạn có muốn đặt lại chi phí và tiếp tục với nhiệm vụ không?"
+			"description": "Builder đã đạt đến giới hạn chi phí tự động phê duyệt là ${{count}}. Bạn có muốn đặt lại chi phí và tiếp tục với nhiệm vụ không?"
 		}
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Codeforce muốn tìm kiếm trong cơ sở mã cho <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Codeforce muốn tìm kiếm trong cơ sở mã cho <code>{{query}}</code> trong <code>{{path}}</code>",
+		"wantsToSearch": "Builder muốn tìm kiếm trong cơ sở mã cho <code>{{query}}</code>",
+		"wantsToSearchWithPath": "Builder muốn tìm kiếm trong cơ sở mã cho <code>{{query}}</code> trong <code>{{path}}</code>",
 		"didSearch_one": "Đã tìm thấy 1 kết quả",
 		"didSearch_other": "Đã tìm thấy {{count}} kết quả",
 		"resultTooltip": "Điểm tương tự: {{score}} (nhấp để mở tệp)"
@@ -488,8 +488,8 @@
 		"clickToEdit": "Nhấp để chỉnh sửa tin nhắn"
 	},
 	"slashCommand": {
-		"wantsToRun": "Codeforce muốn chạy lệnh slash",
-		"didRun": "Codeforce đã chạy lệnh slash"
+		"wantsToRun": "Builder muốn chạy lệnh slash",
+		"didRun": "Builder đã chạy lệnh slash"
 	},
 	"todo": {
 		"partial": "{{completed}} trong tổng số {{total}} công việc đã hoàn thành",

@@ -75,7 +75,7 @@ describe("detectInputState", () => {
 								},
 								{
 									value: "kilo-code",
-									description: "Codeforce team",
+									description: "Builder team",
 									matchScore: 1,
 									highlightedValue: "kilo-code",
 								},

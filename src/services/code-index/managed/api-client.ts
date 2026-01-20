@@ -2,7 +2,7 @@
 /**
  * API client for managed codebase indexing
  *
- * This module provides pure functions for communicating with the Codeforce
+ * This module provides pure functions for communicating with the Builder
  * backend API for managed indexing operations (upsert, search, delete, manifest).
  */
 

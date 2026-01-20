@@ -1,5 +1,5 @@
 /**
- * ANSI Light theme for Codeforce CLI
+ * ANSI Light theme for Builder CLI
  *
  * Based on the ANSI Light color scheme using standard terminal colors
  */

@@ -51,7 +51,7 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Gerador de mensagens de commit Codeforce ativado",
+		"activated": "Gerador de mensagens de commit Builder ativado",
 		"gitNotFound": "⚠️ Repositório Git não encontrado ou git indisponível",
 		"gitInitError": "⚠️ Erro de inicialização do Git: {{error}}",
 		"generating": "Kilo: Gerando mensagem de commit...",
@@ -63,7 +63,7 @@
 		"providerRegistered": "Kilo: Provedor de mensagens de commit registrado",
 		"errors": {
 			"noProject": "Nenhum projeto disponível",
-			"connectionFailed": "Falha ao conectar com a extensão Codeforce",
+			"connectionFailed": "Falha ao conectar com a extensão Builder",
 			"invalidResponse": "Formato de resposta inválido recebido da extensão",
 			"missingMessage": "Nenhuma mensagem de commit recebida da extensão",
 			"timeout": "Solicitação excedeu o tempo limite após 30 segundos",
@@ -88,7 +88,7 @@
 		"progress": {
 			"analyzing": "Analisando mudanças...",
 			"title": "Gerando Mensagem de Commit",
-			"connecting": "Conectando ao Codeforce...",
+			"connecting": "Conectando ao Builder...",
 			"generating": "Gerando mensagem de commit..."
 		},
 		"ui": {
@@ -102,9 +102,9 @@
 			"snoozed": "pausado",
 			"warning": "$(warning) Autocomplete",
 			"tooltip": {
-				"basic": "Codeforce Autocomplete",
-				"disabled": "Codeforce Autocomplete (desabilitado)",
-				"noCredits": "**Sem créditos na sua conta**\n\nSua conta Codeforce não tem créditos. Para usar o autocompletar, adicione créditos à sua conta.\n\n[Abrir Configurações](command:kilo-code.settingsButtonClicked)",
+				"basic": "Builder Autocomplete",
+				"disabled": "Builder Autocomplete (desabilitado)",
+				"noCredits": "**Sem créditos na sua conta**\n\nSua conta Builder não tem créditos. Para usar o autocompletar, adicione créditos à sua conta.\n\n[Abrir Configurações](command:kilo-code.settingsButtonClicked)",
 				"noUsableProvider": "**Nenhum modelo de autocompletar configurado**\n\nPara habilitar o autocompletar, adicione um perfil com um destes provedores suportados: {{providers}}.\n\n[Abrir Configurações](command:kilo-code.settingsButtonClicked)",
 				"sessionTotal": "Custo total da sessão:",
 				"provider": "Provedor:",
@@ -119,36 +119,36 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Codeforce Autocomplete {{status}}",
+		"toggleMessage": "Builder Autocomplete {{status}}",
 		"progress": {
-			"title": "Codeforce",
+			"title": "Builder",
 			"analyzing": "Analisando seu código...",
 			"generating": "Gerando edições sugeridas...",
 			"processing": "Processando edições sugeridas...",
 			"showing": "Exibindo edições sugeridas..."
 		},
 		"input": {
-			"title": "Codeforce: Tarefa Rápida",
+			"title": "Builder: Tarefa Rápida",
 			"placeholder": "ex., 'refatore esta função para ser mais eficiente'"
 		},
 		"commands": {
-			"generateSuggestions": "Codeforce: Gerar Edições Sugeridas",
+			"generateSuggestions": "Builder: Gerar Edições Sugeridas",
 			"displaySuggestions": "Exibir Edições Sugeridas",
 			"cancelSuggestions": "Cancelar Edições Sugeridas",
 			"applyCurrentSuggestion": "Aplicar Edição Sugerida Atual",
 			"applyAllSuggestions": "Aplicar Todas as Edições Sugeridas",
-			"category": "Codeforce"
+			"category": "Builder"
 		},
 		"codeAction": {
-			"title": "Codeforce: Edições Sugeridas"
+			"title": "Builder: Edições Sugeridas"
 		},
 		"chatParticipant": {
-			"fullName": "Codeforce Agent",
+			"fullName": "Builder Agent",
 			"name": "Agent",
 			"description": "Posso te ajudar com tarefas rápidas e edições sugeridas."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "O Codeforce Autocomplete está sendo bloqueado por um conflito com o GitHub Copilot. Para corrigir isso, você deve desabilitar as sugestões inline do Copilot.",
+			"message": "O Builder Autocomplete está sendo bloqueado por um conflito com o GitHub Copilot. Para corrigir isso, você deve desabilitar as sugestões inline do Copilot.",
 			"disableCopilot": "Desabilitar Copilot",
 			"disableInlineAssist": "Desabilitar Autocomplete"
 		}

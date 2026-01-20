@@ -51,7 +51,7 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Codeforce Commit-Nachrichten-Generator aktiviert",
+		"activated": "Builder Commit-Nachrichten-Generator aktiviert",
 		"gitNotFound": "⚠️ Git-Repository nicht gefunden oder Git nicht verfügbar",
 		"gitInitError": "⚠️ Git-Initialisierungsfehler: {{error}}",
 		"generating": "Kilo: Generiere Commit-Nachricht...",
@@ -63,7 +63,7 @@
 		"providerRegistered": "Kilo: Commit-Nachrichtenanbieter registriert",
 		"errors": {
 			"noProject": "Kein Projekt verfügbar",
-			"connectionFailed": "Verbindung zur Codeforce-Erweiterung fehlgeschlagen",
+			"connectionFailed": "Verbindung zur Builder-Erweiterung fehlgeschlagen",
 			"missingMessage": "Keine Commit-Nachricht von der Erweiterung erhalten",
 			"timeout": "Anfrage nach 30 Sekunden abgelaufen",
 			"invalidResponse": "Ungültiges Antwortformat vom Erweiterung erhalten",
@@ -88,7 +88,7 @@
 		"progress": {
 			"title": "Commit-Nachricht generieren",
 			"analyzing": "Änderungen werden analysiert...",
-			"connecting": "Verbindung mit Codeforce wird hergestellt...",
+			"connecting": "Verbindung mit Builder wird hergestellt...",
 			"generating": "Commit-Nachricht wird generiert..."
 		},
 		"ui": {
@@ -102,9 +102,9 @@
 			"snoozed": "pausiert",
 			"warning": "$(warning) Autocomplete",
 			"tooltip": {
-				"basic": "Codeforce Autocomplete",
-				"disabled": "Codeforce Autocomplete (deaktiviert)",
-				"noCredits": "**Kein Guthaben auf deinem Konto**\n\nDein Codeforce Konto hat kein Guthaben. Um Autocomplete zu nutzen, füge bitte Guthaben zu deinem Konto hinzu.\n\n[Einstellungen öffnen](command:kilo-code.settingsButtonClicked)",
+				"basic": "Builder Autocomplete",
+				"disabled": "Builder Autocomplete (deaktiviert)",
+				"noCredits": "**Kein Guthaben auf deinem Konto**\n\nDein Builder Konto hat kein Guthaben. Um Autocomplete zu nutzen, füge bitte Guthaben zu deinem Konto hinzu.\n\n[Einstellungen öffnen](command:kilo-code.settingsButtonClicked)",
 				"noUsableProvider": "**Kein Autocomplete-Modell konfiguriert**\n\nUm Autocomplete zu aktivieren, füge ein Profil mit einem dieser unterstützten Anbieter hinzu: {{providers}}.\n\n[Einstellungen öffnen](command:kilo-code.settingsButtonClicked)",
 				"sessionTotal": "Sitzungsgesamtkosten:",
 				"provider": "Anbieter:",
@@ -119,36 +119,36 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Codeforce Autocomplete {{status}}",
+		"toggleMessage": "Builder Autocomplete {{status}}",
 		"progress": {
-			"title": "Codeforce",
+			"title": "Builder",
 			"analyzing": "Analysiere deinen Code...",
 			"generating": "Generiere Bearbeitungsvorschläge...",
 			"processing": "Verarbeite Bearbeitungsvorschläge...",
 			"showing": "Zeige Bearbeitungsvorschläge..."
 		},
 		"input": {
-			"title": "Codeforce: Schnellaufgabe",
+			"title": "Builder: Schnellaufgabe",
 			"placeholder": "z.B. 'refaktoriere diese Funktion für mehr Effizienz'"
 		},
 		"commands": {
-			"generateSuggestions": "Codeforce: Bearbeitungsvorschläge generieren",
+			"generateSuggestions": "Builder: Bearbeitungsvorschläge generieren",
 			"displaySuggestions": "Bearbeitungsvorschläge anzeigen",
 			"cancelSuggestions": "Bearbeitungsvorschläge abbrechen",
 			"applyCurrentSuggestion": "Aktuellen Bearbeitungsvorschlag anwenden",
 			"applyAllSuggestions": "Alle Bearbeitungsvorschläge anwenden",
-			"category": "Codeforce"
+			"category": "Builder"
 		},
 		"codeAction": {
-			"title": "Codeforce: Bearbeitungsvorschläge"
+			"title": "Builder: Bearbeitungsvorschläge"
 		},
 		"chatParticipant": {
-			"fullName": "Codeforce Agent",
+			"fullName": "Builder Agent",
 			"name": "Agent",
 			"description": "Ich kann dir bei Schnellaufgaben und Bearbeitungsvorschlägen helfen."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "Das Codeforce Autocomplete wird durch einen Konflikt mit GitHub Copilot blockiert. Um dies zu beheben, musst du Copilots Inline-Vorschläge deaktivieren.",
+			"message": "Das Builder Autocomplete wird durch einen Konflikt mit GitHub Copilot blockiert. Um dies zu beheben, musst du Copilots Inline-Vorschläge deaktivieren.",
 			"disableCopilot": "Copilot deaktivieren",
 			"disableInlineAssist": "Autocomplete deaktivieren"
 		}

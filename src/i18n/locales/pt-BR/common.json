@@ -1,10 +1,10 @@
 {
 	"input": {
-		"task_prompt": "O que você quer que o Codeforce faça?",
+		"task_prompt": "O que você quer que o Builder faça?",
 		"task_placeholder": "Construir, encontrar, perguntar algo"
 	},
 	"extension": {
-		"name": "Codeforce",
+		"name": "Builder",
 		"description": "Agente de programação de IA de código aberto que gera código a partir de linguagem natural, automatiza tarefas e executa comandos de terminal. Inclui autocompletar inline, automação de navegador, refatoração automatizada e modos personalizados para planejamento, codificação e depuração. Suporta mais de 500 modelos de IA, incluindo Claude (Anthropic), Gemini, Grok, GPT, Codex e GLM."
 	},
 	"number_format": {
@@ -160,7 +160,7 @@
 	"warnings": {
 		"no_terminal_content": "Nenhum conteúdo do terminal selecionado",
 		"missing_task_files": "Os arquivos desta tarefa estão faltando. Deseja removê-la da lista de tarefas?",
-		"auto_import_failed": "Falha ao importar automaticamente as configurações do Codeforce: {{error}}"
+		"auto_import_failed": "Falha ao importar automaticamente as configurações do Builder: {{error}}"
 	},
 	"info": {
 		"no_changes": "Nenhuma alteração encontrada.",
@@ -169,7 +169,7 @@
 		"custom_storage_path_set": "Caminho de armazenamento personalizado definido: {{path}}",
 		"default_storage_path": "Retornado ao caminho de armazenamento padrão",
 		"settings_imported": "Configurações importadas com sucesso.",
-		"auto_import_success": "Configurações do Codeforce importadas automaticamente de {{filename}}",
+		"auto_import_success": "Configurações do Builder importadas automaticamente de {{filename}}",
 		"share_link_copied": "Link de compartilhamento copiado para a área de transferência",
 		"image_copied_to_clipboard": "URI de dados da imagem copiada para a área de transferência",
 		"image_saved": "Imagem salva em {{path}}",

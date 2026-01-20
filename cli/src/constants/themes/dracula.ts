@@ -1,5 +1,5 @@
 /**
- * Dracula theme for Codeforce CLI
+ * Dracula theme for Builder CLI
  *
  * Based on the popular Dracula color scheme
  */

@@ -1,6 +1,6 @@
 {
-	"greeting": "Merhaba, ben Codeforce!",
-	"introduction": "<strong>Codeforce, önde gelen otonom kodlama aracıdır.</strong> Daha önce hiç görmediğin şekilde mimari tasarım yapmaya, kod yazmaya, hata ayıklamaya ve üretkenliğini artırmaya hazırlan. Devam etmek için Codeforce'un bir API anahtarına ihtiyacı var.",
+	"greeting": "Merhaba, ben Builder!",
+	"introduction": "<strong>Builder, önde gelen otonom kodlama aracıdır.</strong> Daha önce hiç görmediğin şekilde mimari tasarım yapmaya, kod yazmaya, hata ayıklamaya ve üretkenliğini artırmaya hazırlan. Devam etmek için Builder'un bir API anahtarına ihtiyacı var.",
 	"notice": "Başlamak için bu eklentinin bir API sağlayıcısına ihtiyacı var.",
 	"start": "Hadi başlayalım!",
 	"routers": {
@@ -16,7 +16,7 @@
 			"incentive": "Roo'yu ücretsiz dene"
 		}
 	},
-	"chooseProvider": "Sihirini yapabilmesi için Codeforce'nun bir API anahtarına ihtiyacı var.",
+	"chooseProvider": "Sihirini yapabilmesi için Builder'nun bir API anahtarına ihtiyacı var.",
 	"providerSignup": {
 		"heading": "Sağlayıcınızı seçin",
 		"chooseProvider": "Roo'nun çalışması için bir LLM sağlayıcısına ihtiyacı var. Başlamak için bir tane seç, sonra daha fazlasını ekleyebilirsin.",
@@ -43,8 +43,8 @@
 	"startRouter": "Bir LLM yönlendiricisi kullanmanızı öneririz:",
 	"startCustom": "Veya kendi API anahtarınızı getirebilirsiniz:",
 	"telemetry": {
-		"helpImprove": "Codeforce'u Geliştirmeye Yardım Et",
-		"helpImproveMessage": "Codeforce, hataları düzeltmemize ve eklentiyi geliştirmemize yardımcı olmak için hata ve kullanım verileri toplar. Bu telemetri kod, prompts veya kişisel bilgi toplamaz. Bunu <settingsLink>ayarlar</settingsLink>da kapatabilirsin."
+		"helpImprove": "Builder'u Geliştirmeye Yardım Et",
+		"helpImproveMessage": "Builder, hataları düzeltmemize ve eklentiyi geliştirmemize yardımcı olmak için hata ve kullanım verileri toplar. Bu telemetri kod, prompts veya kişisel bilgi toplamaz. Bunu <settingsLink>ayarlar</settingsLink>da kapatabilirsin."
 	},
 	"importSettings": "Ayarları İçe Aktar"
 }

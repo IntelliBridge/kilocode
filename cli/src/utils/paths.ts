@@ -3,7 +3,7 @@ import * as path from "path"
 import * as fs from "fs"
 
 /**
- * Centralized path management for Codeforce CLI
+ * Centralized path management for Builder CLI
  * All configuration and logs are stored in ~/.kilocode/
  */
 export class KiloCodePaths {

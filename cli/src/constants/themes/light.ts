@@ -1,5 +1,5 @@
 /**
- * Light theme for Codeforce CLI
+ * Light theme for Builder CLI
  *
  * Colors matched to VSCode extension's light theme for consistency.
  */

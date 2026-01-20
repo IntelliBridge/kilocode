@@ -67,7 +67,7 @@
 		"apiRequest": "Solicitud API",
 		"taskCompleted": "Tarea completada",
 		"error": "Error",
-		"question": "Codeforce tiene una pregunta",
+		"question": "Builder tiene una pregunta",
 		"command": "Kilo quiere ejecutar un comando",
 		"tool": "Kilo quiere usar una herramienta",
 		"usingTool": "Usando herramienta: **{{tool}}** {{details}}",

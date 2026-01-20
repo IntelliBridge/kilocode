@@ -17,7 +17,7 @@
 		"workspace"
 	],
 	"author": {
-		"name": "Codeforce"
+		"name": "Builder"
 	},
 	"repository": {
 		"type": "git",
@@ -33,7 +33,7 @@
 		"Testing"
 	],
 	"keywords": [
-		"codeforce",
+		"builder",
 		"claude",
 		"dev",
 		"mcp",
@@ -45,7 +45,7 @@
 		"sonnet",
 		"ai",
 		"llama",
-		"Codeforce",
+		"Builder",
 		"agile-defense"
 	],
 	"activationEvents": [
@@ -57,13 +57,13 @@
 		"walkthroughs": [
 			{
 				"id": "kiloCodeWalkthrough",
-				"title": "5 ways Codeforce helps you code",
+				"title": "5 ways Builder helps you code",
 				"description": "You now have a personal AI coding assistant.",
 				"steps": [
 					{
 						"id": "welcome",
 						"title": "Write code for you",
-						"description": "Describe what you want to build. Codeforce will write it from scratch, generate the files, and run them for you.",
+						"description": "Describe what you want to build. Builder will write it from scratch, generate the files, and run them for you.",
 						"media": {
 							"markdown": "./dist/walkthrough/step1.md"
 						}
@@ -71,7 +71,7 @@
 					{
 						"id": "getting-started",
 						"title": "Understand your codebase",
-						"description": "Need clarity on how something works? Ask Codeforce about any part of your files and get a clear explanation.",
+						"description": "Need clarity on how something works? Ask Builder about any part of your files and get a clear explanation.",
 						"media": {
 							"markdown": "./dist/walkthrough/step2.md"
 						},
@@ -82,7 +82,7 @@
 					{
 						"id": "modes",
 						"title": "Get things working again",
-						"description": "Stuck on an error? Codeforce can find the issue, fix it, and get your code running.",
+						"description": "Stuck on an error? Builder can find the issue, fix it, and get your code running.",
 						"media": {
 							"markdown": "./dist/walkthrough/step3.md"
 						}
@@ -627,7 +627,7 @@
 		},
 		"icons": {
 			"kilo-logo": {
-				"description": "Codeforce logo",
+				"description": "Builder logo",
 				"default": {
 					"fontPath": "assets/icons/kilo-icon-font.woff2",
 					"fontCharacter": "\\F101"

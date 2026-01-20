@@ -51,7 +51,7 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "تم تفعيل منشئ رسائل التزام Codeforce",
+		"activated": "تم تفعيل منشئ رسائل التزام Builder",
 		"gitNotFound": "⚠️ مستودع Git غير موجود أو Git غير متاح",
 		"gitInitError": "⚠️ خطأ في تهيئة Git: {{error}}",
 		"generating": "Kilo: جارٍ إنشاء رسالة الالتزام...",
@@ -62,12 +62,12 @@
 		"analyzingChanges": "Kilo: جاري تحليل التعديلات الجاهزة...",
 		"noStagedChangesRepo": "Kilo: ما فيه تعديلات مضافة في مستودع git",
 		"noStagedChanges": "Kilo: ما فيه تعديلات مضافة لتحليلها",
-		"tokenRequired": "يتطلب توليد الرسالة رمز Codeforce",
+		"tokenRequired": "يتطلب توليد الرسالة رمز Builder",
 		"activationFailed": "Kilo: فشل تفعيل مولّد الرسائل: {{error}}",
 		"providerRegistered": "Kilo: تم تسجيل موفر رسائل الاعتماد",
 		"errors": {
 			"noProject": "لا يوجد مشروع متاح",
-			"connectionFailed": "فشل الاتصال بملحق Codeforce",
+			"connectionFailed": "فشل الاتصال بملحق Builder",
 			"invalidResponse": "تم استلام صيغة استجابة غير صالحة من الملحق",
 			"noChanges": "لا توجد تغييرات للإرسال",
 			"timeout": "انتهت مهلة الطلب بعد 30 ثانية",
@@ -106,9 +106,9 @@
 			"snoozed": "متوقف مؤقتاً",
 			"warning": "$(warning) Autocomplete",
 			"tooltip": {
-				"basic": "Codeforce Autocomplete",
-				"disabled": "Codeforce Autocomplete (معطل)",
-				"noCredits": "**لا يوجد رصيد في حسابك**\n\nحساب Codeforce الخاص بك لا يحتوي على رصيد. لاستخدام الإكمال التلقائي، يرجى إضافة رصيد إلى حسابك.\n\n[فتح الإعدادات](command:kilo-code.settingsButtonClicked)",
+				"basic": "Builder Autocomplete",
+				"disabled": "Builder Autocomplete (معطل)",
+				"noCredits": "**لا يوجد رصيد في حسابك**\n\nحساب Builder الخاص بك لا يحتوي على رصيد. لاستخدام الإكمال التلقائي، يرجى إضافة رصيد إلى حسابك.\n\n[فتح الإعدادات](command:kilo-code.settingsButtonClicked)",
 				"noUsableProvider": "**لم يتم تكوين نموذج الإكمال التلقائي**\n\nلتمكين الإكمال التلقائي، أضف ملفًا شخصيًا مع أحد هذه المزودين المدعومين: {{providers}}.\n\n[فتح الإعدادات](command:kilo-code.settingsButtonClicked)",
 				"sessionTotal": "إجمالي تكلفة الجلسة:",
 				"provider": "المزود:",
@@ -123,36 +123,36 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Codeforce Autocomplete {{status}}",
+		"toggleMessage": "Builder Autocomplete {{status}}",
 		"progress": {
-			"title": "Codeforce",
+			"title": "Builder",
 			"analyzing": "تحليل الكود الخاص بك...",
 			"generating": "إنشاء التعديلات المقترحة...",
 			"processing": "معالجة التعديلات المقترحة...",
 			"showing": "عرض التعديلات المقترحة..."
 		},
 		"input": {
-			"title": "Codeforce: مهمة سريعة",
+			"title": "Builder: مهمة سريعة",
 			"placeholder": "مثال، 'أعد هيكلة هذه الدالة لتكون أكثر كفاءة'"
 		},
 		"commands": {
-			"generateSuggestions": "Codeforce: إنشاء التعديلات المقترحة",
+			"generateSuggestions": "Builder: إنشاء التعديلات المقترحة",
 			"displaySuggestions": "عرض التعديلات المقترحة",
 			"cancelSuggestions": "إلغاء التعديلات المقترحة",
 			"applyCurrentSuggestion": "تطبيق التعديل المقترح الحالي",
 			"applyAllSuggestions": "تطبيق جميع التعديلات المقترحة",
-			"category": "Codeforce"
+			"category": "Builder"
 		},
 		"codeAction": {
-			"title": "Codeforce: التعديلات المقترحة"
+			"title": "Builder: التعديلات المقترحة"
 		},
 		"chatParticipant": {
-			"fullName": "Codeforce Agent",
+			"fullName": "Builder Agent",
 			"name": "Agent",
 			"description": "يمكنني مساعدتك في المهام السريعة والتعديلات المقترحة."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "يتم حظر Codeforce Autocomplete بسبب تعارض مع GitHub Copilot. لإصلاح هذا، يجب عليك تعطيل اقتراحات Copilot المضمنة.",
+			"message": "يتم حظر Builder Autocomplete بسبب تعارض مع GitHub Copilot. لإصلاح هذا، يجب عليك تعطيل اقتراحات Copilot المضمنة.",
 			"disableCopilot": "تعطيل Copilot",
 			"disableInlineAssist": "تعطيل الإكمال التلقائي"
 		}

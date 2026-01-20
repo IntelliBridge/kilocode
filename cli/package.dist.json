@@ -1,7 +1,7 @@
 {
 	"name": "@kilocode/cli",
 	"version": "0.23.1",
-	"description": "Terminal User Interface for Codeforce",
+	"description": "Terminal User Interface for Builder",
 	"type": "module",
 	"main": "index.js",
 	"bin": {
@@ -114,7 +114,7 @@
 	},
 	"keywords": ["cli", "tui", "terminal", "ai", "assistant", "kilocode", "kilo", "ink"],
 	"author": {
-		"name": "Codeforce"
+		"name": "Builder"
 	},
 	"homepage": "https://kilo.ai/cli",
 	"bugs": {

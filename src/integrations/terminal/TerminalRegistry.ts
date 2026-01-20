@@ -62,7 +62,7 @@ export class TerminalRegistry {
 						terminal.busy = true // Mark terminal as busy when shell execution starts
 					} else {
 						console.error(
-							"[onDidStartTerminalShellExecution] Shell execution started, but not from a Codeforce-registered terminal:",
+							"[onDidStartTerminalShellExecution] Shell execution started, but not from a Builder-registered terminal:",
 							e,
 						)
 					}
@@ -87,7 +87,7 @@ export class TerminalRegistry {
 
 					if (!terminal) {
 						console.error(
-							"[onDidEndTerminalShellExecution] Shell execution ended, but not from a Codeforce-registered terminal:",
+							"[onDidEndTerminalShellExecution] Shell execution ended, but not from a Builder-registered terminal:",
 							e,
 						)
 

@@ -84,7 +84,7 @@ async function testPowerShellCommand(
 			executeCommand: vi.fn(),
 			cwd: vscode.Uri.file("/test/path"),
 		},
-		name: "Codeforce",
+		name: "Builder",
 		processId: Promise.resolve(123),
 		creationOptions: {},
 		exitStatus: undefined,

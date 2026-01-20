@@ -1,5 +1,5 @@
 {
-	"greeting": "Co Codeforce może dla Ciebie zrobić?",
+	"greeting": "Co Builder może dla Ciebie zrobić?",
 	"task": {
 		"title": "Zadanie",
 		"expand": "Rozwiń zadanie",
@@ -21,7 +21,7 @@
 		"sharePublicly": "Udostępnij publicznie",
 		"sharePubliclyDescription": "Każdy z linkiem może uzyskać dostęp",
 		"connectToCloud": "Połącz z chmurą",
-		"connectToCloudDescription": "Zaloguj się do Codeforce Cloud, aby udostępniać zadania",
+		"connectToCloudDescription": "Zaloguj się do Builder Cloud, aby udostępniać zadania",
 		"sharingDisabledByOrganization": "Udostępnianie wyłączone przez organizację",
 		"shareSuccessOrganization": "Link organizacji skopiowany do schowka",
 		"shareSuccessPublic": "Link publiczny skopiowany do schowka",
@@ -95,7 +95,7 @@
 	"scrollToBottom": "Przewiń do dołu czatu",
 	"about": "Generuj, refaktoryzuj i debuguj kod z pomocą sztucznej inteligencji. Sprawdź naszą <DocsLink>dokumentację</DocsLink>, żeby dowiedzieć się więcej.",
 	"docs": "Sprawdź naszą <DocsLink>dokumentację</DocsLink>, aby dowiedzieć się więcej.",
-	"onboarding": "<strong>Twoja lista zadań w tym obszarze roboczym jest pusta.</strong> Zacznij od wpisania zadania poniżej. Nie wiesz, jak zacząć? Przeczytaj więcej o tym, co Codeforce może dla Ciebie zrobić w <DocsLink>dokumentacji</DocsLink>.",
+	"onboarding": "<strong>Twoja lista zadań w tym obszarze roboczym jest pusta.</strong> Zacznij od wpisania zadania poniżej. Nie wiesz, jak zacząć? Przeczytaj więcej o tym, co Builder może dla Ciebie zrobić w <DocsLink>dokumentacji</DocsLink>.",
 	"rooTips": {
 		"customizableModes": {
 			"title": "Konfigurowalne tryby",
@@ -124,7 +124,7 @@
 		"title": "Tryby",
 		"marketplace": "Marketplace Trybów",
 		"settings": "Ustawienia Trybów",
-		"description": "Wyspecjalizowane persony, które dostosowują zachowanie Codeforce.",
+		"description": "Wyspecjalizowane persony, które dostosowują zachowanie Builder.",
 		"searchPlaceholder": "Szukaj trybów...",
 		"noResults": "Nie znaleziono wyników",
 		"organizationModes": "Tryby organizacji"
@@ -139,7 +139,7 @@
 	"diffError": {
 		"title": "Edycja nieudana"
 	},
-	"troubleMessage": "Codeforce ma problemy...",
+	"troubleMessage": "Builder ma problemy...",
 	"apiRequest": {
 		"title": "Zapytanie API",
 		"failed": "Zapytanie API nie powiodło się",
@@ -182,48 +182,48 @@
 		"current": "Bieżący"
 	},
 	"instructions": {
-		"wantsToFetch": "Codeforce chce pobrać szczegółowe instrukcje, aby pomóc w bieżącym zadaniu"
+		"wantsToFetch": "Builder chce pobrać szczegółowe instrukcje, aby pomóc w bieżącym zadaniu"
 	},
 	"fileOperations": {
-		"wantsToRead": "Codeforce chce przeczytać ten plik",
-		"wantsToReadOutsideWorkspace": "Codeforce chce przeczytać ten plik poza obszarem roboczym",
-		"didRead": "Codeforce przeczytał ten plik",
-		"wantsToEdit": "Codeforce chce edytować ten plik",
-		"wantsToEditOutsideWorkspace": "Codeforce chce edytować ten plik poza obszarem roboczym",
-		"wantsToEditProtected": "Codeforce chce edytować chroniony plik konfiguracyjny",
-		"wantsToCreate": "Codeforce chce utworzyć nowy plik",
-		"wantsToDelete": "Codeforce chce usunąć ten plik",
-		"wantsToDeleteDirectory": "Codeforce chce usunąć ten katalog",
-		"wantsToSearchReplace": "Codeforce chce wykonać wyszukiwanie i zamianę w tym pliku",
-		"didSearchReplace": "Codeforce wykonał wyszukiwanie i zamianę w tym pliku",
-		"wantsToInsert": "Codeforce chce wstawić zawartość do tego pliku",
-		"wantsToInsertWithLineNumber": "Codeforce chce wstawić zawartość do tego pliku w linii {{lineNumber}}",
-		"wantsToInsertAtEnd": "Codeforce chce dodać zawartość na końcu tego pliku",
-		"wantsToReadAndXMore": "Codeforce chce przeczytać ten plik i {{count}} więcej",
-		"wantsToReadMultiple": "Codeforce chce odczytać wiele plików",
-		"wantsToApplyBatchChanges": "Codeforce chce zastosować zmiany do wielu plików",
-		"wantsToGenerateImage": "Codeforce chce wygenerować obraz",
-		"wantsToGenerateImageOutsideWorkspace": "Codeforce chce wygenerować obraz poza obszarem roboczym",
-		"wantsToGenerateImageProtected": "Codeforce chce wygenerować obraz w chronionym miejscu",
-		"didGenerateImage": "Codeforce wygenerował obraz"
+		"wantsToRead": "Builder chce przeczytać ten plik",
+		"wantsToReadOutsideWorkspace": "Builder chce przeczytać ten plik poza obszarem roboczym",
+		"didRead": "Builder przeczytał ten plik",
+		"wantsToEdit": "Builder chce edytować ten plik",
+		"wantsToEditOutsideWorkspace": "Builder chce edytować ten plik poza obszarem roboczym",
+		"wantsToEditProtected": "Builder chce edytować chroniony plik konfiguracyjny",
+		"wantsToCreate": "Builder chce utworzyć nowy plik",
+		"wantsToDelete": "Builder chce usunąć ten plik",
+		"wantsToDeleteDirectory": "Builder chce usunąć ten katalog",
+		"wantsToSearchReplace": "Builder chce wykonać wyszukiwanie i zamianę w tym pliku",
+		"didSearchReplace": "Builder wykonał wyszukiwanie i zamianę w tym pliku",
+		"wantsToInsert": "Builder chce wstawić zawartość do tego pliku",
+		"wantsToInsertWithLineNumber": "Builder chce wstawić zawartość do tego pliku w linii {{lineNumber}}",
+		"wantsToInsertAtEnd": "Builder chce dodać zawartość na końcu tego pliku",
+		"wantsToReadAndXMore": "Builder chce przeczytać ten plik i {{count}} więcej",
+		"wantsToReadMultiple": "Builder chce odczytać wiele plików",
+		"wantsToApplyBatchChanges": "Builder chce zastosować zmiany do wielu plików",
+		"wantsToGenerateImage": "Builder chce wygenerować obraz",
+		"wantsToGenerateImageOutsideWorkspace": "Builder chce wygenerować obraz poza obszarem roboczym",
+		"wantsToGenerateImageProtected": "Builder chce wygenerować obraz w chronionym miejscu",
+		"didGenerateImage": "Builder wygenerował obraz"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Codeforce chce zobaczyć pliki najwyższego poziomu w tym katalogu",
-		"didViewTopLevel": "Codeforce zobaczył pliki najwyższego poziomu w tym katalogu",
-		"wantsToViewRecursive": "Codeforce chce rekurencyjnie zobaczyć wszystkie pliki w tym katalogu",
-		"didViewRecursive": "Codeforce rekurencyjnie zobaczył wszystkie pliki w tym katalogu",
-		"wantsToViewDefinitions": "Codeforce chce zobaczyć nazwy definicji kodu źródłowego używane w tym katalogu",
-		"didViewDefinitions": "Codeforce zobaczył nazwy definicji kodu źródłowego używane w tym katalogu",
-		"wantsToSearch": "Codeforce chce przeszukać ten katalog w poszukiwaniu <code>{{regex}}</code>",
-		"didSearch": "Codeforce przeszukał ten katalog w poszukiwaniu <code>{{regex}}</code>",
-		"wantsToSearchOutsideWorkspace": "Codeforce chce przeszukać ten katalog (poza obszarem roboczym) w poszukiwaniu <code>{{regex}}</code>",
-		"didSearchOutsideWorkspace": "Codeforce przeszukał ten katalog (poza obszarem roboczym) w poszukiwaniu <code>{{regex}}</code>",
-		"wantsToViewTopLevelOutsideWorkspace": "Codeforce chce zobaczyć pliki najwyższego poziomu w tym katalogu (poza obszarem roboczym)",
-		"didViewTopLevelOutsideWorkspace": "Codeforce zobaczył pliki najwyższego poziomu w tym katalogu (poza obszarem roboczym)",
-		"wantsToViewRecursiveOutsideWorkspace": "Codeforce chce rekurencyjnie zobaczyć wszystkie pliki w tym katalogu (poza obszarem roboczym)",
-		"didViewRecursiveOutsideWorkspace": "Codeforce rekurencyjnie zobaczył wszystkie pliki w tym katalogu (poza obszarem roboczym)",
-		"wantsToViewDefinitionsOutsideWorkspace": "Codeforce chce zobaczyć nazwy definicji kodu źródłowego używane w tym katalogu (poza obszarem roboczym)",
-		"didViewDefinitionsOutsideWorkspace": "Codeforce zobaczył nazwy definicji kodu źródłowego używane w tym katalogu (poza obszarem roboczym)"
+		"wantsToViewTopLevel": "Builder chce zobaczyć pliki najwyższego poziomu w tym katalogu",
+		"didViewTopLevel": "Builder zobaczył pliki najwyższego poziomu w tym katalogu",
+		"wantsToViewRecursive": "Builder chce rekurencyjnie zobaczyć wszystkie pliki w tym katalogu",
+		"didViewRecursive": "Builder rekurencyjnie zobaczył wszystkie pliki w tym katalogu",
+		"wantsToViewDefinitions": "Builder chce zobaczyć nazwy definicji kodu źródłowego używane w tym katalogu",
+		"didViewDefinitions": "Builder zobaczył nazwy definicji kodu źródłowego używane w tym katalogu",
+		"wantsToSearch": "Builder chce przeszukać ten katalog w poszukiwaniu <code>{{regex}}</code>",
+		"didSearch": "Builder przeszukał ten katalog w poszukiwaniu <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "Builder chce przeszukać ten katalog (poza obszarem roboczym) w poszukiwaniu <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "Builder przeszukał ten katalog (poza obszarem roboczym) w poszukiwaniu <code>{{regex}}</code>",
+		"wantsToViewTopLevelOutsideWorkspace": "Builder chce zobaczyć pliki najwyższego poziomu w tym katalogu (poza obszarem roboczym)",
+		"didViewTopLevelOutsideWorkspace": "Builder zobaczył pliki najwyższego poziomu w tym katalogu (poza obszarem roboczym)",
+		"wantsToViewRecursiveOutsideWorkspace": "Builder chce rekurencyjnie zobaczyć wszystkie pliki w tym katalogu (poza obszarem roboczym)",
+		"didViewRecursiveOutsideWorkspace": "Builder rekurencyjnie zobaczył wszystkie pliki w tym katalogu (poza obszarem roboczym)",
+		"wantsToViewDefinitionsOutsideWorkspace": "Builder chce zobaczyć nazwy definicji kodu źródłowego używane w tym katalogu (poza obszarem roboczym)",
+		"didViewDefinitionsOutsideWorkspace": "Builder zobaczył nazwy definicji kodu źródłowego używane w tym katalogu (poza obszarem roboczym)"
 	},
 	"commandOutput": "Wyjście polecenia",
 	"commandExecution": {
@@ -251,18 +251,18 @@
 		"youSaid": "Powiedziałeś"
 	},
 	"mcp": {
-		"wantsToUseTool": "Codeforce chce użyć narzędzia na serwerze MCP {{serverName}}",
-		"wantsToAccessResource": "Codeforce chce uzyskać dostęp do zasobu na serwerze MCP {{serverName}}"
+		"wantsToUseTool": "Builder chce użyć narzędzia na serwerze MCP {{serverName}}",
+		"wantsToAccessResource": "Builder chce uzyskać dostęp do zasobu na serwerze MCP {{serverName}}"
 	},
 	"modes": {
-		"wantsToSwitch": "Codeforce chce przełączyć się na tryb <code>{{mode}}</code>",
-		"wantsToSwitchWithReason": "Codeforce chce przełączyć się na tryb <code>{{mode}}</code> ponieważ: {{reason}}",
-		"didSwitch": "Codeforce przełączył się na tryb <code>{{mode}}</code>",
-		"didSwitchWithReason": "Codeforce przełączył się na tryb <code>{{mode}}</code> ponieważ: {{reason}}"
+		"wantsToSwitch": "Builder chce przełączyć się na tryb <code>{{mode}}</code>",
+		"wantsToSwitchWithReason": "Builder chce przełączyć się na tryb <code>{{mode}}</code> ponieważ: {{reason}}",
+		"didSwitch": "Builder przełączył się na tryb <code>{{mode}}</code>",
+		"didSwitchWithReason": "Builder przełączył się na tryb <code>{{mode}}</code> ponieważ: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Codeforce chce utworzyć nowe podzadanie w trybie <code>{{mode}}</code>",
-		"wantsToFinish": "Codeforce chce zakończyć to podzadanie",
+		"wantsToCreate": "Builder chce utworzyć nowe podzadanie w trybie <code>{{mode}}</code>",
+		"wantsToFinish": "Builder chce zakończyć to podzadanie",
 		"newTaskContent": "Instrukcje podzadania",
 		"completionContent": "Podzadanie zakończone",
 		"resultContent": "Wyniki podzadania",
@@ -270,7 +270,7 @@
 		"completionInstructions": "Podzadanie zakończone! Możesz przejrzeć wyniki i zasugerować poprawki lub następne kroki. Jeśli wszystko wygląda dobrze, potwierdź, aby zwrócić wynik do zadania nadrzędnego."
 	},
 	"questions": {
-		"hasQuestion": "Codeforce ma pytanie"
+		"hasQuestion": "Builder ma pytanie"
 	},
 	"taskCompleted": "Zadanie zakończone",
 	"modelResponseIncomplete": "Odpowiedź modelu niekompletna",
@@ -357,7 +357,7 @@
 	},
 	"browser": {
 		"session": "Sesja przeglądarki",
-		"rooWantsToUse": "Codeforce chce użyć przeglądarki",
+		"rooWantsToUse": "Builder chce użyć przeglądarki",
 		"consoleLogs": "Logi konsoli",
 		"noNewLogs": "(Brak nowych logów)",
 		"screenshot": "Zrzut ekranu przeglądarki",
@@ -405,24 +405,24 @@
 	"profileViolationWarning": "Bieżący profil nie jest kompatybilny z ustawieniami Twojej organizacji",
 	"shellIntegration": {
 		"title": "Ostrzeżenie wykonania polecenia",
-		"description": "Twoje polecenie jest wykonywane bez integracji powłoki terminala VSCode. Aby ukryć to ostrzeżenie, możesz wyłączyć integrację powłoki w sekcji <strong>Terminal</strong> w <settingsLink>ustawieniach Codeforce</settingsLink> lub rozwiązać problemy z integracją terminala VSCode korzystając z poniższego linku.",
+		"description": "Twoje polecenie jest wykonywane bez integracji powłoki terminala VSCode. Aby ukryć to ostrzeżenie, możesz wyłączyć integrację powłoki w sekcji <strong>Terminal</strong> w <settingsLink>ustawieniach Builder</settingsLink> lub rozwiązać problemy z integracją terminala VSCode korzystając z poniższego linku.",
 		"troubleshooting": "Kliknij tutaj, aby zobaczyć dokumentację integracji powłoki."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Osiągnięto limit automatycznie zatwierdzonych żądań",
-			"description": "Codeforce osiągnął automatycznie zatwierdzony limit {{count}} żądania/żądań API. Czy chcesz zresetować licznik i kontynuować zadanie?",
+			"description": "Builder osiągnął automatycznie zatwierdzony limit {{count}} żądania/żądań API. Czy chcesz zresetować licznik i kontynuować zadanie?",
 			"button": "Zresetuj i kontynuuj"
 		},
 		"autoApprovedCostLimitReached": {
 			"button": "Zresetuj i Kontynuuj",
 			"title": "Osiągnięto limit kosztów z automatycznym zatwierdzaniem",
-			"description": "Codeforce osiągnął automatycznie zatwierdzony limit kosztów wynoszący ${{count}}. Czy chcesz zresetować koszt i kontynuować zadanie?"
+			"description": "Builder osiągnął automatycznie zatwierdzony limit kosztów wynoszący ${{count}}. Czy chcesz zresetować koszt i kontynuować zadanie?"
 		}
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Codeforce chce przeszukać bazę kodu w poszukiwaniu <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Codeforce chce przeszukać bazę kodu w poszukiwaniu <code>{{query}}</code> w <code>{{path}}</code>",
+		"wantsToSearch": "Builder chce przeszukać bazę kodu w poszukiwaniu <code>{{query}}</code>",
+		"wantsToSearchWithPath": "Builder chce przeszukać bazę kodu w poszukiwaniu <code>{{query}}</code> w <code>{{path}}</code>",
 		"didSearch_one": "Znaleziono 1 wynik",
 		"didSearch_other": "Znaleziono {{count}} wyników",
 		"resultTooltip": "Wynik podobieństwa: {{score}} (kliknij, aby otworzyć plik)"
@@ -487,8 +487,8 @@
 		"clickToEdit": "Kliknij, aby edytować wiadomość"
 	},
 	"slashCommand": {
-		"wantsToRun": "Codeforce chce uruchomić komendę slash",
-		"didRun": "Codeforce uruchomił komendę slash"
+		"wantsToRun": "Builder chce uruchomić komendę slash",
+		"didRun": "Builder uruchomił komendę slash"
 	},
 	"todo": {
 		"partial": "Ukończono {{completed}} z {{total}} zadań do wykonania",

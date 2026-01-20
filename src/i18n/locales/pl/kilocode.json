@@ -51,7 +51,7 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Generator wiadomości commit Codeforce aktywowany",
+		"activated": "Generator wiadomości commit Builder aktywowany",
 		"gitNotFound": "⚠️ Nie znaleziono repozytorium Git lub git jest niedostępny",
 		"gitInitError": "⚠️ Błąd inicjalizacji Git: {{error}}",
 		"generating": "Kilo: Generowanie wiadomości commit...",
@@ -64,7 +64,7 @@
 		"errors": {
 			"noProject": "Brak dostępnego projektu",
 			"timeout": "Upłynął limit czasu żądania po 30 sekundach",
-			"connectionFailed": "Nie udało się połączyć z rozszerzeniem Codeforce",
+			"connectionFailed": "Nie udało się połączyć z rozszerzeniem Builder",
 			"invalidResponse": "Nieprawidłowy format odpowiedzi otrzymany z rozszerzenia",
 			"noChanges": "Nie znaleziono zmian do zatwierdzenia",
 			"missingMessage": "Nie otrzymano komunikatu zatwierdzenia z rozszerzenia",
@@ -88,7 +88,7 @@
 		"progress": {
 			"title": "Generowanie treści commita",
 			"analyzing": "Analizowanie zmian...",
-			"connecting": "Łączenie z Codeforce...",
+			"connecting": "Łączenie z Builder...",
 			"generating": "Generowanie wiadomości do commita..."
 		},
 		"ui": {
@@ -133,9 +133,9 @@
 			"snoozed": "wstrzymane",
 			"warning": "$(warning) Autocomplete",
 			"tooltip": {
-				"basic": "Codeforce Autocomplete",
-				"disabled": "Codeforce Autocomplete (wyłączone)",
-				"noCredits": "**Brak środków na koncie**\n\nTwoje konto Codeforce nie ma środków. Aby korzystać z autouzupełniania, dodaj środki do swojego konta.\n\n[Otwórz Ustawienia](command:kilo-code.settingsButtonClicked)",
+				"basic": "Builder Autocomplete",
+				"disabled": "Builder Autocomplete (wyłączone)",
+				"noCredits": "**Brak środków na koncie**\n\nTwoje konto Builder nie ma środków. Aby korzystać z autouzupełniania, dodaj środki do swojego konta.\n\n[Otwórz Ustawienia](command:kilo-code.settingsButtonClicked)",
 				"noUsableProvider": "**Nie skonfigurowano modelu autouzupełniania**\n\nAby włączyć autouzupełnianie, dodaj profil z jednym z tych obsługiwanych dostawców: {{providers}}.\n\n[Otwórz Ustawienia](command:kilo-code.settingsButtonClicked)",
 				"sessionTotal": "Całkowity koszt sesji:",
 				"provider": "Dostawca:",
@@ -150,36 +150,36 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Codeforce Autocomplete {{status}}",
+		"toggleMessage": "Builder Autocomplete {{status}}",
 		"progress": {
-			"title": "Codeforce",
+			"title": "Builder",
 			"analyzing": "Analizuję twój kod...",
 			"generating": "Generuję sugerowane edycje...",
 			"processing": "Przetwarzam sugerowane edycje...",
 			"showing": "Wyświetlam sugerowane edycje..."
 		},
 		"input": {
-			"title": "Codeforce: Szybkie Zadanie",
+			"title": "Builder: Szybkie Zadanie",
 			"placeholder": "np. 'zrefaktoruj tę funkcję, aby była bardziej wydajna'"
 		},
 		"commands": {
-			"generateSuggestions": "Codeforce: Generuj Sugerowane Edycje",
+			"generateSuggestions": "Builder: Generuj Sugerowane Edycje",
 			"displaySuggestions": "Wyświetl Sugerowane Edycje",
 			"cancelSuggestions": "Anuluj Sugerowane Edycje",
 			"applyCurrentSuggestion": "Zastosuj Bieżącą Sugerowaną Edycję",
 			"applyAllSuggestions": "Zastosuj Wszystkie Sugerowane Edycje",
-			"category": "Codeforce"
+			"category": "Builder"
 		},
 		"codeAction": {
-			"title": "Codeforce: Sugerowane Edycje"
+			"title": "Builder: Sugerowane Edycje"
 		},
 		"chatParticipant": {
-			"fullName": "Codeforce Agent",
+			"fullName": "Builder Agent",
 			"name": "Agent",
 			"description": "Mogę pomóc ci w szybkich zadaniach i sugerowanych edycjach."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "Codeforce Autocomplete jest blokowane przez konflikt z GitHub Copilot. Aby to naprawić, musisz wyłączyć sugestie inline Copilot.",
+			"message": "Builder Autocomplete jest blokowane przez konflikt z GitHub Copilot. Aby to naprawić, musisz wyłączyć sugestie inline Copilot.",
 			"disableCopilot": "Wyłącz Copilot",
 			"disableInlineAssist": "Wyłącz Autocomplete"
 		}
@@ -206,7 +206,7 @@
 		}
 	},
 	"configDiscovery": {
-		"added": "Codeforce: Dodano {{source}} {{configType}}: {{name}}{{modeStr}}",
+		"added": "Builder: Dodano {{source}} {{configType}}: {{name}}{{modeStr}}",
 		"removed": "Kilo Kod: Usunięto {{source}} {{configType}}: {{name}}{{modeStr}}"
 	}
 }

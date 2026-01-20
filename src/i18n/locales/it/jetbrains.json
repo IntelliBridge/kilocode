@@ -13,7 +13,7 @@
 		"cancel": "Annulla"
 	},
 	"ui": {
-		"initializing": "Codeforce si sta inizializzando...",
+		"initializing": "Builder si sta inizializzando...",
 		"systemInformation": "Informazioni del sistema"
 	}
 }

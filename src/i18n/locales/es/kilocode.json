@@ -51,7 +51,7 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Generador de mensajes de commit de Codeforce activado",
+		"activated": "Generador de mensajes de commit de Builder activado",
 		"gitNotFound": "⚠️ Repositorio Git no encontrado o git no disponible",
 		"gitInitError": "⚠️ Error de inicialización de Git: {{error}}",
 		"generating": "Kilo: Generando mensaje de confirmación...",
@@ -63,7 +63,7 @@
 		"activationFailed": "Kilo: Error al activar el generador de mensajes: {{error}}",
 		"errors": {
 			"noProject": "Ningún proyecto disponible",
-			"connectionFailed": "Error al conectar con la extensión de Codeforce",
+			"connectionFailed": "Error al conectar con la extensión de Builder",
 			"missingMessage": "No se recibió mensaje de confirmación desde la extensión",
 			"invalidResponse": "Formato de respuesta inválido recibido de la extensión",
 			"noChanges": "No se encontraron cambios para confirmar",
@@ -88,7 +88,7 @@
 		"progress": {
 			"analyzing": "Analizando cambios...",
 			"title": "Generando Mensaje de Commit",
-			"connecting": "Conectando con Codeforce...",
+			"connecting": "Conectando con Builder...",
 			"generating": "Generando mensaje de commit..."
 		},
 		"ui": {
@@ -102,9 +102,9 @@
 			"snoozed": "pausado",
 			"warning": "$(warning) Autocomplete",
 			"tooltip": {
-				"basic": "Codeforce Autocomplete",
-				"disabled": "Codeforce Autocomplete (deshabilitado)",
-				"noCredits": "**No hay créditos en tu cuenta**\n\nTu cuenta de Codeforce no tiene créditos. Para usar el autocompletado, por favor añade créditos a tu cuenta.\n\n[Abrir Configuración](command:kilo-code.settingsButtonClicked)",
+				"basic": "Builder Autocomplete",
+				"disabled": "Builder Autocomplete (deshabilitado)",
+				"noCredits": "**No hay créditos en tu cuenta**\n\nTu cuenta de Builder no tiene créditos. Para usar el autocompletado, por favor añade créditos a tu cuenta.\n\n[Abrir Configuración](command:kilo-code.settingsButtonClicked)",
 				"noUsableProvider": "**No hay modelo de autocompletado configurado**\n\nPara habilitar el autocompletado, añade un perfil con uno de estos proveedores compatibles: {{providers}}.\n\n[Abrir Configuración](command:kilo-code.settingsButtonClicked)",
 				"sessionTotal": "Costo total de la sesión:",
 				"provider": "Proveedor:",
@@ -119,36 +119,36 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Codeforce Autocomplete {{status}}",
+		"toggleMessage": "Builder Autocomplete {{status}}",
 		"progress": {
-			"title": "Codeforce",
+			"title": "Builder",
 			"analyzing": "Analizando tu código...",
 			"generating": "Generando ediciones sugeridas...",
 			"processing": "Procesando ediciones sugeridas...",
 			"showing": "Mostrando ediciones sugeridas..."
 		},
 		"input": {
-			"title": "Codeforce: Tarea Rápida",
+			"title": "Builder: Tarea Rápida",
 			"placeholder": "ej., 'refactoriza esta función para que sea más eficiente'"
 		},
 		"commands": {
-			"generateSuggestions": "Codeforce: Generar Ediciones Sugeridas",
+			"generateSuggestions": "Builder: Generar Ediciones Sugeridas",
 			"displaySuggestions": "Mostrar Ediciones Sugeridas",
 			"cancelSuggestions": "Cancelar Ediciones Sugeridas",
 			"applyCurrentSuggestion": "Aplicar Edición Sugerida Actual",
 			"applyAllSuggestions": "Aplicar Todas las Ediciones Sugeridas",
-			"category": "Codeforce"
+			"category": "Builder"
 		},
 		"codeAction": {
-			"title": "Codeforce: Ediciones Sugeridas"
+			"title": "Builder: Ediciones Sugeridas"
 		},
 		"chatParticipant": {
-			"fullName": "Codeforce Agent",
+			"fullName": "Builder Agent",
 			"name": "Agent",
 			"description": "Puedo ayudarte con tareas rápidas y ediciones sugeridas."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "El Codeforce Autocomplete está siendo bloqueado por un conflicto con GitHub Copilot. Para solucionarlo, debes desactivar las sugerencias en línea de Copilot.",
+			"message": "El Builder Autocomplete está siendo bloqueado por un conflicto con GitHub Copilot. Para solucionarlo, debes desactivar las sugerencias en línea de Copilot.",
 			"disableCopilot": "Desactivar Copilot",
 			"disableInlineAssist": "Desactivar Autocomplete"
 		}

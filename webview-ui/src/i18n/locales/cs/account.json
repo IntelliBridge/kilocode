@@ -3,18 +3,18 @@
 	"profilePicture": "Profilový obrázek",
 	"logOut": "Odhlásit se",
 	"testApiAuthentication": "Otestovat API autentizaci",
-	"signIn": "Připojit se k Codeforce Cloud",
+	"signIn": "Připojit se k Builder Cloud",
 	"connect": "Připojit",
-	"cloudBenefitsTitle": "Připojit se k Codeforce Cloud",
+	"cloudBenefitsTitle": "Připojit se k Builder Cloud",
 	"cloudBenefitsSubtitle": "Synchronizuj své prompty a telemetrii pro aktivaci:",
 	"cloudBenefitHistory": "Online historie úkolů",
 	"cloudBenefitSharing": "Funkce sdílení a spolupráce",
 	"cloudBenefitMetrics": "Metriky využití založené na úkolech, tokenech a nákladech",
-	"visitCloudWebsite": "Navštívit Codeforce Cloud",
+	"visitCloudWebsite": "Navštívit Builder Cloud",
 	"expandTask": "Rozbalit úkol",
 	"collapseTask": "Sbalit úkol",
 	"deleteFavoritedTaskWarning": "Toto trvale smaže oblíbený úkol. Jste si jisti?",
 	"cloudBenefitWalkaway": "Sledujte a ovládejte úkoly odkudkoli pomocí Kilo remote Control",
 	"remoteControl": "Kilo remote Control",
-	"remoteControlDescription": "Povolit sledování a interakci s úkoly v tomto workspace pomocí Codeforce Cloud"
+	"remoteControlDescription": "Povolit sledování a interakci s úkoly v tomto workspace pomocí Builder Cloud"
 }

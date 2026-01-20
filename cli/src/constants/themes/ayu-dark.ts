@@ -1,5 +1,5 @@
 /**
- * Ayu Dark theme for Codeforce CLI
+ * Ayu Dark theme for Builder CLI
  *
  * Based on the Ayu Dark color scheme
  */

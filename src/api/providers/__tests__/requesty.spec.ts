@@ -66,7 +66,7 @@ describe("RequestyHandler", () => {
 			apiKey: mockOptions.requestyApiKey,
 			defaultHeaders: {
 				"HTTP-Referer": "https://kilocode.ai",
-				"X-Title": "Codeforce",
+				"X-Title": "Builder",
 				"X-KiloCode-Version": Package.version,
 				"User-Agent": `Kilo-Code/${Package.version}`,
 			},
@@ -82,7 +82,7 @@ describe("RequestyHandler", () => {
 			apiKey: mockOptions.requestyApiKey,
 			defaultHeaders: {
 				"HTTP-Referer": "https://kilocode.ai",
-				"X-Title": "Codeforce",
+				"X-Title": "Builder",
 				"X-KiloCode-Version": Package.version,
 				"User-Agent": `Kilo-Code/${Package.version}`,
 			},

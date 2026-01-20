@@ -1,5 +1,5 @@
 /**
- * GitHub Dark theme for Codeforce CLI
+ * GitHub Dark theme for Builder CLI
  *
  * Based on the GitHub Dark color scheme
  */

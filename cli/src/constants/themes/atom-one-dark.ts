@@ -1,5 +1,5 @@
 /**
- * Atom One Dark theme for Codeforce CLI
+ * Atom One Dark theme for Builder CLI
  *
  * Based on the Atom One Dark color scheme
  */

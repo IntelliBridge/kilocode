@@ -1,6 +1,6 @@
 {
-	"greeting": "Ahoj, jsem Codeforce!",
-	"introduction": "<strong>Codeforce je přední autonomní agent pro kódování.</strong> Připrav se na architekturu, kódování, ladění a zvýšení své produktivity jako nikdy předtím. Pro pokračování Codeforce vyžaduje API klíč.",
+	"greeting": "Ahoj, jsem Builder!",
+	"introduction": "<strong>Builder je přední autonomní agent pro kódování.</strong> Připrav se na architekturu, kódování, ladění a zvýšení své produktivity jako nikdy předtím. Pro pokračování Builder vyžaduje API klíč.",
 	"notice": "Pro začátek toto rozšíření potřebuje poskytovatele API.",
 	"start": "Pojďme na to!",
 	"routers": {
@@ -16,7 +16,7 @@
 			"incentive": "Vyzkoušej Roo zdarma"
 		}
 	},
-	"chooseProvider": "Aby mohl dělat svá kouzla, Codeforce potřebuje API klíč.",
+	"chooseProvider": "Aby mohl dělat svá kouzla, Builder potřebuje API klíč.",
 	"providerSignup": {
 		"heading": "Vyber svého poskytovatele",
 		"chooseProvider": "Roo potřebuje poskytovatele LLM k fungování. Vyber jeden pro začátek, později můžeš přidat další.",
@@ -57,8 +57,8 @@
 	"rooCloudProviderCoder": "Coder Agent",
 	"rooCloudProviderCoderDesc": "Specializovaný agent pro psaní a refaktoring kódu",
 	"telemetry": {
-		"helpImprove": "Pomoz vylepšit Codeforce",
-		"helpImproveMessage": "Codeforce sbírá data o chybách a používání, aby nám pomohl opravit chyby a vylepšit rozšíření. Tato telemetrie nesbírá kód, prompts ani osobní informace. Můžeš to vypnout v <settingsLink>nastavení</settingsLink>.",
+		"helpImprove": "Pomoz vylepšit Builder",
+		"helpImproveMessage": "Builder sbírá data o chybách a používání, aby nám pomohl opravit chyby a vylepšit rozšíření. Tato telemetrie nesbírá kód, prompts ani osobní informace. Můžeš to vypnout v <settingsLink>nastavení</settingsLink>.",
 		"changeSettings": "Toto můžete později změnit v dolní části <settingsLink>nastavení</settingsLink>"
 	},
 	"importSettings": "Importovat Nastavení"

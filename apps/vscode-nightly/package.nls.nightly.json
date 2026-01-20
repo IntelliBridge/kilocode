@@ -1,7 +1,7 @@
 {
-	"extension.displayName": "Codeforce Nightly",
-	"views.contextMenu.label": "Codeforce Nightly",
-	"views.terminalMenu.label": "Codeforce Nightly",
-	"views.activitybar.title": "Codeforce Nightly",
-	"configuration.title": "Codeforce Nightly"
+	"extension.displayName": "Builder Nightly",
+	"views.contextMenu.label": "Builder Nightly",
+	"views.terminalMenu.label": "Builder Nightly",
+	"views.activitybar.title": "Builder Nightly",
+	"configuration.title": "Builder Nightly"
 }

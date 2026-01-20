@@ -1,5 +1,5 @@
 {
-	"greeting": "Selamat datang di Codeforce",
+	"greeting": "Selamat datang di Builder",
 	"task": {
 		"title": "Tugas",
 		"expand": "Perluas tugas",
@@ -21,7 +21,7 @@
 		"sharePublicly": "Bagikan secara publik",
 		"sharePubliclyDescription": "Siapa pun dengan tautan dapat mengakses",
 		"connectToCloud": "Hubungkan ke Cloud",
-		"connectToCloudDescription": "Masuk ke Codeforce Cloud untuk berbagi tugas",
+		"connectToCloudDescription": "Masuk ke Builder Cloud untuk berbagi tugas",
 		"sharingDisabledByOrganization": "Berbagi dinonaktifkan oleh organisasi",
 		"shareSuccessOrganization": "Tautan organisasi disalin ke clipboard",
 		"shareSuccessPublic": "Tautan publik disalin ke clipboard",
@@ -123,7 +123,7 @@
 		"title": "Mode",
 		"marketplace": "Marketplace Mode",
 		"settings": "Pengaturan Mode",
-		"description": "Persona khusus yang menyesuaikan perilaku Codeforce.",
+		"description": "Persona khusus yang menyesuaikan perilaku Builder.",
 		"searchPlaceholder": "Cari mode...",
 		"noResults": "Tidak ada hasil yang ditemukan",
 		"organizationModes": "Mode Organisasi"
@@ -200,52 +200,52 @@
 		}
 	},
 	"instructions": {
-		"wantsToFetch": "Codeforce ingin mengambil instruksi detail untuk membantu tugas saat ini"
+		"wantsToFetch": "Builder ingin mengambil instruksi detail untuk membantu tugas saat ini"
 	},
 	"fileOperations": {
-		"wantsToRead": "Codeforce ingin membaca file ini",
-		"wantsToReadMultiple": "Codeforce ingin membaca beberapa file",
-		"wantsToReadAndXMore": "Codeforce ingin membaca file ini dan {{count}} lainnya",
-		"wantsToReadOutsideWorkspace": "Codeforce ingin membaca file ini di luar workspace",
-		"didRead": "Codeforce membaca file ini",
-		"wantsToEdit": "Codeforce ingin mengedit file ini",
-		"wantsToEditOutsideWorkspace": "Codeforce ingin mengedit file ini di luar workspace",
-		"wantsToEditProtected": "Codeforce ingin mengedit file konfigurasi yang dilindungi",
-		"wantsToApplyBatchChanges": "Codeforce ingin menerapkan perubahan ke beberapa file",
-		"wantsToGenerateImage": "Codeforce ingin menghasilkan gambar",
-		"wantsToGenerateImageOutsideWorkspace": "Codeforce ingin menghasilkan gambar di luar workspace",
-		"wantsToGenerateImageProtected": "Codeforce ingin menghasilkan gambar di lokasi yang dilindungi",
-		"didGenerateImage": "Codeforce telah menghasilkan gambar",
-		"wantsToCreate": "Codeforce ingin membuat file baru",
-		"wantsToSearchReplace": "Codeforce ingin mencari dan mengganti di file ini",
-		"didSearchReplace": "Codeforce melakukan pencarian dan penggantian pada file ini",
-		"wantsToInsert": "Codeforce ingin menyisipkan konten ke file ini",
-		"wantsToInsertWithLineNumber": "Codeforce ingin menyisipkan konten ke file ini di baris {{lineNumber}}",
-		"wantsToInsertAtEnd": "Codeforce ingin menambahkan konten ke akhir file ini",
-		"wantsToDelete": "Codeforce ingin menghapus file ini",
-		"wantsToDeleteDirectory": "Codeforce ingin menghapus direktori ini"
+		"wantsToRead": "Builder ingin membaca file ini",
+		"wantsToReadMultiple": "Builder ingin membaca beberapa file",
+		"wantsToReadAndXMore": "Builder ingin membaca file ini dan {{count}} lainnya",
+		"wantsToReadOutsideWorkspace": "Builder ingin membaca file ini di luar workspace",
+		"didRead": "Builder membaca file ini",
+		"wantsToEdit": "Builder ingin mengedit file ini",
+		"wantsToEditOutsideWorkspace": "Builder ingin mengedit file ini di luar workspace",
+		"wantsToEditProtected": "Builder ingin mengedit file konfigurasi yang dilindungi",
+		"wantsToApplyBatchChanges": "Builder ingin menerapkan perubahan ke beberapa file",
+		"wantsToGenerateImage": "Builder ingin menghasilkan gambar",
+		"wantsToGenerateImageOutsideWorkspace": "Builder ingin menghasilkan gambar di luar workspace",
+		"wantsToGenerateImageProtected": "Builder ingin menghasilkan gambar di lokasi yang dilindungi",
+		"didGenerateImage": "Builder telah menghasilkan gambar",
+		"wantsToCreate": "Builder ingin membuat file baru",
+		"wantsToSearchReplace": "Builder ingin mencari dan mengganti di file ini",
+		"didSearchReplace": "Builder melakukan pencarian dan penggantian pada file ini",
+		"wantsToInsert": "Builder ingin menyisipkan konten ke file ini",
+		"wantsToInsertWithLineNumber": "Builder ingin menyisipkan konten ke file ini di baris {{lineNumber}}",
+		"wantsToInsertAtEnd": "Builder ingin menambahkan konten ke akhir file ini",
+		"wantsToDelete": "Builder ingin menghapus file ini",
+		"wantsToDeleteDirectory": "Builder ingin menghapus direktori ini"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Codeforce ingin melihat file tingkat atas di direktori ini",
-		"didViewTopLevel": "Codeforce melihat file tingkat atas di direktori ini",
-		"wantsToViewRecursive": "Codeforce ingin melihat semua file secara rekursif di direktori ini",
-		"didViewRecursive": "Codeforce melihat semua file secara rekursif di direktori ini",
-		"wantsToViewDefinitions": "Codeforce ingin melihat nama definisi source code yang digunakan di direktori ini",
-		"didViewDefinitions": "Codeforce melihat nama definisi source code yang digunakan di direktori ini",
-		"wantsToSearch": "Codeforce ingin mencari direktori ini untuk <code>{{regex}}</code>",
-		"didSearch": "Codeforce mencari direktori ini untuk <code>{{regex}}</code>",
-		"wantsToSearchOutsideWorkspace": "Codeforce ingin mencari direktori ini (di luar workspace) untuk <code>{{regex}}</code>",
-		"didSearchOutsideWorkspace": "Codeforce mencari direktori ini (di luar workspace) untuk <code>{{regex}}</code>",
-		"wantsToViewTopLevelOutsideWorkspace": "Codeforce ingin melihat file tingkat atas di direktori ini (di luar workspace)",
-		"didViewTopLevelOutsideWorkspace": "Codeforce melihat file tingkat atas di direktori ini (di luar workspace)",
-		"wantsToViewRecursiveOutsideWorkspace": "Codeforce ingin melihat semua file secara rekursif di direktori ini (di luar workspace)",
-		"didViewRecursiveOutsideWorkspace": "Codeforce melihat semua file secara rekursif di direktori ini (di luar workspace)",
-		"wantsToViewDefinitionsOutsideWorkspace": "Codeforce ingin melihat nama definisi source code yang digunakan di direktori ini (di luar workspace)",
-		"didViewDefinitionsOutsideWorkspace": "Codeforce melihat nama definisi source code yang digunakan di direktori ini (di luar workspace)"
+		"wantsToViewTopLevel": "Builder ingin melihat file tingkat atas di direktori ini",
+		"didViewTopLevel": "Builder melihat file tingkat atas di direktori ini",
+		"wantsToViewRecursive": "Builder ingin melihat semua file secara rekursif di direktori ini",
+		"didViewRecursive": "Builder melihat semua file secara rekursif di direktori ini",
+		"wantsToViewDefinitions": "Builder ingin melihat nama definisi source code yang digunakan di direktori ini",
+		"didViewDefinitions": "Builder melihat nama definisi source code yang digunakan di direktori ini",
+		"wantsToSearch": "Builder ingin mencari direktori ini untuk <code>{{regex}}</code>",
+		"didSearch": "Builder mencari direktori ini untuk <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "Builder ingin mencari direktori ini (di luar workspace) untuk <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "Builder mencari direktori ini (di luar workspace) untuk <code>{{regex}}</code>",
+		"wantsToViewTopLevelOutsideWorkspace": "Builder ingin melihat file tingkat atas di direktori ini (di luar workspace)",
+		"didViewTopLevelOutsideWorkspace": "Builder melihat file tingkat atas di direktori ini (di luar workspace)",
+		"wantsToViewRecursiveOutsideWorkspace": "Builder ingin melihat semua file secara rekursif di direktori ini (di luar workspace)",
+		"didViewRecursiveOutsideWorkspace": "Builder melihat semua file secara rekursif di direktori ini (di luar workspace)",
+		"wantsToViewDefinitionsOutsideWorkspace": "Builder ingin melihat nama definisi source code yang digunakan di direktori ini (di luar workspace)",
+		"didViewDefinitionsOutsideWorkspace": "Builder melihat nama definisi source code yang digunakan di direktori ini (di luar workspace)"
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Codeforce ingin mencari codebase untuk <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Codeforce ingin mencari codebase untuk <code>{{query}}</code> di <code>{{path}}</code>",
+		"wantsToSearch": "Builder ingin mencari codebase untuk <code>{{query}}</code>",
+		"wantsToSearchWithPath": "Builder ingin mencari codebase untuk <code>{{query}}</code> di <code>{{path}}</code>",
 		"didSearch_one": "Ditemukan 1 hasil",
 		"didSearch_other": "Ditemukan {{count}} hasil",
 		"resultTooltip": "Skor kemiripan: {{score}} (klik untuk membuka file)"
@@ -276,18 +276,18 @@
 		"youSaid": "Anda bilang"
 	},
 	"mcp": {
-		"wantsToUseTool": "Codeforce ingin menggunakan tool di server MCP {{serverName}}",
-		"wantsToAccessResource": "Codeforce ingin mengakses resource di server MCP {{serverName}}"
+		"wantsToUseTool": "Builder ingin menggunakan tool di server MCP {{serverName}}",
+		"wantsToAccessResource": "Builder ingin mengakses resource di server MCP {{serverName}}"
 	},
 	"modes": {
-		"wantsToSwitch": "Codeforce ingin beralih ke mode {{mode}}",
-		"wantsToSwitchWithReason": "Codeforce ingin beralih ke mode {{mode}} karena: {{reason}}",
-		"didSwitch": "Codeforce beralih ke mode {{mode}}",
-		"didSwitchWithReason": "Codeforce beralih ke mode {{mode}} karena: {{reason}}"
+		"wantsToSwitch": "Builder ingin beralih ke mode {{mode}}",
+		"wantsToSwitchWithReason": "Builder ingin beralih ke mode {{mode}} karena: {{reason}}",
+		"didSwitch": "Builder beralih ke mode {{mode}}",
+		"didSwitchWithReason": "Builder beralih ke mode {{mode}} karena: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Codeforce ingin membuat subtugas baru dalam mode {{mode}}",
-		"wantsToFinish": "Codeforce ingin menyelesaikan subtugas ini",
+		"wantsToCreate": "Builder ingin membuat subtugas baru dalam mode {{mode}}",
+		"wantsToFinish": "Builder ingin menyelesaikan subtugas ini",
 		"newTaskContent": "Instruksi Subtugas",
 		"completionContent": "Subtugas Selesai",
 		"resultContent": "Hasil Subtugas",
@@ -295,7 +295,7 @@
 		"completionInstructions": "Subtugas selesai! Kamu bisa meninjau hasilnya dan menyarankan koreksi atau langkah selanjutnya. Jika semuanya terlihat baik, konfirmasi untuk mengembalikan hasil ke tugas induk."
 	},
 	"questions": {
-		"hasQuestion": "Codeforce punya pertanyaan"
+		"hasQuestion": "Builder punya pertanyaan"
 	},
 	"taskCompleted": "Tugas Selesai",
 	"error": "Error",
@@ -309,7 +309,7 @@
 	"diffError": {
 		"title": "Edit Tidak Berhasil"
 	},
-	"troubleMessage": "Codeforce mengalami masalah...",
+	"troubleMessage": "Builder mengalami masalah...",
 	"errorDetails": {
 		"link": "Details",
 		"title": "Detail Kesalahan",
@@ -372,7 +372,7 @@
 	},
 	"browser": {
 		"session": "Sesi Browser",
-		"rooWantsToUse": "Codeforce ingin menggunakan browser",
+		"rooWantsToUse": "Builder ingin menggunakan browser",
 		"consoleLogs": "Log Konsol",
 		"noNewLogs": "(Tidak ada log baru)",
 		"screenshot": "Screenshot browser",
@@ -420,18 +420,18 @@
 	"profileViolationWarning": "Profil saat ini tidak kompatibel dengan pengaturan organisasi kamu",
 	"shellIntegration": {
 		"title": "Peringatan Eksekusi Perintah",
-		"description": "Perintah kamu dijalankan tanpa integrasi shell terminal VSCode. Untuk menekan peringatan ini kamu bisa menonaktifkan integrasi shell di bagian <strong>Terminal</strong> dari <settingsLink>pengaturan Codeforce</settingsLink> atau troubleshoot integrasi terminal VSCode menggunakan link di bawah.",
+		"description": "Perintah kamu dijalankan tanpa integrasi shell terminal VSCode. Untuk menekan peringatan ini kamu bisa menonaktifkan integrasi shell di bagian <strong>Terminal</strong> dari <settingsLink>pengaturan Builder</settingsLink> atau troubleshoot integrasi terminal VSCode menggunakan link di bawah.",
 		"troubleshooting": "Klik di sini untuk dokumentasi integrasi shell."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Batas Permintaan yang Disetujui Otomatis Tercapai",
-			"description": "Codeforce telah mencapai batas {{count}} permintaan API yang disetujui otomatis. Apakah Anda ingin mengatur ulang hitungan dan melanjutkan tugas?",
+			"description": "Builder telah mencapai batas {{count}} permintaan API yang disetujui otomatis. Apakah Anda ingin mengatur ulang hitungan dan melanjutkan tugas?",
 			"button": "Setel Ulang dan Lanjutkan"
 		},
 		"autoApprovedCostLimitReached": {
 			"title": "Batas Biaya yang Disetujui Otomatis Tercapai",
-			"description": "Codeforce telah mencapai batas biaya yang disetujui otomatis sebesar ${{count}}. Apakah Anda ingin mengatur ulang biaya dan melanjutkan tugas?",
+			"description": "Builder telah mencapai batas biaya yang disetujui otomatis sebesar ${{count}}. Apakah Anda ingin mengatur ulang biaya dan melanjutkan tugas?",
 			"button": "Setel Ulang dan Lanjutkan"
 		}
 	},
@@ -487,8 +487,8 @@
 		"clickToEdit": "Klik untuk mengedit pesan"
 	},
 	"slashCommand": {
-		"wantsToRun": "Codeforce ingin menjalankan perintah slash",
-		"didRun": "Codeforce telah menjalankan perintah slash"
+		"wantsToRun": "Builder ingin menjalankan perintah slash",
+		"didRun": "Builder telah menjalankan perintah slash"
 	},
 	"todo": {
 		"partial": "{{completed}} dari {{total}} to-do selesai",

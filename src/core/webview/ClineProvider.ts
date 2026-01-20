@@ -1240,7 +1240,7 @@ export class ClineProvider
 						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 						window.KILOCODE_BACKEND_BASE_URL = "${process.env.KILOCODE_BACKEND_BASE_URL ?? ""}"
 					</script>
-					<title>Codeforce</title>
+					<title>Builder</title>
 				</head>
 				<body>
 					<div id="root"></div>
@@ -1322,7 +1322,7 @@ export class ClineProvider
 				window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 				window.KILOCODE_BACKEND_BASE_URL = "${process.env.KILOCODE_BACKEND_BASE_URL ?? ""}"
 			</script>
-            <title>Codeforce</title>
+            <title>Builder</title>
           </head>
           <body>
             <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -1742,7 +1742,7 @@ export class ClineProvider
 			kilocodeToken: token,
 		})
 
-		vscode.window.showInformationMessage("Codeforce successfully configured!")
+		vscode.window.showInformationMessage("Builder successfully configured!")
 
 		if (this.getCurrentTask()) {
 			this.getCurrentTask()!.api = buildApiHandler({
@@ -2803,7 +2803,7 @@ export class ClineProvider
 			return
 		}
 
-		// Logout from Codeforce provider before resetting (same approach as ProfileView logout)
+		// Logout from Builder provider before resetting (same approach as ProfileView logout)
 		const { apiConfiguration, currentApiConfigName = "default" } = await this.getState()
 		if (apiConfiguration.kilocodeToken) {
 			await this.upsertProviderProfile(currentApiConfigName, {

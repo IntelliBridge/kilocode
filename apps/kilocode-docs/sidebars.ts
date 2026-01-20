@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: "category",
-			label: "Using Codeforce",
+			label: "Using Builder",
 			items: [
 				"basic-usage/the-chat-interface",
 				"basic-usage/model-selection-guide",
@@ -191,7 +191,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: "category",
-			label: "Extending Codeforce",
+			label: "Extending Builder",
 			items: [
 				"advanced-usage/local-models",
 				{

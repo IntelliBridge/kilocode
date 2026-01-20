@@ -13,7 +13,7 @@
 		"cancel": "取消"
 	},
 	"ui": {
-		"initializing": "Codeforce 正在初始化...",
+		"initializing": "Builder 正在初始化...",
 		"systemInformation": "系统信息"
 	}
 }

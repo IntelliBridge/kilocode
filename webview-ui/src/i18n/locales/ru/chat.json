@@ -1,5 +1,5 @@
 {
-	"greeting": "Добро пожаловать в Codeforce",
+	"greeting": "Добро пожаловать в Builder",
 	"task": {
 		"title": "Задача",
 		"expand": "Развернуть задачу",
@@ -21,7 +21,7 @@
 		"sharePublicly": "Поделиться публично",
 		"sharePubliclyDescription": "Любой, у кого есть ссылка, может получить доступ",
 		"connectToCloud": "Подключиться к облаку",
-		"connectToCloudDescription": "Войди в Codeforce Cloud, чтобы делиться задачами",
+		"connectToCloudDescription": "Войди в Builder Cloud, чтобы делиться задачами",
 		"sharingDisabledByOrganization": "Обмен отключен организацией",
 		"shareSuccessOrganization": "Ссылка организации скопирована в буфер обмена",
 		"shareSuccessPublic": "Публичная ссылка скопирована в буфер обмена",
@@ -177,48 +177,48 @@
 		"current": "Текущая"
 	},
 	"instructions": {
-		"wantsToFetch": "Codeforce хочет получить подробные инструкции для помощи с текущей задачей"
+		"wantsToFetch": "Builder хочет получить подробные инструкции для помощи с текущей задачей"
 	},
 	"fileOperations": {
-		"wantsToRead": "Codeforce хочет прочитать этот файл",
-		"wantsToReadOutsideWorkspace": "Codeforce хочет прочитать этот файл вне рабочей области",
-		"didRead": "Codeforce прочитал этот файл",
-		"wantsToEdit": "Codeforce хочет отредактировать этот файл",
-		"wantsToEditOutsideWorkspace": "Codeforce хочет отредактировать этот файл вне рабочей области",
-		"wantsToEditProtected": "Codeforce хочет отредактировать защищённый файл конфигурации",
-		"wantsToCreate": "Codeforce хочет создать новый файл",
-		"wantsToSearchReplace": "Codeforce хочет выполнить поиск и замену в этом файле",
-		"didSearchReplace": "Codeforce выполнил поиск и замену в этом файле",
-		"wantsToInsert": "Codeforce хочет вставить содержимое в этот файл",
-		"wantsToInsertWithLineNumber": "Codeforce хочет вставить содержимое в этот файл на строку {{lineNumber}}",
-		"wantsToInsertAtEnd": "Codeforce хочет добавить содержимое в конец этого файла",
-		"wantsToReadAndXMore": "Codeforce хочет прочитать этот файл и еще {{count}}",
-		"wantsToReadMultiple": "Codeforce хочет прочитать несколько файлов",
-		"wantsToApplyBatchChanges": "Codeforce хочет применить изменения к нескольким файлам",
-		"wantsToGenerateImage": "Codeforce хочет сгенерировать изображение",
-		"wantsToGenerateImageOutsideWorkspace": "Codeforce хочет сгенерировать изображение вне рабочего пространства",
-		"wantsToGenerateImageProtected": "Codeforce хочет сгенерировать изображение в защищённом месте",
-		"didGenerateImage": "Codeforce сгенерировал изображение",
-		"wantsToDelete": "Codeforce хочет удалить этот файл",
-		"wantsToDeleteDirectory": "Codeforce хочет удалить эту директорию"
+		"wantsToRead": "Builder хочет прочитать этот файл",
+		"wantsToReadOutsideWorkspace": "Builder хочет прочитать этот файл вне рабочей области",
+		"didRead": "Builder прочитал этот файл",
+		"wantsToEdit": "Builder хочет отредактировать этот файл",
+		"wantsToEditOutsideWorkspace": "Builder хочет отредактировать этот файл вне рабочей области",
+		"wantsToEditProtected": "Builder хочет отредактировать защищённый файл конфигурации",
+		"wantsToCreate": "Builder хочет создать новый файл",
+		"wantsToSearchReplace": "Builder хочет выполнить поиск и замену в этом файле",
+		"didSearchReplace": "Builder выполнил поиск и замену в этом файле",
+		"wantsToInsert": "Builder хочет вставить содержимое в этот файл",
+		"wantsToInsertWithLineNumber": "Builder хочет вставить содержимое в этот файл на строку {{lineNumber}}",
+		"wantsToInsertAtEnd": "Builder хочет добавить содержимое в конец этого файла",
+		"wantsToReadAndXMore": "Builder хочет прочитать этот файл и еще {{count}}",
+		"wantsToReadMultiple": "Builder хочет прочитать несколько файлов",
+		"wantsToApplyBatchChanges": "Builder хочет применить изменения к нескольким файлам",
+		"wantsToGenerateImage": "Builder хочет сгенерировать изображение",
+		"wantsToGenerateImageOutsideWorkspace": "Builder хочет сгенерировать изображение вне рабочего пространства",
+		"wantsToGenerateImageProtected": "Builder хочет сгенерировать изображение в защищённом месте",
+		"didGenerateImage": "Builder сгенерировал изображение",
+		"wantsToDelete": "Builder хочет удалить этот файл",
+		"wantsToDeleteDirectory": "Builder хочет удалить эту директорию"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Codeforce хочет просмотреть файлы верхнего уровня в этой директории",
-		"didViewTopLevel": "Codeforce просмотрел файлы верхнего уровня в этой директории",
-		"wantsToViewRecursive": "Codeforce хочет рекурсивно просмотреть все файлы в этой директории",
-		"didViewRecursive": "Codeforce рекурсивно просмотрел все файлы в этой директории",
-		"wantsToViewDefinitions": "Codeforce хочет просмотреть имена определений исходного кода в этой директории",
-		"didViewDefinitions": "Codeforce просмотрел имена определений исходного кода в этой директории",
-		"wantsToSearch": "Codeforce хочет выполнить поиск в этой директории по <code>{{regex}}</code>",
-		"didSearch": "Codeforce выполнил поиск в этой директории по <code>{{regex}}</code>",
-		"wantsToSearchOutsideWorkspace": "Codeforce хочет выполнить поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
-		"didSearchOutsideWorkspace": "Codeforce выполнил поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
-		"wantsToViewTopLevelOutsideWorkspace": "Codeforce хочет просмотреть файлы верхнего уровня в этой директории (вне рабочего пространства)",
-		"didViewTopLevelOutsideWorkspace": "Codeforce просмотрел файлы верхнего уровня в этой директории (вне рабочего пространства)",
-		"wantsToViewRecursiveOutsideWorkspace": "Codeforce хочет рекурсивно просмотреть все файлы в этой директории (вне рабочего пространства)",
-		"didViewRecursiveOutsideWorkspace": "Codeforce рекурсивно просмотрел все файлы в этой директории (вне рабочего пространства)",
-		"wantsToViewDefinitionsOutsideWorkspace": "Codeforce хочет просмотреть имена определений исходного кода в этой директории (вне рабочего пространства)",
-		"didViewDefinitionsOutsideWorkspace": "Codeforce просмотрел имена определений исходного кода в этой директории (вне рабочего пространства)"
+		"wantsToViewTopLevel": "Builder хочет просмотреть файлы верхнего уровня в этой директории",
+		"didViewTopLevel": "Builder просмотрел файлы верхнего уровня в этой директории",
+		"wantsToViewRecursive": "Builder хочет рекурсивно просмотреть все файлы в этой директории",
+		"didViewRecursive": "Builder рекурсивно просмотрел все файлы в этой директории",
+		"wantsToViewDefinitions": "Builder хочет просмотреть имена определений исходного кода в этой директории",
+		"didViewDefinitions": "Builder просмотрел имена определений исходного кода в этой директории",
+		"wantsToSearch": "Builder хочет выполнить поиск в этой директории по <code>{{regex}}</code>",
+		"didSearch": "Builder выполнил поиск в этой директории по <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "Builder хочет выполнить поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "Builder выполнил поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
+		"wantsToViewTopLevelOutsideWorkspace": "Builder хочет просмотреть файлы верхнего уровня в этой директории (вне рабочего пространства)",
+		"didViewTopLevelOutsideWorkspace": "Builder просмотрел файлы верхнего уровня в этой директории (вне рабочего пространства)",
+		"wantsToViewRecursiveOutsideWorkspace": "Builder хочет рекурсивно просмотреть все файлы в этой директории (вне рабочего пространства)",
+		"didViewRecursiveOutsideWorkspace": "Builder рекурсивно просмотрел все файлы в этой директории (вне рабочего пространства)",
+		"wantsToViewDefinitionsOutsideWorkspace": "Builder хочет просмотреть имена определений исходного кода в этой директории (вне рабочего пространства)",
+		"didViewDefinitionsOutsideWorkspace": "Builder просмотрел имена определений исходного кода в этой директории (вне рабочего пространства)"
 	},
 	"commandOutput": "Вывод команды",
 	"commandExecution": {
@@ -247,18 +247,18 @@
 		"youSaid": "Вы сказали"
 	},
 	"mcp": {
-		"wantsToUseTool": "Codeforce хочет использовать инструмент на сервере MCP {{serverName}}",
-		"wantsToAccessResource": "Codeforce хочет получить доступ к ресурсу на сервере MCP {{serverName}}"
+		"wantsToUseTool": "Builder хочет использовать инструмент на сервере MCP {{serverName}}",
+		"wantsToAccessResource": "Builder хочет получить доступ к ресурсу на сервере MCP {{serverName}}"
 	},
 	"modes": {
-		"wantsToSwitch": "Codeforce хочет переключиться в режим {{mode}}",
-		"wantsToSwitchWithReason": "Codeforce хочет переключиться в режим {{mode}}, потому что: {{reason}}",
-		"didSwitch": "Codeforce переключился в режим {{mode}}",
-		"didSwitchWithReason": "Codeforce переключился в режим {{mode}}, потому что: {{reason}}"
+		"wantsToSwitch": "Builder хочет переключиться в режим {{mode}}",
+		"wantsToSwitchWithReason": "Builder хочет переключиться в режим {{mode}}, потому что: {{reason}}",
+		"didSwitch": "Builder переключился в режим {{mode}}",
+		"didSwitchWithReason": "Builder переключился в режим {{mode}}, потому что: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Codeforce хочет создать новую подзадачу в режиме {{mode}}",
-		"wantsToFinish": "Codeforce хочет завершить эту подзадачу",
+		"wantsToCreate": "Builder хочет создать новую подзадачу в режиме {{mode}}",
+		"wantsToFinish": "Builder хочет завершить эту подзадачу",
 		"newTaskContent": "Инструкции по подзадаче",
 		"completionContent": "Подзадача завершена",
 		"resultContent": "Результаты подзадачи",
@@ -266,7 +266,7 @@
 		"completionInstructions": "Подзадача завершена! Вы можете просмотреть результаты и предложить исправления или следующие шаги. Если всё в порядке, подтвердите для возврата результата в родительскую задачу."
 	},
 	"questions": {
-		"hasQuestion": "У Codeforce есть вопрос"
+		"hasQuestion": "У Builder есть вопрос"
 	},
 	"taskCompleted": "Задача завершена",
 	"error": "Ошибка",
@@ -280,7 +280,7 @@
 	"diffError": {
 		"title": "Не удалось выполнить редактирование"
 	},
-	"troubleMessage": "У Codeforce возникли проблемы...",
+	"troubleMessage": "У Builder возникли проблемы...",
 	"errorDetails": {
 		"link": "Подробности",
 		"title": "Детали ошибки",
@@ -358,7 +358,7 @@
 	},
 	"browser": {
 		"session": "Сеанс браузера",
-		"rooWantsToUse": "Codeforce хочет использовать браузер",
+		"rooWantsToUse": "Builder хочет использовать браузер",
 		"consoleLogs": "Логи консоли",
 		"noNewLogs": "(Новых логов нет)",
 		"screenshot": "Скриншот браузера",
@@ -406,13 +406,13 @@
 	"profileViolationWarning": "Текущий профиль несовместим с настройками вашей организации",
 	"shellIntegration": {
 		"title": "Предупреждение о выполнении команды",
-		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Codeforce</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
+		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Builder</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
 		"troubleshooting": "Нажмите здесь для просмотра документации по интеграции оболочки."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Достигнут лимит автоматически одобренных запросов",
-			"description": "Codeforce достиг автоматически одобренного лимита в {{count}} API-запрос(ов). Хотите сбросить счетчик и продолжить задачу?",
+			"description": "Builder достиг автоматически одобренного лимита в {{count}} API-запрос(ов). Хотите сбросить счетчик и продолжить задачу?",
 			"button": "Сбросить и продолжить"
 		},
 		"autoApprovedCostLimitReached": {
@@ -422,8 +422,8 @@
 		}
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Codeforce хочет выполнить поиск в кодовой базе по <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Codeforce хочет выполнить поиск в кодовой базе по <code>{{query}}</code> в <code>{{path}}</code>",
+		"wantsToSearch": "Builder хочет выполнить поиск в кодовой базе по <code>{{query}}</code>",
+		"wantsToSearchWithPath": "Builder хочет выполнить поиск в кодовой базе по <code>{{query}}</code> в <code>{{path}}</code>",
 		"didSearch_one": "Найден 1 результат",
 		"didSearch_other": "Найдено {{count}} результатов",
 		"resultTooltip": "Оценка схожести: {{score}} (нажмите, чтобы открыть файл)"
@@ -488,8 +488,8 @@
 		"clickToEdit": "Нажмите, чтобы редактировать сообщение"
 	},
 	"slashCommand": {
-		"wantsToRun": "Codeforce хочет выполнить слеш-команду",
-		"didRun": "Codeforce выполнил слеш-команду"
+		"wantsToRun": "Builder хочет выполнить слеш-команду",
+		"didRun": "Builder выполнил слеш-команду"
 	},
 	"todo": {
 		"partial": "{{completed}} из {{total}} задач выполнено",

@@ -7,9 +7,9 @@
 		"message": "入门",
 		"description": "The label for category Getting Started in sidebar tutorialSidebar"
 	},
-	"sidebar.tutorialSidebar.category.Using Codeforce": {
-		"message": "使用 Codeforce",
-		"description": "The label for category Using Codeforce in sidebar tutorialSidebar"
+	"sidebar.tutorialSidebar.category.Using Builder": {
+		"message": "使用 Builder",
+		"description": "The label for category Using Builder in sidebar tutorialSidebar"
 	},
 	"sidebar.tutorialSidebar.category.Basic Features": {
 		"message": "基本功能",
@@ -23,9 +23,9 @@
 		"message": "高级用法",
 		"description": "The label for category Advanced Usage in sidebar tutorialSidebar"
 	},
-	"sidebar.tutorialSidebar.category.Customizing Codeforce": {
-		"message": "自定义 Codeforce",
-		"description": "The label for category Customizing Codeforce in sidebar tutorialSidebar"
+	"sidebar.tutorialSidebar.category.Customizing Builder": {
+		"message": "自定义 Builder",
+		"description": "The label for category Customizing Builder in sidebar tutorialSidebar"
 	},
 	"sidebar.tutorialSidebar.category.Advanced Context Features": {
 		"message": "高级上下文功能",
@@ -39,9 +39,9 @@
 		"message": "自定义",
 		"description": "The label for category Customization in sidebar tutorialSidebar"
 	},
-	"sidebar.tutorialSidebar.category.Extending Codeforce": {
-		"message": "扩展 Codeforce",
-		"description": "The label for category Extending Codeforce in sidebar tutorialSidebar"
+	"sidebar.tutorialSidebar.category.Extending Builder": {
+		"message": "扩展 Builder",
+		"description": "The label for category Extending Builder in sidebar tutorialSidebar"
 	},
 	"sidebar.tutorialSidebar.category.Model Providers": {
 		"message": "模型供应商",

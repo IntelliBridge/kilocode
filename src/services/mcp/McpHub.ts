@@ -704,7 +704,7 @@ export class McpHub {
 		try {
 			const client = new Client(
 				{
-					name: "Codeforce",
+					name: "Builder",
 					version: this.providerRef.deref()?.context.extension?.packageJSON?.version ?? "1.0.0",
 				},
 				{

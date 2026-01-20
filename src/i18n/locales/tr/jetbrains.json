@@ -13,7 +13,7 @@
 		"cancel": "İptal"
 	},
 	"ui": {
-		"initializing": "Codeforce başlatılıyor...",
+		"initializing": "Builder başlatılıyor...",
 		"systemInformation": "Sistem Bilgileri"
 	}
 }

@@ -13,7 +13,7 @@
 		"cancel": "Отмена"
 	},
 	"ui": {
-		"initializing": "Codeforce инициализируется...",
+		"initializing": "Builder инициализируется...",
 		"systemInformation": "Информация о системе"
 	}
 }

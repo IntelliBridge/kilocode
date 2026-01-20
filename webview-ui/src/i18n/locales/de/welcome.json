@@ -1,6 +1,6 @@
 {
-	"greeting": "Hallo, ich bin Codeforce!",
-	"introduction": "<strong>Codeforce ist der führende autonome Coding-Agent.</strong> Mach dich bereit, zu architektieren, zu coden, zu debuggen und deine Produktivität wie nie zuvor zu steigern. Um fortzufahren, benötigt Codeforce einen API-Schlüssel.",
+	"greeting": "Hallo, ich bin Builder!",
+	"introduction": "<strong>Builder ist der führende autonome Coding-Agent.</strong> Mach dich bereit, zu architektieren, zu coden, zu debuggen und deine Produktivität wie nie zuvor zu steigern. Um fortzufahren, benötigt Builder einen API-Schlüssel.",
 	"notice": "Um loszulegen, benötigt diese Erweiterung einen API-Anbieter.",
 	"start": "Los geht's!",
 	"routers": {
@@ -16,7 +16,7 @@
 			"incentive": "Probier Roo kostenlos aus"
 		}
 	},
-	"chooseProvider": "Um seine Magie zu entfalten, benötigt Codeforce einen API-Schlüssel.",
+	"chooseProvider": "Um seine Magie zu entfalten, benötigt Builder einen API-Schlüssel.",
 	"providerSignup": {
 		"heading": "Wähle deinen Anbieter",
 		"chooseProvider": "Roo braucht einen LLM-Anbieter, um zu funktionieren. Wähle einen aus, um loszulegen. Du kannst später mehr hinzufügen.",
@@ -43,8 +43,8 @@
 	"startRouter": "Wir empfehlen die Verwendung eines LLM-Routers:",
 	"startCustom": "Oder du kannst deinen eigenen API-Schlüssel verwenden:",
 	"telemetry": {
-		"helpImprove": "Hilf, Codeforce zu verbessern",
-		"helpImproveMessage": "Codeforce sammelt Fehler- und Nutzungsdaten, um uns bei der Fehlerbehebung und Verbesserung der Erweiterung zu helfen. Diese Telemetrie sammelt keinen Code, keine Prompts oder persönliche Informationen. Du kannst dies in den <settingsLink>Einstellungen</settingsLink> deaktivieren."
+		"helpImprove": "Hilf, Builder zu verbessern",
+		"helpImproveMessage": "Builder sammelt Fehler- und Nutzungsdaten, um uns bei der Fehlerbehebung und Verbesserung der Erweiterung zu helfen. Diese Telemetrie sammelt keinen Code, keine Prompts oder persönliche Informationen. Du kannst dies in den <settingsLink>Einstellungen</settingsLink> deaktivieren."
 	},
 	"importSettings": "Einstellungen importieren"
 }

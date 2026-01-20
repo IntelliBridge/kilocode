@@ -68,7 +68,7 @@ Line 3`
 
 	describe("System prompt integration", () => {
 		it("should append custom text to system prompt when provided", () => {
-			const basePrompt = "You are Codeforce, an AI assistant."
+			const basePrompt = "You are Builder, an AI assistant."
 			const appendText = "Always write tests first."
 			const expectedPrompt = `${basePrompt}
 
@@ -79,7 +79,7 @@ ${appendText}`
 		})
 
 		it("should not modify system prompt when appendSystemPrompt is undefined", () => {
-			const basePrompt = "You are Codeforce, an AI assistant."
+			const basePrompt = "You are Builder, an AI assistant."
 			const appendText = undefined
 
 			const result = appendText ? `${basePrompt}\n\n${appendText}` : basePrompt
@@ -87,7 +87,7 @@ ${appendText}`
 		})
 
 		it("should not modify system prompt when appendSystemPrompt is empty string", () => {
-			const basePrompt = "You are Codeforce, an AI assistant."
+			const basePrompt = "You are Builder, an AI assistant."
 			const appendText = ""
 
 			const result = appendText ? `${basePrompt}\n\n${appendText}` : basePrompt
@@ -95,9 +95,9 @@ ${appendText}`
 		})
 
 		it("should properly format appended text with newlines", () => {
-			const basePrompt = "You are Codeforce."
+			const basePrompt = "You are Builder."
 			const appendText = "Rule 1: Test first\nRule 2: Keep it simple"
-			const expectedPrompt = `You are Codeforce.
+			const expectedPrompt = `You are Builder.
 
 Rule 1: Test first
 Rule 2: Keep it simple`

@@ -62,6 +62,6 @@ describe("getVisibleProviderOrLog", () => {
 		const result = getVisibleProviderOrLog(mockOutputChannel)
 
 		expect(result).toBeUndefined()
-		expect(mockOutputChannel.appendLine).toHaveBeenCalledWith("Cannot find any visible Codeforce instances.")
+		expect(mockOutputChannel.appendLine).toHaveBeenCalledWith("Cannot find any visible Builder instances.")
 	})
 })

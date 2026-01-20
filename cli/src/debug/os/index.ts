@@ -279,7 +279,7 @@ function printSystemInfo(info: SystemInfo): void {
 }
 
 export const debugOS = async () => {
-	console.log("Codeforce - OS Debug Tool")
+	console.log("Builder - OS Debug Tool")
 
 	try {
 		const systemInfo = gatherSystemInfo()

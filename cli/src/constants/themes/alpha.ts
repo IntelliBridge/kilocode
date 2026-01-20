@@ -1,5 +1,5 @@
 /**
- * Dark theme for Codeforce CLI
+ * Dark theme for Builder CLI
  *
  * The default dark theme using standard terminal colors for maximum compatibility.
  */
@@ -16,7 +16,7 @@ export const alphaTheme: Theme = {
 	type: "dark",
 
 	brand: {
-		primary: "#faf74f", // Codeforce yellow
+		primary: "#faf74f", // Builder yellow
 		secondary: "cyan",
 	},
 

@@ -1,5 +1,5 @@
 /**
- * Shades of Purple theme for Codeforce CLI
+ * Shades of Purple theme for Builder CLI
  *
  * Based on the Shades of Purple color scheme
  */

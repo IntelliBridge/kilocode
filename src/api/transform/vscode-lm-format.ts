@@ -23,7 +23,7 @@ function asObjectSafe(value: any): object {
 
 		return {}
 	} catch (error) {
-		console.warn("Codeforce <Language Model API>: Failed to parse object:", error)
+		console.warn("Builder <Language Model API>: Failed to parse object:", error)
 		return {}
 	}
 }
@@ -187,7 +187,7 @@ export function extractTextCountFromMessage(message: vscode.LanguageModelChatMes
 					try {
 						text += JSON.stringify(item.input)
 					} catch (error) {
-						console.error("Codeforce <Language Model API>: Failed to stringify tool call input:", error)
+						console.error("Builder <Language Model API>: Failed to stringify tool call input:", error)
 					}
 				}
 			}

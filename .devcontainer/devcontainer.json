@@ -1,5 +1,5 @@
 {
-	"name": "Codeforce Development",
+	"name": "Builder Development",
 	"dockerFile": "Dockerfile",
 	"context": "..",
 
@@ -49,7 +49,7 @@
 	},
 
 	"postCreateCommand": "bash .devcontainer/setup.sh",
-	"postStartCommand": "echo '🚀 Codeforce devcontainer is ready!'",
+	"postStartCommand": "echo '🚀 Builder devcontainer is ready!'",
 
 	"remoteUser": "root",
 	"containerUser": "root",

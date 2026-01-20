@@ -67,7 +67,7 @@
 		"apiRequest": "Permintaan API",
 		"taskCompleted": "Tugas Selesai",
 		"error": "Kesalahan",
-		"question": "Codeforce memiliki pertanyaan",
+		"question": "Builder memiliki pertanyaan",
 		"command": "Kilo ingin menjalankan perintah",
 		"tool": "Kilo ingin menggunakan alat",
 		"usingTool": "Menggunakan alat: **{{tool}}** {{details}}",

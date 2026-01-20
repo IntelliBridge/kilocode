@@ -51,7 +51,7 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Generator pesan komit Codeforce diaktifkan",
+		"activated": "Generator pesan komit Builder diaktifkan",
 		"gitNotFound": "⚠️ Repositori Git tidak ditemukan atau git tidak tersedia",
 		"gitInitError": "⚠️ Kesalahan inisialisasi Git: {{error}}",
 		"generating": "Kilo: Menghasilkan pesan komit...",
@@ -63,7 +63,7 @@
 		"providerRegistered": "Kilo: Penyedia pesan komit terdaftar",
 		"errors": {
 			"noProject": "Tidak ada proyek yang tersedia",
-			"connectionFailed": "Gagal terhubung ke ekstensi Codeforce",
+			"connectionFailed": "Gagal terhubung ke ekstensi Builder",
 			"timeout": "Permintaan waktu habis setelah 30 detik",
 			"invalidResponse": "Format respons tidak valid diterima dari ekstensi",
 			"noChanges": "Tidak ada perubahan ditemukan untuk di-commit",
@@ -88,7 +88,7 @@
 		"progress": {
 			"title": "Membuat Pesan Commit",
 			"analyzing": "Menganalisis perubahan...",
-			"connecting": "Menghubungkan ke Codeforce...",
+			"connecting": "Menghubungkan ke Builder...",
 			"generating": "Menghasilkan pesan commit..."
 		},
 		"ui": {
@@ -102,9 +102,9 @@
 			"snoozed": "dijeda",
 			"warning": "$(warning) Autocomplete",
 			"tooltip": {
-				"basic": "Codeforce Autocomplete",
-				"disabled": "Codeforce Autocomplete (dinonaktifkan)",
-				"noCredits": "**Tidak ada kredit di akun kamu**\n\nAkun Codeforce kamu tidak memiliki kredit. Untuk menggunakan autocomplete, silakan tambahkan kredit ke akun kamu.\n\n[Buka Pengaturan](command:kilo-code.settingsButtonClicked)",
+				"basic": "Builder Autocomplete",
+				"disabled": "Builder Autocomplete (dinonaktifkan)",
+				"noCredits": "**Tidak ada kredit di akun kamu**\n\nAkun Builder kamu tidak memiliki kredit. Untuk menggunakan autocomplete, silakan tambahkan kredit ke akun kamu.\n\n[Buka Pengaturan](command:kilo-code.settingsButtonClicked)",
 				"noUsableProvider": "**Tidak ada model autocomplete yang dikonfigurasi**\n\nUntuk mengaktifkan autocomplete, tambahkan profil dengan salah satu penyedia yang didukung ini: {{providers}}.\n\n[Buka Pengaturan](command:kilo-code.settingsButtonClicked)",
 				"sessionTotal": "Total biaya sesi:",
 				"provider": "Penyedia:",
@@ -119,36 +119,36 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Codeforce Autocomplete {{status}}",
+		"toggleMessage": "Builder Autocomplete {{status}}",
 		"progress": {
-			"title": "Codeforce",
+			"title": "Builder",
 			"analyzing": "Menganalisis kode Anda...",
 			"generating": "Menghasilkan suntingan yang disarankan...",
 			"processing": "Memproses suntingan yang disarankan...",
 			"showing": "Menampilkan suntingan yang disarankan..."
 		},
 		"input": {
-			"title": "Codeforce: Tugas Cepat",
+			"title": "Builder: Tugas Cepat",
 			"placeholder": "mis., 'refaktor fungsi ini agar lebih efisien'"
 		},
 		"commands": {
-			"generateSuggestions": "Codeforce: Hasilkan Suntingan yang Disarankan",
+			"generateSuggestions": "Builder: Hasilkan Suntingan yang Disarankan",
 			"displaySuggestions": "Tampilkan Suntingan yang Disarankan",
 			"cancelSuggestions": "Batalkan Suntingan yang Disarankan",
 			"applyCurrentSuggestion": "Terapkan Suntingan yang Disarankan Saat Ini",
 			"applyAllSuggestions": "Terapkan Semua Suntingan yang Disarankan",
-			"category": "Codeforce"
+			"category": "Builder"
 		},
 		"codeAction": {
-			"title": "Codeforce: Suntingan yang Disarankan"
+			"title": "Builder: Suntingan yang Disarankan"
 		},
 		"chatParticipant": {
-			"fullName": "Codeforce Agent",
+			"fullName": "Builder Agent",
 			"name": "Agent",
 			"description": "Saya dapat membantu Anda dengan tugas cepat dan suntingan yang disarankan."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "Codeforce Autocomplete diblokir oleh konflik dengan GitHub Copilot. Untuk memperbaiki ini, Anda harus menonaktifkan saran inline Copilot.",
+			"message": "Builder Autocomplete diblokir oleh konflik dengan GitHub Copilot. Untuk memperbaiki ini, Anda harus menonaktifkan saran inline Copilot.",
 			"disableCopilot": "Nonaktifkan Copilot",
 			"disableInlineAssist": "Nonaktifkan Autocomplete"
 		}

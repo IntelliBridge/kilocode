@@ -12,7 +12,7 @@ export interface DeviceAuthHandlerCallbacks {
 }
 
 /**
- * Handles device authorization flow for Codeforce authentication
+ * Handles device authorization flow for Builder authentication
  * This class encapsulates all device auth logic to keep ClineProvider clean
  */
 export class DeviceAuthHandler {
@@ -61,9 +61,7 @@ export class DeviceAuthHandler {
 					deviceAuthUserEmail: userEmail,
 				})
 
-				this.callbacks.showInformationMessage(
-					`Codeforce successfully configured! Authenticated as ${userEmail}`,
-				)
+				this.callbacks.showInformationMessage(`Builder successfully configured! Authenticated as ${userEmail}`)
 
 				// Clean up
 				this.deviceAuthService?.dispose()

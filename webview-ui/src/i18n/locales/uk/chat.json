@@ -1,5 +1,5 @@
 {
-	"greeting": "Що Codeforce може зробити для тебе?",
+	"greeting": "Що Builder може зробити для тебе?",
 	"task": {
 		"title": "Завдання",
 		"seeMore": "Дивитися більше",
@@ -19,7 +19,7 @@
 		"sharePublicly": "Поділитися публічно",
 		"sharePubliclyDescription": "Будь-хто з посиланням має доступ",
 		"connectToCloud": "Підключитися до Cloud",
-		"connectToCloudDescription": "Увійдіть до Codeforce Cloud для обміну завданнями",
+		"connectToCloudDescription": "Увійдіть до Builder Cloud для обміну завданнями",
 		"sharingDisabledByOrganization": "Обмін вимкнено організацією",
 		"shareSuccessOrganization": "Посилання організації скопійовано до буфера обміну",
 		"shareSuccessPublic": "Публічне посилання скопійовано до буфера обміну",
@@ -138,7 +138,7 @@
 		"title": "Режими",
 		"marketplace": "Ринок режимів",
 		"settings": "Налаштування режимів",
-		"description": "Спеціалізовані персони, які налаштовують поведінку Codeforce.",
+		"description": "Спеціалізовані персони, які налаштовують поведінку Builder.",
 		"searchPlaceholder": "Пошук режимів...",
 		"noResults": "Результатів не знайдено",
 		"organizationModes": "Режими організації"
@@ -227,52 +227,52 @@
 		"tokens": "токени"
 	},
 	"instructions": {
-		"wantsToFetch": "Codeforce хоче отримати детальні інструкції для допомоги з поточним завданням"
+		"wantsToFetch": "Builder хоче отримати детальні інструкції для допомоги з поточним завданням"
 	},
 	"fileOperations": {
-		"wantsToRead": "Codeforce хоче прочитати цей файл:",
-		"wantsToReadMultiple": "Codeforce хоче прочитати кілька файлів:",
-		"wantsToReadAndXMore": "Codeforce хоче прочитати цей файл і ще {{count}}:",
-		"wantsToReadOutsideWorkspace": "Codeforce хоче прочитати цей файл за межами робочого простору:",
-		"didRead": "Codeforce прочитав цей файл:",
-		"wantsToEdit": "Codeforce хоче редагувати цей файл:",
-		"wantsToEditOutsideWorkspace": "Codeforce хоче редагувати цей файл за межами робочого простору:",
-		"wantsToEditProtected": "Codeforce хоче редагувати захищений файл конфігурації:",
-		"wantsToApplyBatchChanges": "Codeforce хоче застосувати зміни до кількох файлів:",
-		"wantsToGenerateImage": "Codeforce хоче згенерувати зображення:",
-		"wantsToGenerateImageOutsideWorkspace": "Codeforce хоче згенерувати зображення поза робочою областю:",
-		"wantsToGenerateImageProtected": "Codeforce хоче згенерувати зображення у захищеному місці:",
-		"didGenerateImage": "Codeforce згенерував зображення:",
-		"wantsToCreate": "Codeforce хоче створити новий файл:",
-		"wantsToSearchReplace": "Codeforce хоче шукати та замінити в цьому файлі:",
-		"didSearchReplace": "Codeforce виконав пошук і заміну в цьому файлі:",
-		"wantsToInsert": "Codeforce хоче вставити вміст у цей файл:",
-		"wantsToInsertWithLineNumber": "Codeforce хоче вставити вміст у цей файл на рядку {{lineNumber}}:",
-		"wantsToInsertAtEnd": "Codeforce хоче додати вміст в кінець цього файлу:",
-		"wantsToDelete": "Codeforce хоче видалити цей файл",
-		"wantsToDeleteDirectory": "Codeforce хоче видалити цю директорію"
+		"wantsToRead": "Builder хоче прочитати цей файл:",
+		"wantsToReadMultiple": "Builder хоче прочитати кілька файлів:",
+		"wantsToReadAndXMore": "Builder хоче прочитати цей файл і ще {{count}}:",
+		"wantsToReadOutsideWorkspace": "Builder хоче прочитати цей файл за межами робочого простору:",
+		"didRead": "Builder прочитав цей файл:",
+		"wantsToEdit": "Builder хоче редагувати цей файл:",
+		"wantsToEditOutsideWorkspace": "Builder хоче редагувати цей файл за межами робочого простору:",
+		"wantsToEditProtected": "Builder хоче редагувати захищений файл конфігурації:",
+		"wantsToApplyBatchChanges": "Builder хоче застосувати зміни до кількох файлів:",
+		"wantsToGenerateImage": "Builder хоче згенерувати зображення:",
+		"wantsToGenerateImageOutsideWorkspace": "Builder хоче згенерувати зображення поза робочою областю:",
+		"wantsToGenerateImageProtected": "Builder хоче згенерувати зображення у захищеному місці:",
+		"didGenerateImage": "Builder згенерував зображення:",
+		"wantsToCreate": "Builder хоче створити новий файл:",
+		"wantsToSearchReplace": "Builder хоче шукати та замінити в цьому файлі:",
+		"didSearchReplace": "Builder виконав пошук і заміну в цьому файлі:",
+		"wantsToInsert": "Builder хоче вставити вміст у цей файл:",
+		"wantsToInsertWithLineNumber": "Builder хоче вставити вміст у цей файл на рядку {{lineNumber}}:",
+		"wantsToInsertAtEnd": "Builder хоче додати вміст в кінець цього файлу:",
+		"wantsToDelete": "Builder хоче видалити цей файл",
+		"wantsToDeleteDirectory": "Builder хоче видалити цю директорію"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Codeforce хоче переглянути файли верхнього рівня в цій директорії:",
-		"didViewTopLevel": "Codeforce переглянув файли верхнього рівня в цій директорії:",
-		"wantsToViewTopLevelOutsideWorkspace": "Codeforce хоче переглянути файли верхнього рівня в цій директорії (за межами робочого простору):",
-		"didViewTopLevelOutsideWorkspace": "Codeforce переглянув файли верхнього рівня в цій директорії (за межами робочого простору):",
-		"wantsToViewRecursive": "Codeforce хоче рекурсивно переглянути всі файли в цій директорії:",
-		"didViewRecursive": "Codeforce рекурсивно переглянув всі файли в цій директорії:",
-		"wantsToViewRecursiveOutsideWorkspace": "Codeforce хоче рекурсивно переглянути всі файли в цій директорії (за межами робочого простору):",
-		"didViewRecursiveOutsideWorkspace": "Codeforce рекурсивно переглянув всі файли в цій директорії (за межами робочого простору):",
-		"wantsToViewDefinitions": "Codeforce хоче переглянути назви визначень вихідного коду, що використовуються в цій директорії:",
-		"didViewDefinitions": "Codeforce переглянув назви визначень вихідного коду, що використовуються в цій директорії:",
-		"wantsToViewDefinitionsOutsideWorkspace": "Codeforce хоче переглянути назви визначень вихідного коду, що використовуються в цій директорії (за межами робочого простору):",
-		"didViewDefinitionsOutsideWorkspace": "Codeforce переглянув назви визначень вихідного коду, що використовуються в цій директорії (за межами робочого простору):",
-		"wantsToSearch": "Codeforce хоче шукати в цій директорії <code>{{regex}}</code>:",
-		"didSearch": "Codeforce шукав у цій директорії <code>{{regex}}</code>:",
-		"wantsToSearchOutsideWorkspace": "Codeforce хоче шукати в цій директорії (за межами робочого простору) <code>{{regex}}</code>:",
-		"didSearchOutsideWorkspace": "Codeforce шукав у цій директорії (за межами робочого простору) <code>{{regex}}</code>:"
+		"wantsToViewTopLevel": "Builder хоче переглянути файли верхнього рівня в цій директорії:",
+		"didViewTopLevel": "Builder переглянув файли верхнього рівня в цій директорії:",
+		"wantsToViewTopLevelOutsideWorkspace": "Builder хоче переглянути файли верхнього рівня в цій директорії (за межами робочого простору):",
+		"didViewTopLevelOutsideWorkspace": "Builder переглянув файли верхнього рівня в цій директорії (за межами робочого простору):",
+		"wantsToViewRecursive": "Builder хоче рекурсивно переглянути всі файли в цій директорії:",
+		"didViewRecursive": "Builder рекурсивно переглянув всі файли в цій директорії:",
+		"wantsToViewRecursiveOutsideWorkspace": "Builder хоче рекурсивно переглянути всі файли в цій директорії (за межами робочого простору):",
+		"didViewRecursiveOutsideWorkspace": "Builder рекурсивно переглянув всі файли в цій директорії (за межами робочого простору):",
+		"wantsToViewDefinitions": "Builder хоче переглянути назви визначень вихідного коду, що використовуються в цій директорії:",
+		"didViewDefinitions": "Builder переглянув назви визначень вихідного коду, що використовуються в цій директорії:",
+		"wantsToViewDefinitionsOutsideWorkspace": "Builder хоче переглянути назви визначень вихідного коду, що використовуються в цій директорії (за межами робочого простору):",
+		"didViewDefinitionsOutsideWorkspace": "Builder переглянув назви визначень вихідного коду, що використовуються в цій директорії (за межами робочого простору):",
+		"wantsToSearch": "Builder хоче шукати в цій директорії <code>{{regex}}</code>:",
+		"didSearch": "Builder шукав у цій директорії <code>{{regex}}</code>:",
+		"wantsToSearchOutsideWorkspace": "Builder хоче шукати в цій директорії (за межами робочого простору) <code>{{regex}}</code>:",
+		"didSearchOutsideWorkspace": "Builder шукав у цій директорії (за межами робочого простору) <code>{{regex}}</code>:"
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Codeforce хоче шукати в кодовій базі <code>{{query}}</code>:",
-		"wantsToSearchWithPath": "Codeforce хоче шукати в кодовій базі <code>{{query}}</code> в <code>{{path}}</code>:",
+		"wantsToSearch": "Builder хоче шукати в кодовій базі <code>{{query}}</code>:",
+		"wantsToSearchWithPath": "Builder хоче шукати в кодовій базі <code>{{query}}</code> в <code>{{path}}</code>:",
 		"didSearch_one": "Знайдено 1 результат",
 		"didSearch_other": "Знайдено {{count}} результатів",
 		"resultTooltip": "Оцінка схожості: {{score}} (клікни для відкриття файлу)"
@@ -305,18 +305,18 @@
 		"youSaid": "Ти сказав"
 	},
 	"mcp": {
-		"wantsToUseTool": "Codeforce хоче використати інструмент на сервері MCP {{serverName}}:",
-		"wantsToAccessResource": "Codeforce хоче отримати доступ до ресурсу на сервері MCP {{serverName}}:"
+		"wantsToUseTool": "Builder хоче використати інструмент на сервері MCP {{serverName}}:",
+		"wantsToAccessResource": "Builder хоче отримати доступ до ресурсу на сервері MCP {{serverName}}:"
 	},
 	"modes": {
-		"wantsToSwitch": "Codeforce хоче перейти в режим {{mode}}",
-		"wantsToSwitchWithReason": "Codeforce хоче перейти в режим {{mode}}, тому що: {{reason}}",
-		"didSwitch": "Codeforce перейшов у режим {{mode}}",
-		"didSwitchWithReason": "Codeforce перейшов у режим {{mode}}, тому що: {{reason}}"
+		"wantsToSwitch": "Builder хоче перейти в режим {{mode}}",
+		"wantsToSwitchWithReason": "Builder хоче перейти в режим {{mode}}, тому що: {{reason}}",
+		"didSwitch": "Builder перейшов у режим {{mode}}",
+		"didSwitchWithReason": "Builder перейшов у режим {{mode}}, тому що: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Codeforce хоче створити нове підзавдання в режимі {{mode}}:",
-		"wantsToFinish": "Codeforce хоче завершити це підзавдання",
+		"wantsToCreate": "Builder хоче створити нове підзавдання в режимі {{mode}}:",
+		"wantsToFinish": "Builder хоче завершити це підзавдання",
 		"newTaskContent": "Інструкції підзавдання",
 		"completionContent": "Підзавдання завершено",
 		"resultContent": "Результати підзавдання",
@@ -324,7 +324,7 @@
 		"completionInstructions": "Підзавдання завершено! Ти можеш переглянути результати та запропонувати будь-які виправлення або наступні кроки. Якщо все виглядає добре, підтверди, щоб повернути результат до батьківського завдання."
 	},
 	"questions": {
-		"hasQuestion": "Codeforce має питання:"
+		"hasQuestion": "Builder має питання:"
 	},
 	"taskCompleted": "Завдання виконано",
 	"error": "Помилка",
@@ -345,14 +345,14 @@
 	"diffError": {
 		"title": "Редагування не вдалося"
 	},
-	"troubleMessage": "Codeforce має проблеми...",
+	"troubleMessage": "Builder має проблеми...",
 	"powershell": {
 		"issues": "Схоже, у тебе проблеми з Windows PowerShell, будь ласка, подивись це"
 	},
 	"autoApprove": {
 		"title": "Автосхвалення:",
 		"none": "Немає",
-		"description": "Автосхвалення дозволяє Codeforce виконувати дії без запиту дозволу. Увімкни лише для дій, яким ти повністю довіряєш. Більш детальна конфігурація доступна в <settingsLink>Налаштуваннях</settingsLink>.",
+		"description": "Автосхвалення дозволяє Builder виконувати дії без запиту дозволу. Увімкни лише для дій, яким ти повністю довіряєш. Більш детальна конфігурація доступна в <settingsLink>Налаштуваннях</settingsLink>.",
 		"selectOptionsFirst": "Спочатку вибери принаймні один варіант нижче, щоб увімкнути автосхвалення",
 		"toggleAriaLabel": "Перемкнути автосхвалення",
 		"disabledAriaLabel": "Автосхвалення вимкнено - спочатку вибери варіанти",
@@ -413,7 +413,7 @@
 	},
 	"browser": {
 		"session": "Сесія браузера",
-		"rooWantsToUse": "Codeforce хоче використати браузер:",
+		"rooWantsToUse": "Builder хоче використати браузер:",
 		"consoleLogs": "Логи консолі",
 		"noNewLogs": "(Немає нових логів)",
 		"screenshot": "Знімок екрана браузера",
@@ -481,18 +481,18 @@
 	"profileViolationWarning": "Поточний профіль несумісний з налаштуваннями твоєї організації",
 	"shellIntegration": {
 		"title": "Попередження про виконання команди",
-		"description": "Твоя команда виконується без інтеграції оболонки терміналу VSCode. Щоб прибрати це попередження, ти можеш вимкнути інтеграцію оболонки в розділі <strong>Terminal</strong> <settingsLink>налаштувань Codeforce</settingsLink> або усунути проблеми з інтеграцією терміналу VSCode, використовуючи посилання нижче.",
+		"description": "Твоя команда виконується без інтеграції оболонки терміналу VSCode. Щоб прибрати це попередження, ти можеш вимкнути інтеграцію оболонки в розділі <strong>Terminal</strong> <settingsLink>налаштувань Builder</settingsLink> або усунути проблеми з інтеграцією терміналу VSCode, використовуючи посилання нижче.",
 		"troubleshooting": "Натисни тут для документації з інтеграції оболонки."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Досягнуто ліміт автосхвалених запитів",
-			"description": "Codeforce досяг автосхваленого ліміту {{count}} API запит(ів). Хочеш скинути лічильник і продовжити завдання?",
+			"description": "Builder досяг автосхваленого ліміту {{count}} API запит(ів). Хочеш скинути лічильник і продовжити завдання?",
 			"button": "Скинути і продовжити"
 		},
 		"autoApprovedCostLimitReached": {
 			"title": "Досягнуто ліміт автоматично схвалених витрат",
-			"description": "Codeforce досяг ліміту автоматично схвалених витрат ${{count}}. Хочете скинути витрати і продовжити завдання?",
+			"description": "Builder досяг ліміту автоматично схвалених витрат ${{count}}. Хочете скинути витрати і продовжити завдання?",
 			"button": "Скинути і продовжити"
 		}
 	},
@@ -540,8 +540,8 @@
 	},
 	"generateCommitMessage": "Згенерувати повідомлення коміту",
 	"slashCommand": {
-		"wantsToRun": "Codeforce хоче виконати slash команду:",
-		"didRun": "Codeforce виконав slash команду:"
+		"wantsToRun": "Builder хоче виконати slash команду:",
+		"didRun": "Builder виконав slash команду:"
 	},
 	"contextMenu": {
 		"noResults": "Результатів немає",

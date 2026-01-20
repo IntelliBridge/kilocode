@@ -1,5 +1,5 @@
 /**
- * Integration test helper utilities for Codeforce CLI
+ * Integration test helper utilities for Builder CLI
  * Inspired by google-gemini/gemini-cli test infrastructure
  */
 

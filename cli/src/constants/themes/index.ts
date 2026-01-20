@@ -1,5 +1,5 @@
 /**
- * Unified Theme System for Codeforce CLI
+ * Unified Theme System for Builder CLI
  *
  * This module provides a centralized theme structure that consolidates
  * color usage across all UI components into semantic categories.
