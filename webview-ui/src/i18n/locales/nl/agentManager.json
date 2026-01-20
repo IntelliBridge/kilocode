@@ -67,7 +67,7 @@
 		"apiRequest": "API-verzoek",
 		"taskCompleted": "Taak voltooid",
 		"error": "Fout",
-		"question": "Kilo Code heeft een vraag",
+		"question": "Builder heeft een vraag",
 		"command": "Kilo wil een commando uitvoeren",
 		"tool": "Kilo wil een tool gebruiken",
 		"usingTool": "Tool gebruiken: **{{tool}}** {{details}}",

@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Kilo Code",
+		"name": "Builder",
 		"description": "Agent de programmation IA open source qui génère du code à partir du langage naturel, automatise les tâches et exécute des commandes terminal. Comprend l'autocomplétion en ligne, l'automatisation du navigateur, le refactoring automatisé et des modes personnalisés pour la planification, le codage et le débogage. Compatible avec plus de 500 modèles d'IA, dont Claude (Anthropic), Gemini, Grok, GPT, Codex et GLM."
 	},
 	"number_format": {
@@ -156,7 +156,7 @@
 	"warnings": {
 		"no_terminal_content": "Aucun contenu de terminal sélectionné",
 		"missing_task_files": "Les fichiers de cette tâche sont introuvables. Souhaitez-vous la supprimer de la liste des tâches ?",
-		"auto_import_failed": "Échec de l'importation automatique des paramètres Kilo Code : {{error}}"
+		"auto_import_failed": "Échec de l'importation automatique des paramètres Builder : {{error}}"
 	},
 	"info": {
 		"no_changes": "Aucun changement trouvé.",
@@ -165,7 +165,7 @@
 		"custom_storage_path_set": "Chemin de stockage personnalisé défini : {{path}}",
 		"default_storage_path": "Retour au chemin de stockage par défaut",
 		"settings_imported": "Paramètres importés avec succès.",
-		"auto_import_success": "Paramètres Kilo Code importés automatiquement depuis {{filename}}",
+		"auto_import_success": "Paramètres Builder importés automatiquement depuis {{filename}}",
 		"share_link_copied": "Lien de partage copié dans le presse-papiers",
 		"image_copied_to_clipboard": "URI de données d'image copiée dans le presse-papiers",
 		"image_saved": "Image enregistrée dans {{path}}",
@@ -203,7 +203,7 @@
 		"enter_valid_path": "Veuillez entrer un chemin valide"
 	},
 	"input": {
-		"task_prompt": "Que doit faire Kilo Code?",
+		"task_prompt": "Que doit faire Builder?",
 		"task_placeholder": "Écrivez votre tâche ici"
 	},
 	"settings": {

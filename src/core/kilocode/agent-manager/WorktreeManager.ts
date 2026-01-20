@@ -308,7 +308,7 @@ export class WorktreeManager {
 		}
 
 		const addition = content.endsWith("\n") || content === "" ? "" : "\n"
-		const excludeEntry = `${addition}\n# Kilo Code agent worktrees\n${entry}\n`
+		const excludeEntry = `${addition}\n# Builder agent worktrees\n${entry}\n`
 
 		await fs.promises.appendFile(excludePath, excludeEntry)
 		this.log("Added .kilocode/worktrees/ to .git/info/exclude")

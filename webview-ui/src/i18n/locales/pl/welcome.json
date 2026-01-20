@@ -1,6 +1,6 @@
 {
-	"greeting": "Cześć, jestem Kilo Code!",
-	"introduction": "<strong>Kilo Code to wiodący autonomiczny agent kodowania.</strong> Przygotuj się na projektowanie architektury, kodowanie, debugowanie i zwiększenie produktywności jak nigdy dotąd. Aby kontynuować, Kilo Code wymaga klucza API.",
+	"greeting": "Cześć, jestem Builder!",
+	"introduction": "<strong>Builder to wiodący autonomiczny agent kodowania.</strong> Przygotuj się na projektowanie architektury, kodowanie, debugowanie i zwiększenie produktywności jak nigdy dotąd. Aby kontynuować, Builder wymaga klucza API.",
 	"notice": "Aby rozpocząć, to rozszerzenie potrzebuje dostawcy API.",
 	"start": "Zaczynajmy!",
 	"routers": {
@@ -16,7 +16,7 @@
 			"incentive": "Wypróbuj Roo bezpłatnie"
 		}
 	},
-	"chooseProvider": "Aby działać, Kilo Code potrzebuje klucza API.",
+	"chooseProvider": "Aby działać, Builder potrzebuje klucza API.",
 	"providerSignup": {
 		"heading": "Wybierz swojego dostawcę",
 		"chooseProvider": "Roo potrzebuje dostawcy LLM, aby działać. Wybierz jeden, aby zacząć, możesz dodać więcej później.",
@@ -43,8 +43,8 @@
 	"startRouter": "Rekomendujemy użycie routera LLM:",
 	"startCustom": "Lub możesz przynieść swój własny klucz API:",
 	"telemetry": {
-		"helpImprove": "Pomóż ulepszyć Kilo Code",
-		"helpImproveMessage": "Kilo Code zbiera dane o błędach i użyciu, aby pomóc nam w naprawianiu błędów i ulepszaniu rozszerzenia. Ta telemetria nie zbiera kodu, promptów ani informacji osobistych. Możesz to wyłączyć w <settingsLink>ustawieniach</settingsLink>."
+		"helpImprove": "Pomóż ulepszyć Builder",
+		"helpImproveMessage": "Builder zbiera dane o błędach i użyciu, aby pomóc nam w naprawianiu błędów i ulepszaniu rozszerzenia. Ta telemetria nie zbiera kodu, promptów ani informacji osobistych. Możesz to wyłączyć w <settingsLink>ustawieniach</settingsLink>."
 	},
 	"importSettings": "Importuj ustawienia"
 }

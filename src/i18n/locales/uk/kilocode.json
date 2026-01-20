@@ -51,7 +51,7 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Генератор повідомлень коммітів Kilo Code активовано",
+		"activated": "Генератор повідомлень коммітів Builder активовано",
 		"gitNotFound": "⚠️ Репозиторій Git не знайдено або git недоступний",
 		"gitInitError": "⚠️ Помилка ініціалізації Git: {{error}}",
 		"generating": "Kilo: Генерування повідомлення комміту...",
@@ -63,7 +63,7 @@
 		"providerRegistered": "Kilo: Постачальник повідомлень коммітів зареєстровано",
 		"errors": {
 			"noProject": "Проєкти відсутні",
-			"connectionFailed": "Не вдалося підключитися до розширення Kilo Code",
+			"connectionFailed": "Не вдалося підключитися до розширення Builder",
 			"timeout": "Запит завершився після 30 секунд очікування",
 			"noWorkspacePath": "Не вдалося визначити шлях робочої області для Git-репозиторію",
 			"invalidResponse": "Отримано недійсний формат відповіді від розширення",
@@ -87,7 +87,7 @@
 		},
 		"progress": {
 			"analyzing": "Аналіз змін...",
-			"connecting": "Підключення до Kilo Code...",
+			"connecting": "Підключення до Builder...",
 			"generating": "Створення повідомлення коміту...",
 			"title": "Генерація Повідомлення Коміту"
 		},
@@ -102,9 +102,9 @@
 			"snoozed": "призупинено",
 			"warning": "$(warning) Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (вимкнено)",
-				"noCredits": "**На вашому рахунку немає кредитів**\n\nНа вашому рахунку Kilo Code немає кредитів. Щоб використовувати автодоповнення, будь ласка, поповніть рахунок.\n\n[Відкрити Налаштування](command:kilo-code.settingsButtonClicked)",
+				"basic": "Builder Autocomplete",
+				"disabled": "Builder Autocomplete (вимкнено)",
+				"noCredits": "**На вашому рахунку немає кредитів**\n\nНа вашому рахунку Builder немає кредитів. Щоб використовувати автодоповнення, будь ласка, поповніть рахунок.\n\n[Відкрити Налаштування](command:kilo-code.settingsButtonClicked)",
 				"noUsableProvider": "**Модель автодоповнення не налаштована**\n\nЩоб увімкнути автодоповнення, додайте профіль з одним із підтримуваних провайдерів: {{providers}}.\n\n[Відкрити Налаштування](command:kilo-code.settingsButtonClicked)",
 				"sessionTotal": "Загальна вартість сесії:",
 				"provider": "Провайдер:",
@@ -119,36 +119,36 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "Builder Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "Builder",
 			"analyzing": "Аналізую твій код...",
 			"generating": "Генерую запропоновані правки...",
 			"processing": "Обробляю запропоновані правки...",
 			"showing": "Показую запропоновані правки..."
 		},
 		"input": {
-			"title": "Kilo Code: Швидке Завдання",
+			"title": "Builder: Швидке Завдання",
 			"placeholder": "напр., 'рефактори цю функцію для більшої ефективності'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: Генерувати Запропоновані Правки",
+			"generateSuggestions": "Builder: Генерувати Запропоновані Правки",
 			"displaySuggestions": "Показати Запропоновані Правки",
 			"cancelSuggestions": "Скасувати Запропоновані Правки",
 			"applyCurrentSuggestion": "Застосувати Поточну Запропоновану Правку",
 			"applyAllSuggestions": "Застосувати Всі Запропоновані Правки",
-			"category": "Kilo Code"
+			"category": "Builder"
 		},
 		"codeAction": {
-			"title": "Kilo Code: Запропоновані Правки"
+			"title": "Builder: Запропоновані Правки"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "Builder Agent",
 			"name": "Agent",
 			"description": "Я можу допомогти тобі зі швидкими завданнями та запропонованими правками."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "Kilo Code Autocomplete блокується конфліктом з GitHub Copilot. Щоб виправити це, ти повинен вимкнути вбудовані пропозиції Copilot.",
+			"message": "Builder Autocomplete блокується конфліктом з GitHub Copilot. Щоб виправити це, ти повинен вимкнути вбудовані пропозиції Copilot.",
 			"disableCopilot": "Вимкнути Copilot",
 			"disableInlineAssist": "Вимкнути Autocomplete"
 		}

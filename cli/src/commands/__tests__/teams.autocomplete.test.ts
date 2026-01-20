@@ -24,7 +24,7 @@ describe("Teams Command Autocomplete", () => {
 				organizations: [
 					{
 						id: "org-1",
-						name: "Kilo Code",
+						name: "Builder",
 						role: "admin",
 					},
 					{
@@ -112,8 +112,8 @@ describe("Teams Command Autocomplete", () => {
 			// Should include organizations with normalized names
 			const kiloCodeSuggestion = suggestions.find((s) => s.value === "kilo-code")
 			expect(kiloCodeSuggestion).toBeDefined()
-			expect(kiloCodeSuggestion?.title).toBe("Kilo Code")
-			expect(kiloCodeSuggestion?.description).toBe("Kilo Code (admin)")
+			expect(kiloCodeSuggestion?.title).toBe("Builder")
+			expect(kiloCodeSuggestion?.description).toBe("Builder (admin)")
 
 			const awesomeTeamSuggestion = suggestions.find((s) => s.value === "my-awesome-team")
 			expect(awesomeTeamSuggestion).toBeDefined()

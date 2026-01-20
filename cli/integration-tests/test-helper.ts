@@ -1,5 +1,5 @@
 /**
- * Integration test helper utilities for Kilo Code CLI
+ * Integration test helper utilities for Builder CLI
  * Inspired by google-gemini/gemini-cli test infrastructure
  */
 
