@@ -86,12 +86,12 @@ The official Kilo Code provider for accessing Kilo Code's managed AI services.
 
 **Required Fields**:
 
-- `kilocodeToken` (password): Your Kilo Code authentication token
-- `kilocodeModel` (text): The model to use (default: `anthropic/claude-sonnet-4.5`)
+- `builderToken` (password): Your Kilo Code authentication token
+- `builderModel` (text): The model to use (default: `anthropic/claude-sonnet-4.5`)
 
 **Optional Fields**:
 
-- `kilocodeOrganizationId` (text): Organization ID for team accounts (leave empty for personal use)
+- `builderOrganizationId` (text): Organization ID for team accounts (leave empty for personal use)
 - `openRouterSpecificProvider` (text): Specific OpenRouter provider to use when routing through OpenRouter
 - `openRouterProviderDataCollection` (text): OpenRouter provider data collection preference
     - `allow`: Allow data collection by the provider
@@ -108,9 +108,9 @@ The official Kilo Code provider for accessing Kilo Code's managed AI services.
 {
 	"id": "default",
 	"provider": "kilocode",
-	"kilocodeToken": "your-token-here",
-	"kilocodeModel": "anthropic/claude-sonnet-4",
-	"kilocodeOrganizationId": "org-123456"
+	"builderToken": "your-token-here",
+	"builderModel": "anthropic/claude-sonnet-4",
+	"builderOrganizationId": "org-123456"
 }
 ```
 

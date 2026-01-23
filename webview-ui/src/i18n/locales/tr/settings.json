@@ -208,7 +208,7 @@
 			},
 			"protected": {
 				"label": "Korumalı dosyaları dahil et",
-				"description": "Builder'nun korumalı dosyaları (.kilocodeignore ve .kilocode/ yapılandırma dosyaları gibi) onay gerektirmeden oluşturmasına ve düzenlemesine izin ver."
+				"description": "Builder'nun korumalı dosyaları (.builderignore ve .builder/ yapılandırma dosyaları gibi) onay gerektirmeden oluşturmasına ve düzenlemesine izin ver."
 			}
 		},
 		"browser": {
@@ -744,8 +744,8 @@
 			"description": "Mevcut çalışma dizini ayrıntılarına dahil edilecek maksimum dosya sayısı. Daha yüksek değerler daha fazla bağlam sağlar ancak token kullanımını artırır."
 		},
 		"rooignore": {
-			"label": "Listelerde ve aramalarda .kilocodeignore dosyalarını göster",
-			"description": "Etkinleştirildiğinde, .kilocodeignore'daki desenlerle eşleşen dosyalar kilit sembolü ile listelerde gösterilecektir. Devre dışı bırakıldığında, bu dosyalar dosya listelerinden ve aramalardan tamamen gizlenecektir."
+			"label": "Listelerde ve aramalarda .builderignore dosyalarını göster",
+			"description": "Etkinleştirildiğinde, .builderignore'daki desenlerle eşleşen dosyalar kilit sembolü ile listelerde gösterilecektir. Devre dışı bırakıldığında, bu dosyalar dosya listelerinden ve aramalardan tamamen gizlenecektir."
 		},
 		"maxReadFile": {
 			"label": "Dosya okuma otomatik kısaltma eşiği",
@@ -1000,9 +1000,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Özel araçları etkinleştir",
-			"description": "Etkinleştirildiğinde, Kilo projenizin .kilocode/tools dizininden veya global araçlar için ~/.kilocode/tools dizininden özel TypeScript/JavaScript araçlarını yükleyebilir ve kullanabilir. Not: bu araçlar otomatik olarak onaylanacaktır.",
+			"description": "Etkinleştirildiğinde, Kilo projenizin .builder/tools dizininden veya global araçlar için ~/.builder/tools dizininden özel TypeScript/JavaScript araçlarını yükleyebilir ve kullanabilir. Not: bu araçlar otomatik olarak onaylanacaktır.",
 			"toolsHeader": "Kullanılabilir Özel Araçlar",
-			"noTools": "Özel araç yüklenmedi. Projenizin .kilocode/tools dizinine veya global araçlar için ~/.kilocode/tools dizinine .ts veya .js dosyaları ekleyin.",
+			"noTools": "Özel araç yüklenmedi. Projenizin .builder/tools dizinine veya global araçlar için ~/.builder/tools dizinine .ts veya .js dosyaları ekleyin.",
 			"refreshButton": "Yenile",
 			"refreshing": "Yenileniyor...",
 			"refreshSuccess": "Araçlar başarıyla yenilendi",

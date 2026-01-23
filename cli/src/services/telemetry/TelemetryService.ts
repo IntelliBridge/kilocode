@@ -75,10 +75,10 @@ export class TelemetryService {
 			const identityManager = getIdentityManager()
 			const identity = await identityManager.initialize()
 
-			// Update Kilocode user ID if token is available
+			// Update Builder user ID if token is available
 			const provider = config.providers.find((p) => p.id === config.provider)
-			if (provider && provider.kilocodeToken && typeof provider.kilocodeToken === "string") {
-				await identityManager.updateKilocodeUserId(provider.kilocodeToken)
+			if (provider && provider.builderToken && typeof provider.builderToken === "string") {
+				await identityManager.updateBuilderUserId(provider.builderToken)
 			}
 
 			// Create telemetry client
@@ -143,20 +143,20 @@ export class TelemetryService {
 	}
 
 	/**
-	 * Update Kilocode user ID
+	 * Update Builder user ID
 	 */
-	public async updateKilocodeUserId(kilocodeToken: string): Promise<void> {
+	public async updateBuilderUserId(builderToken: string): Promise<void> {
 		if (this.client) {
-			await this.client.updateKilocodeUserId(kilocodeToken)
+			await this.client.updateBuilderUserId(builderToken)
 		}
 	}
 
 	/**
-	 * Clear Kilocode user ID
+	 * Clear Builder user ID
 	 */
-	public clearKilocodeUserId(): void {
+	public clearBuilderUserId(): void {
 		if (this.client) {
-			this.client.clearKilocodeUserId()
+			this.client.clearBuilderUserId()
 		}
 	}
 

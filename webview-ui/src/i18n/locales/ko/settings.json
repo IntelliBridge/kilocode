@@ -203,7 +203,7 @@
 			},
 			"protected": {
 				"label": "보호된 파일 포함",
-				"description": "Builder가 보호된 파일(.kilocodeignore 및 .kilocode/ 구성 파일 등)을 승인 없이 생성하고 편집할 수 있도록 허용합니다."
+				"description": "Builder가 보호된 파일(.builderignore 및 .builder/ 구성 파일 등)을 승인 없이 생성하고 편집할 수 있도록 허용합니다."
 			}
 		},
 		"browser": {
@@ -743,8 +743,8 @@
 			"description": "현재 작업 디렉토리 세부 정보에 포함할 파일의 최대 수. 높은 값은 더 많은 컨텍스트를 제공하지만 token 사용량이 증가합니다."
 		},
 		"rooignore": {
-			"label": "목록 및 검색에서 .kilocodeignore 파일 표시",
-			"description": "활성화되면 .kilocodeignore의 패턴과 일치하는 파일이 잠금 기호와 함께 목록에 표시됩니다. 비활성화되면 이러한 파일은 파일 목록 및 검색에서 완전히 숨겨집니다."
+			"label": "목록 및 검색에서 .builderignore 파일 표시",
+			"description": "활성화되면 .builderignore의 패턴과 일치하는 파일이 잠금 기호와 함께 목록에 표시됩니다. 비활성화되면 이러한 파일은 파일 목록 및 검색에서 완전히 숨겨집니다."
 		},
 		"maxReadFile": {
 			"label": "파일 읽기 자동 축소 임계값",
@@ -999,9 +999,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "사용자 정의 도구 활성화",
-			"description": "활성화하면 Kilo가 프로젝트의 .kilocode/tools 디렉터리 또는 전역 도구를 위한 ~/.kilocode/tools에서 사용자 정의 TypeScript/JavaScript 도구를 로드하고 사용할 수 있습니다. 참고: 이러한 도구는 자동으로 자동 승인됩니다.",
+			"description": "활성화하면 Kilo가 프로젝트의 .builder/tools 디렉터리 또는 전역 도구를 위한 ~/.builder/tools에서 사용자 정의 TypeScript/JavaScript 도구를 로드하고 사용할 수 있습니다. 참고: 이러한 도구는 자동으로 자동 승인됩니다.",
 			"toolsHeader": "사용 가능한 사용자 정의 도구",
-			"noTools": "로드된 사용자 정의 도구가 없습니다. 프로젝트의 .kilocode/tools 디렉터리 또는 전역 도구를 위한 ~/.kilocode/tools에 .ts 또는 .js 파일을 추가하세요.",
+			"noTools": "로드된 사용자 정의 도구가 없습니다. 프로젝트의 .builder/tools 디렉터리 또는 전역 도구를 위한 ~/.builder/tools에 .ts 또는 .js 파일을 추가하세요.",
 			"refreshButton": "새로고침",
 			"refreshing": "새로고침 중...",
 			"refreshSuccess": "도구가 성공적으로 새로고침되었습니다",

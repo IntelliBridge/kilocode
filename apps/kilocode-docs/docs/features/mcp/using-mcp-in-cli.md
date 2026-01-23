@@ -9,16 +9,16 @@ The Kilo Code CLI supports MCP servers, but uses a **different configuration pat
 
 ## Configuration Location
 
-| Environment | MCP Settings Path                                   |
-| ----------- | --------------------------------------------------- |
-| **CLI**     | `~/.kilocode/cli/global/settings/mcp_settings.json` |
-| **VS Code** | VS Code's global storage directory                  |
+| Environment | MCP Settings Path                                  |
+| ----------- | -------------------------------------------------- |
+| **CLI**     | `~/.builder/cli/global/settings/mcp_settings.json` |
+| **VS Code** | VS Code's global storage directory                 |
 
 MCP servers configured in VS Code are **not** automatically available in the CLI. You must configure them separately.
 
 ## Configuration Format
 
-Edit `~/.kilocode/cli/global/settings/mcp_settings.json`:
+Edit `~/.builder/cli/global/settings/mcp_settings.json`:
 
 ```json
 {
@@ -70,7 +70,7 @@ Edit `~/.kilocode/cli/global/settings/mcp_settings.json`:
 
 ## Project-Level Configuration
 
-You can define MCP servers per-project by creating `.kilocode/mcp.json` in your project root. Project-level servers take precedence over global settings.
+You can define MCP servers per-project by creating `.builder/mcp.json` in your project root. Project-level servers take precedence over global settings.
 
 ## Configuration Options
 

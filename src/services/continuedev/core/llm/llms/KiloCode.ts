@@ -32,7 +32,7 @@ class KiloCode extends OpenRouter {
 
 	constructor(options: LLMOptions) {
 		// Extract KiloCode-specific config from env
-		const kilocodeToken = options.apiKey ?? ""
+		const builderToken = options.apiKey ?? ""
 
 		// Extract fimProvider before passing to parent
 		const { fimProvider, ...parentOptions } = options
@@ -40,7 +40,7 @@ class KiloCode extends OpenRouter {
 		// Transform apiBase to use KiloCode backend
 		const transformedOptions = {
 			...parentOptions,
-			apiBase: getKiloUrlFromToken("https://api.kilo.ai/api/openrouter/v1/", kilocodeToken),
+			apiBase: getKiloUrlFromToken("https://api.kilo.ai/api/openrouter/v1/", builderToken),
 		}
 
 		super(transformedOptions)

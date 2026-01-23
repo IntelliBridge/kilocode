@@ -81,7 +81,7 @@ describe("ChatRow - KiloCode auth error login button", () => {
 			type: "say",
 			say: "error",
 			ts: Date.now(),
-			text: "Cannot complete request, make sure you are connected and logged in with the selected provider.\n\nKiloCode token + baseUrl is required to fetch models",
+			text: "Cannot complete request, make sure you are connected and logged in with the selected provider.\n\nBuilder token + baseUrl is required to fetch models",
 		}
 
 		renderChatRow(message, { apiProvider: "kilocode" })
@@ -94,7 +94,7 @@ describe("ChatRow - KiloCode auth error login button", () => {
 			type: "say",
 			say: "error",
 			ts: Date.now(),
-			text: "Cannot complete request, make sure you are connected and logged in with the selected provider.\n\nKiloCode token + baseUrl is required to fetch models",
+			text: "Cannot complete request, make sure you are connected and logged in with the selected provider.\n\nBuilder token + baseUrl is required to fetch models",
 		}
 
 		renderChatRow(message, { apiProvider: "openai" })
@@ -120,7 +120,7 @@ describe("ChatRow - KiloCode auth error login button", () => {
 			type: "say",
 			say: "error",
 			ts: Date.now(),
-			text: "Cannot complete request, make sure you are connected and logged in with the selected provider.\n\nKiloCode token + baseUrl is required to fetch models",
+			text: "Cannot complete request, make sure you are connected and logged in with the selected provider.\n\nBuilder token + baseUrl is required to fetch models",
 		}
 
 		renderChatRow(message, { apiProvider: "kilocode" })

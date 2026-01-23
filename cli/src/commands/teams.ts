@@ -36,7 +36,7 @@ async function listTeams(context: CommandContext): Promise<void> {
 		return
 	}
 
-	if (!currentProvider.kilocodeToken) {
+	if (!currentProvider.builderToken) {
 		addMessage({
 			id: Date.now().toString(),
 			type: "error",
@@ -58,7 +58,7 @@ async function listTeams(context: CommandContext): Promise<void> {
 	}
 
 	const organizations = profileData?.organizations || []
-	const currentOrgId = currentProvider.kilocodeOrganizationId
+	const currentOrgId = currentProvider.builderOrganizationId
 
 	if (organizations.length < 1) {
 		addMessage({
@@ -111,7 +111,7 @@ async function selectTeam(context: CommandContext, teamId: string): Promise<void
 		return
 	}
 
-	if (!currentProvider.kilocodeToken) {
+	if (!currentProvider.builderToken) {
 		addMessage({
 			id: Date.now().toString(),
 			type: "error",
@@ -126,7 +126,7 @@ async function selectTeam(context: CommandContext, teamId: string): Promise<void
 		if (teamId.toLowerCase() === "personal") {
 			// Update provider configuration to remove organization ID
 			await updateProvider(currentProvider.id, {
-				kilocodeOrganizationId: undefined,
+				builderOrganizationId: undefined,
 			})
 			await refreshRouterModels()
 
@@ -165,7 +165,7 @@ async function selectTeam(context: CommandContext, teamId: string): Promise<void
 
 			// Update provider configuration with new organization ID
 			await updateProvider(currentProvider.id, {
-				kilocodeOrganizationId: targetOrg.id,
+				builderOrganizationId: targetOrg.id,
 			})
 
 			await refreshRouterModels()
@@ -210,7 +210,7 @@ async function teamAutocompleteProvider(context: ArgumentProviderContext): Promi
 		return []
 	}
 
-	if (!currentProvider.kilocodeToken) {
+	if (!currentProvider.builderToken) {
 		return []
 	}
 

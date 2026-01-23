@@ -39,8 +39,8 @@ services:
 
             # Provider configuration (Kilocode)
             KILO_PROVIDER_TYPE: kilocode
-            KILOCODE_TOKEN: ${KILOCODE_TOKEN}
-            KILOCODE_MODEL: x-ai/grok-code-fast-1
+            BUILDER_TOKEN: ${BUILDER_TOKEN}
+            BUILDER_MODEL: x-ai/grok-code-fast-1
 
             # Auto-approval settings for CI/CD
             KILO_AUTO_APPROVAL_ENABLED: "true"
@@ -62,8 +62,8 @@ services:
 ```bash
 docker run -it \
   -e KILO_PROVIDER_TYPE=kilocode \
-  -e KILOCODE_TOKEN=your-api-token \
-  -e KILOCODE_MODEL=your-model-name \
+  -e BUILDER_TOKEN=your-api-token \
+  -e BUILDER_MODEL=your-model-name \
   -e KILO_MODE=code \
   -e KILO_TELEMETRY=false \
   -v $(pwd):/workspace \
@@ -74,7 +74,7 @@ docker run -it \
 
 ```bash
 # Set your token in .env file
-echo "KILOCODE_TOKEN=your-api-token" > .env
+echo "BUILDER_TOKEN=your-api-token" > .env
 
 # Start the container
 docker-compose up -d
@@ -95,7 +95,7 @@ data:
     KILO_TELEMETRY: "false"
     KILO_THEME: "dark"
     KILO_PROVIDER_TYPE: "kilocode"
-    KILOCODE_MODEL: "x-ai/grok-code-fast-1"
+    BUILDER_MODEL: "x-ai/grok-code-fast-1"
     KILO_AUTO_APPROVAL_ENABLED: "true"
     KILO_AUTO_APPROVAL_READ_ENABLED: "true"
     KILO_AUTO_APPROVAL_WRITE_ENABLED: "true"
@@ -107,7 +107,7 @@ metadata:
     name: kilocode-secrets
 type: Opaque
 stringData:
-    KILOCODE_TOKEN: your-api-token-here
+    BUILDER_TOKEN: your-api-token-here
 ---
 apiVersion: v1
 kind: Pod
@@ -156,8 +156,8 @@ jobs:
             - name: Run Kilo Code
               env:
                   KILO_PROVIDER_TYPE: kilocode
-                  KILOCODE_TOKEN: ${{ secrets.KILOCODE_TOKEN }}
-                  KILOCODE_MODEL: x-ai/grok-code-fast-1
+                  BUILDER_TOKEN: ${{ secrets.BUILDER_TOKEN }}
+                  BUILDER_MODEL: x-ai/grok-code-fast-1
                   KILO_MODE: code
                   KILO_TELEMETRY: false
                   KILO_AUTO_APPROVAL_ENABLED: true
@@ -178,7 +178,7 @@ kilocode-review:
         - kilocode --auto "Review the code changes"
     variables:
         KILO_PROVIDER_TYPE: "kilocode"
-        KILOCODE_TOKEN: $KILOCODE_TOKEN
+        BUILDER_TOKEN: $BUILDER_TOKEN
         KILO_MODE: "code"
         KILO_TELEMETRY: "false"
         KILO_AUTO_APPROVAL_ENABLED: "true"
@@ -198,8 +198,8 @@ pipeline {
 
     environment {
         KILO_PROVIDER_TYPE = 'kilocode'
-        KILOCODE_TOKEN = credentials('kilocode-token')
-        KILOCODE_MODEL = 'x-ai/grok-code-fast-1'
+        BUILDER_TOKEN = credentials('kilocode-token')
+        BUILDER_MODEL = 'x-ai/grok-code-fast-1'
         KILO_MODE = 'code'
         KILO_TELEMETRY = 'false'
         KILO_AUTO_APPROVAL_ENABLED = 'true'
@@ -229,19 +229,19 @@ To test that the CLI works without config.json:
 
 ```bash
 # 1. Remove any existing config
-rm -rf ~/.kilocode/cli/config.json
+rm -rf ~/.builder/cli/config.json
 
 # 2. Set environment variables
 export KILO_PROVIDER_TYPE=kilocode
-export KILOCODE_TOKEN=your-token-here
-export KILOCODE_MODEL=your-model-name
+export BUILDER_TOKEN=your-token-here
+export BUILDER_MODEL=your-model-name
 export KILO_MODE=code
 
 # 3. Run the CLI
 kilocode --help
 
 # 4. Verify it works without creating config.json
-ls ~/.kilocode/cli/config.json  # Should not exist in ephemeral mode
+ls ~/.builder/cli/config.json  # Should not exist in ephemeral mode
 ```
 
 ## Security Best Practices
@@ -302,8 +302,8 @@ docker build -t kilocode-ephemeral .
 # Run with environment variables only
 docker run -it --rm \
   -e KILO_PROVIDER_TYPE=kilocode \
-  -e KILOCODE_TOKEN=${KILOCODE_TOKEN} \
-  -e KILOCODE_MODEL=your-model-name \
+  -e BUILDER_TOKEN=${BUILDER_TOKEN} \
+  -e BUILDER_MODEL=your-model-name \
   -e KILO_MODE=code \
   -e KILO_TELEMETRY=false \
   -e KILO_THEME=dark \

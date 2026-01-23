@@ -762,9 +762,9 @@ export class ExtensionHost extends EventEmitter {
 			version: "1.0.0",
 			apiConfiguration: {
 				apiProvider: "kilocode",
-				kilocodeToken: "",
-				kilocodeModel: "",
-				kilocodeOrganizationId: "",
+				builderToken: "",
+				builderModel: "",
+				builderOrganizationId: "",
 			},
 			chatMessages: [],
 			mode: "code",

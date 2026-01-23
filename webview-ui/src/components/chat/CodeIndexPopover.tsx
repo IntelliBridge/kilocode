@@ -706,7 +706,7 @@ export const CodeIndexPopover: React.FC<CodeIndexPopoverProps> = ({
 		// kilocode_change start
 		apiConfiguration?.apiProvider === "openrouter" ? apiConfiguration?.openRouterBaseUrl : undefined,
 		apiConfiguration?.apiKey,
-		apiConfiguration?.kilocodeOrganizationId ?? "personal",
+		apiConfiguration?.builderOrganizationId ?? "personal",
 		// kilocode_change end
 		{
 			enabled:

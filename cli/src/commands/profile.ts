@@ -22,7 +22,7 @@ async function showProfile(context: CommandContext): Promise<void> {
 		return
 	}
 
-	if (!currentProvider.kilocodeToken) {
+	if (!currentProvider.builderToken) {
 		addMessage({
 			id: Date.now().toString(),
 			type: "error",
@@ -82,7 +82,7 @@ async function showProfile(context: CommandContext): Promise<void> {
 	}
 
 	// Show current organization if set
-	const currentOrgId = currentProvider.kilocodeOrganizationId
+	const currentOrgId = currentProvider.builderOrganizationId
 	if (currentOrgId && profileData?.organizations) {
 		const currentOrg = profileData.organizations.find((org: UserOrganization) => org.id === currentOrgId)
 		if (currentOrg) {

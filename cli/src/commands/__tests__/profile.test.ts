@@ -20,7 +20,7 @@ describe("/profile command", () => {
 			currentProvider: {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			},
 			kilocodeDefaultModel: "test-model",
 		})
@@ -91,7 +91,7 @@ describe("/profile command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileLoading = true
 
@@ -109,7 +109,7 @@ describe("/profile command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = {
 				user: {
@@ -143,7 +143,7 @@ describe("/profile command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = {
 				user: {
@@ -175,8 +175,8 @@ describe("/profile command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
-				kilocodeOrganizationId: "org-123",
+				builderToken: "test-token",
+				builderOrganizationId: "org-123",
 			}
 			mockContext.profileData = {
 				user: {
@@ -216,7 +216,7 @@ describe("/profile command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = {
 				organizations: [],

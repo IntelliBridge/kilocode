@@ -36,9 +36,9 @@ export const ENV_VARS = {
 } as const
 
 /**
- * Environment variable prefix for Kilocode provider
+ * Environment variable prefix for Builder provider
  */
-export const KILOCODE_PREFIX = "KILOCODE_"
+export const BUILDER_PREFIX = "BUILDER_"
 
 /**
  * Environment variable prefix for other providers

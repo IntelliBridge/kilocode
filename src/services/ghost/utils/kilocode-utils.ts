@@ -4,21 +4,21 @@ export { AUTOCOMPLETE_PROVIDER_MODELS }
 export type { AutocompleteProviderKey }
 
 /**
- * Check if the Kilocode account has a positive balance
- * @param kilocodeToken - The Kilocode JWT token
- * @param kilocodeOrganizationId - Optional organization ID to include in headers
+ * Check if the Builder account has a positive balance
+ * @param builderToken - The Builder JWT token
+ * @param builderOrganizationId - Optional organization ID to include in headers
  * @returns Promise<boolean> - True if balance > 0, false otherwise
  */
-export async function checkKilocodeBalance(kilocodeToken: string, kilocodeOrganizationId?: string): Promise<boolean> {
+export async function checkKilocodeBalance(builderToken: string, builderOrganizationId?: string): Promise<boolean> {
 	try {
-		const baseUrl = getKiloBaseUriFromToken(kilocodeToken)
+		const baseUrl = getKiloBaseUriFromToken(builderToken)
 
 		const headers: Record<string, string> = {
-			Authorization: `Bearer ${kilocodeToken}`,
+			Authorization: `Bearer ${builderToken}`,
 		}
 
-		if (kilocodeOrganizationId) {
-			headers["X-KiloCode-OrganizationId"] = kilocodeOrganizationId
+		if (builderOrganizationId) {
+			headers["X-KiloCode-OrganizationId"] = builderOrganizationId
 		}
 
 		const response = await fetch(`${baseUrl}/api/profile/balance`, {

@@ -80,8 +80,8 @@ describe("models-api command", () => {
 			{
 				id: "kilocode-1",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
-				kilocodeModel: "claude-sonnet-4",
+				builderToken: "test-token",
+				builderModel: "claude-sonnet-4",
 			},
 			{
 				id: "anthropic-1",

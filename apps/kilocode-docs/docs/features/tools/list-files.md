@@ -27,7 +27,7 @@ This tool lists all files and directories in a specified location, providing a c
 - Offers both recursive and non-recursive listing modes
 - Intelligently ignores common large directories like `node_modules` and `.git` in recursive mode
 - Respects `.gitignore` rules when in recursive mode
-- Marks files ignored by `.kilocodeignore` with a lock symbol (🔒) when `showKiloCodeIgnoredFiles` is enabled
+- Marks files ignored by `.builderignore` with a lock symbol (🔒) when `showKiloCodeIgnoredFiles` is enabled
 - Optimizes performance with level-by-level directory traversal
 - Sorts results to show directories before their contents, maintaining a logical hierarchy
 - Presents results in a clean, organized format
@@ -56,7 +56,7 @@ When the `list_files` tool is invoked, it follows this process:
 5. **Result Filtering**:
     - In recursive mode, skips common large directories like `node_modules`, `.git`, etc.
     - Respects `.gitignore` rules when in recursive mode
-    - Handles `.kilocodeignore` patterns, either hiding files or marking them with a lock symbol
+    - Handles `.builderignore` patterns, either hiding files or marking them with a lock symbol
 6. **Formatting**:
     - Marks directories with a trailing slash (`/`)
     - Sorts results to show directories before their contents for logical hierarchy
@@ -70,7 +70,7 @@ The file listing results include:
 
 - Each file path is displayed on its own line
 - Directories are marked with a trailing slash (`/`)
-- Files ignored by `.kilocodeignore` are marked with a lock symbol (🔒) when `showKiloCodeIgnored` is enabled
+- Files ignored by `.builderignore` are marked with a lock symbol (🔒) when `showKiloCodeIgnored` is enabled
 - Results are sorted logically with directories appearing before their contents
 - When the file limit is reached, a message appears suggesting to use `list_files` on specific subdirectories
 
@@ -88,7 +88,7 @@ src/index.ts
 File listing truncated (showing 200 of 543 files). Use list_files on specific subdirectories for more details.
 ```
 
-When `.kilocodeignore` files are used and `showKiloCodeIgnored` is enabled:
+When `.builderignore` files are used and `showKiloCodeIgnored` is enabled:
 
 ```
 src/

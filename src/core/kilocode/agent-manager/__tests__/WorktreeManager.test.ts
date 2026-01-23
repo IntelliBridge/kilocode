@@ -99,7 +99,7 @@ describe("WorktreeManager", () => {
 			const result = await manager.createWorktree({ prompt: "Add authentication" })
 
 			expect(result.branch).toMatch(/^add-authentication-\d+$/)
-			expect(containsPathSegments(result.path, ".kilocode", "worktrees")).toBe(true)
+			expect(containsPathSegments(result.path, ".builder", "worktrees")).toBe(true)
 			expect(result.parentBranch).toBe("main")
 		})
 
@@ -149,12 +149,12 @@ describe("WorktreeManager", () => {
 			vi.mocked(fs.existsSync).mockImplementation((p) => {
 				const normalized = String(p).replace(/\\/g, "/")
 				// .git exists, worktree path exists
-				return normalized.endsWith(".git") || normalized.includes(".kilocode/worktrees")
+				return normalized.endsWith(".git") || normalized.includes(".builder/worktrees")
 			})
 			vi.mocked(fs.promises.stat).mockResolvedValue({ isDirectory: () => true, isFile: () => false } as any)
 			vi.mocked(fs.promises.mkdir).mockResolvedValue(undefined)
 			vi.mocked(fs.promises.rm).mockResolvedValue(undefined)
-			vi.mocked(fs.promises.readFile).mockResolvedValue(".kilocode/worktrees/")
+			vi.mocked(fs.promises.readFile).mockResolvedValue(".builder/worktrees/")
 			vi.mocked(fs.promises.appendFile).mockResolvedValue(undefined)
 
 			await manager.createWorktree({ prompt: "test" })
@@ -166,7 +166,7 @@ describe("WorktreeManager", () => {
 			)
 			// Verify the path contains the expected segments
 			const rmCall = vi.mocked(fs.promises.rm).mock.calls[0]
-			expect(containsPathSegments(String(rmCall[0]), ".kilocode", "worktrees")).toBe(true)
+			expect(containsPathSegments(String(rmCall[0]), ".builder", "worktrees")).toBe(true)
 		})
 	})
 
@@ -297,14 +297,14 @@ describe("WorktreeManager", () => {
 
 			expect(fs.promises.appendFile).toHaveBeenCalledWith(
 				path.join(projectRoot, ".git", "info", "exclude"),
-				expect.stringContaining(".kilocode/worktrees/"),
+				expect.stringContaining(".builder/worktrees/"),
 			)
 		})
 
 		it("skips adding entry when already present", async () => {
 			vi.mocked(fs.existsSync).mockReturnValue(true)
 			vi.mocked(fs.promises.stat).mockResolvedValue({ isDirectory: () => true, isFile: () => false } as any)
-			vi.mocked(fs.promises.readFile).mockResolvedValue(".kilocode/worktrees/\n")
+			vi.mocked(fs.promises.readFile).mockResolvedValue(".builder/worktrees/\n")
 			vi.mocked(fs.promises.appendFile).mockResolvedValue(undefined)
 
 			await manager.ensureGitExclude()
@@ -349,7 +349,7 @@ describe("WorktreeManager", () => {
 			// Should write to main repo's .git/info/exclude, not the worktree's
 			expect(fs.promises.appendFile).toHaveBeenCalledWith(
 				expect.stringContaining(path.join(mainRepoGitDir, "info", "exclude")),
-				expect.stringContaining(".kilocode/worktrees/"),
+				expect.stringContaining(".builder/worktrees/"),
 			)
 		})
 	})

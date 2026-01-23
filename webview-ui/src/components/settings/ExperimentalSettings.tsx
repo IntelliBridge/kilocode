@@ -30,7 +30,7 @@ type ExperimentalSettingsProps = HTMLAttributes<HTMLDivElement> & {
 	setCachedStateField: SetCachedStateField<"morphApiKey" | "fastApplyModel" | "fastApplyApiProvider">
 	kiloCodeImageApiKey?: string
 	setKiloCodeImageApiKey?: (apiKey: string) => void
-	currentProfileKilocodeToken?: string
+	currentProfileBuilderToken?: string
 	// kilocode_change end
 	apiConfiguration?: any
 	setApiConfigurationField?: any
@@ -61,7 +61,7 @@ export const ExperimentalSettings = ({
 	setCachedStateField,
 	setKiloCodeImageApiKey,
 	kiloCodeImageApiKey,
-	currentProfileKilocodeToken,
+	currentProfileBuilderToken,
 	// kilocode_change end
 	...props
 }: ExperimentalSettingsProps) => {
@@ -162,7 +162,7 @@ export const ExperimentalSettings = ({
 									setOpenRouterImageApiKey={setOpenRouterImageApiKey}
 									setKiloCodeImageApiKey={setKiloCodeImageApiKey}
 									setImageGenerationSelectedModel={setImageGenerationSelectedModel}
-									currentProfileKilocodeToken={currentProfileKilocodeToken}
+									currentProfileBuilderToken={currentProfileBuilderToken}
 								/>
 							)
 						}

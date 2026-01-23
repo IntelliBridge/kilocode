@@ -57,9 +57,9 @@ describe("modelValidation atom", () => {
 			{
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeModel: model,
-				kilocodeToken: token,
-				kilocodeOrganizationId: orgId,
+				builderModel: model,
+				builderToken: token,
+				builderOrganizationId: orgId,
 			},
 		],
 	})
@@ -102,7 +102,7 @@ describe("modelValidation atom", () => {
 
 			// Model should remain unchanged
 			const updatedConfig = store.get(configAtom)
-			expect(updatedConfig.providers[0].kilocodeModel).toBe("claude-sonnet-4")
+			expect(updatedConfig.providers[0].builderModel).toBe("claude-sonnet-4")
 		})
 	})
 
@@ -120,7 +120,7 @@ describe("modelValidation atom", () => {
 
 			// Model should be updated to extension state default
 			const updatedConfig = store.get(configAtom)
-			expect(updatedConfig.providers[0].kilocodeModel).toBe("claude-haiku")
+			expect(updatedConfig.providers[0].builderModel).toBe("claude-haiku")
 		})
 
 		it("should fall back to first available model when extension state default is not set", async () => {
@@ -136,7 +136,7 @@ describe("modelValidation atom", () => {
 
 			// Model should fall back to first available
 			const updatedConfig = store.get(configAtom)
-			expect(updatedConfig.providers[0].kilocodeModel).toBe("claude-sonnet-4")
+			expect(updatedConfig.providers[0].builderModel).toBe("claude-sonnet-4")
 		})
 
 		it("should use extension state default model even if not in router models", async () => {
@@ -153,7 +153,7 @@ describe("modelValidation atom", () => {
 			// Model uses extension state default even if not in router models
 			// Note: This may be a bug - the model should be validated against available models
 			const updatedConfig = store.get(configAtom)
-			expect(updatedConfig.providers[0].kilocodeModel).toBe("gpt-4-turbo")
+			expect(updatedConfig.providers[0].builderModel).toBe("gpt-4-turbo")
 		})
 	})
 
@@ -193,7 +193,7 @@ describe("modelValidation atom", () => {
 
 			// Config should remain unchanged without router models
 			const updatedConfig = store.get(configAtom)
-			expect(updatedConfig.providers[0].kilocodeModel).toBe("claude-sonnet-4")
+			expect(updatedConfig.providers[0].builderModel).toBe("claude-sonnet-4")
 		})
 
 		it("should skip validation when no current model set", async () => {
@@ -206,7 +206,7 @@ describe("modelValidation atom", () => {
 					{
 						id: "test-provider",
 						provider: "kilocode",
-						kilocodeToken: "test-token",
+						builderToken: "test-token",
 					},
 				],
 			}
@@ -218,7 +218,7 @@ describe("modelValidation atom", () => {
 
 			// Config should remain unchanged without current model
 			const updatedConfig = store.get(configAtom)
-			expect(updatedConfig.providers[0].kilocodeModel).toBeUndefined()
+			expect(updatedConfig.providers[0].builderModel).toBeUndefined()
 		})
 	})
 })

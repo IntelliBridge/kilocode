@@ -178,7 +178,7 @@ Error: File not found at path 'non_existent_file.txt'.
 
 ### 尝试读取被阻止的文件
 
-如果文件被`.kilocodeignore`规则排除：
+如果文件被`.builderignore`规则排除：
 
 **输入：**
 
@@ -191,5 +191,5 @@ Error: File not found at path 'non_existent_file.txt'.
 **模拟输出（错误）：**
 
 ```
-Error: Access denied to file '.env' due to .kilocodeignore rules.
+Error: Access denied to file '.env' due to .builderignore rules.
 ```

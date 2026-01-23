@@ -17,7 +17,7 @@ export async function authenticateWithToken(): Promise<AuthResult> {
 	console.log("\n🔑 Manual Token Authentication\n")
 	console.log("Please navigate to https://app.kilo.ai and copy your API key from the bottom of the page!\n")
 
-	let kilocodeToken: string = ""
+	let builderToken: string = ""
 	let profileData
 	let isValidToken = false
 
@@ -36,11 +36,11 @@ export async function authenticateWithToken(): Promise<AuthResult> {
 			]),
 		)
 
-		kilocodeToken = token
+		builderToken = token
 
 		try {
 			// Validate token by fetching profile
-			profileData = await getKilocodeProfile(kilocodeToken)
+			profileData = await getKilocodeProfile(builderToken)
 			isValidToken = true
 		} catch (error) {
 			if (error instanceof Error && error.message === INVALID_TOKEN_ERROR) {
@@ -55,22 +55,22 @@ export async function authenticateWithToken(): Promise<AuthResult> {
 	}
 
 	// Token is valid, now handle organization selection
-	let kilocodeOrganizationId: string | undefined
+	let builderOrganizationId: string | undefined
 	if (profileData?.organizations && profileData.organizations.length > 0) {
-		kilocodeOrganizationId = await promptOrganizationSelection(profileData.organizations)
+		builderOrganizationId = await promptOrganizationSelection(profileData.organizations)
 	}
 
 	// Fetch the default model from Kilocode API with organization context
-	const kilocodeModel = await getKilocodeDefaultModel(kilocodeToken, kilocodeOrganizationId)
+	const builderModel = await getKilocodeDefaultModel(builderToken, builderOrganizationId)
 
 	// Return provider config
 	return {
 		providerConfig: {
 			id: "default",
 			provider: "kilocode",
-			kilocodeToken,
-			kilocodeModel,
-			...(kilocodeOrganizationId && { kilocodeOrganizationId }),
+			builderToken,
+			builderModel,
+			...(builderOrganizationId && { builderOrganizationId }),
 		},
 	}
 }

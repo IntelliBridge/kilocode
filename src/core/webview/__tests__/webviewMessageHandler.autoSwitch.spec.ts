@@ -98,8 +98,8 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 		mockProvider = {
 			getState: vi.fn().mockResolvedValue({
 				apiConfiguration: {
-					kilocodeToken: "test-token",
-					kilocodeOrganizationId: undefined,
+					builderToken: "test-token",
+					builderOrganizationId: undefined,
 				},
 				currentApiConfigName: "default",
 			}),
@@ -142,8 +142,8 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 			expect(mockUpsertProviderProfile).toHaveBeenCalledWith(
 				"default",
 				{
-					kilocodeToken: "test-token",
-					kilocodeOrganizationId: "org-1",
+					builderToken: "test-token",
+					builderOrganizationId: "org-1",
 				},
 				false,
 			)
@@ -158,15 +158,15 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 			expect(flushModels).toHaveBeenCalledWith(
 				{
 					provider: "kilocode",
-					kilocodeOrganizationId: "org-1",
-					kilocodeToken: "test-token",
+					builderOrganizationId: "org-1",
+					builderToken: "test-token",
 				},
 				true,
 			)
 			expect(getModels).toHaveBeenCalledWith({
 				provider: "kilocode",
-				kilocodeOrganizationId: "org-1",
-				kilocodeToken: "test-token",
+				builderOrganizationId: "org-1",
+				builderToken: "test-token",
 			})
 
 			// Verify webview state was updated (via upsertApiConfiguration handler)
@@ -212,7 +212,7 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 
 			// Verify it was called with an object containing the organization ID
 			const callArgs = (refreshOrganizationModes as Mock).mock.calls[0]
-			expect(callArgs[0].apiConfiguration.kilocodeOrganizationId).toBe("org-1")
+			expect(callArgs[0].apiConfiguration.builderOrganizationId).toBe("org-1")
 			expect(callArgs[1]).toBe(mockProvider)
 		})
 
@@ -233,8 +233,8 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 			expect(flushModels).toHaveBeenCalledWith(
 				{
 					provider: "kilocode",
-					kilocodeOrganizationId: "org-1",
-					kilocodeToken: "test-token",
+					builderOrganizationId: "org-1",
+					builderToken: "test-token",
 				},
 				true,
 			)
@@ -242,8 +242,8 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 			// Verify getModels was called with organization ID (via upsertApiConfiguration)
 			expect(getModels).toHaveBeenCalledWith({
 				provider: "kilocode",
-				kilocodeOrganizationId: "org-1",
-				kilocodeToken: "test-token",
+				builderOrganizationId: "org-1",
+				builderToken: "test-token",
 			})
 
 			// Verify models were sent to webview (via upsertApiConfiguration)
@@ -259,8 +259,8 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 			// User already has an organization
 			mockProvider.getState = vi.fn().mockResolvedValue({
 				apiConfiguration: {
-					kilocodeToken: "test-token",
-					kilocodeOrganizationId: "existing-org",
+					builderToken: "test-token",
+					builderOrganizationId: "existing-org",
 				},
 				currentApiConfigName: "default",
 			})
@@ -372,7 +372,7 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 				payload: {
 					success: true,
 					data: expect.objectContaining({
-						kilocodeToken: "test-token",
+						builderToken: "test-token",
 						organizations: mockProfileData.organizations,
 					}),
 				},
@@ -384,16 +384,16 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 		it("should reset flag on token change", async () => {
 			// Mock existing configuration with a different token
 			mockProviderSettingsManager.getProfile.mockResolvedValueOnce({
-				kilocodeToken: "old-token",
-				kilocodeOrganizationId: "org-1",
+				builderToken: "old-token",
+				builderOrganizationId: "org-1",
 			})
 
 			await webviewMessageHandler(mockProvider, {
 				type: "upsertApiConfiguration",
 				text: "default",
 				apiConfiguration: {
-					kilocodeToken: "new-token",
-					kilocodeOrganizationId: "org-1",
+					builderToken: "new-token",
+					builderOrganizationId: "org-1",
 				},
 			})
 
@@ -404,8 +404,8 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 			expect(mockUpsertProviderProfile).toHaveBeenCalledWith(
 				"default",
 				{
-					kilocodeToken: "new-token",
-					kilocodeOrganizationId: undefined,
+					builderToken: "new-token",
+					builderOrganizationId: undefined,
 				},
 				false,
 			)
@@ -414,16 +414,16 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 		it("should NOT reset flag if token stays the same", async () => {
 			// Mock existing configuration with the same token
 			mockProviderSettingsManager.getProfile.mockResolvedValueOnce({
-				kilocodeToken: "same-token",
-				kilocodeOrganizationId: "org-1",
+				builderToken: "same-token",
+				builderOrganizationId: "org-1",
 			})
 
 			await webviewMessageHandler(mockProvider, {
 				type: "upsertApiConfiguration",
 				text: "default",
 				apiConfiguration: {
-					kilocodeToken: "same-token",
-					kilocodeOrganizationId: "org-1",
+					builderToken: "same-token",
+					builderOrganizationId: "org-1",
 				},
 			})
 
@@ -434,14 +434,14 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 		it("should NOT reset flag if previous token was undefined", async () => {
 			// Mock existing configuration with no token
 			mockProviderSettingsManager.getProfile.mockResolvedValueOnce({
-				kilocodeToken: undefined,
+				builderToken: undefined,
 			})
 
 			await webviewMessageHandler(mockProvider, {
 				type: "upsertApiConfiguration",
 				text: "default",
 				apiConfiguration: {
-					kilocodeToken: "new-token",
+					builderToken: "new-token",
 				},
 			})
 
@@ -475,7 +475,7 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 				payload: {
 					success: true,
 					data: expect.objectContaining({
-						kilocodeToken: "test-token",
+						builderToken: "test-token",
 						organizations: mockProfileData.organizations,
 					}),
 				},
@@ -566,8 +566,8 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 			expect(mockUpsertProviderProfile).toHaveBeenCalledWith(
 				"default",
 				{
-					kilocodeToken: "test-token",
-					kilocodeOrganizationId: "org-1",
+					builderToken: "test-token",
+					builderOrganizationId: "org-1",
 				},
 				false,
 			)

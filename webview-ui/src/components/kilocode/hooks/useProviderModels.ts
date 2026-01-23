@@ -355,7 +355,7 @@ export const useProviderModels = (apiConfiguration?: ProviderSettings) => {
 	const routerModels = useRouterModels({
 		openRouterBaseUrl: apiConfiguration?.openRouterBaseUrl,
 		openRouterApiKey: apiConfiguration?.apiKey,
-		kilocodeOrganizationId: apiConfiguration?.kilocodeOrganizationId ?? "personal",
+		builderOrganizationId: apiConfiguration?.builderOrganizationId ?? "personal",
 		chutesApiKey: apiConfiguration?.chutesApiKey,
 		geminiApiKey: apiConfiguration?.geminiApiKey,
 		googleGeminiBaseUrl: apiConfiguration?.googleGeminiBaseUrl,

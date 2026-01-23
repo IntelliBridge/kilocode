@@ -231,7 +231,7 @@ describe("ContributionTrackingService", () => {
 				originalContent: "const x = 1",
 				newContent: "const x = 1\nconst y = 2",
 				status: "accepted",
-				kilocodeToken: "token",
+				builderToken: "token",
 				// organizationId is missing
 			}
 
@@ -268,7 +268,7 @@ describe("ContributionTrackingService", () => {
 				newContent: "const x = 1\nconst y = 2",
 				status: "accepted",
 				organizationId: "org-1",
-				kilocodeToken: "token",
+				builderToken: "token",
 			}
 
 			await service.trackContribution(params)
@@ -323,7 +323,7 @@ describe("ContributionTrackingService", () => {
 				status: "accepted",
 				taskId: "task-123",
 				organizationId: "org-1",
-				kilocodeToken: "main-token",
+				builderToken: "main-token",
 			}
 
 			await service.trackContribution(params)
@@ -376,7 +376,7 @@ describe("ContributionTrackingService", () => {
 				newContent: "const x = 1\nconst y = 2",
 				status: "accepted",
 				organizationId: "org-1",
-				kilocodeToken: "token",
+				builderToken: "token",
 			}
 
 			// Should not throw

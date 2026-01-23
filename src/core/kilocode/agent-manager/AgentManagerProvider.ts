@@ -1704,7 +1704,7 @@ export class AgentManagerProvider implements vscode.Disposable {
 
 	/**
 	 * Open a terminal and run the local CLI install command.
-	 * This installs the CLI to ~/.kilocode/cli/pkg for systems that don't support global installation (e.g., NixOS).
+	 * This installs the CLI to ~/.builder/cli/pkg for systems that don't support global installation (e.g., NixOS).
 	 * Also adds the local bin directory to the user's PATH in their shell configuration and sources it immediately.
 	 */
 	private runLocalInstallInTerminal(): void {
@@ -1714,7 +1714,7 @@ export class AgentManagerProvider implements vscode.Disposable {
 
 		const terminal = vscode.window.createTerminal({
 			name: "Install Kilocode CLI (Local)",
-			message: "Installing Kilocode CLI locally to ~/.kilocode/cli/pkg",
+			message: "Installing Kilocode CLI locally to ~/.builder/cli/pkg",
 			shellPath,
 			shellArgs,
 		})
@@ -1780,7 +1780,7 @@ export class AgentManagerProvider implements vscode.Disposable {
 
 	/**
 	 * Open a terminal and run the local CLI update command.
-	 * This updates the CLI in ~/.kilocode/cli/pkg for systems using local installation.
+	 * This updates the CLI in ~/.builder/cli/pkg for systems using local installation.
 	 */
 	private runLocalUpdateInTerminal(): void {
 		const shellPath = process.platform === "win32" ? undefined : process.env.SHELL
@@ -1789,7 +1789,7 @@ export class AgentManagerProvider implements vscode.Disposable {
 
 		const terminal = vscode.window.createTerminal({
 			name: "Update Kilocode CLI (Local)",
-			message: "Updating Kilocode CLI in ~/.kilocode/cli/pkg",
+			message: "Updating Kilocode CLI in ~/.builder/cli/pkg",
 			shellPath,
 			shellArgs,
 		})
@@ -1908,7 +1908,7 @@ export class AgentManagerProvider implements vscode.Disposable {
 				break
 			}
 			case "cli_configuration_error": {
-				// CLI is installed but misconfigured (e.g., missing kilocodeToken)
+				// CLI is installed but misconfigured (e.g., missing builderToken)
 				// Offer to configure via terminal
 				const configureLabel = t("kilocode:agentManager.actions.configureCli")
 				const authLabel = t("kilocode:agentManager.actions.loginCli")

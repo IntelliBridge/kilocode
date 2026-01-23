@@ -12,7 +12,7 @@ export const getModelIdKey = ({
 	| "requestyModelId"
 	| "openAiModelId"
 	| "litellmModelId"
-	| "kilocodeModel"
+	| "builderModel"
 	| "ollamaModelId"
 	| "lmStudioModelId"
 	| "vsCodeLmModelSelector"
@@ -49,7 +49,7 @@ export const getModelIdKey = ({
 			return "vsCodeLmModelSelector"
 		}
 		case "kilocode": {
-			return "kilocodeModel"
+			return "builderModel"
 		}
 		// kilocode_change start
 		case "ovhcloud": {

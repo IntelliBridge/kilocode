@@ -19,4 +19,4 @@ When translating, follow these key rules:
 4. **Placeholders**: Keep `{{variable}}` placeholders exactly as in the English source
 5. **Validation**: Run `node scripts/find-missing-translations.js` to validate changes
 
-For comprehensive translation guidelines including language-specific rules, see `.kilocode/skills/translation/SKILL.md`.
+For comprehensive translation guidelines including language-specific rules, see `.builder/skills/translation/SKILL.md`.

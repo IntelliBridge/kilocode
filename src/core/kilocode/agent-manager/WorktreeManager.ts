@@ -2,7 +2,7 @@
  * WorktreeManager - Manages git worktrees for agent sessions
  *
  * Handles creation, discovery, commit, and cleanup of worktrees
- * stored in {projectRoot}/.kilocode/worktrees/
+ * stored in {projectRoot}/.builder/worktrees/
  */
 
 import * as vscode from "vscode"
@@ -64,7 +64,7 @@ export class WorktreeManager {
 
 	constructor(projectRoot: string, outputChannel: vscode.OutputChannel) {
 		this.projectRoot = projectRoot
-		this.worktreesDir = path.join(projectRoot, ".kilocode", "worktrees")
+		this.worktreesDir = path.join(projectRoot, ".builder", "worktrees")
 		this.git = simpleGit(projectRoot)
 		this.outputChannel = outputChannel
 	}
@@ -220,7 +220,7 @@ export class WorktreeManager {
 	}
 
 	/**
-	 * Discover existing worktrees in .kilocode/worktrees/
+	 * Discover existing worktrees in .builder/worktrees/
 	 */
 	async discoverWorktrees(): Promise<WorktreeInfo[]> {
 		if (!fs.existsSync(this.worktreesDir)) {
@@ -276,7 +276,7 @@ export class WorktreeManager {
 	}
 
 	/**
-	 * Ensure .kilocode/worktrees/ directory exists
+	 * Ensure .builder/worktrees/ directory exists
 	 */
 	private async ensureWorktreesDir(): Promise<void> {
 		if (!fs.existsSync(this.worktreesDir)) {
@@ -286,11 +286,11 @@ export class WorktreeManager {
 	}
 
 	/**
-	 * Ensure .kilocode/worktrees/ is excluded from git using .git/info/exclude.
+	 * Ensure .builder/worktrees/ is excluded from git using .git/info/exclude.
 	 * This avoids modifying the user's .gitignore file which would require a commit.
 	 */
 	async ensureGitExclude(): Promise<void> {
-		const entry = ".kilocode/worktrees/"
+		const entry = ".builder/worktrees/"
 
 		const gitDir = await this.resolveGitDir()
 		const excludePath = path.join(gitDir, "info", "exclude")
@@ -311,7 +311,7 @@ export class WorktreeManager {
 		const excludeEntry = `${addition}\n# Builder agent worktrees\n${entry}\n`
 
 		await fs.promises.appendFile(excludePath, excludeEntry)
-		this.log("Added .kilocode/worktrees/ to .git/info/exclude")
+		this.log("Added .builder/worktrees/ to .git/info/exclude")
 	}
 
 	/**

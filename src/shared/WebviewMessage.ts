@@ -431,7 +431,7 @@ export type UserOrganizationWithApiKey = {
 }
 
 export type ProfileData = {
-	kilocodeToken: string
+	builderToken: string
 	user: {
 		id: string
 		name: string

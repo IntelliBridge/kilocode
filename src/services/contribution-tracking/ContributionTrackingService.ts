@@ -83,21 +83,21 @@ export class ContributionTrackingService {
 	/**
 	 * Fetch a new short-lived token from the Kilo backend
 	 * @param organizationId - The organization ID to get a token for
-	 * @param kilocodeToken - The main Kilocode authentication token
+	 * @param builderToken - The main Builder authentication token
 	 * @returns The token provision response
 	 */
-	private async fetchToken(organizationId: string, kilocodeToken: string): Promise<TokenProvisionResponse> {
+	private async fetchToken(organizationId: string, builderToken: string): Promise<TokenProvisionResponse> {
 		try {
 			const url = getKiloUrlFromToken(
 				`https://api.kilo.ai/api/organizations/${organizationId}/user-tokens`,
-				kilocodeToken,
+				builderToken,
 			)
 
 			const response = await fetchWithRetries({
 				url,
 				method: "POST",
 				headers: {
-					Authorization: `Bearer ${kilocodeToken}`,
+					Authorization: `Bearer ${builderToken}`,
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({}), // Empty body as per spec
@@ -121,7 +121,7 @@ export class ContributionTrackingService {
 	 * Get a valid token, fetching a new one if necessary
 	 * Handles caching and concurrent requests
 	 */
-	private async getValidToken(organizationId: string, kilocodeToken: string): Promise<TokenProvisionResponse> {
+	private async getValidToken(organizationId: string, builderToken: string): Promise<TokenProvisionResponse> {
 		// If we have a valid cached token, return it
 		if (this.isTokenValid(organizationId)) {
 			return this.cachedToken!
@@ -133,7 +133,7 @@ export class ContributionTrackingService {
 		}
 
 		// Start a new fetch
-		this.tokenFetchPromise = this.fetchToken(organizationId, kilocodeToken)
+		this.tokenFetchPromise = this.fetchToken(organizationId, builderToken)
 
 		try {
 			const token = await this.tokenFetchPromise
@@ -285,7 +285,7 @@ export class ContributionTrackingService {
 	 *   status: 'accepted',
 	 *   taskId: 'task_123',
 	 *   organizationId: 'org_456',
-	 *   kilocodeToken: 'token_789'
+	 *   builderToken: 'token_789'
 	 * })
 	 * ```
 	 */
@@ -327,7 +327,7 @@ export class ContributionTrackingService {
 			const { linesAdded, linesRemoved } = this.extractLineChanges(formattedDiff, formattedContent)
 
 			// Get a valid token for the attributions service
-			const cachedToken = await this.getValidToken(params.organizationId, params.kilocodeToken)
+			const cachedToken = await this.getValidToken(params.organizationId, params.builderToken)
 
 			// Build the payload with snake_case field names
 			const payload: ContributionPayload = {
@@ -398,8 +398,8 @@ export class ContributionTrackingService {
  *   newContent: diffResult.content,
  *   status: didApprove ? "accepted" : "rejected",
  *   taskId: task.taskId,
- *   organizationId: state?.apiConfiguration?.kilocodeOrganizationId,
- *   kilocodeToken: state?.apiConfiguration?.kilocodeToken || "",
+ *   organizationId: state?.apiConfiguration?.builderOrganizationId,
+ *   builderToken: state?.apiConfiguration?.builderToken || "",
  * })
  * ```
  */

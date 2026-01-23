@@ -152,8 +152,8 @@ export class WriteToFileTool extends BaseTool<"write_to_file"> {
 					newContent,
 					status: didApprove ? "accepted" : "rejected",
 					taskId: task.taskId,
-					organizationId: state?.apiConfiguration?.kilocodeOrganizationId,
-					kilocodeToken: state?.apiConfiguration?.kilocodeToken || "",
+					organizationId: state?.apiConfiguration?.builderOrganizationId,
+					builderToken: state?.apiConfiguration?.builderToken || "",
 				})
 				// kilocode_change end
 
@@ -198,8 +198,8 @@ export class WriteToFileTool extends BaseTool<"write_to_file"> {
 					newContent,
 					status: didApprove ? "accepted" : "rejected",
 					taskId: task.taskId,
-					organizationId: state?.apiConfiguration?.kilocodeOrganizationId,
-					kilocodeToken: state?.apiConfiguration?.kilocodeToken || "",
+					organizationId: state?.apiConfiguration?.builderOrganizationId,
+					builderToken: state?.apiConfiguration?.builderToken || "",
 				})
 				// kilocode_change end
 

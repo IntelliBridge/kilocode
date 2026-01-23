@@ -193,8 +193,8 @@ export async function editFileTool(
 			newContent,
 			status: approved ? "accepted" : "rejected",
 			taskId: cline.taskId,
-			organizationId: state?.apiConfiguration?.kilocodeOrganizationId,
-			kilocodeToken: state?.apiConfiguration?.kilocodeToken || "",
+			organizationId: state?.apiConfiguration?.builderOrganizationId,
+			builderToken: state?.apiConfiguration?.builderToken || "",
 		})
 
 		if (!approved) {
@@ -274,7 +274,7 @@ async function applyFastApplyEdit(
 			`Original Content: ${originalContent.length} characters`,
 		].join("\n")
 
-		const kiloTesterSuppressUntil = state.apiConfiguration.kilocodeTesterWarningsDisabledUntil
+		const kiloTesterSuppressUntil = state.apiConfiguration.builderTesterWarningsDisabledUntil
 		const kiloTesterSuppress =
 			kiloTesterSuppressUntil && kiloTesterSuppressUntil > Date.now() ? { [X_KILOCODE_TESTER]: "SUPPRESS" } : {}
 		// Create OpenAI client for Morph API
@@ -283,8 +283,8 @@ async function applyFastApplyEdit(
 			baseURL: morphConfig.baseUrl,
 			defaultHeaders: {
 				...DEFAULT_HEADERS,
-				...(morphConfig.kiloCodeOrganizationId
-					? { [X_KILOCODE_ORGANIZATIONID]: morphConfig.kiloCodeOrganizationId }
+				...(morphConfig.builderOrganizationId
+					? { [X_KILOCODE_ORGANIZATIONID]: morphConfig.builderOrganizationId }
 					: {}),
 				...kiloTesterSuppress,
 				[X_KILOCODE_TASKID]: cline.taskId,
@@ -343,7 +343,7 @@ interface FastApplyConfiguration {
 	baseUrl?: string
 	model?: string
 	error?: string
-	kiloCodeOrganizationId?: string
+	builderOrganizationId?: string
 }
 
 function getFastApplyConfiguration(state: ClineProviderState): FastApplyConfiguration {
@@ -386,7 +386,7 @@ function getFastApplyConfiguration(state: ClineProviderState): FastApplyConfigur
 
 	// Priority 2: Use KiloCode provider
 	if (apiProvider === "kilocode") {
-		const token = useCurrentApiConfiguration ? state.apiConfiguration.kilocodeToken : state.morphApiKey
+		const token = useCurrentApiConfiguration ? state.apiConfiguration.builderToken : state.morphApiKey
 		if (!token) {
 			return { available: false, error: "No KiloCode token available to use Fast Apply" }
 		}
@@ -397,7 +397,7 @@ function getFastApplyConfiguration(state: ClineProviderState): FastApplyConfigur
 			apiKey: token,
 			baseUrl: url,
 			model: selectedModel === "auto" ? "morph/morph-v3-large" : selectedModel, // Use selected model
-			kiloCodeOrganizationId: state.apiConfiguration.kilocodeOrganizationId,
+			builderOrganizationId: state.apiConfiguration.builderOrganizationId,
 		}
 	}
 

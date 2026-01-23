@@ -25,7 +25,7 @@ describe("providerEnvMapper", () => {
 	})
 
 	it("injects kilocode auth by switching to an existing CLI kilocode provider entry", () => {
-		const configPath = path.join(tempHome, ".kilocode", "cli", "config.json")
+		const configPath = path.join(tempHome, ".builder", "cli", "config.json")
 		fs.mkdirSync(path.dirname(configPath), { recursive: true })
 		fs.writeFileSync(
 			configPath,
@@ -37,18 +37,18 @@ describe("providerEnvMapper", () => {
 					{
 						id: "kilo-1",
 						provider: "kilocode",
-						kilocodeToken: "",
-						kilocodeModel: "claude-sonnet-4-20250514",
+						builderToken: "",
+						builderModel: "claude-sonnet-4-20250514",
 					},
 				],
 			}),
 		)
 
-		const baseEnv = { KEEP_ME: "1", KILOCODE_TOKEN: "user-token" }
+		const baseEnv = { KEEP_ME: "1", BUILDER_TOKEN: "user-token" }
 		const overrides = buildProviderEnvOverrides(
 			{
 				apiProvider: "kilocode",
-				kilocodeToken: "ext-token",
+				builderToken: "ext-token",
 			} as ProviderSettings,
 			{ ...baseEnv, HOME: tempHome },
 			log,
@@ -57,8 +57,8 @@ describe("providerEnvMapper", () => {
 
 		expect(overrides.KILO_PROVIDER).toBe("kilo-1")
 		expect(overrides.KILO_PROVIDER_TYPE).toBeUndefined()
-		expect(overrides.KILOCODE_MODEL).toBeUndefined()
-		expect(overrides.KILOCODE_TOKEN).toBe("ext-token")
+		expect(overrides.BUILDER_MODEL).toBeUndefined()
+		expect(overrides.BUILDER_TOKEN).toBe("ext-token")
 		expect(overrides.HOME).toBeUndefined()
 		expect(overrides.KEEP_ME).toBeUndefined()
 	})
@@ -79,7 +79,7 @@ describe("providerEnvMapper", () => {
 	})
 
 	it("falls back to env-config mode when CLI config has no kilocode provider (overrides HOME)", () => {
-		const configPath = path.join(tempHome, ".kilocode", "cli", "config.json")
+		const configPath = path.join(tempHome, ".builder", "cli", "config.json")
 		fs.mkdirSync(path.dirname(configPath), { recursive: true })
 		fs.writeFileSync(
 			configPath,
@@ -93,27 +93,27 @@ describe("providerEnvMapper", () => {
 		const overrides = buildProviderEnvOverrides(
 			{
 				apiProvider: "kilocode",
-				kilocodeToken: "ext-token",
-				kilocodeModel: "claude-sonnet-4-20250514",
+				builderToken: "ext-token",
+				builderModel: "claude-sonnet-4-20250514",
 			} as ProviderSettings,
 			{ HOME: tempHome, TMPDIR: tempHome },
 			log,
 			debugLog,
 		)
 
-		expect(overrides.HOME).toBe(path.join(tempHome, "kilocode-agent-manager-home"))
-		expect(overrides.USERPROFILE).toBe(path.join(tempHome, "kilocode-agent-manager-home"))
+		expect(overrides.HOME).toBe(path.join(tempHome, "builder-agent-manager-home"))
+		expect(overrides.USERPROFILE).toBe(path.join(tempHome, "builder-agent-manager-home"))
 		expect(overrides.KILO_PROVIDER_TYPE).toBe("kilocode")
-		expect(overrides.KILOCODE_MODEL).toBe("claude-sonnet-4-20250514")
-		expect(overrides.KILOCODE_TOKEN).toBe("ext-token")
+		expect(overrides.BUILDER_MODEL).toBe("claude-sonnet-4-20250514")
+		expect(overrides.BUILDER_TOKEN).toBe("ext-token")
 	})
 
 	it("uses env-config mode without HOME override when no CLI config exists", () => {
 		const overrides = buildProviderEnvOverrides(
 			{
 				apiProvider: "kilocode",
-				kilocodeToken: "ext-token",
-				kilocodeModel: "claude-sonnet-4-20250514",
+				builderToken: "ext-token",
+				builderModel: "claude-sonnet-4-20250514",
 			} as ProviderSettings,
 			{ HOME: tempHome },
 			log,
@@ -122,15 +122,15 @@ describe("providerEnvMapper", () => {
 
 		expect(overrides.HOME).toBeUndefined()
 		expect(overrides.KILO_PROVIDER_TYPE).toBe("kilocode")
-		expect(overrides.KILOCODE_MODEL).toBe("claude-sonnet-4-20250514")
-		expect(overrides.KILOCODE_TOKEN).toBe("ext-token")
+		expect(overrides.BUILDER_MODEL).toBe("claude-sonnet-4-20250514")
+		expect(overrides.BUILDER_TOKEN).toBe("ext-token")
 	})
 
 	it("skips injection when kilocode token is missing", () => {
 		const overrides = buildProviderEnvOverrides(
 			{
 				apiProvider: "kilocode",
-				kilocodeToken: "",
+				builderToken: "",
 			} as ProviderSettings,
 			{},
 			log,
@@ -144,16 +144,16 @@ describe("providerEnvMapper", () => {
 		const overrides = buildProviderEnvOverrides(
 			{
 				apiProvider: "kilocode",
-				kilocodeToken: "ext-token",
-				kilocodeModel: "claude-sonnet-4-20250514",
-				kilocodeOrganizationId: "org-123",
+				builderToken: "ext-token",
+				builderModel: "claude-sonnet-4-20250514",
+				builderOrganizationId: "org-123",
 			} as ProviderSettings,
 			{ HOME: tempHome },
 			log,
 			debugLog,
 		)
 
-		expect(overrides.KILOCODE_TOKEN).toBe("ext-token")
-		expect(overrides.KILOCODE_ORGANIZATION_ID).toBe("org-123")
+		expect(overrides.BUILDER_TOKEN).toBe("ext-token")
+		expect(overrides.BUILDER_ORGANIZATION_ID).toBe("org-123")
 	})
 })

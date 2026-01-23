@@ -15,7 +15,7 @@ export interface ConfigLoadResult {
 	validation: ValidationResult
 }
 
-export const CONFIG_DIR = path.join(homedir(), ".kilocode", "cli")
+export const CONFIG_DIR = path.join(homedir(), ".builder", "cli")
 export const CONFIG_FILE = path.join(CONFIG_DIR, "config.json")
 
 // Allow overriding paths for testing
@@ -83,8 +83,8 @@ function deepMerge(target: any, source: any): any {
 export function getKiloToken(config: CLIConfig) {
 	const kiloProvider = config.providers.find((p) => p.provider === "kilocode")
 
-	if (kiloProvider && "kilocodeToken" in kiloProvider) {
-		return kiloProvider.kilocodeToken
+	if (kiloProvider && "builderToken" in kiloProvider) {
+		return kiloProvider.builderToken
 	}
 
 	return null

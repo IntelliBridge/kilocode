@@ -106,7 +106,7 @@ describe("OpenRouterHandler", () => {
 				"HTTP-Referer": "https://kilocode.ai",
 				"X-Title": "Builder",
 				"X-KiloCode-Version": Package.version,
-				"User-Agent": `Kilo-Code/${Package.version}`,
+				"User-Agent": `Builder/${Package.version}`,
 			},
 		})
 	})

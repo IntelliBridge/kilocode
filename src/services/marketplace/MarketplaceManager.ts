@@ -253,7 +253,7 @@ export class MarketplaceManager {
 			}
 
 			// Check modes in .roomodes
-			const projectModesPath = path.join(workspaceFolder.uri.fsPath, ".kilocodemodes")
+			const projectModesPath = path.join(workspaceFolder.uri.fsPath, ".buildermodes")
 			try {
 				const content = await fs.readFile(projectModesPath, "utf-8")
 				const data = yaml.parse(content)
@@ -271,7 +271,7 @@ export class MarketplaceManager {
 			}
 
 			// Check MCPs in .roo/mcp.json
-			const projectMcpPath = path.join(workspaceFolder.uri.fsPath, ".kilocode", "mcp.json")
+			const projectMcpPath = path.join(workspaceFolder.uri.fsPath, ".builder", "mcp.json")
 			try {
 				const content = await fs.readFile(projectMcpPath, "utf-8")
 				const data = JSON.parse(content)
@@ -286,8 +286,8 @@ export class MarketplaceManager {
 				// File doesn't exist or can't be read, skip
 			}
 
-			// kilocode_change start - Check skills in .kilocode/skills/
-			const projectSkillsPath = path.join(workspaceFolder.uri.fsPath, ".kilocode", "skills")
+			// kilocode_change start - Check skills in .builder/skills/
+			const projectSkillsPath = path.join(workspaceFolder.uri.fsPath, ".builder", "skills")
 			try {
 				const entries = await fs.readdir(projectSkillsPath, { withFileTypes: true })
 				for (const entry of entries) {

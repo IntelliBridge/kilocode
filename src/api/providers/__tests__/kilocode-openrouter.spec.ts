@@ -57,20 +57,20 @@ vitest.mock("../kilocode/getKilocodeDefaultModel", () => ({
 
 describe("KilocodeOpenrouterHandler", () => {
 	const mockOptions: ApiHandlerOptions = {
-		kilocodeToken: "test-token",
-		kilocodeModel: "anthropic/claude-sonnet-4",
+		builderToken: "test-token",
+		builderModel: "anthropic/claude-sonnet-4",
 	}
 
 	beforeEach(() => vitest.clearAllMocks())
 
 	it("getRolloutHash returns a deterministic hash based on token", () => {
-		const handler = new KilocodeOpenrouterHandler({ ...mockOptions, kilocodeToken: undefined })
+		const handler = new KilocodeOpenrouterHandler({ ...mockOptions, builderToken: undefined })
 		expect(handler.getRolloutHash()).toBeUndefined()
 
-		const handlerA = new KilocodeOpenrouterHandler({ ...mockOptions, kilocodeToken: "token-A" })
+		const handlerA = new KilocodeOpenrouterHandler({ ...mockOptions, builderToken: "token-A" })
 		expect(handlerA.getRolloutHash()).toEqual(4000417282)
 
-		const handlerB = new KilocodeOpenrouterHandler({ ...mockOptions, kilocodeToken: "token-B" })
+		const handlerB = new KilocodeOpenrouterHandler({ ...mockOptions, builderToken: "token-B" })
 		expect(handlerB.getRolloutHash()).toEqual(398635706)
 	})
 
@@ -90,7 +90,7 @@ describe("KilocodeOpenrouterHandler", () => {
 		it("includes organizationId header when configured", () => {
 			const handler = new KilocodeOpenrouterHandler({
 				...mockOptions,
-				kilocodeOrganizationId: "test-org-id",
+				builderOrganizationId: "test-org-id",
 			})
 			const result = handler.customRequestOptions({ taskId: "test-task-id", mode: "code" })
 
@@ -106,7 +106,7 @@ describe("KilocodeOpenrouterHandler", () => {
 		it("includes projectId header when provided in metadata with organizationId", () => {
 			const handler = new KilocodeOpenrouterHandler({
 				...mockOptions,
-				kilocodeOrganizationId: "test-org-id",
+				builderOrganizationId: "test-org-id",
 			})
 			const result = handler.customRequestOptions({
 				taskId: "test-task-id",
@@ -127,7 +127,7 @@ describe("KilocodeOpenrouterHandler", () => {
 		it("includes all headers when all metadata is provided", () => {
 			const handler = new KilocodeOpenrouterHandler({
 				...mockOptions,
-				kilocodeOrganizationId: "test-org-id",
+				builderOrganizationId: "test-org-id",
 			})
 			const result = handler.customRequestOptions({
 				taskId: "test-task-id",
@@ -148,7 +148,7 @@ describe("KilocodeOpenrouterHandler", () => {
 		it("omits projectId header when not provided in metadata", () => {
 			const handler = new KilocodeOpenrouterHandler({
 				...mockOptions,
-				kilocodeOrganizationId: "test-org-id",
+				builderOrganizationId: "test-org-id",
 			})
 			const result = handler.customRequestOptions({ taskId: "test-task-id", mode: "code" })
 
@@ -195,7 +195,7 @@ describe("KilocodeOpenrouterHandler", () => {
 		it("passes custom headers to OpenAI client", async () => {
 			const handler = new KilocodeOpenrouterHandler({
 				...mockOptions,
-				kilocodeOrganizationId: "test-org-id",
+				builderOrganizationId: "test-org-id",
 			})
 
 			const mockStream = {
@@ -245,7 +245,7 @@ describe("KilocodeOpenrouterHandler", () => {
 			it("returns FimHandler for codestral models", () => {
 				const handler = new KilocodeOpenrouterHandler({
 					...mockOptions,
-					kilocodeModel: "mistral/codestral-latest",
+					builderModel: "mistral/codestral-latest",
 				})
 
 				const fimHandler = handler.fimSupport()
@@ -258,7 +258,7 @@ describe("KilocodeOpenrouterHandler", () => {
 			it("returns undefined for non-codestral models", () => {
 				const handler = new KilocodeOpenrouterHandler({
 					...mockOptions,
-					kilocodeModel: "anthropic/claude-sonnet-4",
+					builderModel: "anthropic/claude-sonnet-4",
 				})
 
 				expect(handler.fimSupport()).toBeUndefined()
@@ -269,7 +269,7 @@ describe("KilocodeOpenrouterHandler", () => {
 			it("yields chunks correctly", async () => {
 				const handler = new KilocodeOpenrouterHandler({
 					...mockOptions,
-					kilocodeModel: "mistral/codestral-latest",
+					builderModel: "mistral/codestral-latest",
 				})
 
 				// Mock streamSse to return the expected data
@@ -317,7 +317,7 @@ describe("KilocodeOpenrouterHandler", () => {
 			it("handles errors correctly", async () => {
 				const handler = new KilocodeOpenrouterHandler({
 					...mockOptions,
-					kilocodeModel: "mistral/codestral-latest",
+					builderModel: "mistral/codestral-latest",
 				})
 
 				const mockResponse = {

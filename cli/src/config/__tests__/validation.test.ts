@@ -31,8 +31,8 @@ describe("validateProviderConfig", () => {
 		const provider: ProviderConfig = {
 			id: "test-kilocode",
 			provider: "kilocode",
-			kilocodeToken: "valid-token-123",
-			kilocodeModel: "claude-3-5-sonnet",
+			builderToken: "valid-token-123",
+			builderModel: "claude-3-5-sonnet",
 		}
 		const result = validateProviderConfig(provider, false)
 		expect(result.valid).toBe(true)
@@ -43,8 +43,8 @@ describe("validateProviderConfig", () => {
 		const provider: ProviderConfig = {
 			id: "test-kilocode",
 			provider: "kilocode",
-			kilocodeToken: "short",
-			kilocodeModel: "claude-3-5-sonnet",
+			builderToken: "short",
+			builderModel: "claude-3-5-sonnet",
 		}
 		const result = validateProviderConfig(provider, false)
 		expect(result.valid).toBe(true)
@@ -108,8 +108,8 @@ describe("validateConfig", () => {
 				{
 					id: "provider2",
 					provider: "kilocode",
-					kilocodeToken: "", // Empty is OK for non-selected provider
-					kilocodeModel: "claude-3-5-sonnet",
+					builderToken: "", // Empty is OK for non-selected provider
+					builderModel: "claude-3-5-sonnet",
 				},
 			],
 		}
@@ -127,15 +127,15 @@ describe("validateConfig", () => {
 				{
 					id: "provider1",
 					provider: "kilocode",
-					kilocodeToken: "", // Empty is NOT OK - schema minLength will catch this
-					kilocodeModel: "claude-3-5-sonnet",
+					builderToken: "", // Empty is NOT OK - schema minLength will catch this
+					builderModel: "claude-3-5-sonnet",
 				},
 			],
 		}
 		const result = await validateConfig(config)
 		expect(result.valid).toBe(false)
 		// Schema validation error
-		expect(result.errors?.some((e) => e.includes("kilocodeToken"))).toBe(true)
+		expect(result.errors?.some((e) => e.includes("builderToken"))).toBe(true)
 	})
 
 	it("should return errors for multiple invalid providers (schema validation)", async () => {
@@ -154,8 +154,8 @@ describe("validateConfig", () => {
 				{
 					id: "provider2",
 					provider: "kilocode",
-					kilocodeToken: "short", // Invalid - schema will catch
-					kilocodeModel: "claude-3-5-sonnet",
+					builderToken: "short", // Invalid - schema will catch
+					builderModel: "claude-3-5-sonnet",
 				},
 			],
 		}
@@ -163,7 +163,7 @@ describe("validateConfig", () => {
 		expect(result.valid).toBe(false)
 		expect(result.errors?.length).toBeGreaterThan(0)
 		// Schema will report errors for the invalid fields
-		expect(result.errors?.some((e) => e.includes("apiKey") || e.includes("kilocodeToken"))).toBe(true)
+		expect(result.errors?.some((e) => e.includes("apiKey") || e.includes("builderToken"))).toBe(true)
 	})
 
 	it("should validate selected provider exists", async () => {
@@ -202,8 +202,8 @@ describe("validateConfig", () => {
 				{
 					id: "provider2",
 					provider: "kilocode",
-					kilocodeToken: "valid-token-123",
-					kilocodeModel: "claude-3-5-sonnet",
+					builderToken: "valid-token-123",
+					builderModel: "claude-3-5-sonnet",
 				},
 			],
 		}

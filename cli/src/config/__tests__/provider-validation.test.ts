@@ -26,7 +26,7 @@ describe("envConfigExists", () => {
 describe("getRequiredEnvVars", () => {
 	it("should return required vars for kilocode provider", () => {
 		const required = getRequiredEnvVars("kilocode")
-		expect(required).toEqual(["KILOCODE_TOKEN", "KILOCODE_MODEL"])
+		expect(required).toEqual(["BUILDER_TOKEN", "BUILDER_MODEL"])
 	})
 
 	it("should return required vars for anthropic provider", () => {
@@ -110,8 +110,8 @@ describe("getMissingEnvVars", () => {
 	beforeEach(() => {
 		process.env = { ...originalEnv }
 		// Clear all relevant env vars
-		delete process.env.KILOCODE_TOKEN
-		delete process.env.KILOCODE_MODEL
+		delete process.env.BUILDER_TOKEN
+		delete process.env.BUILDER_MODEL
 		delete process.env.KILO_API_KEY
 		delete process.env.KILO_API_MODEL_ID
 		delete process.env.KILO_OPENAI_NATIVE_API_KEY
@@ -145,18 +145,18 @@ describe("getMissingEnvVars", () => {
 	describe("kilocode provider", () => {
 		it("should return all missing vars when none are set", () => {
 			const missing = getMissingEnvVars("kilocode")
-			expect(missing).toEqual(["KILOCODE_TOKEN", "KILOCODE_MODEL"])
+			expect(missing).toEqual(["BUILDER_TOKEN", "BUILDER_MODEL"])
 		})
 
 		it("should return only missing vars when some are set", () => {
-			process.env.KILOCODE_TOKEN = "test-token"
+			process.env.BUILDER_TOKEN = "test-token"
 			const missing = getMissingEnvVars("kilocode")
-			expect(missing).toEqual(["KILOCODE_MODEL"])
+			expect(missing).toEqual(["BUILDER_MODEL"])
 		})
 
 		it("should return empty array when all vars are set", () => {
-			process.env.KILOCODE_TOKEN = "test-token"
-			process.env.KILOCODE_MODEL = "test-model"
+			process.env.BUILDER_TOKEN = "test-token"
+			process.env.BUILDER_MODEL = "test-model"
 			const missing = getMissingEnvVars("kilocode")
 			expect(missing).toEqual([])
 		})

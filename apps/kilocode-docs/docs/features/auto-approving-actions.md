@@ -138,7 +138,7 @@ Use with caution and in controlled environments. It allows Kilo Code to:
 
 **Setting:** "Allow writing to protected files"
 
-**Description:** "When enabled, Kilo Code can overwrite or modify files that are normally protected by the `.kilocodeignore` file."
+**Description:** "When enabled, Kilo Code can overwrite or modify files that are normally protected by the `.builderignore` file."
 
 **Risk level:** Very High
 
@@ -158,7 +158,7 @@ This setting allows Kilo Code to permanently remove files without confirmation.
 
 **Safeguards:**
 
-- Kilo Code still respects `.kilocodeignore` rules
+- Kilo Code still respects `.builderignore` rules
 - Protected files cannot be deleted
 - The delete tool shows what will be removed before execution
 

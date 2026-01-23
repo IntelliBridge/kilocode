@@ -104,13 +104,13 @@ async function fetchModelsFromProvider(options: GetModelsOptions): Promise<Model
 			break
 		// kilocode_change start
 		case "kilocode": {
-			const backendUrl = options.kilocodeOrganizationId
-				? `https://api.kilo.ai/api/organizations/${options.kilocodeOrganizationId}`
+			const backendUrl = options.builderOrganizationId
+				? `https://api.kilo.ai/api/organizations/${options.builderOrganizationId}`
 				: "https://api.kilo.ai/api/openrouter"
-			const openRouterBaseUrl = getKiloUrlFromToken(backendUrl, options.kilocodeToken ?? "")
+			const openRouterBaseUrl = getKiloUrlFromToken(backendUrl, options.builderToken ?? "")
 			models = await getOpenRouterModels({
 				openRouterBaseUrl,
-				headers: options.kilocodeToken ? { Authorization: `Bearer ${options.kilocodeToken}` } : undefined,
+				headers: options.builderToken ? { Authorization: `Bearer ${options.builderToken}` } : undefined,
 			})
 			break
 		}

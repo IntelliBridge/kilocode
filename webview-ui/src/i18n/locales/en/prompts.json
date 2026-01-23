@@ -7,7 +7,7 @@
 		"importMode": "Import Mode",
 		"editModesConfig": "Edit modes configuration",
 		"editGlobalModes": "Edit Global Modes",
-		"editProjectModes": "Edit Project Modes (.kilocodemodes)",
+		"editProjectModes": "Edit Project Modes (.buildermodes)",
 		"createModeHelpText": "Modes are specialized personas that tailor Builder's behavior. <0>Learn about Using Modes</0> or <1>Customizing Modes.</1>",
 		"selectMode": "Search modes",
 		"noMatchFound": "No modes found"
@@ -55,11 +55,11 @@
 		"title": "Mode-specific Custom Instructions (optional)",
 		"resetToDefault": "Reset to default",
 		"description": "Add behavioral guidelines specific to {{modeName}} mode.",
-		"loadFromFile": "Custom instructions specific to {{mode}} mode can also be loaded from the <span>.kilocode/rules-{{slug}}/</span> folder in your workspace or from the global <0>.kilocode/rules-{{slug}}/</0> (.kilocoderules-{{slug}} and .clinerules-{{slug}} are deprecated and will stop working soon)."
+		"loadFromFile": "Custom instructions specific to {{mode}} mode can also be loaded from the <span>.builder/rules-{{slug}}/</span> folder in your workspace or from the global <0>.builder/rules-{{slug}}/</0> (.builderrules-{{slug}} and .clinerules-{{slug}} are deprecated and will stop working soon)."
 	},
 	"exportMode": {
 		"title": "Export Mode",
-		"description": "Export this mode with rules from the .kilocode/rules-{{slug}}/ folder combined into a shareable YAML file. The original files remain unchanged.",
+		"description": "Export this mode with rules from the .builder/rules-{{slug}}/ folder combined into a shareable YAML file. The original files remain unchanged.",
 		"exporting": "Exporting..."
 	},
 	"importMode": {
@@ -68,11 +68,11 @@
 		"importing": "Importing...",
 		"global": {
 			"label": "Global Level",
-			"description": "Available across all projects. If the exported mode contained rules files, they will be recreated in the global .kilocode/rules-{slug}/ folder."
+			"description": "Available across all projects. If the exported mode contained rules files, they will be recreated in the global .builder/rules-{slug}/ folder."
 		},
 		"project": {
 			"label": "Project Level",
-			"description": "Only available in this workspace. If the exported mode contained rules files, they will be recreated in .kilocode/rules-{slug}/ folder."
+			"description": "Only available in this workspace. If the exported mode contained rules files, they will be recreated in .builder/rules-{slug}/ folder."
 		}
 	},
 	"advanced": {
@@ -81,7 +81,7 @@
 	"globalCustomInstructions": {
 		"title": "Custom Instructions for All Modes",
 		"description": "These instructions apply to all modes. They provide a base set of behaviors that can be enhanced by mode-specific instructions below. <0>Learn more</0>",
-		"loadFromFile": "Instructions can also be loaded from the <span>.kilocode/rules/</span> folder in your workspace or from the global <0>.kilocode/rules/</0> (.kilocoderules and .clinerules are deprecated and will stop working soon)."
+		"loadFromFile": "Instructions can also be loaded from the <span>.builder/rules/</span> folder in your workspace or from the global <0>.builder/rules/</0> (.builderrules and .clinerules are deprecated and will stop working soon)."
 	},
 	"systemPrompt": {
 		"preview": "Preview System Prompt",
@@ -160,7 +160,7 @@
 	},
 	"advancedSystemPrompt": {
 		"title": "Advanced: Override System Prompt",
-		"description": "<2>⚠️ Warning:</2> This advanced feature bypasses safeguards. <1>READ THIS BEFORE USING!</1>Override the default system prompt by creating a file at <span>.kilocode/system-prompt-{{slug}}</span>."
+		"description": "<2>⚠️ Warning:</2> This advanced feature bypasses safeguards. <1>READ THIS BEFORE USING!</1>Override the default system prompt by creating a file at <span>.builder/system-prompt-{{slug}}</span>."
 	},
 	"createModeDialog": {
 		"title": "Create New Mode",
@@ -181,7 +181,7 @@
 				"description": "Available in all workspaces"
 			},
 			"project": {
-				"label": "Project-specific (.kilocodemodes)",
+				"label": "Project-specific (.buildermodes)",
 				"description": "Only available in this workspace, takes precedence over global"
 			}
 		},

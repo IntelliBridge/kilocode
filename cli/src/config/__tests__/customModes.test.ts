@@ -80,7 +80,7 @@ describe("customModes", () => {
 			// Check project path structure
 			expect(paths[1]).toMatchObject({
 				type: "project",
-				path: "/test/workspace/.kilocodemodes",
+				path: "/test/workspace/.buildermodes",
 				found: false,
 				modesCount: 0,
 			})
@@ -113,7 +113,7 @@ describe("customModes", () => {
 
 		it("should load modes from project config file", async () => {
 			;(existsSync as Mock).mockImplementation((path: string) => {
-				return path.includes(".kilocodemodes")
+				return path.includes(".buildermodes")
 			})
 			;(readFile as Mock).mockResolvedValue(VALID_YAML_CONTENT)
 
@@ -260,7 +260,7 @@ customModes:
 			await loadCustomModes("/my/custom/workspace")
 			const paths = getSearchedPaths()
 
-			expect(paths[1].path).toBe("/my/custom/workspace/.kilocodemodes")
+			expect(paths[1].path).toBe("/my/custom/workspace/.buildermodes")
 		})
 	})
 })

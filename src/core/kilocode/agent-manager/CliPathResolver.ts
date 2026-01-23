@@ -136,7 +136,7 @@ export async function findExecutable(
  * Resolution order:
  * 1. VS Code setting `kiloCode.agentManager.cliPath`
  * 2. Workspace-local build at <workspace>/cli/dist/index.js
- * 3. Local installation at ~/.kilocode/cli/pkg (for immutable systems like NixOS)
+ * 3. Local installation at ~/.builder/cli/pkg (for immutable systems like NixOS)
  * 4. Login shell lookup (respects user's nvm, fnm, volta, asdf config)
  * 5. Direct PATH lookup using findExecutable (handles PATHEXT on Windows)
  * 6. Common npm installation paths (last resort)

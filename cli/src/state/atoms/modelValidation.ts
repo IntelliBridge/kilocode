@@ -32,7 +32,7 @@ export const validateModelOnRouterModelsUpdateAtom = atom(null, async (get, set)
 		return
 	}
 
-	const currentModel = currentProvider.kilocodeModel
+	const currentModel = currentProvider.builderModel
 	const availableModels = routerModels.kilocode
 
 	// Skip if no current model set
@@ -59,13 +59,13 @@ export const validateModelOnRouterModelsUpdateAtom = atom(null, async (get, set)
 	}
 
 	// Update to fallback model
-	const modelIdKey = "kilocodeModel"
+	const modelIdKey = "builderModel"
 	await set(updateProviderAtom, currentProvider.id, {
 		[modelIdKey]: fallbackModel,
 	})
 
 	// Get organization name for message
-	const orgName = currentProvider.kilocodeOrganizationId ? "this organization" : "Personal"
+	const orgName = currentProvider.builderOrganizationId ? "this organization" : "Personal"
 
 	const cliMessage: CliMessage = generateModelFallbackMessage({
 		previousModel: currentModel,

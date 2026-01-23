@@ -204,7 +204,7 @@
 			},
 			"protected": {
 				"label": "包含受保護的檔案",
-				"description": "允許 Builder 建立和編輯受保護的檔案（如 .kilocodeignore 和 .kilocode/ 設定檔），無需核准。"
+				"description": "允許 Builder 建立和編輯受保護的檔案（如 .builderignore 和 .builder/ 設定檔），無需核准。"
 			}
 		},
 		"browser": {
@@ -744,8 +744,8 @@
 			"description": "目前工作目錄中最多包含多少個檔案。數值越高提供的上下文越多，但 token 用量也會增加。"
 		},
 		"rooignore": {
-			"label": "在列表和搜尋中顯示被 .kilocodeignore 排除的檔案",
-			"description": "啟用後，符合 .kilocodeignore 規則的檔案會在列表中顯示並標示鎖定圖示。停用後，這些檔案將完全從檔案列表和搜尋結果中隱藏。"
+			"label": "在列表和搜尋中顯示被 .builderignore 排除的檔案",
+			"description": "啟用後，符合 .builderignore 規則的檔案會在列表中顯示並標示鎖定圖示。停用後，這些檔案將完全從檔案列表和搜尋結果中隱藏。"
 		},
 		"maxReadFile": {
 			"label": "檔案讀取自動截斷閾值",
@@ -1000,9 +1000,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "啟用自訂工具",
-			"description": "啟用後，Kilo 可以從專案的 .kilocode/tools 目錄或全域工具目錄 ~/.kilocode/tools 載入並使用自訂 TypeScript/JavaScript 工具。注意：這些工具將自動獲得核准。",
+			"description": "啟用後，Kilo 可以從專案的 .builder/tools 目錄或全域工具目錄 ~/.builder/tools 載入並使用自訂 TypeScript/JavaScript 工具。注意：這些工具將自動獲得核准。",
 			"toolsHeader": "可用的自訂工具",
-			"noTools": "未載入自訂工具。請將 .ts 或 .js 檔案新增至專案的 .kilocode/tools 目錄或全域工具目錄 ~/.kilocode/tools。",
+			"noTools": "未載入自訂工具。請將 .ts 或 .js 檔案新增至專案的 .builder/tools 目錄或全域工具目錄 ~/.builder/tools。",
 			"refreshButton": "重新整理",
 			"refreshing": "重新整理中...",
 			"refreshSuccess": "工具重新整理成功",

@@ -216,14 +216,14 @@ async function handleEnable(context: CommandContext): Promise<void> {
  */
 function getCheckpointsPath(): string {
 	if (process.platform === "win32") {
-		return "%USERPROFILE%\\.kilocode\\cli\\global\\tasks\\*\\checkpoints\\"
+		return "%USERPROFILE%\\.builder\\cli\\global\\tasks\\*\\checkpoints\\"
 	}
-	return "~/.kilocode/cli/global/tasks/*/checkpoints/"
+	return "~/.builder/cli/global/tasks/*/checkpoints/"
 }
 
 /**
-	* Handle /checkpoint disable
-	*/
+ * Handle /checkpoint disable
+ */
 async function handleDisable(context: CommandContext): Promise<void> {
 	const { addMessage, sendWebviewMessage } = context
 

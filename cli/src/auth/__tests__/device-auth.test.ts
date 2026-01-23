@@ -97,8 +97,8 @@ describe("Device Auth Flow", () => {
 		expect(result.providerConfig).toEqual({
 			id: "default",
 			provider: "kilocode",
-			kilocodeToken: "test-token-123",
-			kilocodeModel: "anthropic/claude-sonnet-4",
+			builderToken: "test-token-123",
+			builderModel: "anthropic/claude-sonnet-4",
 		})
 	})
 

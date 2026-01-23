@@ -44,7 +44,7 @@ describe("Provider Merging", () => {
 				{
 					id: "default",
 					provider: "kilocode",
-					// Missing kilocodeToken and kilocodeModel - should be filled from defaults
+					// Missing builderToken and builderModel - should be filled from defaults
 				},
 			],
 			theme: "dark",
@@ -59,9 +59,9 @@ describe("Provider Merging", () => {
 		expect(result.config.providers[0]).toHaveProperty("provider")
 		expect(result.config.providers[0].provider).toBe("kilocode")
 		expect(result.config.providers[0].id).toBe("default")
-		expect(result.config.providers[0]).toHaveProperty("kilocodeToken")
-		expect(result.config.providers[0]).toHaveProperty("kilocodeModel")
-		expect(result.config.providers[0].kilocodeModel).toBe("x-ai/grok-code-fast-1")
+		expect(result.config.providers[0]).toHaveProperty("builderToken")
+		expect(result.config.providers[0]).toHaveProperty("builderModel")
+		expect(result.config.providers[0].builderModel).toBe("x-ai/grok-code-fast-1")
 		expect(result.validation.valid).toBe(true)
 	})
 
@@ -76,8 +76,8 @@ describe("Provider Merging", () => {
 				{
 					id: "default",
 					provider: "kilocode",
-					kilocodeToken: "test-token-1234567890",
-					kilocodeModel: "anthropic/claude-sonnet-4.5",
+					builderToken: "test-token-1234567890",
+					builderModel: "anthropic/claude-sonnet-4.5",
 				},
 			],
 			theme: "dark",
@@ -91,7 +91,7 @@ describe("Provider Merging", () => {
 		// Check that the provider field is preserved
 		expect(result.config.providers[0].provider).toBe("kilocode")
 		expect(result.config.providers[0].id).toBe("default")
-		expect(result.config.providers[0].kilocodeToken).toBe("test-token-1234567890")
+		expect(result.config.providers[0].builderToken).toBe("test-token-1234567890")
 		expect(result.validation.valid).toBe(true)
 	})
 
@@ -107,7 +107,7 @@ describe("Provider Merging", () => {
 					id: "anthropic-custom",
 					provider: "anthropic",
 					apiKey: "test-anthropic-key",
-					// Should not get kilocodeToken or kilocodeModel
+					// Should not get builderToken or builderModel
 				},
 			],
 			theme: "dark",
@@ -121,8 +121,8 @@ describe("Provider Merging", () => {
 		// Check that anthropic provider doesn't have kilocode-specific fields
 		expect(result.config.providers[0].provider).toBe("anthropic")
 		expect(result.config.providers[0].apiKey).toBe("test-anthropic-key")
-		expect(result.config.providers[0]).not.toHaveProperty("kilocodeToken")
-		expect(result.config.providers[0]).not.toHaveProperty("kilocodeModel")
+		expect(result.config.providers[0]).not.toHaveProperty("builderToken")
+		expect(result.config.providers[0]).not.toHaveProperty("builderModel")
 		expect(result.validation.valid).toBe(true)
 	})
 
@@ -137,8 +137,8 @@ describe("Provider Merging", () => {
 				{
 					id: "custom-kilo",
 					provider: "kilocode",
-					kilocodeToken: "custom-token-xyz",
-					kilocodeModel: "anthropic/claude-opus-4",
+					builderToken: "custom-token-xyz",
+					builderModel: "anthropic/claude-opus-4",
 				},
 			],
 			theme: "dark",
@@ -152,8 +152,8 @@ describe("Provider Merging", () => {
 		// Check that custom values are preserved (not overwritten by defaults)
 		expect(result.config.providers[0].provider).toBe("kilocode")
 		expect(result.config.providers[0].id).toBe("custom-kilo")
-		expect(result.config.providers[0].kilocodeToken).toBe("custom-token-xyz")
-		expect(result.config.providers[0].kilocodeModel).toBe("anthropic/claude-opus-4")
+		expect(result.config.providers[0].builderToken).toBe("custom-token-xyz")
+		expect(result.config.providers[0].builderModel).toBe("anthropic/claude-opus-4")
 		expect(result.validation.valid).toBe(true)
 	})
 })

@@ -6,7 +6,7 @@
 import * as fs from "fs-extra"
 import * as path from "path"
 import * as crypto from "crypto"
-import { KiloCodePaths } from "../../utils/paths.js"
+import { BuilderPaths } from "../../utils/paths.js"
 import { logs } from "../logs.js"
 import { getApiUrl } from "@roo-code/types"
 import { machineIdSync } from "node-machine-id"
@@ -15,14 +15,14 @@ import { machineIdSync } from "node-machine-id"
  * User identity structure
  */
 export interface UserIdentity {
-	/** Persistent CLI user ID (UUID stored in ~/.kilocode/cli/identity) */
+	/** Persistent CLI user ID (UUID stored in ~/.builder/cli/identity) */
 	cliUserId: string
 
 	/** Machine identifier (OS-level) */
 	machineId: string
 
-	/** Kilocode user ID (from authentication token) */
-	kilocodeUserId?: string
+	/** Builder user ID (from authentication token) */
+	builderUserId?: string
 
 	/** Current session ID (new UUID per CLI session) */
 	sessionId: string
@@ -49,7 +49,7 @@ export class IdentityManager {
 	private identityFilePath: string
 
 	private constructor() {
-		this.identityFilePath = path.join(KiloCodePaths.getKiloCodeDir(), "identity.json")
+		this.identityFilePath = path.join(BuilderPaths.getBuilderDir(), "identity.json")
 	}
 
 	/**
@@ -98,19 +98,19 @@ export class IdentityManager {
 	}
 
 	/**
-	 * Update Kilocode user ID from authentication token
+	 * Update Builder user ID from authentication token
 	 */
-	public async updateKilocodeUserId(kilocodeToken: string): Promise<void> {
+	public async updateBuilderUserId(builderToken: string): Promise<void> {
 		if (!this.identity) {
-			logs.warn("Cannot update Kilocode user ID: identity not initialized", "IdentityManager")
+			logs.warn("Cannot update Builder user ID: identity not initialized", "IdentityManager")
 			return
 		}
 
 		try {
-			// Fetch user profile from Kilocode API
+			// Fetch user profile from Builder API
 			const response = await fetch(getApiUrl("/api/profile"), {
 				headers: {
-					Authorization: `Bearer ${kilocodeToken}`,
+					Authorization: `Bearer ${builderToken}`,
 					"Content-Type": "application/json",
 				},
 			})
@@ -122,29 +122,29 @@ export class IdentityManager {
 			const data = await response.json()
 
 			if (data?.user?.email) {
-				this.identity.kilocodeUserId = data.user.email
-				logs.debug("Kilocode user ID updated", "IdentityManager", {
+				this.identity.builderUserId = data.user.email
+				logs.debug("Builder user ID updated", "IdentityManager", {
 					userId: data.user.email.substring(0, 3) + "...",
 				})
 			} else {
 				throw new Error("Invalid API response: missing user email")
 			}
 		} catch (error) {
-			logs.warn("Failed to update Kilocode user ID", "IdentityManager", { error })
-			// Clear Kilocode user ID on error
-			if (this.identity.kilocodeUserId) {
-				delete this.identity.kilocodeUserId
+			logs.warn("Failed to update Builder user ID", "IdentityManager", { error })
+			// Clear Builder user ID on error
+			if (this.identity.builderUserId) {
+				delete this.identity.builderUserId
 			}
 		}
 	}
 
 	/**
-	 * Clear Kilocode user ID (on logout)
+	 * Clear Builder user ID (on logout)
 	 */
-	public clearKilocodeUserId(): void {
-		if (this.identity && this.identity.kilocodeUserId) {
-			delete this.identity.kilocodeUserId
-			logs.debug("Kilocode user ID cleared", "IdentityManager")
+	public clearBuilderUserId(): void {
+		if (this.identity && this.identity.builderUserId) {
+			delete this.identity.builderUserId
+			logs.debug("Builder user ID cleared", "IdentityManager")
 		}
 	}
 
@@ -156,15 +156,15 @@ export class IdentityManager {
 	}
 
 	/**
-	 * Get distinct ID for PostHog (prioritize Kilocode user ID)
+	 * Get distinct ID for PostHog (prioritize Builder user ID)
 	 */
 	public getDistinctId(): string {
 		if (!this.identity) {
 			return "unknown"
 		}
 
-		// Use Kilocode user ID if available, otherwise use CLI user ID
-		return this.identity.kilocodeUserId || this.identity.cliUserId
+		// Use Builder user ID if available, otherwise use CLI user ID
+		return this.identity.builderUserId || this.identity.cliUserId
 	}
 
 	/**

@@ -204,7 +204,7 @@
 			},
 			"protected": {
 				"label": "保護されたファイルを含める",
-				"description": "Builderが保護されたファイル（.kilocodeignoreや.kilocode/設定ファイルなど）を承認なしで作成・編集することを許可します。"
+				"description": "Builderが保護されたファイル（.builderignoreや.builder/設定ファイルなど）を承認なしで作成・編集することを許可します。"
 			}
 		},
 		"browser": {
@@ -749,8 +749,8 @@
 			"description": "現在の作業ディレクトリの詳細に含めるファイルの最大数。高い値はより多くのコンテキストを提供しますが、token使用量が増加します。"
 		},
 		"rooignore": {
-			"label": "リストと検索で.kilocodeignoreファイルを表示",
-			"description": "有効にすると、.kilocodeignoreのパターンに一致するファイルがロックシンボル付きでリストに表示されます。無効にすると、これらのファイルはファイルリストや検索から完全に非表示になります。"
+			"label": "リストと検索で.builderignoreファイルを表示",
+			"description": "有効にすると、.builderignoreのパターンに一致するファイルがロックシンボル付きでリストに表示されます。無効にすると、これらのファイルはファイルリストや検索から完全に非表示になります。"
 		},
 		"maxReadFile": {
 			"label": "ファイル読み込み自動切り詰めしきい値",
@@ -1005,9 +1005,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "カスタムツールを有効化",
-			"description": "有効にすると、Kiloはプロジェクトの .kilocode/tools ディレクトリまたはグローバルツール用の ~/.kilocode/tools からカスタム TypeScript/JavaScript ツールを読み込んで使用できます。注意：これらのツールは自動的に承認されます。",
+			"description": "有効にすると、Kiloはプロジェクトの .builder/tools ディレクトリまたはグローバルツール用の ~/.builder/tools からカスタム TypeScript/JavaScript ツールを読み込んで使用できます。注意：これらのツールは自動的に承認されます。",
 			"toolsHeader": "利用可能なカスタムツール",
-			"noTools": "カスタムツールが読み込まれていません。プロジェクトの .kilocode/tools ディレクトリまたはグローバルツール用の ~/.kilocode/tools に .ts または .js ファイルを追加してください。",
+			"noTools": "カスタムツールが読み込まれていません。プロジェクトの .builder/tools ディレクトリまたはグローバルツール用の ~/.builder/tools に .ts または .js ファイルを追加してください。",
 			"refreshButton": "更新",
 			"refreshing": "更新中...",
 			"refreshSuccess": "ツールが正常に更新されました",

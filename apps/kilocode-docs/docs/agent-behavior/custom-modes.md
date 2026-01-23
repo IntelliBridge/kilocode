@@ -58,7 +58,7 @@ Easily share, back up, and template your custom modes. This feature lets you exp
 1. Click the Import Mode button (upload icon) in the Modes view
 2. Select the mode's YAML file
 3. Choose the import level:
-    - **Project:** Available only in current workspace (saved to `.kilocodemodes` file)
+    - **Project:** Available only in current workspace (saved to `.buildermodes` file)
     - **Global:** Available in all projects (saved to global settings)
 
 ### Changing Slugs on Import
@@ -100,7 +100,7 @@ The interface provides fields for Name, Slug, Description, Save Location, Role D
 You can directly edit the configuration files to create or modify custom modes. This method offers the most control over all properties. Kilo Code now supports both YAML (preferred) and JSON formats.
 
 - **Global Modes:** Edit the `custom_modes.yaml` (preferred) or `custom_modes.json` file. Access it via Prompts Tab > <Codicon name="gear" /> (Settings Menu icon next to "Global Prompts") > "Edit Global Modes"
-- **Project Modes:** Edit the `.kilocodemodes` file (which can be YAML or JSON) in your project root. Access it via Prompts Tab > <Codicon name="gear" /> (Settings Menu icon next to "Project Prompts") > "Edit Project Modes"
+- **Project Modes:** Edit the `.buildermodes` file (which can be YAML or JSON) in your project root. Access it via Prompts Tab > <Codicon name="gear" /> (Settings Menu icon next to "Project Prompts") > "Edit Project Modes"
 
 These files define an array/list of custom modes.
 
@@ -281,10 +281,10 @@ Automatic migration from `custom_modes.json` to `custom_modes.yaml` happens when
 
 The migration process preserves the original JSON file for rollback purposes.
 
-### Project Modes (`.kilocodemodes`)
+### Project Modes (`.buildermodes`)
 
 - No automatic startup migration occurs for project-specific files
-- Kilo Code can read `.kilocodemodes` files in either YAML or JSON format
+- Kilo Code can read `.buildermodes` files in either YAML or JSON format
 - When editing through the UI, JSON files will be converted to YAML format
 - For manual conversion, you can ask Kilo to help reformat configurations
 
@@ -322,11 +322,11 @@ The directory method takes precedence if it exists and contains files. Files wit
 
 Mode configurations are applied in this order:
 
-1. **Project-level mode configurations** (from `.kilocodemodes` - YAML or JSON)
+1. **Project-level mode configurations** (from `.buildermodes` - YAML or JSON)
 2. **Global mode configurations** (from `custom_modes.yaml`, then `custom_modes.json` if YAML not found)
 3. **Default mode configurations**
 
-**Important:** When modes with the same slug exist in both `.kilocodemodes` and global settings, the `.kilocodemodes` version completely overrides the global one for ALL properties.
+**Important:** When modes with the same slug exist in both `.buildermodes` and global settings, the `.buildermodes` version completely overrides the global one for ALL properties.
 
 ## Overriding Default Modes
 

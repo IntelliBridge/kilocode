@@ -58,7 +58,7 @@ const WelcomeView = () => {
 
 	const isSettingUpKiloCode =
 		!apiConfiguration?.apiProvider ||
-		(apiConfiguration?.apiProvider === "kilocode" && !apiConfiguration?.kilocodeToken)
+		(apiConfiguration?.apiProvider === "kilocode" && !apiConfiguration?.builderToken)
 
 	return (
 		<Tab>

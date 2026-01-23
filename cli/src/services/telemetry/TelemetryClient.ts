@@ -106,20 +106,20 @@ export class TelemetryClient {
 	}
 
 	/**
-	 * Update Kilocode user ID
+	 * Update Builder user ID
 	 */
-	public async updateKilocodeUserId(kilocodeToken: string): Promise<void> {
+	public async updateBuilderUserId(builderToken: string): Promise<void> {
 		const identityManager = getIdentityManager()
-		await identityManager.updateKilocodeUserId(kilocodeToken)
+		await identityManager.updateBuilderUserId(builderToken)
 		this.identity = identityManager.getIdentity()
 	}
 
 	/**
-	 * Clear Kilocode user ID
+	 * Clear Builder user ID
 	 */
-	public clearKilocodeUserId(): void {
+	public clearBuilderUserId(): void {
 		const identityManager = getIdentityManager()
-		identityManager.clearKilocodeUserId()
+		identityManager.clearBuilderUserId()
 		this.identity = identityManager.getIdentity()
 	}
 
@@ -347,9 +347,9 @@ export class TelemetryClient {
 			cliUserId: this.identity.cliUserId,
 		}
 
-		// Only include kilocodeUserId if it exists
-		if (this.identity.kilocodeUserId) {
-			baseProps.kilocodeUserId = this.identity.kilocodeUserId
+		// Only include builderUserId if it exists
+		if (this.identity.builderUserId) {
+			baseProps.builderUserId = this.identity.builderUserId
 		}
 
 		return baseProps

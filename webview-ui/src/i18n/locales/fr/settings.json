@@ -204,7 +204,7 @@
 			},
 			"protected": {
 				"label": "Inclure les fichiers protégés",
-				"description": "Permettre à Builder de créer et modifier des fichiers protégés (comme .kilocodeignore et les fichiers de configuration .kilocode/) sans nécessiter d'approbation."
+				"description": "Permettre à Builder de créer et modifier des fichiers protégés (comme .builderignore et les fichiers de configuration .builder/) sans nécessiter d'approbation."
 			}
 		},
 		"browser": {
@@ -743,8 +743,8 @@
 			"description": "Nombre maximum de fichiers à inclure dans les détails du répertoire de travail actuel. Des valeurs plus élevées fournissent plus de contexte mais augmentent l'utilisation de token."
 		},
 		"rooignore": {
-			"label": "Afficher les fichiers .kilocodeignore dans les listes et recherches",
-			"description": "Lorsque cette option est activée, les fichiers correspondant aux modèles dans .kilocodeignore seront affichés dans les listes avec un symbole de cadenas. Lorsqu'elle est désactivée, ces fichiers seront complètement masqués des listes de fichiers et des recherches."
+			"label": "Afficher les fichiers .builderignore dans les listes et recherches",
+			"description": "Lorsque cette option est activée, les fichiers correspondant aux modèles dans .builderignore seront affichés dans les listes avec un symbole de cadenas. Lorsqu'elle est désactivée, ces fichiers seront complètement masqués des listes de fichiers et des recherches."
 		},
 		"maxReadFile": {
 			"label": "Seuil d'auto-troncature de lecture de fichier",
@@ -998,9 +998,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Activer les outils personnalisés",
-			"description": "Lorsqu'activé, Kilo peut charger et utiliser des outils TypeScript/JavaScript personnalisés à partir du répertoire .kilocode/tools de votre projet ou ~/.kilocode/tools pour des outils globaux. Remarque : ces outils seront automatiquement auto-approuvés.",
+			"description": "Lorsqu'activé, Kilo peut charger et utiliser des outils TypeScript/JavaScript personnalisés à partir du répertoire .builder/tools de votre projet ou ~/.builder/tools pour des outils globaux. Remarque : ces outils seront automatiquement auto-approuvés.",
 			"toolsHeader": "Outils personnalisés disponibles",
-			"noTools": "Aucun outil personnalisé chargé. Ajoutez des fichiers .ts ou .js au répertoire .kilocode/tools de votre projet ou ~/.kilocode/tools pour des outils globaux.",
+			"noTools": "Aucun outil personnalisé chargé. Ajoutez des fichiers .ts ou .js au répertoire .builder/tools de votre projet ou ~/.builder/tools pour des outils globaux.",
 			"refreshButton": "Actualiser",
 			"refreshing": "Actualisation...",
 			"refreshSuccess": "Outils actualisés avec succès",

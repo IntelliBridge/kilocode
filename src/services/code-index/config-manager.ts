@@ -38,7 +38,7 @@ export class CodeIndexConfigManager {
 	// kilocode_change start: Kilo org indexing props
 	private _kiloOrgProps: {
 		organizationId: string
-		kilocodeToken: string
+		builderToken: string
 		projectId: string
 	} | null = null
 	// kilocode_change end
@@ -52,7 +52,7 @@ export class CodeIndexConfigManager {
 	/**
 	 * Sets Kilo organization properties for cloud-based indexing
 	 */
-	public setKiloOrgProps(props: { organizationId: string; kilocodeToken: string; projectId: string }) {
+	public setKiloOrgProps(props: { organizationId: string; builderToken: string; projectId: string }) {
 		this._kiloOrgProps = props
 	}
 
@@ -69,7 +69,7 @@ export class CodeIndexConfigManager {
 	public get isKiloOrgMode(): boolean {
 		return !!(
 			this._kiloOrgProps?.organizationId &&
-			this._kiloOrgProps?.kilocodeToken &&
+			this._kiloOrgProps?.builderToken &&
 			this._kiloOrgProps?.projectId
 		)
 	}

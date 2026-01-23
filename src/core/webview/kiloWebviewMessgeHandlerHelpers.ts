@@ -9,12 +9,12 @@ export async function refreshOrganizationModes(
 	provider: ClineProvider,
 	updateGlobalState: <K extends keyof GlobalState>(key: K, value: GlobalState[K]) => Promise<void>,
 ) {
-	if (message.apiConfiguration?.kilocodeToken) {
+	if (message.apiConfiguration?.builderToken) {
 		try {
 			const orgModes = await provider.customModesManager.fetchOrganizationModes(
-				message.apiConfiguration.kilocodeToken,
-				message.apiConfiguration.kilocodeOrganizationId,
-				message.apiConfiguration.kilocodeTesterWarningsDisabledUntil,
+				message.apiConfiguration.builderToken,
+				message.apiConfiguration.builderOrganizationId,
+				message.apiConfiguration.builderTesterWarningsDisabledUntil,
 			)
 
 			// Refresh custom modes with organization modes
@@ -41,12 +41,12 @@ export async function fetchAndRefreshOrganizationModesOnStartup(
 	updateGlobalState: <K extends keyof GlobalState>(key: K, value: GlobalState[K]) => Promise<void>,
 ) {
 	const startupState = await provider.getState()
-	if (startupState.apiConfiguration.kilocodeToken && startupState.apiConfiguration.kilocodeOrganizationId) {
+	if (startupState.apiConfiguration.builderToken && startupState.apiConfiguration.builderOrganizationId) {
 		try {
 			const orgModes = await provider.customModesManager.fetchOrganizationModes(
-				startupState.apiConfiguration.kilocodeToken,
-				startupState.apiConfiguration.kilocodeOrganizationId,
-				startupState.apiConfiguration.kilocodeTesterWarningsDisabledUntil,
+				startupState.apiConfiguration.builderToken,
+				startupState.apiConfiguration.builderOrganizationId,
+				startupState.apiConfiguration.builderTesterWarningsDisabledUntil,
 			)
 
 			if (orgModes.length > 0) {
@@ -55,7 +55,7 @@ export async function fetchAndRefreshOrganizationModesOnStartup(
 				await updateGlobalState("customModes", updatedCustomModes)
 
 				provider.log(
-					`Loaded ${orgModes.length} organization modes on startup for organization ${startupState.apiConfiguration.kilocodeOrganizationId}`,
+					`Loaded ${orgModes.length} organization modes on startup for organization ${startupState.apiConfiguration.builderOrganizationId}`,
 				)
 			}
 		} catch (error) {

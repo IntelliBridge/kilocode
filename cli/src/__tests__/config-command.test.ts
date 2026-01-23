@@ -48,8 +48,8 @@ describe("Config Command", () => {
 				{
 					id: "default",
 					provider: "kilocode",
-					kilocodeToken: "valid-token-1234567890",
-					kilocodeModel: "anthropic/claude-sonnet-4.5",
+					builderToken: "valid-token-1234567890",
+					builderModel: "anthropic/claude-sonnet-4.5",
 				},
 			],
 		}

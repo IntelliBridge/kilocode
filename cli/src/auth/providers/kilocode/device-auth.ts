@@ -163,22 +163,22 @@ export async function authenticateWithDeviceAuth(): Promise<AuthResult> {
 	}
 
 	// Step 5: Prompt for organization selection
-	let kilocodeOrganizationId: string | undefined
+	let builderOrganizationId: string | undefined
 	if (profileData.organizations && profileData.organizations.length > 0) {
-		kilocodeOrganizationId = await promptOrganizationSelection(profileData.organizations)
+		builderOrganizationId = await promptOrganizationSelection(profileData.organizations)
 	}
 
 	// Step 6: Fetch default model
-	const kilocodeModel = await getKilocodeDefaultModel(token, kilocodeOrganizationId)
+	const builderModel = await getKilocodeDefaultModel(token, builderOrganizationId)
 
 	// Step 7: Return provider config
 	return {
 		providerConfig: {
 			id: "default",
 			provider: "kilocode",
-			kilocodeToken: token,
-			kilocodeModel,
-			...(kilocodeOrganizationId && { kilocodeOrganizationId }),
+			builderToken: token,
+			builderModel,
+			...(builderOrganizationId && { builderOrganizationId }),
 		},
 	}
 }

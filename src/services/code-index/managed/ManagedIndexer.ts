@@ -22,9 +22,9 @@ import { TelemetryEventName } from "@roo-code/types"
 import { shouldIgnoreFile } from "./ignore-list"
 
 interface ManagedIndexerConfig {
-	kilocodeToken: string | null
-	kilocodeOrganizationId: string | null
-	kilocodeTesterWarningsDisabledUntil: number | null
+	builderToken: string | null
+	builderOrganizationId: string | null
+	builderTesterWarningsDisabledUntil: number | null
 }
 
 /**
@@ -160,9 +160,9 @@ export class ManagedIndexer implements vscode.Disposable {
 
 	private async onConfigurationChange(config: ManagedIndexerConfig): Promise<void> {
 		console.info("[ManagedIndexer] Configuration changed, restarting...", {
-			hasToken: !!config.kilocodeToken,
-			hasOrgId: !!config.kilocodeOrganizationId,
-			testerWarningsDisabled: config.kilocodeTesterWarningsDisabledUntil,
+			hasToken: !!config.builderToken,
+			hasOrgId: !!config.builderOrganizationId,
+			testerWarningsDisabled: config.builderTesterWarningsDisabledUntil,
 		})
 		this.config = config
 		this.dispose()
@@ -177,14 +177,14 @@ export class ManagedIndexer implements vscode.Disposable {
 
 	fetchConfig(): ManagedIndexerConfig {
 		// kilocode_change: Read directly from ContextProxy instead of ClineProvider
-		const kilocodeToken = this.contextProxy?.getSecret("kilocodeToken")
-		const kilocodeOrganizationId = this.contextProxy?.getValue("kilocodeOrganizationId")
-		const kilocodeTesterWarningsDisabledUntil = this.contextProxy?.getValue("kilocodeTesterWarningsDisabledUntil")
+		const builderToken = this.contextProxy?.getSecret("builderToken")
+		const builderOrganizationId = this.contextProxy?.getValue("builderOrganizationId")
+		const builderTesterWarningsDisabledUntil = this.contextProxy?.getValue("builderTesterWarningsDisabledUntil")
 
 		this.config = {
-			kilocodeToken: kilocodeToken ?? null,
-			kilocodeOrganizationId: kilocodeOrganizationId ?? null,
-			kilocodeTesterWarningsDisabledUntil: kilocodeTesterWarningsDisabledUntil ?? null,
+			builderToken: builderToken ?? null,
+			builderOrganizationId: builderOrganizationId ?? null,
+			builderTesterWarningsDisabledUntil: builderTesterWarningsDisabledUntil ?? null,
 		}
 
 		return this.config
@@ -234,10 +234,10 @@ export class ManagedIndexer implements vscode.Disposable {
 		console.log("[ManagedIndexer] Starting ManagedIndexer")
 
 		this.fetchConfig()
-		const { kilocodeOrganizationId, kilocodeToken } = this.config ?? {}
+		const { builderOrganizationId, builderToken } = this.config ?? {}
 
-		if (!kilocodeToken) {
-			console.log("[ManagedIndexer] No Kilocode token found, skipping managed indexing")
+		if (!builderToken) {
+			console.log("[ManagedIndexer] No Builder token found, skipping managed indexing")
 			return
 		}
 
@@ -267,7 +267,7 @@ export class ManagedIndexer implements vscode.Disposable {
 			}
 		}
 
-		this.enabledViaApi = await isEnabled(kilocodeToken, kilocodeOrganizationId ?? null)
+		this.enabledViaApi = await isEnabled(builderToken, builderOrganizationId ?? null)
 		console.debug(
 			`[ManagedIndexer] Starting indexer. config disabled: ${this.disabledViaConfig}, API: ${this.enabledViaApi}`,
 		)
@@ -334,10 +334,10 @@ export class ManagedIndexer implements vscode.Disposable {
 					// Step 3: Fetch server manifest
 					try {
 						state.manifest = await getServerManifest(
-							kilocodeOrganizationId ?? null,
+							builderOrganizationId ?? null,
 							projectId,
 							gitBranch,
-							kilocodeToken,
+							builderToken,
 							state.currentAbortController?.signal,
 						)
 					} catch (error) {
@@ -463,15 +463,15 @@ export class ManagedIndexer implements vscode.Disposable {
 				state.projectId = projectId
 
 				// Ensure we have the necessary configuration
-				if (!this.config?.kilocodeToken) {
+				if (!this.config?.builderToken) {
 					throw new Error("Missing required configuration for manifest fetch")
 				}
 
 				const manifest = await getServerManifest(
-					this.config.kilocodeOrganizationId,
+					this.config.builderOrganizationId,
 					state.projectId,
 					branch,
-					this.config.kilocodeToken,
+					this.config.builderToken,
 				)
 
 				state.manifest = manifest
@@ -583,7 +583,7 @@ export class ManagedIndexer implements vscode.Disposable {
 				return
 			}
 
-			if (!this.config?.kilocodeToken || !state.projectId) {
+			if (!this.config?.builderToken || !state.projectId) {
 				console.warn("[ManagedIndexer] Missing token, organization ID, or project ID, skipping file upsert")
 				return
 			}
@@ -644,7 +644,7 @@ export class ManagedIndexer implements vscode.Disposable {
 					try {
 						// Ensure we have the necessary configuration
 						// check again inside loop as this can change mid-flight
-						if (!this.config?.kilocodeToken || !state.projectId) {
+						if (!this.config?.builderToken || !state.projectId) {
 							return
 						}
 						const projectId = state.projectId
@@ -681,9 +681,9 @@ export class ManagedIndexer implements vscode.Disposable {
 								filePath: relativeFilePath,
 								gitBranch: event.branch,
 								isBaseBranch: event.isBaseBranch,
-								organizationId: this.config.kilocodeOrganizationId,
+								organizationId: this.config.builderOrganizationId,
 								projectId,
-								kilocodeToken: this.config.kilocodeToken,
+								builderToken: this.config.builderToken,
 							},
 							signal,
 						)
@@ -741,11 +741,11 @@ export class ManagedIndexer implements vscode.Disposable {
 				try {
 					await deleteFiles(
 						{
-							organizationId: this.config.kilocodeOrganizationId,
+							organizationId: this.config.builderOrganizationId,
 							projectId: state.projectId,
 							gitBranch: event.branch,
 							filePaths: filesToDelete,
-							kilocodeToken: this.config.kilocodeToken,
+							builderToken: this.config.builderToken,
 						},
 						signal,
 					)
@@ -792,10 +792,10 @@ export class ManagedIndexer implements vscode.Disposable {
 	}
 
 	public async search(query: string, directoryPrefix?: string): Promise<VectorStoreSearchResult[]> {
-		const { kilocodeOrganizationId, kilocodeToken } = this.config ?? {}
+		const { builderOrganizationId, builderToken } = this.config ?? {}
 
-		if (!kilocodeToken) {
-			throw new Error("Kilocode token is required for managed index search")
+		if (!builderToken) {
+			throw new Error("Builder token is required for managed index search")
 		}
 
 		const results = await Promise.all(
@@ -807,7 +807,7 @@ export class ManagedIndexer implements vscode.Disposable {
 				return await searchCode(
 					{
 						query,
-						organizationId: kilocodeOrganizationId ?? null,
+						organizationId: builderOrganizationId ?? null,
 						projectId: state.projectId,
 						preferBranch: state.gitBranch,
 						fallbackBranch: "main",
@@ -815,7 +815,7 @@ export class ManagedIndexer implements vscode.Disposable {
 						excludeFiles: [],
 						path: directoryPrefix,
 					},
-					kilocodeToken,
+					builderToken,
 				)
 			}),
 		)

@@ -284,15 +284,15 @@
 					},
 					"then": {
 						"properties": {
-							"kilocodeToken": {
+							"builderToken": {
 								"type": "string",
 								"description": "Kilocode API token"
 							},
-							"kilocodeModel": {
+							"builderModel": {
 								"type": "string",
 								"description": "Kilocode model ID"
 							},
-							"kilocodeOrganizationId": {
+							"builderOrganizationId": {
 								"type": "string",
 								"description": "Organization ID for team accounts"
 							},
@@ -314,7 +314,7 @@
 								"type": "boolean",
 								"description": "Enable OpenRouter Zero Data Retention"
 							},
-							"kilocodeTesterWarningsDisabledUntil": {
+							"builderTesterWarningsDisabledUntil": {
 								"type": "number",
 								"description": "Timestamp until which tester warnings are disabled"
 							}
@@ -325,13 +325,13 @@
 					"if": {
 						"properties": {
 							"provider": { "const": "kilocode" },
-							"kilocodeToken": { "type": "string", "minLength": 1 }
+							"builderToken": { "type": "string", "minLength": 1 }
 						},
-						"required": ["kilocodeToken"]
+						"required": ["builderToken"]
 					},
 					"then": {
 						"properties": {
-							"kilocodeToken": { "minLength": 10 }
+							"builderToken": { "minLength": 10 }
 						}
 					}
 				},
@@ -339,13 +339,13 @@
 					"if": {
 						"properties": {
 							"provider": { "const": "kilocode" },
-							"kilocodeModel": { "type": "string", "minLength": 1 }
+							"builderModel": { "type": "string", "minLength": 1 }
 						},
-						"required": ["kilocodeModel"]
+						"required": ["builderModel"]
 					},
 					"then": {
 						"properties": {
-							"kilocodeModel": { "minLength": 1 }
+							"builderModel": { "minLength": 1 }
 						}
 					}
 				},

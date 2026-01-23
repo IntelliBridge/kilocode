@@ -67,10 +67,10 @@ export type FastApplyApiProvider = z.infer<typeof fastApplyApiProviderSchema>
 
 export const DEFAULT_KILOCODE_BACKEND_URL = "https://kilo.ai"
 
-export function getKiloBaseUriFromToken(kilocodeToken?: string) {
-	if (kilocodeToken) {
+export function getKiloBaseUriFromToken(builderToken?: string) {
+	if (builderToken) {
 		try {
-			const payload_string = kilocodeToken.split(".")[1]
+			const payload_string = builderToken.split(".")[1]
 			if (!payload_string) return "https://api.kilo.ai"
 
 			const payload_json =
@@ -100,11 +100,11 @@ export function getKiloBaseUriFromToken(kilocodeToken?: string) {
  * then constructs the final URL by replacing the domain in the target URL.
  *
  * @param targetUrl The target URL to transform
- * @param kilocodeToken The KiloCode authentication token
- * @returns Fully constructed KiloCode URL with proper backend mapping based on token
+ * @param builderToken The Builder authentication token
+ * @returns Fully constructed Builder URL with proper backend mapping based on token
  */
-export function getKiloUrlFromToken(targetUrl: string, kilocodeToken?: string): string {
-	const baseUrl = getKiloBaseUriFromToken(kilocodeToken)
+export function getKiloUrlFromToken(targetUrl: string, builderToken?: string): string {
+	const baseUrl = getKiloBaseUriFromToken(builderToken)
 	const target = new URL(targetUrl)
 
 	const { protocol, host } = new URL(baseUrl)

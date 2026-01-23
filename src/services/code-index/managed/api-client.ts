@@ -11,9 +11,9 @@ import { logger } from "../../../utils/logging"
 import { getKiloBaseUriFromToken } from "../../../../packages/types/src/kilocode/kilocode"
 import { fetchWithRetries } from "../../../shared/http"
 
-export async function isEnabled(kilocodeToken: string, organizationId: string | null): Promise<boolean> {
+export async function isEnabled(builderToken: string, organizationId: string | null): Promise<boolean> {
 	try {
-		const baseUrl = getKiloBaseUriFromToken(kilocodeToken)
+		const baseUrl = getKiloBaseUriFromToken(builderToken)
 		let url = `${baseUrl}/api/code-indexing/enabled`
 		if (organizationId) {
 			url += `?${new URLSearchParams({ organizationId }).toString()}`
@@ -23,7 +23,7 @@ export async function isEnabled(kilocodeToken: string, organizationId: string | 
 			method: "GET",
 			retries: 2,
 			headers: {
-				Authorization: `Bearer ${kilocodeToken}`,
+				Authorization: `Bearer ${builderToken}`,
 				"Content-Type": "application/json",
 			},
 		})
@@ -45,17 +45,17 @@ export async function isEnabled(kilocodeToken: string, organizationId: string | 
  * Searches code in the managed index with branch preferences
  *
  * @param request Search request with preferences
- * @param kilocodeToken Authentication token
+ * @param builderToken Authentication token
  * @param signal Optional AbortSignal to cancel the request
  * @returns Array of search results sorted by relevance
  * @throws Error if the request fails
  */
 export async function searchCode(
 	request: SearchRequest,
-	kilocodeToken: string,
+	builderToken: string,
 	signal?: AbortSignal,
 ): Promise<SearchResult[]> {
-	const baseUrl = getKiloBaseUriFromToken(kilocodeToken)
+	const baseUrl = getKiloBaseUriFromToken(builderToken)
 
 	try {
 		const response = await fetchWithRetries({
@@ -63,7 +63,7 @@ export async function searchCode(
 			method: "POST",
 			retries: 2,
 			headers: {
-				Authorization: `Bearer ${kilocodeToken}`,
+				Authorization: `Bearer ${builderToken}`,
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(request),
@@ -103,7 +103,7 @@ export interface UpsertFileParams {
 	/** Whether this is from a base branch (defaults to true) */
 	isBaseBranch?: boolean
 	/** Authentication token */
-	kilocodeToken: string
+	builderToken: string
 }
 
 /**
@@ -122,10 +122,10 @@ export async function upsertFile(params: UpsertFileParams, signal?: AbortSignal)
 		fileHash,
 		gitBranch = "main",
 		isBaseBranch = true,
-		kilocodeToken,
+		builderToken,
 	} = params
 
-	const baseUrl = getKiloBaseUriFromToken(kilocodeToken)
+	const baseUrl = getKiloBaseUriFromToken(builderToken)
 
 	try {
 		// Create FormData for multipart upload
@@ -148,7 +148,7 @@ export async function upsertFile(params: UpsertFileParams, signal?: AbortSignal)
 			method: "PUT",
 			retries: 2,
 			headers: {
-				Authorization: `Bearer ${kilocodeToken}`,
+				Authorization: `Bearer ${builderToken}`,
 			},
 			body: formData,
 			signal,
@@ -173,7 +173,7 @@ export async function upsertFile(params: UpsertFileParams, signal?: AbortSignal)
  * @param organizationId Organization ID
  * @param projectId Project ID
  * @param gitBranch Git branch name
- * @param kilocodeToken Authentication token
+ * @param builderToken Authentication token
  * @param signal Optional AbortSignal to cancel the request
  * @returns Server manifest with file metadata
  * @throws Error if the request fails
@@ -182,10 +182,10 @@ export async function getServerManifest(
 	organizationId: string | null,
 	projectId: string,
 	gitBranch: string,
-	kilocodeToken: string,
+	builderToken: string,
 	signal?: AbortSignal,
 ): Promise<ServerManifest> {
-	const baseUrl = getKiloBaseUriFromToken(kilocodeToken)
+	const baseUrl = getKiloBaseUriFromToken(builderToken)
 
 	try {
 		const params = new URLSearchParams({
@@ -202,7 +202,7 @@ export async function getServerManifest(
 			method: "GET",
 			retries: 2,
 			headers: {
-				Authorization: `Bearer ${kilocodeToken}`,
+				Authorization: `Bearer ${builderToken}`,
 				"Content-Type": "application/json",
 			},
 			signal,
@@ -235,7 +235,7 @@ export interface DeleteFilesParams {
 	/** Array of file paths to delete (optional - if not provided, deletes all files for the branch) */
 	filePaths?: string[]
 	/** Authentication token */
-	kilocodeToken: string
+	builderToken: string
 }
 
 /**
@@ -246,9 +246,9 @@ export interface DeleteFilesParams {
  * @throws Error if the request fails
  */
 export async function deleteFiles(params: DeleteFilesParams, signal?: AbortSignal): Promise<void> {
-	const { organizationId, projectId, gitBranch, filePaths, kilocodeToken } = params
+	const { organizationId, projectId, gitBranch, filePaths, builderToken } = params
 
-	const baseUrl = getKiloBaseUriFromToken(kilocodeToken)
+	const baseUrl = getKiloBaseUriFromToken(builderToken)
 
 	try {
 		const requestBody: any = {
@@ -272,7 +272,7 @@ export async function deleteFiles(params: DeleteFilesParams, signal?: AbortSigna
 			method: "POST",
 			retries: 2,
 			headers: {
-				Authorization: `Bearer ${kilocodeToken}`,
+				Authorization: `Bearer ${builderToken}`,
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(requestBody),

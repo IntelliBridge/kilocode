@@ -54,7 +54,7 @@ vi.mock("fs/promises", async () => {
 })
 
 // Define test paths
-const TEST_CONFIG_DIR = path.join(homedir(), ".kilocode", "cli-test")
+const TEST_CONFIG_DIR = path.join(homedir(), ".builder", "cli-test")
 const TEST_CONFIG_FILE = path.join(TEST_CONFIG_DIR, "config.json")
 
 describe("Config Persistence", () => {
@@ -125,8 +125,8 @@ describe("Config Persistence", () => {
 					{
 						id: "test-provider",
 						provider: "kilocode",
-						kilocodeToken: "test-token-1234567890",
-						kilocodeModel: "anthropic/claude-sonnet-4.5",
+						builderToken: "test-token-1234567890",
+						builderModel: "anthropic/claude-sonnet-4.5",
 					},
 				],
 			}
@@ -261,8 +261,8 @@ describe("Config Persistence", () => {
 					{
 						id: "test",
 						provider: "kilocode",
-						kilocodeToken: "test-token-1234567890",
-						kilocodeModel: "test-model",
+						builderToken: "test-token-1234567890",
+						builderModel: "test-model",
 					},
 				],
 			}
@@ -280,8 +280,8 @@ describe("Config Persistence", () => {
 					{
 						id: "default",
 						provider: "kilocode",
-						kilocodeToken: "valid-token-1234567890",
-						kilocodeModel: "anthropic/claude-sonnet-4.5",
+						builderToken: "valid-token-1234567890",
+						builderModel: "anthropic/claude-sonnet-4.5",
 					},
 				],
 			}
@@ -305,8 +305,8 @@ describe("Config Persistence", () => {
 					{
 						id: "default",
 						provider: "kilocode",
-						kilocodeToken: "valid-token-1234567890",
-						kilocodeModel: "anthropic/claude-sonnet-4.5",
+						builderToken: "valid-token-1234567890",
+						builderModel: "anthropic/claude-sonnet-4.5",
 					},
 				],
 			}
@@ -317,7 +317,7 @@ describe("Config Persistence", () => {
 	})
 
 	describe("getKiloToken", () => {
-		it("should extract kilocodeToken from kilocode provider", async () => {
+		it("should extract builderToken from kilocode provider", async () => {
 			const config = {
 				version: "1.0.0",
 				mode: "code",
@@ -327,8 +327,8 @@ describe("Config Persistence", () => {
 					{
 						id: "default",
 						provider: "kilocode",
-						kilocodeToken: "provider-token-1234567890",
-						kilocodeModel: "anthropic/claude-sonnet-4.5",
+						builderToken: "provider-token-1234567890",
+						builderModel: "anthropic/claude-sonnet-4.5",
 					},
 				],
 				autoApproval: DEFAULT_CONFIG.autoApproval,
@@ -361,7 +361,7 @@ describe("Config Persistence", () => {
 			expect(token).toBeNull()
 		})
 
-		it("should return null when provider is kilocode but kilocodeToken doesn't exist", async () => {
+		it("should return null when provider is kilocode but builderToken doesn't exist", async () => {
 			const config = {
 				version: "1.0.0",
 				mode: "code",
@@ -371,7 +371,7 @@ describe("Config Persistence", () => {
 					{
 						id: "default",
 						provider: "kilocode",
-						kilocodeModel: "anthropic/claude-sonnet-4.5",
+						builderModel: "anthropic/claude-sonnet-4.5",
 					},
 				],
 				autoApproval: DEFAULT_CONFIG.autoApproval,
@@ -382,7 +382,7 @@ describe("Config Persistence", () => {
 			expect(token).toBeNull()
 		})
 
-		it("should return empty string when provider has empty kilocodeToken", async () => {
+		it("should return empty string when provider has empty builderToken", async () => {
 			const config = {
 				version: "1.0.0",
 				mode: "code",
@@ -392,8 +392,8 @@ describe("Config Persistence", () => {
 					{
 						id: "default",
 						provider: "kilocode",
-						kilocodeToken: "",
-						kilocodeModel: "anthropic/claude-sonnet-4.5",
+						builderToken: "",
+						builderModel: "anthropic/claude-sonnet-4.5",
 					},
 				],
 				autoApproval: DEFAULT_CONFIG.autoApproval,
@@ -441,8 +441,8 @@ describe("Config Persistence", () => {
 					{
 						id: "test",
 						provider: "kilocode",
-						kilocodeToken: "env-token-should-not-be-saved",
-						kilocodeModel: "test-model",
+						builderToken: "env-token-should-not-be-saved",
+						builderModel: "test-model",
 					},
 				],
 			}
@@ -472,8 +472,8 @@ describe("Config Persistence", () => {
 					{
 						id: "test",
 						provider: "kilocode",
-						kilocodeToken: "real-token-should-be-saved",
-						kilocodeModel: "test-model",
+						builderToken: "real-token-should-be-saved",
+						builderModel: "test-model",
 					},
 				],
 			}
@@ -488,7 +488,7 @@ describe("Config Persistence", () => {
 			// Verify content was written correctly
 			const content = await fs.readFile(TEST_CONFIG_FILE, "utf-8")
 			const parsed = JSON.parse(content)
-			expect(parsed.providers[0].kilocodeToken).toBe("real-token-should-be-saved")
+			expect(parsed.providers[0].builderToken).toBe("real-token-should-be-saved")
 		})
 
 		it("should not persist merged config during loadConfig when in ephemeral mode", async () => {
@@ -507,8 +507,8 @@ describe("Config Persistence", () => {
 					{
 						id: "test",
 						provider: "kilocode",
-						kilocodeToken: "original-token-1234567890",
-						kilocodeModel: "test-model",
+						builderToken: "original-token-1234567890",
+						builderModel: "test-model",
 					},
 				],
 				autoApproval: DEFAULT_CONFIG.autoApproval,
@@ -522,12 +522,12 @@ describe("Config Persistence", () => {
 
 			// Load the config - this would normally trigger a save after merging
 			const result = await loadConfig()
-			expect(result.config.providers[0]).toHaveProperty("kilocodeToken", "original-token-1234567890")
+			expect(result.config.providers[0]).toHaveProperty("builderToken", "original-token-1234567890")
 
 			// Verify the file still has the original content (not re-saved in ephemeral mode)
 			const content = await fs.readFile(TEST_CONFIG_FILE, "utf-8")
 			const parsed = JSON.parse(content)
-			expect(parsed.providers[0].kilocodeToken).toBe("original-token-1234567890")
+			expect(parsed.providers[0].builderToken).toBe("original-token-1234567890")
 
 			// Reset mock
 			vi.mocked(envConfig.isEphemeralMode).mockReturnValue(false)

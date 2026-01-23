@@ -23,7 +23,7 @@ describe("CliInstaller", () => {
 		it("returns the local CLI installation directory", async () => {
 			const { getLocalCliDir } = await import("../CliInstaller")
 			const dir = getLocalCliDir()
-			const expectedDir = path.join(os.homedir(), ".kilocode", "cli", "pkg")
+			const expectedDir = path.join(os.homedir(), ".builder", "cli", "pkg")
 			expect(dir).toBe(expectedDir)
 		})
 	})
@@ -32,7 +32,7 @@ describe("CliInstaller", () => {
 		it("returns the local CLI bin directory", async () => {
 			const { getLocalCliBinDir } = await import("../CliInstaller")
 			const binDir = getLocalCliBinDir()
-			const expectedDir = path.join(os.homedir(), ".kilocode", "cli", "pkg", "node_modules", ".bin")
+			const expectedDir = path.join(os.homedir(), ".builder", "cli", "pkg", "node_modules", ".bin")
 			expect(binDir).toBe(expectedDir)
 		})
 	})
@@ -44,7 +44,7 @@ describe("CliInstaller", () => {
 
 			const { getLocalCliPath } = await import("../CliInstaller")
 			const cliPath = getLocalCliPath()
-			const expectedPath = path.join(os.homedir(), ".kilocode", "cli", "pkg", "node_modules", ".bin", "kilocode")
+			const expectedPath = path.join(os.homedir(), ".builder", "cli", "pkg", "node_modules", ".bin", "kilocode")
 			expect(cliPath).toBe(expectedPath)
 
 			Object.defineProperty(process, "platform", { value: originalPlatform })
@@ -59,7 +59,7 @@ describe("CliInstaller", () => {
 			const cliPath = getLocalCliPath()
 			const expectedPath = path.join(
 				os.homedir(),
-				".kilocode",
+				".builder",
 				"cli",
 				"pkg",
 				"node_modules",
@@ -76,7 +76,7 @@ describe("CliInstaller", () => {
 		it("returns the npm install command for local CLI installation", async () => {
 			const { getLocalCliInstallCommand } = await import("../CliInstaller")
 			const command = getLocalCliInstallCommand()
-			const expectedDir = path.join(os.homedir(), ".kilocode", "cli", "pkg")
+			const expectedDir = path.join(os.homedir(), ".builder", "cli", "pkg")
 			expect(command).toBe(`npm install @kilocode/cli --prefix ${expectedDir}`)
 		})
 	})

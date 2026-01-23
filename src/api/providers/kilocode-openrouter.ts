@@ -16,7 +16,7 @@ import {
 	X_KILOCODE_TESTER,
 	X_KILOCODE_EDITORNAME,
 } from "../../shared/kilocode/headers"
-import { KILOCODE_TOKEN_REQUIRED_ERROR } from "../../shared/kilocode/errorUtils"
+import { BUILDER_TOKEN_REQUIRED_ERROR } from "../../shared/kilocode/errorUtils"
 import { DEFAULT_HEADERS } from "./constants"
 import { streamSse } from "../../services/continuedev/core/fetch/stream"
 import { getEditorNameHeader } from "../../core/kilocode/wrapper"
@@ -36,12 +36,12 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 	}
 
 	constructor(options: ApiHandlerOptions) {
-		const baseApiUrl = getKiloUrlFromToken("https://api.kilo.ai/api/", options.kilocodeToken ?? "")
+		const baseApiUrl = getKiloUrlFromToken("https://api.kilo.ai/api/", options.builderToken ?? "")
 
 		options = {
 			...options,
 			openRouterBaseUrl: `${baseApiUrl}openrouter/`,
-			openRouterApiKey: options.kilocodeToken,
+			openRouterApiKey: options.builderToken,
 		}
 
 		super(options)
@@ -50,7 +50,7 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 	}
 
 	public getRolloutHash(): number | undefined {
-		const token = this.options.kilocodeToken
+		const token = this.options.builderToken
 		return !token ? undefined : crypto.createHash("sha256").update(token).digest().readUInt32BE(0)
 	}
 
@@ -65,8 +65,8 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 
 		const kilocodeOptions = this.options
 
-		if (kilocodeOptions.kilocodeOrganizationId) {
-			headers[X_KILOCODE_ORGANIZATIONID] = kilocodeOptions.kilocodeOrganizationId
+		if (kilocodeOptions.builderOrganizationId) {
+			headers[X_KILOCODE_ORGANIZATIONID] = kilocodeOptions.builderOrganizationId
 
 			if (metadata?.projectId) {
 				headers[X_KILOCODE_PROJECTID] = metadata.projectId
@@ -75,8 +75,8 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 
 		// Add X-KILOCODE-TESTER: SUPPRESS header if the setting is enabled
 		if (
-			kilocodeOptions.kilocodeTesterWarningsDisabledUntil &&
-			kilocodeOptions.kilocodeTesterWarningsDisabledUntil > Date.now()
+			kilocodeOptions.builderTesterWarningsDisabledUntil &&
+			kilocodeOptions.builderTesterWarningsDisabledUntil > Date.now()
 		) {
 			headers[X_KILOCODE_TESTER] = "SUPPRESS"
 		}
@@ -98,7 +98,7 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 	}
 
 	override getModel() {
-		let id = this.options.kilocodeModel ?? this.defaultModel
+		let id = this.options.builderModel ?? this.defaultModel
 		let info = this.models[id] ?? openRouterDefaultModelInfo
 
 		// If a specific provider is requested, use the endpoint for that provider.
@@ -120,22 +120,22 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 	}
 
 	public override async fetchModel() {
-		if (!this.options.kilocodeToken || !this.options.openRouterBaseUrl) {
-			throw new Error(KILOCODE_TOKEN_REQUIRED_ERROR)
+		if (!this.options.builderToken || !this.options.openRouterBaseUrl) {
+			throw new Error(BUILDER_TOKEN_REQUIRED_ERROR)
 		}
 
 		const [models, endpoints, defaultModel] = await Promise.all([
 			getModels({
 				provider: "kilocode",
-				kilocodeToken: this.options.kilocodeToken,
-				kilocodeOrganizationId: this.options.kilocodeOrganizationId,
+				builderToken: this.options.builderToken,
+				builderOrganizationId: this.options.builderOrganizationId,
 			}),
 			getModelEndpoints({
 				router: "openrouter",
-				modelId: this.options.kilocodeModel,
+				modelId: this.options.builderModel,
 				endpoint: this.options.openRouterSpecificProvider,
 			}),
-			getKilocodeDefaultModel(this.options.kilocodeToken, this.options.kilocodeOrganizationId, this.options),
+			getKilocodeDefaultModel(this.options.builderToken, this.options.builderOrganizationId, this.options),
 		])
 
 		this.models = models
@@ -145,7 +145,7 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 	}
 
 	fimSupport(): FimHandler | undefined {
-		const modelId = this.options.kilocodeModel ?? this.defaultModel
+		const modelId = this.options.builderModel ?? this.defaultModel
 		if (!modelId.includes("codestral")) {
 			return undefined
 		}
@@ -167,8 +167,8 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 			...DEFAULT_HEADERS,
 			"Content-Type": "application/json",
 			Accept: "application/json",
-			"x-api-key": this.options.kilocodeToken ?? "",
-			Authorization: `Bearer ${this.options.kilocodeToken}`,
+			"x-api-key": this.options.builderToken ?? "",
+			Authorization: `Bearer ${this.options.builderToken}`,
 			...this.customRequestOptions(taskId ? { taskId, mode: "code" } : undefined)?.headers,
 		}
 

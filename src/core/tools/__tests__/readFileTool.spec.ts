@@ -103,7 +103,7 @@ vi.mock("../../prompts/responses", () => ({
 		),
 		rooIgnoreError: vi.fn(
 			(path: string) =>
-				`Access to ${path} is blocked by the .kilocodeignore file settings. You must try to continue in the task without using this file, or ask the user to update the .kilocodeignore file.`,
+				`Access to ${path} is blocked by the .builderignore file settings. You must try to continue in the task without using this file, or ask the user to update the .builderignore file.`,
 		),
 		toolResult: toolResultMock,
 		imageBlocks: imageBlocksMock,
@@ -1440,7 +1440,7 @@ describe("read_file tool output structure", () => {
 
 			// Verify - native format for error
 			expect(result).toBe(
-				`File: ${testFilePath}\nError: Access to ${testFilePath} is blocked by the .kilocodeignore file settings. You must try to continue in the task without using this file, or ask the user to update the .kilocodeignore file.`,
+				`File: ${testFilePath}\nError: Access to ${testFilePath} is blocked by the .builderignore file settings. You must try to continue in the task without using this file, or ask the user to update the .builderignore file.`,
 			)
 		})
 

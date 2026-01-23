@@ -203,7 +203,7 @@
 			},
 			"protected": {
 				"label": "Uwzględnij pliki chronione",
-				"description": "Pozwól Builder na tworzenie i edycję plików chronionych (takich jak .kilocodeignore i pliki konfiguracyjne .kilocode/) bez konieczności zatwierdzania."
+				"description": "Pozwól Builder na tworzenie i edycję plików chronionych (takich jak .builderignore i pliki konfiguracyjne .builder/) bez konieczności zatwierdzania."
 			}
 		},
 		"delete": {
@@ -743,8 +743,8 @@
 			"description": "Maksymalna liczba plików do uwzględnienia w szczegółach bieżącego katalogu roboczego. Wyższe wartości zapewniają więcej kontekstu, ale zwiększają zużycie token."
 		},
 		"rooignore": {
-			"label": "Pokaż pliki .kilocodeignore na listach i w wyszukiwaniach",
-			"description": "Gdy włączone, pliki pasujące do wzorców w .kilocodeignore będą pokazywane na listach z symbolem kłódki. Gdy wyłączone, te pliki będą całkowicie ukryte z list plików i wyszukiwań."
+			"label": "Pokaż pliki .builderignore na listach i w wyszukiwaniach",
+			"description": "Gdy włączone, pliki pasujące do wzorców w .builderignore będą pokazywane na listach z symbolem kłódki. Gdy wyłączone, te pliki będą całkowicie ukryte z list plików i wyszukiwań."
 		},
 		"maxReadFile": {
 			"label": "Próg automatycznego skracania odczytu pliku",
@@ -999,9 +999,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Włącz niestandardowe narzędzia",
-			"description": "Gdy włączone, Kilo może ładować i używać niestandardowych narzędzi TypeScript/JavaScript z katalogu .kilocode/tools Twojego projektu lub ~/.kilocode/tools dla narzędzi globalnych. Uwaga: te narzędzia będą automatycznie zatwierdzane.",
+			"description": "Gdy włączone, Kilo może ładować i używać niestandardowych narzędzi TypeScript/JavaScript z katalogu .builder/tools Twojego projektu lub ~/.builder/tools dla narzędzi globalnych. Uwaga: te narzędzia będą automatycznie zatwierdzane.",
 			"toolsHeader": "Dostępne niestandardowe narzędzia",
-			"noTools": "Nie załadowano niestandardowych narzędzi. Dodaj pliki .ts lub .js do katalogu .kilocode/tools swojego projektu lub ~/.kilocode/tools dla narzędzi globalnych.",
+			"noTools": "Nie załadowano niestandardowych narzędzi. Dodaj pliki .ts lub .js do katalogu .builder/tools swojego projektu lub ~/.builder/tools dla narzędzi globalnych.",
 			"refreshButton": "Odśwież",
 			"refreshing": "Odświeżanie...",
 			"refreshSuccess": "Narzędzia odświeżone pomyślnie",

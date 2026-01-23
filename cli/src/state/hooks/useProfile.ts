@@ -76,8 +76,8 @@ export function useProfile(): UseProfileReturn {
 
 	// Get current organization
 	const currentOrganization =
-		currentProvider?.kilocodeOrganizationId && typeof currentProvider.kilocodeOrganizationId === "string"
-			? getCurrentOrganization(currentProvider.kilocodeOrganizationId)
+		currentProvider?.builderOrganizationId && typeof currentProvider.builderOrganizationId === "string"
+			? getCurrentOrganization(currentProvider.builderOrganizationId)
 			: null
 
 	/**
@@ -123,7 +123,7 @@ export function useProfile(): UseProfileReturn {
 		if (
 			!initialFetchTriggered.current &&
 			currentProvider?.provider === "kilocode" &&
-			currentProvider?.kilocodeToken &&
+			currentProvider?.builderToken &&
 			!profileData &&
 			!profileLoading
 		) {

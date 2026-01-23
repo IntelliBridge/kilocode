@@ -57,13 +57,13 @@ export const useModelProviders = (kilocodeDefaultModel: string, apiConfiguration
 	const provider = apiConfiguration?.apiProvider
 	return useOpenRouterModelProviders(
 		provider === "kilocode"
-			? (apiConfiguration?.kilocodeModel ?? kilocodeDefaultModel)
+			? (apiConfiguration?.builderModel ?? kilocodeDefaultModel)
 			: provider === "openrouter"
 				? (apiConfiguration?.openRouterModelId ?? openRouterDefaultModelId)
 				: undefined,
 		provider === "openrouter" ? apiConfiguration?.openRouterBaseUrl : undefined,
 		apiConfiguration?.apiKey,
-		apiConfiguration?.kilocodeOrganizationId ?? "personal",
+		apiConfiguration?.builderOrganizationId ?? "personal",
 	)
 }
 // kilocode_change end
@@ -96,7 +96,7 @@ export const useSelectedModel = (apiConfiguration?: ProviderSettings) => {
 		{
 			openRouterBaseUrl: apiConfiguration?.openRouterBaseUrl,
 			openRouterApiKey: apiConfiguration?.apiKey,
-			kilocodeOrganizationId: apiConfiguration?.kilocodeOrganizationId,
+			builderOrganizationId: apiConfiguration?.builderOrganizationId,
 			geminiApiKey: apiConfiguration?.geminiApiKey,
 			googleGeminiBaseUrl: apiConfiguration?.googleGeminiBaseUrl,
 			syntheticApiKey: apiConfiguration?.syntheticApiKey,
@@ -404,11 +404,11 @@ function getSelectedModel({
 		// kilocode_change begin
 		case "kilocode": {
 			// Use the fetched models from routerModels
-			if (routerModels["kilocode"] && apiConfiguration.kilocodeModel) {
+			if (routerModels["kilocode"] && apiConfiguration.builderModel) {
 				// Find the model in the fetched models
 				const modelEntries = Object.entries(routerModels["kilocode"])
 
-				const selectedModelId = apiConfiguration.kilocodeModel.toLowerCase()
+				const selectedModelId = apiConfiguration.builderModel.toLowerCase()
 
 				// Prefer exact match
 				const selectedModel =
@@ -429,7 +429,7 @@ function getSelectedModel({
 				}
 			}
 
-			const invalidOrDefaultModel = apiConfiguration.kilocodeModel ?? kilocodeDefaultModel
+			const invalidOrDefaultModel = apiConfiguration.builderModel ?? kilocodeDefaultModel
 			return {
 				id: invalidOrDefaultModel,
 				info: routerModels["kilocode"][invalidOrDefaultModel],

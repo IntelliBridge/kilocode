@@ -66,12 +66,12 @@ export const formatResponse = {
 			return JSON.stringify({
 				status: "error",
 				type: "access_denied",
-				message: "Access blocked by .kilocodeignore",
+				message: "Access blocked by .builderignore",
 				path: path,
-				suggestion: "Try to continue without this file, or ask the user to update the .kilocodeignore file",
+				suggestion: "Try to continue without this file, or ask the user to update the .builderignore file",
 			})
 		}
-		return `Access to ${path} is blocked by the .kilocodeignore file settings. You must try to continue in the task without using this file, or ask the user to update the .kilocodeignore file.`
+		return `Access to ${path} is blocked by the .builderignore file settings. You must try to continue in the task without using this file, or ask the user to update the .builderignore file.`
 	},
 
 	noToolsUsed: (protocol?: ToolProtocol) => {

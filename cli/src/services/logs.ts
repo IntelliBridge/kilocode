@@ -11,7 +11,7 @@ import {
 	existsSync,
 } from "fs"
 import * as path from "path"
-import { KiloCodePaths } from "../utils/paths.js"
+import { BuilderPaths } from "../utils/paths.js"
 import { safeStringify } from "../utils/safe-stringify.js"
 
 export type LogLevel = "info" | "debug" | "error" | "warn"
@@ -66,7 +66,7 @@ export class LogsService {
 		}
 
 		// Initialize file logging - use centralized logs directory
-		this.logFilePath = path.join(KiloCodePaths.getLogsDir(), "cli.txt")
+		this.logFilePath = path.join(BuilderPaths.getLogsDir(), "cli.txt")
 		// Initialize file logging asynchronously (don't await to avoid blocking constructor)
 		this.initializeFileLogging().catch(() => {
 			// Error handling is done within initializeFileLogging

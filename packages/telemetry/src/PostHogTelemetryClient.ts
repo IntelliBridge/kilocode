@@ -51,7 +51,7 @@ export class PostHogTelemetryClient extends BaseTelemetryClient {
 		if (this.gitPropertyNames.includes(propertyName)) {
 			return false
 		}
-		if (allProperties.kilocodeOrganizationId && this.orgFilteredProperties.includes(propertyName)) {
+		if (allProperties.builderOrganizationId && this.orgFilteredProperties.includes(propertyName)) {
 			return false
 		}
 		return true
@@ -127,24 +127,24 @@ export class PostHogTelemetryClient extends BaseTelemetryClient {
 	}
 
 	private counter = 0
-	private kilocodeToken = ""
+	private builderToken = ""
 
-	public override async updateIdentity(kilocodeToken: string) {
-		if (kilocodeToken === this.kilocodeToken) {
+	public override async updateIdentity(builderToken: string) {
+		if (builderToken === this.builderToken) {
 			console.debug("KILOTEL: Identity up-to-date")
 			return
 		}
-		if (!kilocodeToken) {
+		if (!builderToken) {
 			console.debug("KILOTEL: Updating identity to machine ID")
 			this.distinctId = vscode.env.machineId
-			this.kilocodeToken = ""
+			this.builderToken = ""
 			return
 		}
 		const id = ++this.counter
 		try {
-			const response = await fetch(getKiloUrlFromToken("https://api.kilo.ai/api/profile", kilocodeToken), {
+			const response = await fetch(getKiloUrlFromToken("https://api.kilo.ai/api/profile", builderToken), {
 				headers: {
-					Authorization: `Bearer ${kilocodeToken}`,
+					Authorization: `Bearer ${builderToken}`,
 					"Content-Type": "application/json",
 				},
 			})
@@ -154,7 +154,7 @@ export class PostHogTelemetryClient extends BaseTelemetryClient {
 			}
 			if (id === this.counter) {
 				this.distinctId = data.user.email
-				this.kilocodeToken = kilocodeToken
+				this.builderToken = builderToken
 				console.debug("KILOTEL: Identity updated to:", this.distinctId)
 			} else {
 				console.debug("KILOTEL: Identity update ignored, newer request in progress")
@@ -163,7 +163,7 @@ export class PostHogTelemetryClient extends BaseTelemetryClient {
 			console.error("KILOTEL: Failed to update identity", error)
 			if (id === this.counter) {
 				this.distinctId = vscode.env.machineId
-				this.kilocodeToken = ""
+				this.builderToken = ""
 			}
 		}
 	}

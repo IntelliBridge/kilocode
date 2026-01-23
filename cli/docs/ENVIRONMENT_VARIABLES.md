@@ -23,16 +23,16 @@ The Kilo Code CLI can be fully configured using environment variables, allowing 
 
 ### Kilocode Provider
 
-| Variable                                        | Description                                | Required |
-| ----------------------------------------------- | ------------------------------------------ | -------- |
-| `KILOCODE_TOKEN`                                | API token                                  | Yes      |
-| `KILOCODE_MODEL`                                | Model to use                               | Yes      |
-| `KILOCODE_ORGANIZATION_ID`                      | Organization ID                            | No       |
-| `KILOCODE_OPEN_ROUTER_SPECIFIC_PROVIDER`        | OpenRouter specific provider               | No       |
-| `KILOCODE_OPEN_ROUTER_PROVIDER_DATA_COLLECTION` | Data collection (allow/deny)               | No       |
-| `KILOCODE_OPEN_ROUTER_PROVIDER_SORT`            | Sort preference (price/throughput/latency) | No       |
-| `KILOCODE_OPEN_ROUTER_ZDR`                      | Enable ZDR                                 | No       |
-| `KILOCODE_TESTER_WARNINGS_DISABLED_UNTIL`       | Disable warnings until (timestamp)         | No       |
+| Variable                                       | Description                                | Required |
+| ---------------------------------------------- | ------------------------------------------ | -------- |
+| `BUILDER_TOKEN`                                | API token                                  | Yes      |
+| `BUILDER_MODEL`                                | Model to use                               | Yes      |
+| `BUILDER_ORGANIZATION_ID`                      | Organization ID                            | No       |
+| `BUILDER_OPEN_ROUTER_SPECIFIC_PROVIDER`        | OpenRouter specific provider               | No       |
+| `BUILDER_OPEN_ROUTER_PROVIDER_DATA_COLLECTION` | Data collection (allow/deny)               | No       |
+| `BUILDER_OPEN_ROUTER_PROVIDER_SORT`            | Sort preference (price/throughput/latency) | No       |
+| `BUILDER_OPEN_ROUTER_ZDR`                      | Enable ZDR                                 | No       |
+| `BUILDER_TESTER_WARNINGS_DISABLED_UNTIL`       | Disable warnings until (timestamp)         | No       |
 
 ### Anthropic Provider
 
@@ -164,8 +164,8 @@ To run the CLI in an ephemeral environment without a config.json file, you need 
 
 ```bash
 export KILO_PROVIDER_TYPE=kilocode
-export KILOCODE_TOKEN=your-api-token
-export KILOCODE_MODEL=your-model-name
+export BUILDER_TOKEN=your-api-token
+export BUILDER_MODEL=your-model-name
 kilocode
 ```
 
@@ -197,9 +197,9 @@ export KILO_THEME=dark
 
 # Provider configuration
 export KILO_PROVIDER_TYPE=kilocode
-export KILOCODE_TOKEN=your-api-token
-export KILOCODE_MODEL=x-ai/grok-code-fast-1
-export KILOCODE_ORGANIZATION_ID=org-123
+export BUILDER_TOKEN=your-api-token
+export BUILDER_MODEL=x-ai/grok-code-fast-1
+export BUILDER_ORGANIZATION_ID=org-123
 
 # Auto-approval settings
 export KILO_AUTO_APPROVAL_ENABLED=true

@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest"
-import { applyEnvOverrides, PROVIDER_ENV_VAR, KILOCODE_PREFIX, KILO_PREFIX } from "../env-config.js"
+import { applyEnvOverrides, PROVIDER_ENV_VAR, BUILDER_PREFIX, KILO_PREFIX } from "../env-config.js"
 import type { CLIConfig } from "../types.js"
 
 describe("env-overrides", () => {
@@ -10,9 +10,9 @@ describe("env-overrides", () => {
 		// Reset environment variables before each test
 		process.env = { ...originalEnv }
 
-		// Clear any KILOCODE_* or KILO_* environment variables to ensure clean test state
+		// Clear any BUILDER_* or KILO_* environment variables to ensure clean test state
 		for (const key of Object.keys(process.env)) {
-			if (key.startsWith(KILOCODE_PREFIX) || key.startsWith(KILO_PREFIX)) {
+			if (key.startsWith(BUILDER_PREFIX) || key.startsWith(KILO_PREFIX)) {
 				delete process.env[key]
 			}
 		}
@@ -27,9 +27,9 @@ describe("env-overrides", () => {
 				{
 					id: "default",
 					provider: "kilocode",
-					kilocodeToken: "test-token",
-					kilocodeModel: "anthropic/claude-sonnet-4.5",
-					kilocodeOrganizationId: "original-org-id",
+					builderToken: "test-token",
+					builderModel: "anthropic/claude-sonnet-4.5",
+					builderOrganizationId: "original-org-id",
 				},
 				{
 					id: "anthropic-provider",
@@ -77,36 +77,36 @@ describe("env-overrides", () => {
 		})
 	})
 
-	describe("KILOCODE_* overrides for kilocode provider", () => {
-		it("should transform KILOCODE_MODEL to kilocodeModel", () => {
-			process.env[`${KILOCODE_PREFIX}MODEL`] = "anthropic/claude-opus-4.0"
+	describe("BUILDER_* overrides for kilocode provider", () => {
+		it("should transform BUILDER_MODEL to builderModel", () => {
+			process.env[`${BUILDER_PREFIX}MODEL`] = "anthropic/claude-opus-4.0"
 
 			const result = applyEnvOverrides(testConfig)
 
 			const provider = result.providers.find((p) => p.id === "default")
-			expect(provider?.kilocodeModel).toBe("anthropic/claude-opus-4.0")
+			expect(provider?.builderModel).toBe("anthropic/claude-opus-4.0")
 		})
 
-		it("should transform KILOCODE_ORGANIZATION_ID to kilocodeOrganizationId", () => {
-			process.env[`${KILOCODE_PREFIX}ORGANIZATION_ID`] = "new-org-id"
+		it("should transform BUILDER_ORGANIZATION_ID to builderOrganizationId", () => {
+			process.env[`${BUILDER_PREFIX}ORGANIZATION_ID`] = "new-org-id"
 
 			const result = applyEnvOverrides(testConfig)
 
 			const provider = result.providers.find((p) => p.id === "default")
-			expect(provider?.kilocodeOrganizationId).toBe("new-org-id")
+			expect(provider?.builderOrganizationId).toBe("new-org-id")
 		})
 
-		it("should handle multiple KILOCODE_* overrides", () => {
-			process.env[`${KILOCODE_PREFIX}MODEL`] = "anthropic/claude-opus-4.0"
-			process.env[`${KILOCODE_PREFIX}ORGANIZATION_ID`] = "new-org-id"
-			process.env[`${KILOCODE_PREFIX}TOKEN`] = "new-token"
+		it("should handle multiple BUILDER_* overrides", () => {
+			process.env[`${BUILDER_PREFIX}MODEL`] = "anthropic/claude-opus-4.0"
+			process.env[`${BUILDER_PREFIX}ORGANIZATION_ID`] = "new-org-id"
+			process.env[`${BUILDER_PREFIX}TOKEN`] = "new-token"
 
 			const result = applyEnvOverrides(testConfig)
 
 			const provider = result.providers.find((p) => p.id === "default")
-			expect(provider?.kilocodeModel).toBe("anthropic/claude-opus-4.0")
-			expect(provider?.kilocodeOrganizationId).toBe("new-org-id")
-			expect(provider?.kilocodeToken).toBe("new-token")
+			expect(provider?.builderModel).toBe("anthropic/claude-opus-4.0")
+			expect(provider?.builderOrganizationId).toBe("new-org-id")
+			expect(provider?.builderToken).toBe("new-token")
 		})
 	})
 
@@ -152,14 +152,14 @@ describe("env-overrides", () => {
 			expect(provider?.apiKey).toBeUndefined()
 		})
 
-		it("should not apply KILOCODE_* overrides to non-kilocode provider", () => {
+		it("should not apply BUILDER_* overrides to non-kilocode provider", () => {
 			process.env[PROVIDER_ENV_VAR] = "anthropic-provider"
-			process.env[`${KILOCODE_PREFIX}MODEL`] = "should-not-apply"
+			process.env[`${BUILDER_PREFIX}MODEL`] = "should-not-apply"
 
 			const result = applyEnvOverrides(testConfig)
 
 			const provider = result.providers.find((p) => p.id === "anthropic-provider")
-			expect(provider?.kilocodeModel).toBeUndefined()
+			expect(provider?.builderModel).toBeUndefined()
 		})
 	})
 
@@ -179,15 +179,15 @@ describe("env-overrides", () => {
 
 		it("should apply both provider and field overrides together for kilocode provider", () => {
 			process.env[PROVIDER_ENV_VAR] = "default"
-			process.env[`${KILOCODE_PREFIX}MODEL`] = "anthropic/claude-opus-4.0"
-			process.env[`${KILOCODE_PREFIX}ORGANIZATION_ID`] = "new-org-id"
+			process.env[`${BUILDER_PREFIX}MODEL`] = "anthropic/claude-opus-4.0"
+			process.env[`${BUILDER_PREFIX}ORGANIZATION_ID`] = "new-org-id"
 
 			const result = applyEnvOverrides(testConfig)
 
 			expect(result.provider).toBe("default")
 			const provider = result.providers.find((p) => p.id === "default")
-			expect(provider?.kilocodeModel).toBe("anthropic/claude-opus-4.0")
-			expect(provider?.kilocodeOrganizationId).toBe("new-org-id")
+			expect(provider?.builderModel).toBe("anthropic/claude-opus-4.0")
+			expect(provider?.builderOrganizationId).toBe("new-org-id")
 		})
 	})
 
@@ -208,14 +208,14 @@ describe("env-overrides", () => {
 			expect(result).toEqual(testConfig)
 		})
 
-		it("should handle empty string override values for KILOCODE_*", () => {
-			process.env[`${KILOCODE_PREFIX}MODEL`] = ""
+		it("should handle empty string override values for BUILDER_*", () => {
+			process.env[`${BUILDER_PREFIX}MODEL`] = ""
 
 			const result = applyEnvOverrides(testConfig)
 
 			// Empty strings should not trigger overrides
 			const provider = result.providers.find((p) => p.id === "default")
-			expect(provider?.kilocodeModel).toBe("anthropic/claude-sonnet-4.5")
+			expect(provider?.builderModel).toBe("anthropic/claude-sonnet-4.5")
 		})
 
 		it("should handle empty string override values for KILO_*", () => {
@@ -229,8 +229,8 @@ describe("env-overrides", () => {
 			expect(provider?.apiKey).toBe("test-key")
 		})
 
-		it("should ignore KILOCODE_ with no field name", () => {
-			process.env[KILOCODE_PREFIX.slice(0, -1)] = "value"
+		it("should ignore BUILDER_ with no field name", () => {
+			process.env[BUILDER_PREFIX.slice(0, -1)] = "value"
 
 			const result = applyEnvOverrides(testConfig)
 

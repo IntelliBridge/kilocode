@@ -23,7 +23,7 @@ describe("provider command", () => {
 		{
 			id: "kilocode-test",
 			provider: "kilocode",
-			kilocodeModel: "claude-sonnet-4.5",
+			builderModel: "claude-sonnet-4.5",
 		},
 	]
 

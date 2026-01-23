@@ -3,7 +3,7 @@ import { DEFAULT_CONFIG, DEFAULT_AUTO_APPROVAL } from "./defaults.js"
 import { logs } from "../services/logs.js"
 import {
 	ENV_VARS,
-	KILOCODE_PREFIX,
+	BUILDER_PREFIX,
 	KILO_PREFIX,
 	PROVIDER_ENV_VAR,
 	SPECIFIC_ENV_VARS,
@@ -15,7 +15,7 @@ import {
 import { envConfigExists, getMissingEnvVars } from "./provider-validation.js"
 
 export { envConfigExists, getMissingEnvVars }
-export { PROVIDER_ENV_VAR, KILOCODE_PREFIX, KILO_PREFIX }
+export { PROVIDER_ENV_VAR, BUILDER_PREFIX, KILO_PREFIX }
 
 /**
  * Build auto-approval configuration from environment variables
@@ -282,7 +282,7 @@ function applyCoreOverrides(config: CLIConfig): CLIConfig {
 
 /**
  * Get all environment variable overrides for the current provider
- * - For Kilocode provider: looks for KILOCODE_* vars and transforms to kilocodeXyz
+ * - For Builder provider: looks for BUILDER_* vars and transforms to builderXyz
  * - For other providers: looks for KILO_* vars (excluding specific vars) and transforms to xyzAbc
  * Returns an array of { fieldName, value } objects
  */
@@ -290,9 +290,9 @@ function getProviderOverrideFields(provider: string): Array<{ fieldName: string;
 	const overrides: Array<{ fieldName: string; value: string }> = []
 
 	if (provider === "kilocode") {
-		// For Kilocode provider: KILOCODE_XYZ → kilocodeXyz
+		// For Builder provider: BUILDER_XYZ → builderXyz
 		for (const [key, value] of Object.entries(process.env)) {
-			if (key.startsWith(KILOCODE_PREFIX) && value) {
+			if (key.startsWith(BUILDER_PREFIX) && value) {
 				overrides.push({ fieldName: snakeToCamelCase(key), value })
 			}
 		}
@@ -322,7 +322,7 @@ function getProviderOverrideFields(provider: string): Array<{ fieldName: string;
  * This is critical because validation happens immediately after config creation, so all
  * required fields must be present before validation runs.
  *
- * For Kilocode provider: KILOCODE_* vars → kilocodeXyz fields
+ * For Builder provider: BUILDER_* vars → builderXyz fields
  * For other providers: KILO_* vars → xyzAbc fields
  */
 function buildProviderFromEnv(providerType: string): ProviderConfig {
@@ -396,10 +396,10 @@ export function buildConfigFromEnv(): CLIConfig | null {
  * - KILO_TELEMETRY: Override telemetry setting (true/false)
  * - KILO_THEME: Override the UI theme
  * - KILO_AUTO_APPROVAL_*: Override auto-approval settings
- * - For Kilocode provider: KILOCODE_<FIELD_NAME> (e.g., KILOCODE_MODEL → kilocodeModel)
+ * - For Kilocode provider: BUILDER_<FIELD_NAME> (e.g., BUILDER_MODEL → builderModel)
  *   Examples:
- *   - KILOCODE_MODEL → kilocodeModel
- *   - KILOCODE_ORGANIZATION_ID → kilocodeOrganizationId
+ *   - BUILDER_MODEL → builderModel
+ *   - BUILDER_ORGANIZATION_ID → builderOrganizationId
  * - For other providers: KILO_<FIELD_NAME> (e.g., KILO_API_KEY → apiKey)
  *   Examples:
  *   - KILO_API_KEY → apiKey

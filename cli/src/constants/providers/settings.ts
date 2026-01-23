@@ -39,18 +39,18 @@ export interface FieldMetadata {
  */
 export const FIELD_REGISTRY: Record<string, FieldMetadata> = {
 	// Kilocode fields
-	kilocodeToken: {
+	builderToken: {
 		label: "Builder Token",
 		type: "password",
 		placeholder: "Enter your Builder token...",
 	},
-	kilocodeOrganizationId: {
+	builderOrganizationId: {
 		label: "Organization ID",
 		type: "text",
 		placeholder: "Enter organization ID (or leave empty for personal)...",
 		isOptional: true,
 	},
-	kilocodeModel: {
+	builderModel: {
 		label: "Model",
 		type: "text",
 		placeholder: "Enter model name...",
@@ -726,7 +726,7 @@ export const isOptionalField = (field: string): boolean => {
 	}
 
 	// Fallback logic for fields not in registry
-	return field.includes("BaseUrl") || field === "kilocodeOrganizationId"
+	return field.includes("BaseUrl") || field === "builderOrganizationId"
 }
 
 /**
@@ -784,9 +784,9 @@ export const getProviderSettings = (provider: ProviderName, config: ProviderSett
 	switch (provider) {
 		case "kilocode":
 			return [
-				createFieldConfig("kilocodeToken", config),
-				createFieldConfig("kilocodeOrganizationId", config, "personal"),
-				createFieldConfig("kilocodeModel", config, "anthropic/claude-sonnet-4"),
+				createFieldConfig("builderToken", config),
+				createFieldConfig("builderOrganizationId", config, "personal"),
+				createFieldConfig("builderModel", config, "anthropic/claude-sonnet-4"),
 			]
 
 		case "anthropic":

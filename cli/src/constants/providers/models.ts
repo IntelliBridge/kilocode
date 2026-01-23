@@ -172,7 +172,7 @@ export const PROVIDER_TO_ROUTER_NAME: Record<ProviderName, RouterName | null> = 
  * Mapping from ProviderName to the field name that stores the model ID
  */
 export const PROVIDER_MODEL_FIELD: Record<ProviderName, string | null> = {
-	kilocode: "kilocodeModel",
+	kilocode: "builderModel",
 	openrouter: "openRouterModelId",
 	ollama: "ollamaModelId",
 	lmstudio: "lmStudioModelId",
@@ -453,7 +453,7 @@ export function getModelIdKey(provider: ProviderName): string {
 		case "vscode-lm":
 			return "vsCodeLmModelSelector"
 		case "kilocode":
-			return "kilocodeModel"
+			return "builderModel"
 		case "deepinfra":
 			return "deepInfraModelId"
 		case "io-intelligence":

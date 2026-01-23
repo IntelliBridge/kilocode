@@ -33,7 +33,7 @@ import type { CLIConfig, ProviderConfig } from "./config/types.js"
 import { getModelIdKey } from "./constants/providers/models.js"
 import type { ProviderName } from "./types/messages.js"
 import { getSelectedModelId } from "./utils/providers.js"
-import { KiloCodePathProvider, ExtensionMessengerAdapter } from "./services/session-adapters.js"
+import { BuilderPathProvider, ExtensionMessengerAdapter } from "./services/session-adapters.js"
 import { getKiloToken } from "./config/persistence.js"
 import { SessionManager } from "../../src/shared/kilocode/cli-sessions/core/SessionManager.js"
 import { triggerExitConfirmationAtom } from "./state/atoms/keyboard.js"
@@ -163,7 +163,7 @@ export class CLI {
 				await this.injectConfigurationToExtension()
 				logs.debug("CLI configuration injected into extension", "CLI")
 
-				const pathProvider = new KiloCodePathProvider()
+				const pathProvider = new BuilderPathProvider()
 				const extensionMessenger = new ExtensionMessengerAdapter(this.service)
 
 				this.sessionService = SessionManager.init({
@@ -194,7 +194,7 @@ export class CLI {
 					platform: "cli",
 					getOrganizationId: async () => {
 						const state = this.service?.getState()
-						const result = state?.apiConfiguration?.kilocodeOrganizationId
+						const result = state?.apiConfiguration?.builderOrganizationId
 
 						logs.debug(`Resolved organization ID: "${result}"`, "SessionManager")
 

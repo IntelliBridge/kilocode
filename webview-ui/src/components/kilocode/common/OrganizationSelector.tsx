@@ -9,7 +9,7 @@ export const OrganizationSelector = ({ className, showLabel = false }: { classNa
 	const { apiConfiguration, currentApiConfigName } = useExtensionState()
 	const { t } = useAppTranslation()
 	const [isOpen, setIsOpen] = useState(false)
-	const selectedOrg = organizations.find((o) => o.id === apiConfiguration?.kilocodeOrganizationId)
+	const selectedOrg = organizations.find((o) => o.id === apiConfiguration?.builderOrganizationId)
 	const containerRef = useRef<HTMLDivElement>(null)
 
 	const handleMessage = (event: MessageEvent<WebviewMessage>) => {
@@ -53,12 +53,12 @@ export const OrganizationSelector = ({ className, showLabel = false }: { classNa
 	}, [])
 
 	useEffect(() => {
-		if (!apiConfiguration?.kilocodeToken) return
+		if (!apiConfiguration?.builderToken) return
 
 		vscode.postMessage({
 			type: "fetchProfileDataRequest",
 		})
-	}, [apiConfiguration?.kilocodeToken])
+	}, [apiConfiguration?.builderToken])
 
 	const setSelectedOrganization = (organization: UserOrganizationWithApiKey | null) => {
 		if (organization === null) {
@@ -68,13 +68,13 @@ export const OrganizationSelector = ({ className, showLabel = false }: { classNa
 				text: currentApiConfigName,
 				apiConfiguration: {
 					...apiConfiguration,
-					kilocodeOrganizationId: undefined,
+					builderOrganizationId: undefined,
 				},
 			})
 			vscode.postMessage({
 				type: "fetchBalanceDataRequest",
 				values: {
-					apiKey: apiConfiguration?.kilocodeToken,
+					apiKey: apiConfiguration?.builderToken,
 				},
 			})
 		} else {
@@ -83,7 +83,7 @@ export const OrganizationSelector = ({ className, showLabel = false }: { classNa
 				text: currentApiConfigName,
 				apiConfiguration: {
 					...apiConfiguration,
-					kilocodeOrganizationId: organization.id,
+					builderOrganizationId: organization.id,
 				},
 			})
 			vscode.postMessage({

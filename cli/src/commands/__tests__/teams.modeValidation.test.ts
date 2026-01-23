@@ -35,9 +35,9 @@ describe("teams command - mode validation", () => {
 			currentProvider: {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeModel: "claude-sonnet-4",
-				kilocodeToken: "test-token",
-				kilocodeOrganizationId: undefined,
+				builderModel: "claude-sonnet-4",
+				builderToken: "test-token",
+				builderOrganizationId: undefined,
 			},
 			config: {} as CLIConfig,
 			addMessage: addMessageMock,
@@ -116,7 +116,7 @@ describe("teams command - mode validation", () => {
 	it("should handle personal account switch with mode validation", async () => {
 		const { teamsCommand } = await import("../teams.js")
 
-		mockContext.currentProvider.kilocodeOrganizationId = "org-1"
+		mockContext.currentProvider.builderOrganizationId = "org-1"
 		mockContext.args = ["select", "personal"]
 
 		await teamsCommand.handler(mockContext)
@@ -125,7 +125,7 @@ describe("teams command - mode validation", () => {
 		expect(updateProviderMock).toHaveBeenCalledWith(
 			"test-provider",
 			expect.objectContaining({
-				kilocodeOrganizationId: undefined,
+				builderOrganizationId: undefined,
 			}),
 		)
 

@@ -87,7 +87,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 			WorktreeManager: vi.fn().mockImplementation(() => ({
 				createWorktree: vi.fn().mockResolvedValue({
 					branch: "test-branch-123",
-					path: "/tmp/workspace/.kilocode/worktrees/test-branch-123",
+					path: "/tmp/workspace/.builder/worktrees/test-branch-123",
 					parentBranch: "main",
 				}),
 				commitChanges: vi.fn().mockResolvedValue({ success: true }),

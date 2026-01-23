@@ -3,7 +3,7 @@ import * as path from "node:path"
 import * as os from "node:os"
 
 const CLI_PACKAGE_NAME = "@kilocode/cli"
-const LOCAL_CLI_DIR = path.join(os.homedir(), ".kilocode", "cli", "pkg")
+const LOCAL_CLI_DIR = path.join(os.homedir(), ".builder", "cli", "pkg")
 
 /**
  * Get the path to the local CLI installation directory.
@@ -42,7 +42,7 @@ export function getCliInstallCommand(): string {
 
 /**
  * Get the npm install command for local CLI installation.
- * This installs the CLI to ~/.kilocode/cli/pkg for systems that don't support global installation.
+ * This installs the CLI to ~/.builder/cli/pkg for systems that don't support global installation.
  */
 export function getLocalCliInstallCommand(): string {
 	return `npm install ${CLI_PACKAGE_NAME} --prefix ${LOCAL_CLI_DIR}`

@@ -31,7 +31,7 @@
 - 组合重叠匹配以提高置信度评分。
 - 在应用更改前，在diff视图中显示更改以供用户审查和编辑。
 - 跟踪每个文件的连续错误（`consecutiveMistakeCountForApplyDiff`）以防止重复失败。
-- 根据`.kilocodeignore`规则验证文件访问权限。
+- 根据`.builderignore`规则验证文件访问权限。
 - 有效处理多行编辑。
 
 ## 限制
@@ -47,7 +47,7 @@
 当调用`apply_diff`工具时，它会遵循以下过程：
 
 1. **参数验证**：验证必需的`path`和`diff`参数。
-2. **KiloCodeIgnore检查**：验证目标文件路径是否被`.kilocodeignore`规则允许。
+2. **KiloCodeIgnore检查**：验证目标文件路径是否被`.builderignore`规则允许。
 3. **文件分析**：加载目标文件内容。
 4. **匹配查找**：使用所选策略的算法（精确、模糊、重叠窗口）定位目标内容，考虑置信度阈值和上下文（`BUFFER_LINES`）。
 5. **更改准备**：生成建议的更改，保留缩进。

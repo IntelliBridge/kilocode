@@ -101,7 +101,7 @@ describe("PostHogTelemetryClient", () => {
 				(propertyName: string, allProperties: Record<string, unknown>) => boolean
 			>(client, "isPropertyCapturable").bind(client)
 
-			const orgProperties = { appVersion: "1.0.0", kilocodeOrganizationId: "org-123" }
+			const orgProperties = { appVersion: "1.0.0", builderOrganizationId: "org-123" }
 
 			// Error properties should be filtered out for org users
 			expect(isPropertyCapturable("errorMessage", orgProperties)).toBe(false)
@@ -233,7 +233,7 @@ describe("PostHogTelemetryClient", () => {
 					editorName: "vscode",
 					language: "en",
 					mode: "code",
-					kilocodeOrganizationId: "org-123",
+					builderOrganizationId: "org-123",
 				}),
 			}
 
@@ -258,7 +258,7 @@ describe("PostHogTelemetryClient", () => {
 				editorName: "vscode",
 				language: "en",
 				mode: "code",
-				kilocodeOrganizationId: "org-123",
+				builderOrganizationId: "org-123",
 				customProp: "value",
 			})
 		})
@@ -269,7 +269,7 @@ describe("PostHogTelemetryClient", () => {
 			const mockProvider: TelemetryPropertiesProvider = {
 				getTelemetryProperties: vi.fn().mockResolvedValue({
 					appVersion: "1.0.0",
-					kilocodeOrganizationId: "org-from-provider",
+					builderOrganizationId: "org-from-provider",
 				}),
 			}
 
@@ -282,12 +282,12 @@ describe("PostHogTelemetryClient", () => {
 			const result = await getEventProperties({
 				event: TelemetryEventName.TASK_CREATED,
 				properties: {
-					kilocodeOrganizationId: "org-from-event",
+					builderOrganizationId: "org-from-event",
 				},
 			})
 
 			// Event property should take precedence
-			expect(result.kilocodeOrganizationId).toBe("org-from-event")
+			expect(result.builderOrganizationId).toBe("org-from-event")
 		})
 
 		it("should handle missing organization ID gracefully", async () => {
@@ -315,7 +315,7 @@ describe("PostHogTelemetryClient", () => {
 			})
 
 			// Should not have organization ID
-			expect(result).not.toHaveProperty("kilocodeOrganizationId")
+			expect(result).not.toHaveProperty("builderOrganizationId")
 			expect(result).toEqual({
 				appVersion: "1.0.0",
 				vscodeVersion: "1.60.0",
@@ -481,7 +481,7 @@ describe("PostHogTelemetryClient", () => {
 					editorName: "vscode",
 					language: "en",
 					mode: "code",
-					kilocodeOrganizationId: "org-456",
+					builderOrganizationId: "org-456",
 				}),
 			}
 
@@ -498,13 +498,13 @@ describe("PostHogTelemetryClient", () => {
 				properties: expect.objectContaining({
 					appVersion: "1.0.0",
 					test: "value",
-					kilocodeOrganizationId: "org-456",
+					builderOrganizationId: "org-456",
 				}),
 			})
 
 			// Verify organization ID is included
 			const captureCall = mockPostHogClient.capture.mock.calls[0][0]
-			expect(captureCall.properties.kilocodeOrganizationId).toBe("org-456")
+			expect(captureCall.properties.builderOrganizationId).toBe("org-456")
 		})
 
 		it("should capture events without organization ID when not provided", async () => {
@@ -537,7 +537,7 @@ describe("PostHogTelemetryClient", () => {
 
 			// Verify organization ID is not included
 			const captureCall = mockPostHogClient.capture.mock.calls[0][0]
-			expect(captureCall.properties).not.toHaveProperty("kilocodeOrganizationId")
+			expect(captureCall.properties).not.toHaveProperty("builderOrganizationId")
 		})
 	})
 

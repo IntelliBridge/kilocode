@@ -344,7 +344,7 @@ export interface TelemetryClient {
 	capture(options: TelemetryEvent): Promise<void>
 	// kilocode_change start
 	captureException(error: Error, properties?: Record<string | number, unknown>): void
-	updateIdentity(kilocodeToken: string): Promise<void>
+	updateIdentity(builderToken: string): Promise<void>
 	// kilocode_change end
 	updateTelemetryState(isOptedIn: boolean): void
 	isTelemetryEnabled(): boolean

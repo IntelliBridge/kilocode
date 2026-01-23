@@ -38,7 +38,7 @@ type ModelIdKey = keyof Pick<
 	| "litellmModelId"
 	// kilocode_change start
 	| "apiModelId"
-	| "kilocodeModel"
+	| "builderModel"
 	| "nanoGptModelId"
 	| "ovhCloudAiEndpointsModelId"
 	| "inceptionLabsModelId"

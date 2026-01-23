@@ -196,8 +196,8 @@ describe("CliProcessHandler", () => {
 				{
 					apiConfiguration: {
 						apiProvider: "kilocode",
-						kilocodeToken: "abc123",
-						kilocodeModel: "claude-sonnet-4-20250514",
+						builderToken: "abc123",
+						builderModel: "claude-sonnet-4-20250514",
 					},
 				},
 				onCliEvent,
@@ -206,8 +206,8 @@ describe("CliProcessHandler", () => {
 			const env = (spawnMock.mock.calls[0] as unknown as [string, string[], Record<string, any>])[2].env
 			expect(env.KILO_PROVIDER).toBe("default")
 			expect(env.KILO_PROVIDER_TYPE).toBe("kilocode")
-			expect(env.KILOCODE_TOKEN).toBe("abc123")
-			expect(env.KILOCODE_MODEL).toBe("claude-sonnet-4-20250514")
+			expect(env.BUILDER_TOKEN).toBe("abc123")
+			expect(env.BUILDER_MODEL).toBe("claude-sonnet-4-20250514")
 			expect(env.KILO_PLATFORM).toBe("agent-manager")
 			expect(env.EXISTING_VAR).toBe("keep-me")
 
@@ -228,7 +228,7 @@ describe("CliProcessHandler", () => {
 			process.env.HOME = tempHome
 			process.env.TMPDIR = tempTmpDir
 
-			const configPath = path.join(tempHome, ".kilocode", "cli", "config.json")
+			const configPath = path.join(tempHome, ".builder", "cli", "config.json")
 			fs.mkdirSync(path.dirname(configPath), { recursive: true })
 			fs.writeFileSync(
 				configPath,
@@ -248,19 +248,19 @@ describe("CliProcessHandler", () => {
 				{
 					apiConfiguration: {
 						apiProvider: "kilocode",
-						kilocodeToken: "abc123",
-						kilocodeModel: "claude-sonnet-4-20250514",
+						builderToken: "abc123",
+						builderModel: "claude-sonnet-4-20250514",
 					},
 				},
 				onCliEvent,
 			)
 
 			const env = (spawnMock.mock.calls[0] as unknown as [string, string[], Record<string, any>])[2].env
-			expect(env.HOME).toBe(path.join(tempTmpDir, "kilocode-agent-manager-home"))
-			expect(env.USERPROFILE).toBe(path.join(tempTmpDir, "kilocode-agent-manager-home"))
+			expect(env.HOME).toBe(path.join(tempTmpDir, "builder-agent-manager-home"))
+			expect(env.USERPROFILE).toBe(path.join(tempTmpDir, "builder-agent-manager-home"))
 			expect(env.KILO_PROVIDER_TYPE).toBe("kilocode")
-			expect(env.KILOCODE_TOKEN).toBe("abc123")
-			expect(env.KILOCODE_MODEL).toBe("claude-sonnet-4-20250514")
+			expect(env.BUILDER_TOKEN).toBe("abc123")
+			expect(env.BUILDER_MODEL).toBe("claude-sonnet-4-20250514")
 
 			fs.rmSync(tempHome, { recursive: true, force: true })
 			fs.rmSync(tempTmpDir, { recursive: true, force: true })
@@ -333,7 +333,7 @@ describe("CliProcessHandler", () => {
 				try {
 					const onCliEvent = vi.fn()
 					handler.spawnProcess(
-						"C:\\Users\\test\\.kilocode\\cli\\pkg\\node_modules\\.bin\\kilocode.cmd",
+						"C:\\Users\\test\\.builder\\cli\\pkg\\node_modules\\.bin\\kilocode.cmd",
 						"/workspace",
 						"test prompt",
 						undefined,
@@ -344,7 +344,7 @@ describe("CliProcessHandler", () => {
 						expectedCommand,
 						expect.arrayContaining([
 							"/c",
-							"C:\\Users\\test\\.kilocode\\cli\\pkg\\node_modules\\.bin\\kilocode.cmd",
+							"C:\\Users\\test\\.builder\\cli\\pkg\\node_modules\\.bin\\kilocode.cmd",
 						]),
 						expect.objectContaining({ shell: false }),
 					)
@@ -939,7 +939,7 @@ describe("CliProcessHandler", () => {
 
 			// Emit welcome event with configuration error instructions (like misconfigured CLI)
 			const welcomeEvent =
-				'{"type":"welcome","metadata":{"welcomeOptions":{"instructions":["Configuration Error: config.json is incomplete","kilocodeToken is required"]}}}\n'
+				'{"type":"welcome","metadata":{"welcomeOptions":{"instructions":["Configuration Error: config.json is incomplete","builderToken is required"]}}}\n'
 			mockProcess.stdout.emit("data", Buffer.from(welcomeEvent))
 
 			// Exit with code 0 (CLI exits normally after showing configuration error)
@@ -948,7 +948,7 @@ describe("CliProcessHandler", () => {
 			expect(registry.pendingSession).toBeNull()
 			expect(callbacks.onStartSessionFailed).toHaveBeenCalledWith({
 				type: "cli_configuration_error",
-				message: "Configuration Error: config.json is incomplete\nkilocodeToken is required",
+				message: "Configuration Error: config.json is incomplete\nbuilderToken is required",
 			})
 		})
 
@@ -982,7 +982,7 @@ describe("CliProcessHandler", () => {
 			mockProcess.stdout.emit("data", Buffer.from(chunk1))
 
 			// Second chunk contains the rest of the JSON with newline
-			const chunk2 = '"kilocodeToken is required"]}}}\n'
+			const chunk2 = '"builderToken is required"]}}}\n'
 			mockProcess.stdout.emit("data", Buffer.from(chunk2))
 
 			// Exit with code 0 (CLI exits normally after showing configuration error)
@@ -991,7 +991,7 @@ describe("CliProcessHandler", () => {
 			expect(registry.pendingSession).toBeNull()
 			expect(callbacks.onStartSessionFailed).toHaveBeenCalledWith({
 				type: "cli_configuration_error",
-				message: "Configuration Error: config.json is incomplete\nkilocodeToken is required",
+				message: "Configuration Error: config.json is incomplete\nbuilderToken is required",
 			})
 		})
 
@@ -1034,12 +1034,12 @@ describe("CliProcessHandler", () => {
 			})
 		})
 
-		it("handles CLI configuration error when raw output contains kilocodeToken error", () => {
+		it("handles CLI configuration error when raw output contains builderToken error", () => {
 			const onCliEvent = vi.fn()
 			handler.spawnProcess("/path/to/kilocode", "/workspace", "test prompt", undefined, onCliEvent)
 
 			// Emit output containing the specific error message
-			const output = "Some output... kilocodeToken is required and cannot be empty... more output"
+			const output = "Some output... builderToken is required and cannot be empty... more output"
 			mockProcess.stdout.emit("data", Buffer.from(output))
 
 			mockProcess.emit("exit", 0, null)
@@ -1075,7 +1075,7 @@ describe("CliProcessHandler", () => {
 
 			// Send chunks with identifiable content
 			const oldData = "OLD_DATA_".repeat(8 * 1024) // ~80KB of old data
-			const newData = "kilocodeToken is required" // This should be preserved
+			const newData = "builderToken is required" // This should be preserved
 
 			mockProcess.stdout.emit("data", Buffer.from(oldData))
 			mockProcess.stdout.emit("data", Buffer.from(newData))

@@ -58,7 +58,7 @@ type RouterModelsQueryKey = {
 	openRouterApiKey?: string
 	lmStudioBaseUrl?: string
 	ollamaBaseUrl?: string
-	kilocodeOrganizationId?: string
+	builderOrganizationId?: string
 	deepInfraApiKey?: string
 	geminiApiKey?: string
 	googleGeminiBaseUrl?: string

@@ -116,9 +116,9 @@ describe("env-utils", () => {
 			expect(snakeToCamelCase("model")).toBe("model")
 		})
 
-		it("should handle KILOCODE_ prefix", () => {
-			expect(snakeToCamelCase("KILOCODE_MODEL")).toBe("kilocodeModel")
-			expect(snakeToCamelCase("KILOCODE_ORGANIZATION_ID")).toBe("kilocodeOrganizationId")
+		it("should handle BUILDER_ prefix", () => {
+			expect(snakeToCamelCase("BUILDER_MODEL")).toBe("builderModel")
+			expect(snakeToCamelCase("BUILDER_ORGANIZATION_ID")).toBe("builderOrganizationId")
 		})
 	})
 })

@@ -15,23 +15,23 @@ const defaultsSchema = z.object({
 })
 
 async function fetchKilocodeDefaultModel(
-	kilocodeToken: KilocodeToken,
+	builderToken: KilocodeToken,
 	organizationId?: OrganizationId,
 	providerSettings?: ProviderSettings,
 ): Promise<string> {
 	try {
 		const path = organizationId ? `/organizations/${organizationId}/defaults` : `/defaults`
-		const url = getKiloUrlFromToken(`https://api.kilo.ai/api${path}`, kilocodeToken)
+		const url = getKiloUrlFromToken(`https://api.kilo.ai/api${path}`, builderToken)
 
 		const headers: Record<string, string> = {
 			...DEFAULT_HEADERS,
-			Authorization: `Bearer ${kilocodeToken}`,
+			Authorization: `Bearer ${builderToken}`,
 		}
 
 		// Add X-KILOCODE-TESTER: SUPPRESS header if the setting is enabled
 		if (
-			providerSettings?.kilocodeTesterWarningsDisabledUntil &&
-			providerSettings.kilocodeTesterWarningsDisabledUntil > Date.now()
+			providerSettings?.builderTesterWarningsDisabledUntil &&
+			providerSettings.builderTesterWarningsDisabledUntil > Date.now()
 		) {
 			headers["X-KILOCODE-TESTER"] = "SUPPRESS"
 		}
@@ -57,21 +57,21 @@ async function fetchKilocodeDefaultModel(
 }
 
 export async function getKilocodeDefaultModel(
-	kilocodeToken?: KilocodeToken,
+	builderToken?: KilocodeToken,
 	organizationId?: OrganizationId,
 	providerSettings?: ProviderSettings,
 ): Promise<string> {
-	if (!kilocodeToken) {
+	if (!builderToken) {
 		return openRouterDefaultModelId
 	}
 	const key = JSON.stringify({
-		kilocodeToken,
+		builderToken,
 		organizationId,
-		testerSuppressed: providerSettings?.kilocodeTesterWarningsDisabledUntil,
+		testerSuppressed: providerSettings?.builderTesterWarningsDisabledUntil,
 	})
 	let defaultModelPromise = cache.get(key)
 	if (!defaultModelPromise) {
-		defaultModelPromise = fetchKilocodeDefaultModel(kilocodeToken, organizationId, providerSettings)
+		defaultModelPromise = fetchKilocodeDefaultModel(builderToken, organizationId, providerSettings)
 		cache.set(key, defaultModelPromise)
 	}
 	return await defaultModelPromise

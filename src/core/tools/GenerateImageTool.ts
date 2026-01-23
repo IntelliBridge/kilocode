@@ -209,11 +209,11 @@ export class GenerateImageTool extends BaseTool<"generate_image"> {
 			const handler =
 				modelProvider === "kilocode"
 					? new KilocodeOpenrouterHandler({
-							kilocodeToken: kiloCodeApiKey,
-							kilocodeOrganizationId:
+							builderToken: kiloCodeApiKey,
+							builderOrganizationId:
 								task.apiConfiguration.apiProvider === "kilocode" &&
-								task.apiConfiguration.kilocodeToken === kiloCodeApiKey
-									? task.apiConfiguration.kilocodeOrganizationId
+								task.apiConfiguration.builderToken === kiloCodeApiKey
+									? task.apiConfiguration.builderOrganizationId
 									: undefined,
 						})
 					: new OpenRouterHandler({})

@@ -75,9 +75,9 @@ const resendMessageSequence = async (
 export const fetchKilocodeNotificationsHandler = async (provider: ClineProvider) => {
 	try {
 		const { apiConfiguration, dismissedNotificationIds } = await provider.getState()
-		const kilocodeToken = apiConfiguration?.kilocodeToken
+		const builderToken = apiConfiguration?.builderToken
 
-		if (!kilocodeToken || apiConfiguration?.apiProvider !== "kilocode") {
+		if (!builderToken || apiConfiguration?.apiProvider !== "kilocode") {
 			provider.postMessageToWebview({
 				type: "kilocodeNotificationsResponse",
 				notifications: [],
@@ -86,19 +86,19 @@ export const fetchKilocodeNotificationsHandler = async (provider: ClineProvider)
 		}
 
 		const headers: Record<string, string> = {
-			Authorization: `Bearer ${kilocodeToken}`,
+			Authorization: `Bearer ${builderToken}`,
 			"Content-Type": "application/json",
 		}
 
 		// Add X-KILOCODE-TESTER: SUPPRESS header if the setting is enabled
 		if (
-			apiConfiguration.kilocodeTesterWarningsDisabledUntil &&
-			apiConfiguration.kilocodeTesterWarningsDisabledUntil > Date.now()
+			apiConfiguration.builderTesterWarningsDisabledUntil &&
+			apiConfiguration.builderTesterWarningsDisabledUntil > Date.now()
 		) {
 			headers["X-KILOCODE-TESTER"] = "SUPPRESS"
 		}
 
-		const url = getKiloUrlFromToken("https://api.kilo.ai/api/users/notifications", kilocodeToken)
+		const url = getKiloUrlFromToken("https://api.kilo.ai/api/users/notifications", builderToken)
 		const response = await axios.get(url, {
 			headers,
 			timeout: 5000,
@@ -279,7 +279,7 @@ export const deviceAuthMessageHandler = async (provider: ClineProvider, message:
 							{
 								...profileConfig,
 								apiProvider: "kilocode",
-								kilocodeToken: token,
+								builderToken: token,
 							},
 							true, // Activate immediately to match old handleKiloCodeCallback behavior
 						)
@@ -289,7 +289,7 @@ export const deviceAuthMessageHandler = async (provider: ClineProvider, message:
 						await provider.upsertProviderProfile(currentApiConfigName, {
 							...apiConfiguration,
 							apiProvider: "kilocode",
-							kilocodeToken: token,
+							builderToken: token,
 						}) // activate: true by default
 					}
 
@@ -297,7 +297,7 @@ export const deviceAuthMessageHandler = async (provider: ClineProvider, message:
 					if (provider.getCurrentTask()) {
 						provider.getCurrentTask()!.api = buildApiHandler({
 							apiProvider: "kilocode",
-							kilocodeToken: token,
+							builderToken: token,
 						})
 					}
 				} catch (error) {
