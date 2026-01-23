@@ -268,7 +268,7 @@ const App = () => {
 	}, [shouldShowAnnouncement, tab])
 
 	// kilocode_change start
-	const telemetryDistinctId = useKiloIdentity(apiConfiguration?.kilocodeToken ?? "", machineId ?? "")
+	const telemetryDistinctId = useKiloIdentity(apiConfiguration?.builderToken ?? "", machineId ?? "")
 	useEffect(() => {
 		if (didHydrateState) {
 			telemetryClient.updateTelemetryState(telemetrySetting, telemetryKey, telemetryDistinctId)

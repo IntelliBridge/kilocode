@@ -1,6 +1,6 @@
 # Managing Disk Space
 
-The Kilo Code CLI stores task history in `~/.kilocode/cli/` (or `%USERPROFILE%\.kilocode\cli\` on Windows). With heavy usage, this directory can grow significantly.
+The Kilo Code CLI stores task history in `~/.builder/cli/` (or `%USERPROFILE%\.builder\cli\` on Windows). With heavy usage, this directory can grow significantly.
 
 ## Manual Cleanup
 
@@ -9,19 +9,19 @@ Delete the CLI data directory to free disk space:
 **macOS/Linux:**
 
 ```bash
-rm -rf ~/.kilocode/cli
+rm -rf ~/.builder/cli
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-Remove-Item -Recurse -Force "$env:USERPROFILE\.kilocode\cli"
+Remove-Item -Recurse -Force "$env:USERPROFILE\.builder\cli"
 ```
 
 **Windows (Command Prompt):**
 
 ```cmd
-rmdir /s /q "%USERPROFILE%\.kilocode\cli"
+rmdir /s /q "%USERPROFILE%\.builder\cli"
 ```
 
 > **Note:** This deletes all task history. The directory will be recreated on next CLI use.

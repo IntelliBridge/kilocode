@@ -44,17 +44,17 @@ export const KiloCode = ({
 	)
 
 	// Use the existing hook to get user identity
-	const userIdentity = useKiloIdentity(apiConfiguration.kilocodeToken || "", "")
+	const userIdentity = useKiloIdentity(apiConfiguration.builderToken || "", "")
 	const isKiloCodeAiUser = userIdentity.endsWith("@kilo.ai")
 
-	const areKilocodeWarningsDisabled = apiConfiguration.kilocodeTesterWarningsDisabledUntil
-		? apiConfiguration.kilocodeTesterWarningsDisabledUntil > Date.now()
+	const areBuilderWarningsDisabled = apiConfiguration.builderTesterWarningsDisabledUntil
+		? apiConfiguration.builderTesterWarningsDisabledUntil > Date.now()
 		: false
 
 	const handleToggleTesterWarnings = useCallback(() => {
-		const newTimestamp = Date.now() + (areKilocodeWarningsDisabled ? 0 : 24 * 60 * 60 * 1000)
-		setApiConfigurationField("kilocodeTesterWarningsDisabledUntil", newTimestamp)
-	}, [areKilocodeWarningsDisabled, setApiConfigurationField])
+		const newTimestamp = Date.now() + (areBuilderWarningsDisabled ? 0 : 24 * 60 * 60 * 1000)
+		setApiConfigurationField("builderTesterWarningsDisabledUntil", newTimestamp)
+	}, [areBuilderWarningsDisabled, setApiConfigurationField])
 
 	return (
 		<>
@@ -62,20 +62,20 @@ export const KiloCode = ({
 				<label className="block font-medium -mb-2">{t("kilocode:settings.provider.account")}</label>
 			</div>
 			{!hideKiloCodeButton &&
-				(apiConfiguration.kilocodeToken ? (
+				(apiConfiguration.builderToken ? (
 					<div>
 						<Button
 							variant="secondary"
 							onClick={async () => {
-								setApiConfigurationField("kilocodeToken", "")
+								setApiConfigurationField("builderToken", "")
 
 								vscode.postMessage({
 									type: "upsertApiConfiguration",
 									text: currentApiConfigName,
 									apiConfiguration: {
 										...apiConfiguration,
-										kilocodeToken: "",
-										kilocodeOrganizationId: undefined,
+										builderToken: "",
+										builderOrganizationId: undefined,
 									},
 								})
 							}}>
@@ -97,9 +97,9 @@ export const KiloCode = ({
 				))}
 
 			<VSCodeTextField
-				value={apiConfiguration?.kilocodeToken || ""}
+				value={apiConfiguration?.builderToken || ""}
 				type="password"
-				onInput={handleInputChange("kilocodeToken")}
+				onInput={handleInputChange("builderToken")}
 				placeholder={t("kilocode:settings.provider.apiKey")}
 				className="w-full">
 				<div className="flex justify-between items-center mb-1">
@@ -114,7 +114,7 @@ export const KiloCode = ({
 				setApiConfigurationField={setApiConfigurationField}
 				defaultModelId={kilocodeDefaultModel}
 				models={routerModels?.kilocode ?? {}}
-				modelIdKey="kilocodeModel"
+				modelIdKey="builderModel"
 				serviceName="Builder"
 				serviceUrl={getAppUrl()}
 				organizationAllowList={organizationAllowList}
@@ -125,12 +125,12 @@ export const KiloCode = ({
 				<div className="mb-4">
 					<label className="block font-medium mb-2">Disable KILOCODE-TESTER warnings</label>
 					<div className="text-sm text-vscode-descriptionForeground mb-2">
-						{areKilocodeWarningsDisabled
-							? `Warnings disabled until ${new Date(apiConfiguration.kilocodeTesterWarningsDisabledUntil || 0).toLocaleString()}`
+						{areBuilderWarningsDisabled
+							? `Warnings disabled until ${new Date(apiConfiguration.builderTesterWarningsDisabledUntil || 0).toLocaleString()}`
 							: "KILOCODE-TESTER warnings are currently enabled"}
 					</div>
 					<Button variant="secondary" onClick={handleToggleTesterWarnings} className="text-sm">
-						{areKilocodeWarningsDisabled ? "Enable warnings now" : "Disable warnings for 1 day"}
+						{areBuilderWarningsDisabled ? "Enable warnings now" : "Disable warnings for 1 day"}
 					</Button>
 				</div>
 			)}

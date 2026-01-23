@@ -40,18 +40,18 @@ async function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: nu
 
 /**
  * Fetch user profile data from Kilocode API
- * @param kilocodeToken - The Kilocode API token
+ * @param builderToken - The Kilocode API token
  * @returns Profile data including user info and organizations
  * @throws Error with "INVALID_TOKEN" message if token is invalid (401/403)
  * @throws Error with details for other failures
  */
-export async function getKilocodeProfile(kilocodeToken: string): Promise<KilocodeProfileData> {
+export async function getKilocodeProfile(builderToken: string): Promise<KilocodeProfileData> {
 	try {
 		const url = getApiUrl("/api/profile")
 
 		const response = await fetch(url, {
 			headers: {
-				Authorization: `Bearer ${kilocodeToken}`,
+				Authorization: `Bearer ${builderToken}`,
 				"Content-Type": "application/json",
 			},
 		})
@@ -78,18 +78,18 @@ export async function getKilocodeProfile(kilocodeToken: string): Promise<Kilocod
 
 /**
  * Fetch the default model from Kilocode API
- * @param kilocodeToken - The Kilocode API token
+ * @param builderToken - The Kilocode API token
  * @param organizationId - Optional organization ID for org-specific defaults
  * @returns The default model ID, or falls back to openRouterDefaultModelId on error
  */
-export async function getKilocodeDefaultModel(kilocodeToken: string, organizationId?: string): Promise<string> {
+export async function getKilocodeDefaultModel(builderToken: string, organizationId?: string): Promise<string> {
 	try {
 		const path = organizationId ? `/api/organizations/${organizationId}/defaults` : `/api/defaults`
 		const url = getApiUrl(path)
 
 		const headers: Record<string, string> = {
 			...DEFAULT_HEADERS,
-			Authorization: `Bearer ${kilocodeToken}`,
+			Authorization: `Bearer ${builderToken}`,
 		}
 
 		const response = await fetchWithTimeout(url, { headers }, API_TIMEOUT_MS)

@@ -23,7 +23,7 @@ export const sessionSourceSchema = z.enum(["local", "remote"])
 export const parallelModeInfoSchema = z.object({
 	enabled: z.boolean(),
 	branch: z.string().optional(), // e.g., "add-authentication-1702734891234"
-	worktreePath: z.string().optional(), // e.g., ".kilocode/worktrees/add-auth..."
+	worktreePath: z.string().optional(), // e.g., ".builder/worktrees/add-auth..."
 	parentBranch: z.string().optional(), // e.g., "main" - the branch worktree was created from
 	completionMessage: z.string().optional(), // Merge instructions from CLI on completion
 })

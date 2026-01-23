@@ -657,7 +657,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 	private getCliGlobalStoragePath(): string {
 		// Try to use home directory based path for CLI mode
 		const homeDir = process.env.HOME || process.env.USERPROFILE || "/tmp"
-		const cliStoragePath = path.join(homeDir, ".kilocode", "cli", "global")
+		const cliStoragePath = path.join(homeDir, ".builder", "cli", "global")
 
 		// Ensure directory exists
 		try {
@@ -2600,7 +2600,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			if (needsRulesFileCheck) {
 				await this.say(
 					"error",
-					"Issue with processing the /newrule command. Double check that, if '.kilocode/rules' already exists, it's a directory and not a file. Otherwise there was an issue referencing this file/directory",
+					"Issue with processing the /newrule command. Double check that, if '.builder/rules' already exists, it's a directory and not a file. Otherwise there was an issue referencing this file/directory",
 				)
 			}
 			// kilocode_change end
@@ -4404,7 +4404,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 					: this.ask(
 							"invalid_model",
 							JSON.stringify({
-								modelId: apiConfiguration.kilocodeModel,
+								modelId: apiConfiguration.builderModel,
 								error: {
 									status: error.status,
 									message: error.message,

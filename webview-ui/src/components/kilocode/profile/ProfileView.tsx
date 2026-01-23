@@ -29,12 +29,12 @@ const ProfileView: React.FC<ProfileViewProps> = ({ onDone }) => {
 	const [balance, setBalance] = React.useState<number | null>(null)
 	const [isLoadingBalance, setIsLoadingBalance] = React.useState(true)
 	const [isLoadingUser, setIsLoadingUser] = React.useState(true)
-	const organizationId = apiConfiguration?.kilocodeOrganizationId
+	const organizationId = apiConfiguration?.builderOrganizationId
 
 	useEffect(() => {
 		vscode.postMessage({ type: "fetchProfileDataRequest" })
 		vscode.postMessage({ type: "fetchBalanceDataRequest" })
-	}, [apiConfiguration?.kilocodeToken, organizationId])
+	}, [apiConfiguration?.builderToken, organizationId])
 
 	useEffect(() => {
 		const handleMessage = (event: MessageEvent<WebviewMessage>) => {
@@ -82,8 +82,8 @@ const ProfileView: React.FC<ProfileViewProps> = ({ onDone }) => {
 			text: currentApiConfigName,
 			apiConfiguration: {
 				...apiConfiguration,
-				kilocodeToken: "",
-				kilocodeOrganizationId: undefined,
+				builderToken: "",
+				builderOrganizationId: undefined,
 			},
 		})
 	}

@@ -21,7 +21,7 @@ import { getKiloUrlFromToken } from "@roo-code/types"
 import { X_KILOCODE_ORGANIZATIONID, X_KILOCODE_TESTER } from "../../shared/kilocode/headers"
 // kilocode_change end
 
-const ROOMODES_FILENAME = ".kilocodemodes"
+const ROOMODES_FILENAME = ".buildermodes"
 
 // Type definitions for import/export functionality
 interface RuleFile {
@@ -315,7 +315,7 @@ export class CustomModesManager {
 					return
 				}
 
-				// Get modes from .kilocodemodes if it exists (takes precedence)
+				// Get modes from .buildermodes if it exists (takes precedence)
 				const roomodesPath = await this.getWorkspaceRoomodes()
 				const roomodesModes = roomodesPath ? await this.loadModesFromFile(roomodesPath) : []
 
@@ -367,7 +367,7 @@ export class CustomModesManager {
 					this.clearCache()
 					await this.onUpdate()
 				} catch (error) {
-					console.error(`[CustomModesManager] Error handling .kilocodemodes file change:`, error)
+					console.error(`[CustomModesManager] Error handling .buildermodes file change:`, error)
 				}
 			}
 
@@ -410,7 +410,7 @@ export class CustomModesManager {
 		const settingsPath = await this.getCustomModesFilePath()
 		const settingsModes = await this.loadModesFromFile(settingsPath)
 
-		// Get modes from .kilocodemodes if it exists
+		// Get modes from .buildermodes if it exists
 		const roomodesPath = await this.getWorkspaceRoomodes()
 		const roomodesModes = roomodesPath ? await this.loadModesFromFile(roomodesPath) : []
 
@@ -1042,15 +1042,15 @@ export class CustomModesManager {
 	// kilocode_change start: New method to fetch organization modes
 	/**
 	 * Fetches custom modes for a specific organization from the KiloCode API
-	 * @param kilocodeToken - The authentication token
+	 * @param builderToken - The authentication token
 	 * @param organizationId - The organization ID (undefined for personal account)
-	 * @param kilocodeTesterWarningsDisabledUntil - Timestamp for suppressing tester warnings
+	 * @param builderTesterWarningsDisabledUntil - Timestamp for suppressing tester warnings
 	 * @returns Array of organization-specific modes
 	 */
 	public async fetchOrganizationModes(
-		kilocodeToken: string,
+		builderToken: string,
 		organizationId?: string,
-		kilocodeTesterWarningsDisabledUntil?: number,
+		builderTesterWarningsDisabledUntil?: number,
 	): Promise<ModeConfig[]> {
 		try {
 			// If no organization ID, return empty array (personal account has no org modes)
@@ -1059,20 +1059,20 @@ export class CustomModesManager {
 			}
 
 			const headers: Record<string, string> = {
-				Authorization: `Bearer ${kilocodeToken}`,
+				Authorization: `Bearer ${builderToken}`,
 				"Content-Type": "application/json",
 			}
 
 			headers[X_KILOCODE_ORGANIZATIONID] = organizationId
 
 			// Add X-KILOCODE-TESTER: SUPPRESS header if the setting is enabled
-			if (kilocodeTesterWarningsDisabledUntil && kilocodeTesterWarningsDisabledUntil > Date.now()) {
+			if (builderTesterWarningsDisabledUntil && builderTesterWarningsDisabledUntil > Date.now()) {
 				headers[X_KILOCODE_TESTER] = "SUPPRESS"
 			}
 
 			const url = getKiloUrlFromToken(
 				`https://api.kilo.ai/api/organizations/${organizationId}/modes`,
-				kilocodeToken,
+				builderToken,
 			)
 			const response = await axios.get(url, { headers })
 

@@ -7,7 +7,7 @@ description: Guidelines for translating and localizing the Kilo Code extension, 
 
 This file provides guidance to agents when working with translations in this repository.
 
-For the translation workflow, use the `/add-missing-translations` command or see `.kilocode/workflows/add-missing-translations.md`.
+For the translation workflow, use the `/add-missing-translations` command or see `.builder/workflows/add-missing-translations.md`.
 
 ---
 

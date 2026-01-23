@@ -654,7 +654,7 @@ const ModesView = () => {
 												e.preventDefault() // Prevent blur
 												vscode.postMessage({
 													type: "openFile",
-													text: "./.kilocodemodes",
+													text: "./.buildermodes",
 													values: {
 														create: true,
 														content: JSON.stringify({ customModes: [] }, null, 2),
@@ -1290,7 +1290,7 @@ const ModesView = () => {
 											// Open or create an empty file
 											vscode.postMessage({
 												type: "openFile",
-												text: `./.kilocode/rules-${currentMode.slug}/rules.md`, // kilocode_change
+												text: `./.builder/rules-${currentMode.slug}/rules.md`, // kilocode_change
 												values: {
 													create: true,
 													content: "",
@@ -1383,7 +1383,7 @@ const ModesView = () => {
 
 															vscode.postMessage({
 																type: "openFile",
-																text: `./.kilocode/system-prompt-${currentMode.slug}`, // kilocode_change
+																text: `./.builder/system-prompt-${currentMode.slug}`, // kilocode_change
 																values: {
 																	create: true,
 																	content: "",
@@ -1452,7 +1452,7 @@ const ModesView = () => {
 										onClick={() =>
 											vscode.postMessage({
 												type: "openFile",
-												text: "./.kilocode/rules/rules.md",
+												text: "./.builder/rules/rules.md",
 												values: {
 													create: true,
 													content: "",

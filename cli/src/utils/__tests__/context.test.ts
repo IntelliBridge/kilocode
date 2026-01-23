@@ -95,7 +95,7 @@ describe("context utilities", () => {
 		it("should get context window from model info", () => {
 			const apiConfig: ProviderSettings = {
 				apiProvider: "kilocode",
-				kilocodeModel: "anthropic/claude-sonnet-4.5",
+				builderModel: "anthropic/claude-sonnet-4.5",
 			}
 
 			const routerModels: Partial<RouterModels> = {

@@ -829,7 +829,7 @@ export class CliProcessHandler {
 			this.callbacks.onPendingSessionChanged(null)
 			this.pendingProcess = null
 
-			// Check for CLI configuration error (e.g., missing kilocodeToken)
+			// Check for CLI configuration error (e.g., missing builderToken)
 			// CLI may exit with code 0 when showing configuration error instructions
 			if (configurationError) {
 				this.callbacks.onStartSessionFailed({
@@ -1071,7 +1071,7 @@ export class CliProcessHandler {
 
 		// Also check for common configuration error indicators
 		if (
-			rawOutput.includes("kilocodeToken is required") ||
+			rawOutput.includes("builderToken is required") ||
 			rawOutput.includes("config.json is incomplete") ||
 			rawOutput.includes("apiKey is required")
 		) {

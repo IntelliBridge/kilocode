@@ -24,9 +24,9 @@ import { logger } from "../../utils/logging"
 
 // kilocode_change start: Configuration change event types
 export interface ManagedIndexerConfig {
-	kilocodeToken: string | null
-	kilocodeOrganizationId: string | null
-	kilocodeTesterWarningsDisabledUntil: number | null
+	builderToken: string | null
+	builderOrganizationId: string | null
+	builderTesterWarningsDisabledUntil: number | null
 }
 // kilocode_change end
 
@@ -369,9 +369,9 @@ export class ContextProxy {
 
 	public async setProviderSettings(values: ProviderSettings) {
 		// kilocode_change start: Capture old values for change detection
-		const oldToken = this.secretCache.kilocodeToken
-		const oldOrgId = this.stateCache.kilocodeOrganizationId
-		const oldTesterWarnings = this.stateCache.kilocodeTesterWarningsDisabledUntil
+		const oldToken = this.secretCache.builderToken
+		const oldOrgId = this.stateCache.builderOrganizationId
+		const oldTesterWarnings = this.stateCache.builderTesterWarningsDisabledUntil
 		// kilocode_change end
 
 		// Explicitly clear out any old API configuration values before that
@@ -397,15 +397,15 @@ export class ContextProxy {
 		})
 
 		// kilocode_change start: Emit event if managed indexer config changed
-		const newToken = this.secretCache.kilocodeToken
-		const newOrgId = this.stateCache.kilocodeOrganizationId
-		const newTesterWarnings = this.stateCache.kilocodeTesterWarningsDisabledUntil
+		const newToken = this.secretCache.builderToken
+		const newOrgId = this.stateCache.builderOrganizationId
+		const newTesterWarnings = this.stateCache.builderTesterWarningsDisabledUntil
 
 		if (oldToken !== newToken || oldOrgId !== newOrgId || oldTesterWarnings !== newTesterWarnings) {
 			this.configEmitter.emit("managed-indexer-config-changed", {
-				kilocodeToken: newToken ?? null,
-				kilocodeOrganizationId: newOrgId ?? null,
-				kilocodeTesterWarningsDisabledUntil: newTesterWarnings ?? null,
+				builderToken: newToken ?? null,
+				builderOrganizationId: newOrgId ?? null,
+				builderTesterWarningsDisabledUntil: newTesterWarnings ?? null,
 			} as ManagedIndexerConfig)
 		}
 		// kilocode_change end

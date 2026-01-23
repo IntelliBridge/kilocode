@@ -29,7 +29,7 @@ export class VisibleCodeTracker {
 
 	/**
 	 * Captures the currently visible code across all visible editors.
-	 * Excludes files matching security patterns or .kilocodeignore rules.
+	 * Excludes files matching security patterns or .builderignore rules.
 	 *
 	 * @returns VisibleCodeContext containing information about all visible editors
 	 * and their visible code ranges
@@ -57,7 +57,7 @@ export class VisibleCodeTracker {
 				continue
 			}
 			if (this.rooIgnoreController && !this.rooIgnoreController.validateAccess(relativePath)) {
-				console.log(`[VisibleCodeTracker] Filtered (.kilocodeignore): ${relativePath}`)
+				console.log(`[VisibleCodeTracker] Filtered (.builderignore): ${relativePath}`)
 				continue
 			}
 

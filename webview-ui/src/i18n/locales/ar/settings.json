@@ -846,7 +846,7 @@
 			"description": "اكتشاف وتحميل ملفات .roo/rules و AGENTS.md من المجلدات الفرعية بشكل تكراري. مفيد للمشاريع الضخمة ذات القواعد الخاصة بكل حزمة."
 		},
 		"rooignore": {
-			"label": "إظهار ملفات .kilocodeignore",
+			"label": "إظهار ملفات .builderignore",
 			"description": "عند التفعيل تُعرض مع رمز قفل؛ عند التعطيل تُخفى."
 		},
 		"maxConcurrentFileReads": {
@@ -1111,9 +1111,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "تفعيل الأدوات المخصصة",
-			"description": "عند التفعيل، يمكن لـ Kilo تحميل واستخدام أدوات TypeScript/JavaScript مخصصة من مجلد .kilocode/tools في مشروعك أو ~/.kilocode/tools للأدوات العامة. ملاحظة: سيتم الموافقة على هذه الأدوات تلقائياً.",
+			"description": "عند التفعيل، يمكن لـ Kilo تحميل واستخدام أدوات TypeScript/JavaScript مخصصة من مجلد .builder/tools في مشروعك أو ~/.builder/tools للأدوات العامة. ملاحظة: سيتم الموافقة على هذه الأدوات تلقائياً.",
 			"toolsHeader": "الأدوات المخصصة المتاحة",
-			"noTools": "لم يتم تحميل أدوات مخصصة. أضف ملفات .ts أو .js إلى مجلد .kilocode/tools في مشروعك أو ~/.kilocode/tools للأدوات العامة.",
+			"noTools": "لم يتم تحميل أدوات مخصصة. أضف ملفات .ts أو .js إلى مجلد .builder/tools في مشروعك أو ~/.builder/tools للأدوات العامة.",
 			"refreshButton": "تحديث",
 			"refreshing": "جاري التحديث...",
 			"refreshSuccess": "تم تحديث الأدوات بنجاح",

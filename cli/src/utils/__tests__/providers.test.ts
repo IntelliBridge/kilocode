@@ -8,17 +8,17 @@ describe("getSelectedModelId", () => {
 	})
 
 	it("should return 'unknown' when provider is unknown", () => {
-		const result = getSelectedModelId("unknown", { kilocodeModel: "test-model" })
+		const result = getSelectedModelId("unknown", { builderModel: "test-model" })
 		expect(result).toBe("unknown")
 	})
 
 	it("should return 'unknown' when provider is empty", () => {
-		const result = getSelectedModelId("", { kilocodeModel: "test-model" })
+		const result = getSelectedModelId("", { builderModel: "test-model" })
 		expect(result).toBe("unknown")
 	})
 
 	it("should return correct model for kilocode provider", () => {
-		const apiConfig = { kilocodeModel: "anthropic/claude-sonnet-4" }
+		const apiConfig = { builderModel: "anthropic/claude-sonnet-4" }
 		const result = getSelectedModelId("kilocode", apiConfig)
 		expect(result).toBe("anthropic/claude-sonnet-4")
 	})
@@ -103,7 +103,7 @@ describe("getSelectedModelId", () => {
 	})
 
 	it("should handle mixed case provider names", () => {
-		const apiConfig = { kilocodeModel: "test-model" }
+		const apiConfig = { builderModel: "test-model" }
 		const result = getSelectedModelId("KiloCode", apiConfig)
 		expect(result).toBe("default") // Will be treated as unknown provider
 	})

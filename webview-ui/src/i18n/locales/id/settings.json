@@ -207,7 +207,7 @@
 			},
 			"protected": {
 				"label": "Sertakan file yang dilindungi",
-				"description": "Izinkan Builder membuat dan mengedit file yang dilindungi (seperti .kilocodeignore dan file konfigurasi .kilocode/) tanpa memerlukan persetujuan."
+				"description": "Izinkan Builder membuat dan mengedit file yang dilindungi (seperti .builderignore dan file konfigurasi .builder/) tanpa memerlukan persetujuan."
 			}
 		},
 		"browser": {
@@ -769,8 +769,8 @@
 			"description": "Jumlah maksimum file yang disertakan dalam detail direktori kerja saat ini. Nilai yang lebih tinggi memberikan lebih banyak konteks tetapi meningkatkan penggunaan token."
 		},
 		"rooignore": {
-			"label": "Tampilkan file .kilocodeignore'd dalam daftar dan pencarian",
-			"description": "Ketika diaktifkan, file yang cocok dengan pola di .kilocodeignore akan ditampilkan dalam daftar dengan simbol kunci. Ketika dinonaktifkan, file ini akan sepenuhnya disembunyikan dari daftar file dan pencarian."
+			"label": "Tampilkan file .builderignore'd dalam daftar dan pencarian",
+			"description": "Ketika diaktifkan, file yang cocok dengan pola di .builderignore akan ditampilkan dalam daftar dengan simbol kunci. Ketika dinonaktifkan, file ini akan sepenuhnya disembunyikan dari daftar file dan pencarian."
 		},
 		"maxConcurrentFileReads": {
 			"label": "Batas pembacaan file bersamaan",
@@ -1020,9 +1020,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Aktifkan tool kustom",
-			"description": "Ketika diaktifkan, Kilo dapat memuat dan menggunakan tool kustom TypeScript/JavaScript dari direktori .kilocode/tools proyek kamu atau ~/.kilocode/tools untuk tool global. Catatan: tool ini akan otomatis disetujui.",
+			"description": "Ketika diaktifkan, Kilo dapat memuat dan menggunakan tool kustom TypeScript/JavaScript dari direktori .builder/tools proyek kamu atau ~/.builder/tools untuk tool global. Catatan: tool ini akan otomatis disetujui.",
 			"toolsHeader": "Tool Kustom yang Tersedia",
-			"noTools": "Tidak ada tool kustom yang dimuat. Tambahkan file .ts atau .js ke direktori .kilocode/tools proyek kamu atau ~/.kilocode/tools untuk tool global.",
+			"noTools": "Tidak ada tool kustom yang dimuat. Tambahkan file .ts atau .js ke direktori .builder/tools proyek kamu atau ~/.builder/tools untuk tool global.",
 			"refreshButton": "Refresh",
 			"refreshing": "Merefresh...",
 			"refreshSuccess": "Tool berhasil direfresh",

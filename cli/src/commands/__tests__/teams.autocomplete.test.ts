@@ -16,9 +16,9 @@ describe("Teams Command Autocomplete", () => {
 			currentProvider: {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			},
-			kilocodeDefaultModel: "",
+			builderDefaultModel: "",
 			profileData: {
 				user: {},
 				organizations: [
@@ -110,7 +110,7 @@ describe("Teams Command Autocomplete", () => {
 			expect(personalSuggestion?.description).toBe("Your personal account")
 
 			// Should include organizations with normalized names
-			const kiloCodeSuggestion = suggestions.find((s) => s.value === "kilo-code")
+			const kiloCodeSuggestion = suggestions.find((s) => s.value === "builder")
 			expect(kiloCodeSuggestion).toBeDefined()
 			expect(kiloCodeSuggestion?.title).toBe("Builder")
 			expect(kiloCodeSuggestion?.description).toBe("Builder (admin)")
@@ -192,7 +192,7 @@ describe("Teams Command Autocomplete", () => {
 				currentProvider: {
 					id: "test-provider",
 					provider: "kilocode",
-					// No kilocodeToken
+					// No builderToken
 				},
 			}
 

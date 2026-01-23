@@ -69,8 +69,8 @@ export class GhostModel {
 
 			if (provider === "kilocode") {
 				// For all other providers, assume they are usable
-				if (!profile.kilocodeToken) continue
-				const hasBalance = await checkKilocodeBalance(profile.kilocodeToken, profile.kilocodeOrganizationId)
+				if (!profile.builderToken) continue
+				const hasBalance = await checkKilocodeBalance(profile.builderToken, profile.builderOrganizationId)
 				if (!hasBalance) {
 					// Track that we found a kilocode profile but it has no balance
 					this.hasKilocodeProfileWithNoBalance = true

@@ -649,8 +649,8 @@ ${errorDetails ? `\nTechnical details:\n${errorDetails}\n` : ""}
 						newContent: originalContent!,
 						status: didApprove ? "accepted" : "rejected",
 						taskId: cline.taskId,
-						organizationId: state?.apiConfiguration?.kilocodeOrganizationId,
-						kilocodeToken: state?.apiConfiguration?.kilocodeToken || "",
+						organizationId: state?.apiConfiguration?.builderOrganizationId,
+						builderToken: state?.apiConfiguration?.builderToken || "",
 					})
 					// kilocode_change end
 
@@ -688,8 +688,8 @@ ${errorDetails ? `\nTechnical details:\n${errorDetails}\n` : ""}
 						newContent: originalContent!,
 						status: "accepted", // Batch operations are already approved at this point
 						taskId: cline.taskId,
-						organizationId: state?.apiConfiguration?.kilocodeOrganizationId,
-						kilocodeToken: state?.apiConfiguration?.kilocodeToken || "",
+						organizationId: state?.apiConfiguration?.builderOrganizationId,
+						builderToken: state?.apiConfiguration?.builderToken || "",
 					})
 					// kilocode_change end
 

@@ -16,7 +16,7 @@ export async function handleChatCompletionRequest(
 		const userText = message.text || ""
 		const requestId = message.requestId || ""
 
-		// Pass RooIgnoreController to respect .kilocodeignore patterns
+		// Pass RooIgnoreController to respect .builderignore patterns
 		const currentTask = provider.getCurrentTask()
 		const tracker = new VisibleCodeTracker(getCurrentCwd(), currentTask?.rooIgnoreController ?? null)
 

@@ -54,8 +54,8 @@ export const DEFAULT_CONFIG = {
 		{
 			id: "default",
 			provider: "kilocode",
-			kilocodeToken: "",
-			kilocodeModel: "x-ai/grok-code-fast-1",
+			builderToken: "",
+			builderModel: "x-ai/grok-code-fast-1",
 		},
 	],
 	autoApproval: DEFAULT_AUTO_APPROVAL,

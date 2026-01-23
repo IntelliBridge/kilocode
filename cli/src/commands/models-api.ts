@@ -197,8 +197,8 @@ export async function modelsApiCommand(options: ModelsApiOptions = {}): Promise<
 		// Get kilocode default model from config (for kilocode provider)
 		const kilocodeProvider = config.providers.find((p) => p.provider === "kilocode")
 		const kilocodeDefaultModel =
-			kilocodeProvider && "kilocodeModel" in kilocodeProvider
-				? (kilocodeProvider.kilocodeModel as string) || ""
+			kilocodeProvider && "builderModel" in kilocodeProvider
+				? (kilocodeProvider.builderModel as string) || ""
 				: ""
 
 		let routerModels: RouterModels | null = null

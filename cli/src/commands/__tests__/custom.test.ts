@@ -189,7 +189,7 @@ describe("Custom Commands", () => {
 			]
 
 			mockReaddir.mockImplementation(async (dirPath: string) => {
-				if (dirPath === path.join(mockHomeDir, ".kilocode", "commands")) {
+				if (dirPath === path.join(mockHomeDir, ".builder", "commands")) {
 					return mockFiles
 				}
 				throw new Error("ENOENT")
@@ -233,10 +233,10 @@ Test content with $1 and $2`)
 			]
 
 			mockReaddir.mockImplementation(async (dirPath: string) => {
-				if (dirPath === path.join(mockHomeDir, ".kilocode", "commands")) {
+				if (dirPath === path.join(mockHomeDir, ".builder", "commands")) {
 					return globalFiles
 				}
-				if (dirPath === path.join(mockCwd, ".kilocode", "commands")) {
+				if (dirPath === path.join(mockCwd, ".builder", "commands")) {
 					return projectFiles
 				}
 				throw new Error("ENOENT")

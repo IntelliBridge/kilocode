@@ -185,8 +185,8 @@ export class ApplyDiffTool extends BaseTool<"apply_diff"> {
 					newContent: diffResult.content,
 					status: didApprove ? "accepted" : "rejected",
 					taskId: task.taskId,
-					organizationId: state?.apiConfiguration?.kilocodeOrganizationId,
-					kilocodeToken: state?.apiConfiguration?.kilocodeToken || "",
+					organizationId: state?.apiConfiguration?.builderOrganizationId,
+					builderToken: state?.apiConfiguration?.builderToken || "",
 				})
 				// kilocode_change end
 
@@ -243,8 +243,8 @@ export class ApplyDiffTool extends BaseTool<"apply_diff"> {
 					newContent: diffResult.content,
 					status: didApprove ? "accepted" : "rejected",
 					taskId: task.taskId,
-					organizationId: state?.apiConfiguration?.kilocodeOrganizationId,
-					kilocodeToken: state?.apiConfiguration?.kilocodeToken || "",
+					organizationId: state?.apiConfiguration?.builderOrganizationId,
+					builderToken: state?.apiConfiguration?.builderToken || "",
 				})
 				// kilocode_change end
 

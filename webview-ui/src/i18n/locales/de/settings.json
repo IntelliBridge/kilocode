@@ -203,7 +203,7 @@
 			},
 			"protected": {
 				"label": "Geschützte Dateien einbeziehen",
-				"description": "Builder erlauben, geschützte Dateien (wie .kilocodeignore und .kilocode/ Konfigurationsdateien) ohne Genehmigung zu erstellen und zu bearbeiten."
+				"description": "Builder erlauben, geschützte Dateien (wie .builderignore und .builder/ Konfigurationsdateien) ohne Genehmigung zu erstellen und zu bearbeiten."
 			}
 		},
 		"browser": {
@@ -743,8 +743,8 @@
 			"description": "Maximale Anzahl von Dateien, die in den Details des aktuellen Arbeitsverzeichnisses enthalten sein sollen. Höhere Werte bieten mehr Kontext, erhöhen aber den Token-Verbrauch."
 		},
 		"rooignore": {
-			"label": ".kilocodeignore-Dateien in Listen und Suchen anzeigen",
-			"description": "Wenn aktiviert, werden Dateien, die mit Mustern in .kilocodeignore übereinstimmen, in Listen mit einem Schlosssymbol angezeigt. Wenn deaktiviert, werden diese Dateien vollständig aus Dateilisten und Suchen ausgeblendet."
+			"label": ".builderignore-Dateien in Listen und Suchen anzeigen",
+			"description": "Wenn aktiviert, werden Dateien, die mit Mustern in .builderignore übereinstimmen, in Listen mit einem Schlosssymbol angezeigt. Wenn deaktiviert, werden diese Dateien vollständig aus Dateilisten und Suchen ausgeblendet."
 		},
 		"maxConcurrentFileReads": {
 			"label": "Gleichzeitige Dateilesungen Limit",
@@ -994,9 +994,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Benutzerdefinierte Tools aktivieren",
-			"description": "Wenn aktiviert, kann Kilo benutzerdefinierte TypeScript/JavaScript Tools aus dem .kilocode/tools-Verzeichnis deines Projekts oder ~/.kilocode/tools für globale Tools laden und verwenden. Hinweis: Diese Tools werden automatisch genehmigt.",
+			"description": "Wenn aktiviert, kann Kilo benutzerdefinierte TypeScript/JavaScript Tools aus dem .builder/tools-Verzeichnis deines Projekts oder ~/.builder/tools für globale Tools laden und verwenden. Hinweis: Diese Tools werden automatisch genehmigt.",
 			"toolsHeader": "Verfügbare benutzerdefinierte Tools",
-			"noTools": "Keine benutzerdefinierten Tools geladen. Füge .ts oder .js Dateien zum .kilocode/tools-Verzeichnis deines Projekts oder ~/.kilocode/tools für globale Tools hinzu.",
+			"noTools": "Keine benutzerdefinierten Tools geladen. Füge .ts oder .js Dateien zum .builder/tools-Verzeichnis deines Projekts oder ~/.builder/tools für globale Tools hinzu.",
 			"refreshButton": "Aktualisieren",
 			"refreshing": "Wird aktualisiert...",
 			"refreshSuccess": "Tools erfolgreich aktualisiert",

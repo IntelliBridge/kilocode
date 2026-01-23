@@ -124,10 +124,10 @@ AGENTS.md works alongside Kilo Code's other configuration systems:
 
 | Feature                                                        | Scope   | Location                  | Purpose                                    | Priority    |
 | -------------------------------------------------------------- | ------- | ------------------------- | ------------------------------------------ | ----------- |
-| **[Mode-specific Custom Rules](/agent-behavior/custom-rules)** | Project | `.kilocode/rules-{mode}/` | Mode-specific rules and constraints        | 1 (Highest) |
-| **[Custom Rules](/agent-behavior/custom-rules)**               | Project | `.kilocode/rules/`        | Kilo Code-specific rules and constraints   | 2           |
+| **[Mode-specific Custom Rules](/agent-behavior/custom-rules)** | Project | `.builder/rules-{mode}/`  | Mode-specific rules and constraints        | 1 (Highest) |
+| **[Custom Rules](/agent-behavior/custom-rules)**               | Project | `.builder/rules/`         | Kilo Code-specific rules and constraints   | 2           |
 | **AGENTS.md**                                                  | Project | Project root or subfolder | Cross-tool standard for project guidelines | 3           |
-| **[Global Custom Rules](/agent-behavior/custom-rules)**        | Global  | `~/.kilocode/rules/`      | Global Kilo Code rules                     | 4           |
+| **[Global Custom Rules](/agent-behavior/custom-rules)**        | Global  | `~/.builder/rules/`       | Global Kilo Code rules                     | 4           |
 | **[Custom Instructions](/agent-behavior/custom-instructions)** | Global  | IDE settings              | Personal preferences across all projects   | 5 (Lowest)  |
 
 ### Enabling/Disabling AGENTS.md

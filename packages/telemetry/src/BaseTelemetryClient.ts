@@ -62,8 +62,8 @@ export abstract class BaseTelemetryClient implements TelemetryClient {
 		// kilocode_change start
 		// Add organization ID if available from provider properties
 		// This ensures all events include the organization ID when present
-		if (providerProperties.kilocodeOrganizationId && !mergedProperties.kilocodeOrganizationId) {
-			mergedProperties.kilocodeOrganizationId = providerProperties.kilocodeOrganizationId
+		if (providerProperties.builderOrganizationId && !mergedProperties.builderOrganizationId) {
+			mergedProperties.builderOrganizationId = providerProperties.builderOrganizationId
 		}
 		// kilocode_change end
 
@@ -84,7 +84,7 @@ export abstract class BaseTelemetryClient implements TelemetryClient {
 	// kilocode_change start
 	public async captureException(_error: Error, _properties?: Record<string | number, unknown>): Promise<void> {}
 
-	public updateIdentity(_kilocodeToken: string): Promise<void> {
+	public updateIdentity(_builderToken: string): Promise<void> {
 		return Promise.resolve()
 	}
 	// kilocode_change end

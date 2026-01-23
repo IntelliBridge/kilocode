@@ -97,10 +97,10 @@ function createGenericAuthFunction(providerName: ProviderName) {
 
 		// Add default model if not provided and available
 		const defaultModel = getProviderDefaultModel(providerName)
-		if (defaultModel && !providerConfig.apiModelId && !providerConfig.kilocodeModel) {
+		if (defaultModel && !providerConfig.apiModelId && !providerConfig.builderModel) {
 			// Use appropriate model field based on provider
 			if (providerName === "kilocode") {
-				providerConfig.kilocodeModel = defaultModel
+				providerConfig.builderModel = defaultModel
 			} else {
 				providerConfig.apiModelId = defaultModel
 			}

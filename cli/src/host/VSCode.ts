@@ -1,7 +1,7 @@
 import * as fs from "fs"
 import * as path from "path"
 import { logs } from "../services/logs.js"
-import { KiloCodePaths } from "../utils/paths.js"
+import { BuilderPaths } from "../utils/paths.js"
 import { Package } from "../constants/package.js"
 import { machineIdSync } from "node-machine-id"
 
@@ -942,11 +942,11 @@ export class ExtensionContext {
 
 		// Setup storage paths using centralized path utility
 		// Initialize workspace to ensure all directories exist
-		KiloCodePaths.initializeWorkspace(workspacePath)
+		BuilderPaths.initializeWorkspace(workspacePath)
 
-		const globalStoragePath = KiloCodePaths.getGlobalStorageDir()
-		const workspaceStoragePath = KiloCodePaths.getWorkspaceStorageDir(workspacePath)
-		const logPath = KiloCodePaths.getLogsDir()
+		const globalStoragePath = BuilderPaths.getGlobalStorageDir()
+		const workspaceStoragePath = BuilderPaths.getWorkspaceStorageDir(workspacePath)
+		const logPath = BuilderPaths.getLogsDir()
 
 		this.globalStoragePath = globalStoragePath
 		this.globalStorageUri = Uri.file(globalStoragePath)
@@ -1555,8 +1555,8 @@ export class MockWorkspaceConfiguration implements WorkspaceConfiguration {
 			this.workspaceMemento = context.workspaceState as unknown as MemoryMemento
 		} else {
 			// Fallback: create our own mementos (shouldn't happen in normal usage)
-			const globalStoragePath = KiloCodePaths.getGlobalStorageDir()
-			const workspaceStoragePath = KiloCodePaths.getWorkspaceStorageDir(process.cwd())
+			const globalStoragePath = BuilderPaths.getGlobalStorageDir()
+			const workspaceStoragePath = BuilderPaths.getWorkspaceStorageDir(process.cwd())
 
 			this.ensureDirectoryExists(globalStoragePath)
 			this.ensureDirectoryExists(workspaceStoragePath)

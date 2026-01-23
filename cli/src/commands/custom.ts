@@ -1,5 +1,5 @@
 /**
- * Custom commands - loads markdown-based commands from ~/.kilocode/commands/ and .kilocode/commands/
+ * Custom commands - loads markdown-based commands from ~/.builder/commands/ and .builder/commands/
  */
 
 import fs from "fs/promises"
@@ -149,16 +149,16 @@ function customCommandToCliCommand(customCommand: CustomCommand): Command {
 }
 
 /**
- * Load custom commands from ~/.kilocode/commands/ and .kilocode/commands/
+ * Load custom commands from ~/.builder/commands/ and .builder/commands/
  * Priority: project > global
  */
 export async function getCustomCommands(cwd: string): Promise<CustomCommand[]> {
 	const commands = new Map<string, CustomCommand>()
 
-	const globalDir = path.join(os.homedir(), ".kilocode", "commands")
+	const globalDir = path.join(os.homedir(), ".builder", "commands")
 	await scanCommandDirectory(globalDir, commands)
 
-	const projectDir = path.join(cwd, ".kilocode", "commands")
+	const projectDir = path.join(cwd, ".builder", "commands")
 	await scanCommandDirectory(projectDir, commands)
 
 	return Array.from(commands.values())

@@ -16,7 +16,7 @@ sidebar_label: "足枪式提示"
 
 ## 工作原理
 
-1.  **覆盖文件：** 在您的工作区根目录中创建一个名为 `.kilocode/system-prompt-{mode-slug}` 的文件（例如，Code 模式的 `.kilocode/system-prompt-code`）。
+1.  **覆盖文件：** 在您的工作区根目录中创建一个名为 `.builder/system-prompt-{mode-slug}` 的文件（例如，Code 模式的 `.builder/system-prompt-code`）。
 2.  **内容：** 此文件的内容将成为该特定模式的新系统提示。
 3.  **激活：** Kilo Code 会自动检测此文件。如果存在，它将替换大多数标准系统提示部分。
 4.  **保留部分：** 只有核心 `roleDefinition` 和您为该模式设置的任何 `customInstructions` 会与您的覆盖内容一起保留。工具描述、规则和功能等标准部分将被绕过。
@@ -46,7 +46,7 @@ sidebar_label: "足枪式提示"
 - **目标受众：** 最适合深入了解 Kilo Code 提示系统以及修改核心指令所带来影响的用户。
 - **对功能的影响：** 自定义提示会覆盖标准指令，包括工具使用和响应一致性的指令。如果管理不当，这可能导致意外行为或错误。
 - **模式特定：** 每个覆盖文件仅适用于其文件名中指定的模式（`{mode-slug}`）。
-- **无文件，无覆盖：** 如果 `.kilocode/system-prompt-{mode-slug}` 文件不存在，Kilo Code 将使用该模式的标准系统提示生成过程。
-- **目录创建：** Kilo Code 确保 `.kilocode` 目录存在，然后才尝试读取或创建覆盖文件。
+- **无文件，无覆盖：** 如果 `.builder/system-prompt-{mode-slug}` 文件不存在，Kilo Code 将使用该模式的标准系统提示生成过程。
+- **目录创建：** Kilo Code 确保 `.builder` 目录存在，然后才尝试读取或创建覆盖文件。
 
 请谨慎使用此功能。虽然它在自定义方面功能强大，但错误的实现可能会显著降低 Kilo Code 在受影响模式下的性能和可靠性。

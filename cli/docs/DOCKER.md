@@ -70,7 +70,7 @@ Mount your existing Kilo Code configuration to avoid setup prompts:
 ```bash
 docker run -it --rm \
   -v $(pwd):/workspace \
-  -v ~/.kilocode:/home/kilocode/.kilocode \
+  -v ~/.builder:/home/kilocode/.builder \
   kiloai/cli
 ```
 
@@ -91,7 +91,7 @@ For commit operations:
 ```bash
 docker run -it --rm \
   -v $(pwd):/workspace \
-  -v ~/.kilocode:/home/kilocode/.kilocode \
+  -v ~/.builder:/home/kilocode/.builder \
   -v ~/.gitconfig:/home/kilocode/.gitconfig:ro \
   kiloai/cli
 ```
@@ -101,7 +101,7 @@ docker run -it --rm \
 ```bash
 docker run -it --rm \
   -v $(pwd):/workspace \
-  -e KILOCODE_MODE=code \
+  -e BUILDER_MODE=code \
   kiloai/cli
 ```
 
@@ -117,12 +117,12 @@ docker run --rm \
 
 ### Persistent Configuration
 
-The CLI stores configuration in `~/.kilocode/config.json`. You can:
+The CLI stores configuration in `~/.builder/config.json`. You can:
 
 **Option 1: Mount local config** (recommended)
 
 ```bash
--v ~/.kilocode:/home/kilocode/.kilocode
+-v ~/.builder:/home/kilocode/.builder
 ```
 
 **Option 2: Use Docker volume for isolated config**
@@ -131,7 +131,7 @@ The CLI stores configuration in `~/.kilocode/config.json`. You can:
 docker volume create kilocode-config
 docker run -it --rm \
   -v $(pwd):/workspace \
-  -v kilocode-config:/home/kilocode/.kilocode \
+  -v kilocode-config:/home/kilocode/.builder \
   kiloai/cli
 ```
 
@@ -141,7 +141,7 @@ If you experience text visibility issues (text blending with background), you ca
 
 **Option 1: Set theme explicitly in config**
 
-Edit `~/.kilocode/config.json`:
+Edit `~/.builder/config.json`:
 
 ```json
 {

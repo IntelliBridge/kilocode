@@ -52,13 +52,13 @@ describe("RooConfigService", () => {
 	describe("getGlobalRooDirectory", () => {
 		it("should return correct path for global .roo directory", () => {
 			const result = getGlobalRooDirectory()
-			expect(result).toBe(path.join("/mock/home", ".kilocode"))
+			expect(result).toBe(path.join("/mock/home", ".builder"))
 		})
 
 		it("should handle different home directories", () => {
 			mockHomedir.mockReturnValue("/different/home")
 			const result = getGlobalRooDirectory()
-			expect(result).toBe(path.join("/different/home", ".kilocode"))
+			expect(result).toBe(path.join("/different/home", ".builder"))
 		})
 	})
 
@@ -66,7 +66,7 @@ describe("RooConfigService", () => {
 		it("should return correct path for given cwd", () => {
 			const cwd = "/custom/project/path"
 			const result = getProjectRooDirectoryForCwd(cwd)
-			expect(result).toBe(path.join(cwd, ".kilocode"))
+			expect(result).toBe(path.join(cwd, ".builder"))
 		})
 	})
 
@@ -219,7 +219,7 @@ describe("RooConfigService", () => {
 
 			const result = getRooDirectoriesForCwd(cwd)
 
-			expect(result).toEqual([path.join("/mock/home", ".kilocode"), path.join(cwd, ".kilocode")])
+			expect(result).toEqual([path.join("/mock/home", ".builder"), path.join(cwd, ".builder")])
 		})
 	})
 
@@ -302,11 +302,8 @@ describe("RooConfigService", () => {
 
 			await loadConfiguration("rules/rules.md", "/project/path")
 
-			expect(mockReadFile).toHaveBeenCalledWith(path.join("/mock/home", ".kilocode", "rules/rules.md"), "utf-8")
-			expect(mockReadFile).toHaveBeenCalledWith(
-				path.join("/project/path", ".kilocode", "rules/rules.md"),
-				"utf-8",
-			)
+			expect(mockReadFile).toHaveBeenCalledWith(path.join("/mock/home", ".builder", "rules/rules.md"), "utf-8")
+			expect(mockReadFile).toHaveBeenCalledWith(path.join("/project/path", ".builder", "rules/rules.md"), "utf-8")
 		})
 	})
 
@@ -425,8 +422,8 @@ describe("RooConfigService", () => {
 			const result = await getAllRooDirectoriesForCwd("/project/path")
 
 			expect(result).toEqual([
-				path.join("/mock/home", ".kilocode"), // global
-				path.join("/project/path", ".kilocode"), // project
+				path.join("/mock/home", ".builder"), // global
+				path.join("/project/path", ".builder"), // project
 				path.join("/project/path", "subfolder", ".roo"), // subfolder
 			])
 		})
@@ -436,7 +433,7 @@ describe("RooConfigService", () => {
 
 			const result = await getAllRooDirectoriesForCwd("/project/path")
 
-			expect(result).toEqual([path.join("/mock/home", ".kilocode"), path.join("/project/path", ".kilocode")])
+			expect(result).toEqual([path.join("/mock/home", ".builder"), path.join("/project/path", ".builder")])
 		})
 
 		it("should maintain order: global, project, subfolders (alphabetically)", async () => {
@@ -448,8 +445,8 @@ describe("RooConfigService", () => {
 			const result = await getAllRooDirectoriesForCwd("/project/path")
 
 			expect(result).toEqual([
-				path.join("/mock/home", ".kilocode"), // global first
-				path.join("/project/path", ".kilocode"), // project second
+				path.join("/mock/home", ".builder"), // global first
+				path.join("/project/path", ".builder"), // project second
 				path.join("/project/path", "apple", ".roo"), // subfolders alphabetically
 				path.join("/project/path", "zebra", ".roo"),
 			])

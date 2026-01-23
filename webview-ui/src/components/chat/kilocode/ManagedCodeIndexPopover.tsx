@@ -57,7 +57,7 @@ export const ManagedCodeIndexPopover: React.FC<CodeIndexPopoverProps> = ({ child
 
 const Content = () => {
 	const state = useExtensionState()
-	const orgId = state.apiConfiguration?.kilocodeOrganizationId
+	const orgId = state.apiConfiguration?.builderOrganizationId
 	const href = `https://kilo.ai/organizations/${orgId}/code-indexing`
 	const [workspaceFolders, setWorkspaceFolders] = useState<WorkspaceFolderState[]>([])
 

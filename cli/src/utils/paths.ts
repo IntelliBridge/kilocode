@@ -4,10 +4,10 @@ import * as fs from "fs"
 
 /**
  * Centralized path management for Builder CLI
- * All configuration and logs are stored in ~/.kilocode/
+ * All configuration and logs are stored in ~/.builder/
  */
-export class KiloCodePaths {
-	private static readonly BASE_DIR_NAME = ".kilocode"
+export class BuilderPaths {
+	private static readonly BASE_DIR_NAME = ".builder"
 	private static readonly CLI_SUBDIR = "cli"
 	private static readonly WORKSPACE_MAP_FILE = "workspace-map.json"
 
@@ -19,9 +19,9 @@ export class KiloCodePaths {
 	}
 
 	/**
-	 * Get base .kilocode/cli directory in user home
+	 * Get base .builder/cli directory in user home
 	 */
-	static getKiloCodeDir(): string {
+	static getBuilderDir(): string {
 		return path.join(this.getHomeDir(), this.BASE_DIR_NAME, this.CLI_SUBDIR)
 	}
 
@@ -29,14 +29,14 @@ export class KiloCodePaths {
 	 * Get unified logs directory (shared across all workspaces)
 	 */
 	static getLogsDir(): string {
-		return path.join(this.getKiloCodeDir(), "logs")
+		return path.join(this.getBuilderDir(), "logs")
 	}
 
 	/**
 	 * Get global storage directory (shared across all workspaces)
 	 */
 	static getGlobalStorageDir(): string {
-		return path.join(this.getKiloCodeDir(), "global")
+		return path.join(this.getBuilderDir(), "global")
 	}
 
 	/**
@@ -59,7 +59,7 @@ export class KiloCodePaths {
 	 * Get workspaces base directory
 	 */
 	static getWorkspacesDir(): string {
-		return path.join(this.getKiloCodeDir(), "workspaces")
+		return path.join(this.getBuilderDir(), "workspaces")
 	}
 
 	/**
@@ -179,7 +179,7 @@ export class KiloCodePaths {
 	 */
 	static initializeWorkspace(workspacePath: string): void {
 		// Ensure base directories exist
-		this.ensureDirectoryExists(this.getKiloCodeDir())
+		this.ensureDirectoryExists(this.getBuilderDir())
 		this.ensureDirectoryExists(this.getLogsDir())
 		this.ensureDirectoryExists(this.getGlobalStorageDir())
 		this.ensureDirectoryExists(this.getWorkspacesDir())

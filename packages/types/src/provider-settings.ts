@@ -448,14 +448,14 @@ const ovhcloudSchema = baseProviderSettingsSchema.extend({
 })
 
 const kilocodeSchema = baseProviderSettingsSchema.extend({
-	kilocodeToken: z.string().optional(),
-	kilocodeOrganizationId: z.string().optional(),
-	kilocodeModel: z.string().optional(),
+	builderToken: z.string().optional(),
+	builderOrganizationId: z.string().optional(),
+	builderModel: z.string().optional(),
 	openRouterSpecificProvider: z.string().optional(),
 	openRouterProviderDataCollection: openRouterProviderDataCollectionSchema.optional(),
 	openRouterProviderSort: openRouterProviderSortSchema.optional(),
 	openRouterZdr: z.boolean().optional(),
-	kilocodeTesterWarningsDisabledUntil: z.number().optional(), // Timestamp for disabling KILOCODE-TESTER warnings
+	builderTesterWarningsDisabledUntil: z.number().optional(), // Timestamp for disabling BUILDER-TESTER warnings
 })
 
 export const virtualQuotaFallbackProfileDataSchema = z.object({
@@ -673,7 +673,7 @@ export const modelIdKeys = [
 	"ioIntelligenceModelId",
 	"vercelAiGatewayModelId",
 	"deepInfraModelId",
-	"kilocodeModel",
+	"builderModel",
 	"ovhCloudAiEndpointsModelId", // kilocode_change
 	"inceptionLabsModelId", // kilocode_change
 	"sapAiCoreModelId", // kilocode_change
@@ -701,7 +701,7 @@ export const modelIdKeysByProvider: Record<TypicalProvider, ModelIdKey> = {
 	glama: "glamaModelId", // kilocode_change
 	"nano-gpt": "nanoGptModelId", // kilocode_change
 	openrouter: "openRouterModelId",
-	kilocode: "kilocodeModel",
+	kilocode: "builderModel",
 	bedrock: "apiModelId",
 	vertex: "apiModelId",
 	"openai-native": "openAiModelId",

@@ -47,14 +47,14 @@ function getModelDisplayName(apiConfig: ProviderSettings | null, routerModels: R
 				...apiConfig,
 			} as ProviderConfig,
 			routerModels,
-			kilocodeDefaultModel: apiConfig.kilocodeModel || "",
+			kilocodeDefaultModel: apiConfig.builderModel || "",
 		})
 
 		// Get models for the provider
 		const { models } = getModelsByProvider({
 			provider: apiConfig.apiProvider,
 			routerModels,
-			kilocodeDefaultModel: apiConfig.kilocodeModel || "",
+			kilocodeDefaultModel: apiConfig.builderModel || "",
 		})
 
 		// Get model info
@@ -73,7 +73,7 @@ function getModelDisplayName(apiConfig: ProviderSettings | null, routerModels: R
 			apiConfig.apiModelId ||
 			apiConfig.openAiModelId ||
 			apiConfig.ollamaModelId ||
-			apiConfig.kilocodeModel ||
+			apiConfig.builderModel ||
 			"Unknown"
 
 		return modelId.length > MAX_MODEL_NAME_LENGTH

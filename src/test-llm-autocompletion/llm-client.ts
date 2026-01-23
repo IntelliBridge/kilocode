@@ -19,10 +19,10 @@ export interface FimResponse {
 	tokensUsed?: number
 }
 
-export function getKiloBaseUriFromToken(kilocodeToken?: string): string {
-	if (kilocodeToken) {
+export function getKiloBaseUriFromToken(builderToken?: string): string {
+	if (builderToken) {
 		try {
-			const payload_string = kilocodeToken.split(".")[1]
+			const payload_string = builderToken.split(".")[1]
 			const payload_json = Buffer.from(payload_string, "base64").toString()
 			const payload = JSON.parse(payload_json)
 			// Note: this is UNTRUSTED, so we need to make sure we're OK with this being manipulated by an attacker

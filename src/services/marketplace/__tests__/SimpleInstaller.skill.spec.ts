@@ -97,14 +97,14 @@ This is a test skill.`
 
 			const result = await installer.installItem(mockSkillItem, { target: "project" })
 
-			expect(result.filePath).toBe(path.join("/test/workspace", ".kilocode", "skills", "test-skill", "SKILL.md"))
+			expect(result.filePath).toBe(path.join("/test/workspace", ".builder", "skills", "test-skill", "SKILL.md"))
 			expect(result.line).toBe(1)
 			expect(mockFs.mkdir).toHaveBeenCalledWith(
-				path.join("/test/workspace", ".kilocode", "skills", "test-skill"),
+				path.join("/test/workspace", ".builder", "skills", "test-skill"),
 				{ recursive: true },
 			)
 			expect(mockFs.writeFile).toHaveBeenCalledWith(
-				path.join("/test/workspace", ".kilocode", "skills", "test-skill", "SKILL.md"),
+				path.join("/test/workspace", ".builder", "skills", "test-skill", "SKILL.md"),
 				mockSkillContent,
 				"utf-8",
 			)
@@ -120,8 +120,8 @@ This is a test skill.`
 
 			const result = await installer.installItem(mockSkillItem, { target: "global" })
 
-			expect(result.filePath).toBe(path.join("/home/user", ".kilocode", "skills", "test-skill", "SKILL.md"))
-			expect(mockFs.mkdir).toHaveBeenCalledWith(path.join("/home/user", ".kilocode", "skills", "test-skill"), {
+			expect(result.filePath).toBe(path.join("/home/user", ".builder", "skills", "test-skill", "SKILL.md"))
+			expect(mockFs.mkdir).toHaveBeenCalledWith(path.join("/home/user", ".builder", "skills", "test-skill"), {
 				recursive: true,
 			})
 		})
@@ -168,7 +168,7 @@ This is a test skill.`
 
 			await installer.removeItem(mockSkillItem, { target: "project" })
 
-			expect(mockFs.rm).toHaveBeenCalledWith(path.join("/test/workspace", ".kilocode", "skills", "test-skill"), {
+			expect(mockFs.rm).toHaveBeenCalledWith(path.join("/test/workspace", ".builder", "skills", "test-skill"), {
 				recursive: true,
 			})
 		})
@@ -179,7 +179,7 @@ This is a test skill.`
 
 			await installer.removeItem(mockSkillItem, { target: "global" })
 
-			expect(mockFs.rm).toHaveBeenCalledWith(path.join("/home/user", ".kilocode", "skills", "test-skill"), {
+			expect(mockFs.rm).toHaveBeenCalledWith(path.join("/home/user", ".builder", "skills", "test-skill"), {
 				recursive: true,
 			})
 		})

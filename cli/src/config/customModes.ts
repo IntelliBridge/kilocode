@@ -86,10 +86,10 @@ function getGlobalModesPath(): string {
 /**
  * Get the project custom modes file path
  * @param workspace - Workspace directory path
- * @returns Path to .kilocodemodes
+ * @returns Path to .buildermodes
  */
 function getProjectModesPath(workspace: string): string {
-	return join(workspace, ".kilocodemodes")
+	return join(workspace, ".buildermodes")
 }
 
 /**

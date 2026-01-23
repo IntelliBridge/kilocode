@@ -27,7 +27,7 @@
 - 提供递归和非递归两种列出模式
 - 在递归模式下，智能忽略常见的大型目录（如 `node_modules` 和 `.git`）
 - 在递归模式下，遵循 `.gitignore` 规则
-- 当启用 `showKiloCodeIgnoredFiles` 时，用锁符号（🔒）标记被 `.kilocodeignore` 忽略的文件
+- 当启用 `showKiloCodeIgnoredFiles` 时，用锁符号（🔒）标记被 `.builderignore` 忽略的文件
 - 通过逐级目录遍历优化性能
 - 排序结果，先显示目录及其内容，保持逻辑层次结构
 - 以干净、有组织的方式呈现结果
@@ -56,7 +56,7 @@
 5. **结果过滤**：
     - 在递归模式下，跳过常见的大型目录，如 `node_modules`、`.git` 等
     - 在递归模式下，遵循 `.gitignore` 规则
-    - 处理 `.kilocodeignore` 规则，要么隐藏文件，要么用锁符号标记
+    - 处理 `.builderignore` 规则，要么隐藏文件，要么用锁符号标记
 6. **格式化**：
     - 用斜杠（`/`）标记目录
     - 排序结果，先显示目录及其内容，保持逻辑层次结构
@@ -70,7 +70,7 @@
 
 - 每个文件路径显示在其自己的行上
 - 目录用斜杠（`/`）标记
-- 当启用 `showKiloCodeIgnored` 时，被 `.kilocodeignore` 忽略的文件用锁符号（🔒）标记
+- 当启用 `showKiloCodeIgnored` 时，被 `.builderignore` 忽略的文件用锁符号（🔒）标记
 - 结果按逻辑排序，先显示目录及其内容
 - 当达到文件限制时，会出现一条消息，建议对特定子目录使用 `list_files`
 
@@ -88,7 +88,7 @@ src/index.ts
 文件列出已截断（显示 200 个文件中的 543 个）。请对特定子目录使用 list_files 以获取更多详细信息。
 ```
 
-当使用 `.kilocodeignore` 文件并启用 `showKiloCodeIgnored` 时：
+当使用 `.builderignore` 文件并启用 `showKiloCodeIgnored` 时：
 
 ```
 src/

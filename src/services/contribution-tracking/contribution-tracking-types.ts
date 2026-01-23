@@ -54,5 +54,5 @@ export interface TrackContributionParams {
 	status: "accepted" | "rejected"
 	taskId?: string
 	organizationId?: string
-	kilocodeToken: string
+	builderToken: string
 }

@@ -68,12 +68,12 @@ export function kilo_initializeSessionManager({
 							const currentTask = provider.getCurrentTask()
 
 							if (currentTask?.taskId === taskId) {
-								return currentTask.apiConfiguration.kilocodeOrganizationId
+								return currentTask.apiConfiguration.builderOrganizationId
 							}
 
 							const state = await provider.getState()
 
-							return state.apiConfiguration.kilocodeOrganizationId
+							return state.apiConfiguration.builderOrganizationId
 						} catch {
 							return undefined
 						}

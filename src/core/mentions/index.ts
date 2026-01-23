@@ -286,7 +286,7 @@ async function getFileOrFolderContent(
 
 		if (stats.isFile()) {
 			if (rooIgnoreController && !rooIgnoreController.validateAccess(absPath)) {
-				return `(File ${mentionPath} is ignored by .kilocodeignore)`
+				return `(File ${mentionPath} is ignored by .builderignore)`
 			}
 			// kilocode_change start
 			if (isSupportedImageFormat(path.extname(absPath))) {

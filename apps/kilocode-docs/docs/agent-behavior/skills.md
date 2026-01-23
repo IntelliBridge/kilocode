@@ -34,12 +34,13 @@ Skills are loaded from multiple locations, allowing both personal skills and pro
 
 ### Global Skills (User-Level)
 
-Global skills are located in the `.kilocode` directory within your Home directory. 
-* Mac and Linux: `~/.kilocode/skills/`
-* Windows: `\Users\<yourUser>\.kilocode\`
+Global skills are located in the `.kilocode` directory within your Home directory.
+
+- Mac and Linux: `~/.builder/skills/`
+- Windows: `\Users\<yourUser>\.kilocode\`
 
 ```
-~/.kilocode/
+~/.builder/
 ├── skills/                    # Generic skills (all modes)
 │   ├── my-skill/
 │   │   └── SKILL.md
@@ -55,11 +56,11 @@ Global skills are located in the `.kilocode` directory within your Home director
 
 ### Project Skills (Workspace-Level)
 
-Located in `.kilocode/skills/` within your project:
+Located in `.builder/skills/` within your project:
 
 ```
 your-project/
-└── .kilocode/
+└── .builder/
     ├── skills/               # Generic skills for this project
     │   └── project-conventions/
     │       └── SKILL.md
@@ -74,10 +75,10 @@ To create a skill that only appears in a specific mode:
 
 ```bash
 # For Code mode only
-mkdir -p ~/.kilocode/skills-code/typescript-patterns
+mkdir -p ~/.builder/skills-code/typescript-patterns
 
 # For Architect mode only
-mkdir -p ~/.kilocode/skills-architect/microservices
+mkdir -p ~/.builder/skills-architect/microservices
 ```
 
 The directory naming pattern is `skills-{mode-slug}` where `{mode-slug}` matches the mode's identifier (e.g., `code`, `architect`, `ask`, `debug`).
@@ -202,7 +203,7 @@ These additional files can be referenced from your skill's instructions, allowin
 1. Create the skill directory:
 
     ```bash
-    mkdir -p ~/.kilocode/skills/api-design
+    mkdir -p ~/.builder/skills/api-design
     ```
 
 2. Create `SKILL.md`:

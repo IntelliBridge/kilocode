@@ -318,7 +318,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>((props, ref)
 
 	// Temporary way of making sure that the Settings view updates its local state properly when receiving
 	// api keys from providers that support url callbacks. This whole Settings View needs proper with this local state thing later
-	const { kilocodeToken, openRouterApiKey, glamaApiKey, requestyApiKey } = extensionState.apiConfiguration ?? {}
+	const { builderToken, openRouterApiKey, glamaApiKey, requestyApiKey } = extensionState.apiConfiguration ?? {}
 	useEffect(() => {
 		setCachedState((prevCachedState) => ({
 			...prevCachedState,
@@ -326,13 +326,13 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>((props, ref)
 				...prevCachedState.apiConfiguration,
 				// Only set specific tokens/keys instead of spreading the entire
 				// `prevCachedState.apiConfiguration` since it may contain unsaved changes
-				kilocodeToken,
+				builderToken,
 				openRouterApiKey,
 				glamaApiKey,
 				requestyApiKey,
 			},
 		}))
-	}, [kilocodeToken, openRouterApiKey, glamaApiKey, requestyApiKey])
+	}, [builderToken, openRouterApiKey, glamaApiKey, requestyApiKey])
 
 	useEffect(() => {
 		// Only update if we're not already detecting changes
@@ -1201,7 +1201,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>((props, ref)
 							setOpenRouterImageApiKey={setOpenRouterImageApiKey}
 							setKiloCodeImageApiKey={setKiloCodeImageApiKey}
 							setImageGenerationSelectedModel={setImageGenerationSelectedModel}
-							currentProfileKilocodeToken={apiConfiguration.kilocodeToken}
+							currentProfileBuilderToken={apiConfiguration.builderToken}
 						/>
 					)}
 

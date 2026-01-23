@@ -41,7 +41,7 @@ Before enabling Managed Indexing:
 
 Codebase Indexing is rolling out across our users. It will automatically engage unless your repository root is configured to opt out.
 
-1. Create a `.kilocode/config.json` file in the root of your repository (if it doesn't already exist).
+1. Create a `.builder/config.json` file in the root of your repository (if it doesn't already exist).
 2. Add the following configuration:
 
 ```json

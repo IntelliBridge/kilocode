@@ -155,7 +155,7 @@ export const UI: React.FC<UIAppProps> = ({ options, onExit }) => {
 		if (options.workspace) {
 			setWorkspacePath(options.workspace)
 		}
-		// Load custom commands from ~/.kilocode/commands/ and .kilocode/commands/
+		// Load custom commands from ~/.builder/commands/ and .builder/commands/
 		void initializeCustomCommands(workspace)
 	}, [options.workspace, setWorkspacePath])
 

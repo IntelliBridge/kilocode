@@ -51,8 +51,8 @@ describe("project-config", () => {
 	})
 
 	describe("getProjectConfig", () => {
-		it("returns config from .kilocode/config.json", async () => {
-			const kilocodeDir = path.join(tempDir, ".kilocode")
+		it("returns config from .builder/config.json", async () => {
+			const kilocodeDir = path.join(tempDir, ".builder")
 			await fs.mkdir(kilocodeDir, { recursive: true })
 			await fs.writeFile(
 				path.join(kilocodeDir, "config.json"),
@@ -79,7 +79,7 @@ describe("project-config", () => {
 		})
 
 		it("returns null when config file is invalid JSON", async () => {
-			const kilocodeDir = path.join(tempDir, ".kilocode")
+			const kilocodeDir = path.join(tempDir, ".builder")
 			await fs.mkdir(kilocodeDir, { recursive: true })
 			await fs.writeFile(path.join(kilocodeDir, "config.json"), "{ invalid json }")
 
@@ -91,7 +91,7 @@ describe("project-config", () => {
 
 	describe("getProjectId", () => {
 		it("returns normalized project ID from config file when available", async () => {
-			const kilocodeDir = path.join(tempDir, ".kilocode")
+			const kilocodeDir = path.join(tempDir, ".builder")
 			await fs.mkdir(kilocodeDir, { recursive: true })
 			await fs.writeFile(
 				path.join(kilocodeDir, "config.json"),
@@ -120,7 +120,7 @@ describe("project-config", () => {
 		})
 
 		it("normalizes git URL when config file has no project.id", async () => {
-			const kilocodeDir = path.join(tempDir, ".kilocode")
+			const kilocodeDir = path.join(tempDir, ".builder")
 			await fs.mkdir(kilocodeDir, { recursive: true })
 			await fs.writeFile(
 				path.join(kilocodeDir, "config.json"),
@@ -141,7 +141,7 @@ describe("project-config", () => {
 		})
 
 		it("prioritizes config file over git URL", async () => {
-			const kilocodeDir = path.join(tempDir, ".kilocode")
+			const kilocodeDir = path.join(tempDir, ".builder")
 			await fs.mkdir(kilocodeDir, { recursive: true })
 			await fs.writeFile(
 				path.join(kilocodeDir, "config.json"),
@@ -158,7 +158,7 @@ describe("project-config", () => {
 		})
 
 		it("normalizes git URL in config file", async () => {
-			const kilocodeDir = path.join(tempDir, ".kilocode")
+			const kilocodeDir = path.join(tempDir, ".builder")
 			await fs.mkdir(kilocodeDir, { recursive: true })
 			await fs.writeFile(
 				path.join(kilocodeDir, "config.json"),

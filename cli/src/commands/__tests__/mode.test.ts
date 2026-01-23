@@ -11,7 +11,7 @@ import type { ModeConfig } from "../../types/messages.js"
 vi.mock("../../config/customModes.js", () => ({
 	getSearchedPaths: vi.fn().mockReturnValue([
 		{ type: "global", path: "/global/path/custom_modes.yaml", found: false },
-		{ type: "project", path: "/project/path/.kilocodemodes", found: true, modesCount: 1 },
+		{ type: "project", path: "/project/path/.buildermodes", found: true, modesCount: 1 },
 	]),
 }))
 
@@ -42,7 +42,7 @@ describe("modeCommand", () => {
 			isParallelMode: false,
 			routerModels: null,
 			currentProvider: null,
-			kilocodeDefaultModel: "",
+			builderDefaultModel: "",
 			updateProviderModel: vi.fn().mockResolvedValue(undefined),
 			refreshRouterModels: vi.fn().mockResolvedValue(undefined),
 			updateProvider: vi.fn().mockResolvedValue(undefined),
@@ -199,7 +199,7 @@ describe("modeCommand", () => {
 			expect(message.content).toContain('Invalid mode "invalid-mode"')
 			expect(message.content).toContain("The CLI searched for custom modes in:")
 			expect(message.content).toContain("/global/path/custom_modes.yaml")
-			expect(message.content).toContain("/project/path/.kilocodemodes")
+			expect(message.content).toContain("/project/path/.buildermodes")
 			expect(message.content).toContain("Available modes:")
 		})
 

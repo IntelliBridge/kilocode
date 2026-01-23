@@ -225,7 +225,7 @@ const ApiOptions = ({
 	const { data: routerModels, refetch: refetchRouterModels } = useRouterModels({
 		openRouterBaseUrl: apiConfiguration?.openRouterBaseUrl,
 		openRouterApiKey: apiConfiguration?.openRouterApiKey,
-		kilocodeOrganizationId: apiConfiguration?.kilocodeOrganizationId ?? "personal",
+		builderOrganizationId: apiConfiguration?.builderOrganizationId ?? "personal",
 		deepInfraApiKey: apiConfiguration?.deepInfraApiKey,
 		geminiApiKey: apiConfiguration?.geminiApiKey,
 		googleGeminiBaseUrl: apiConfiguration?.googleGeminiBaseUrl,
@@ -421,7 +421,7 @@ const ApiOptions = ({
 				ollama: { field: "ollamaModelId" },
 				lmstudio: { field: "lmStudioModelId" },
 				// kilocode_change start
-				kilocode: { field: "kilocodeModel", default: kilocodeDefaultModel },
+				kilocode: { field: "builderModel", default: kilocodeDefaultModel },
 				"gemini-cli": { field: "apiModelId", default: geminiCliDefaultModelId },
 				synthetic: { field: "apiModelId", default: syntheticDefaultModelId },
 				ovhcloud: { field: "ovhCloudAiEndpointsModelId", default: ovhCloudAiEndpointsDefaultModelId },
@@ -1009,9 +1009,9 @@ const ApiOptions = ({
 			{
 				// kilocode_change start
 				(selectedProvider === "kilocode" || selectedProvider === "openrouter") &&
-					(apiConfiguration.kilocodeOrganizationId ? (
+					(apiConfiguration.builderOrganizationId ? (
 						<KiloProviderRoutingManagedByOrganization
-							organizationId={apiConfiguration.kilocodeOrganizationId}
+							organizationId={apiConfiguration.builderOrganizationId}
 						/>
 					) : (
 						<KiloProviderRouting

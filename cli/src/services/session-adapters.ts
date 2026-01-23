@@ -1,16 +1,16 @@
-import { KiloCodePaths } from "../utils/paths.js"
+import { BuilderPaths } from "../utils/paths.js"
 import type { ExtensionService } from "./extension.js"
 import type { IPathProvider } from "../../../src/shared/kilocode/cli-sessions/types/IPathProvider"
 import type { IExtensionMessenger } from "../../../src/shared/kilocode/cli-sessions/types/IExtensionMessenger"
 import type { WebviewMessage } from "../../../src/shared/WebviewMessage"
 
-export class KiloCodePathProvider implements IPathProvider {
+export class BuilderPathProvider implements IPathProvider {
 	getTasksDir(): string {
-		return KiloCodePaths.getTasksDir()
+		return BuilderPaths.getTasksDir()
 	}
 
 	getSessionFilePath(workspaceDir: string): string {
-		return KiloCodePaths.getSessionFilePath(workspaceDir)
+		return BuilderPaths.getSessionFilePath(workspaceDir)
 	}
 }
 

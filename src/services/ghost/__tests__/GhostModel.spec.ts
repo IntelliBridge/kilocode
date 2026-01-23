@@ -150,7 +150,7 @@ describe("GhostModel", () => {
 						id: "1",
 						name: "kilocode-profile",
 						apiProvider: "kilocode",
-						kilocodeToken: "test-token",
+						builderToken: "test-token",
 					} as any
 				} else if (args.id === "2") {
 					return {
@@ -208,7 +208,7 @@ describe("GhostModel", () => {
 						id: "1",
 						name: "kilocode-profile",
 						apiProvider: "kilocode",
-						kilocodeToken: "test-token",
+						builderToken: "test-token",
 					} as any
 				} else if (args.id === "2") {
 					return {
@@ -266,7 +266,7 @@ describe("GhostModel", () => {
 						id: "1",
 						name: "kilocode-profile",
 						apiProvider: "kilocode",
-						kilocodeToken: "", // No token
+						builderToken: "", // No token
 					} as any
 				} else if (args.id === "2") {
 					return {
@@ -320,7 +320,7 @@ describe("GhostModel", () => {
 				id: "1",
 				name: "kilocode-profile",
 				apiProvider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			} as any)
 
 			// Mock fetch to return zero balance for kilocode
@@ -357,7 +357,7 @@ describe("GhostModel", () => {
 				id: "1",
 				name: "kilocode-profile",
 				apiProvider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			} as any)
 
 			// Mock fetch to return positive balance for kilocode and valid models response
@@ -410,7 +410,7 @@ describe("GhostModel", () => {
 				id: "1",
 				name: "kilocode-profile",
 				apiProvider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			} as any)
 
 			// First reload: zero balance

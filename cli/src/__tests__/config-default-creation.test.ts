@@ -36,7 +36,7 @@ vi.mock("fs/promises", async () => {
 })
 
 // Define test paths
-const TEST_CONFIG_DIR = path.join(homedir(), ".kilocode", "cli-test-default")
+const TEST_CONFIG_DIR = path.join(homedir(), ".builder", "cli-test-default")
 const TEST_CONFIG_FILE = path.join(TEST_CONFIG_DIR, "config.json")
 
 describe("Default Config Creation", () => {

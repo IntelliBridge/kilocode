@@ -78,7 +78,7 @@ abstract class BaseTelemetryClient implements TelemetryClient {
 
 	public abstract captureException(error: Error, properties?: Record<string | number, unknown>): void
 
-	public abstract updateIdentity(kilocodeToken: string): Promise<void>
+	public abstract updateIdentity(builderToken: string): Promise<void>
 
 	public isTelemetryEnabled(): boolean {
 		return this.telemetryEnabled
@@ -290,7 +290,7 @@ export class CloudTelemetryClient extends BaseTelemetryClient {
 
 	public override captureException(error: Error, properties?: Record<string | number, unknown>): void {} // kilocode_change
 
-	public override async updateIdentity(kilocodeToken: string): Promise<void> {} // kilocode_change
+	public override async updateIdentity(builderToken: string): Promise<void> {} // kilocode_change
 
 	public override async shutdown() {}
 }

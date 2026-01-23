@@ -70,12 +70,12 @@ describe("ManagedIndexer", () => {
 		// Setup mock ContextProxy
 		mockContextProxy = {
 			getSecret: vi.fn((key: string) => {
-				if (key === "kilocodeToken") return "test-token"
+				if (key === "builderToken") return "test-token"
 				return null
 			}),
 			getValue: vi.fn((key: string) => {
-				if (key === "kilocodeOrganizationId") return "test-org-id"
-				if (key === "kilocodeTesterWarningsDisabledUntil") return null
+				if (key === "builderOrganizationId") return "test-org-id"
+				if (key === "builderTesterWarningsDisabledUntil") return null
 				return null
 			}),
 			getGlobalState: vi.fn((key: string) => {
@@ -154,13 +154,13 @@ describe("ManagedIndexer", () => {
 		it("should fetch config from ContextProxy", async () => {
 			const config = await indexer.fetchConfig()
 
-			expect(mockContextProxy.getSecret).toHaveBeenCalledWith("kilocodeToken")
-			expect(mockContextProxy.getValue).toHaveBeenCalledWith("kilocodeOrganizationId")
-			expect(mockContextProxy.getValue).toHaveBeenCalledWith("kilocodeTesterWarningsDisabledUntil")
+			expect(mockContextProxy.getSecret).toHaveBeenCalledWith("builderToken")
+			expect(mockContextProxy.getValue).toHaveBeenCalledWith("builderOrganizationId")
+			expect(mockContextProxy.getValue).toHaveBeenCalledWith("builderTesterWarningsDisabledUntil")
 			expect(config).toEqual({
-				kilocodeOrganizationId: "test-org-id",
-				kilocodeToken: "test-token",
-				kilocodeTesterWarningsDisabledUntil: null,
+				builderOrganizationId: "test-org-id",
+				builderToken: "test-token",
+				builderTesterWarningsDisabledUntil: null,
 			})
 		})
 
@@ -168,9 +168,9 @@ describe("ManagedIndexer", () => {
 			await indexer.fetchConfig()
 
 			expect(indexer.config).toEqual({
-				kilocodeOrganizationId: "test-org-id",
-				kilocodeToken: "test-token",
-				kilocodeTesterWarningsDisabledUntil: null,
+				builderOrganizationId: "test-org-id",
+				builderToken: "test-token",
+				builderTesterWarningsDisabledUntil: null,
 			})
 		})
 
@@ -181,9 +181,9 @@ describe("ManagedIndexer", () => {
 			const config = await indexer.fetchConfig()
 
 			expect(config).toEqual({
-				kilocodeOrganizationId: null,
-				kilocodeToken: null,
-				kilocodeTesterWarningsDisabledUntil: null,
+				builderOrganizationId: null,
+				builderToken: null,
+				builderTesterWarningsDisabledUntil: null,
 			})
 		})
 	})

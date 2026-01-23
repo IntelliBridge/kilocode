@@ -8,14 +8,14 @@ const baseProviderSchema = z.object({
 // Kilocode provider
 export const kilocodeProviderSchema = baseProviderSchema.extend({
 	provider: z.literal("kilocode"),
-	kilocodeModel: z.string().optional(),
-	kilocodeToken: z.string().optional(),
-	kilocodeOrganizationId: z.string().optional(),
+	builderModel: z.string().optional(),
+	builderToken: z.string().optional(),
+	builderOrganizationId: z.string().optional(),
 	openRouterSpecificProvider: z.string().optional(),
 	openRouterProviderDataCollection: z.enum(["allow", "deny"]).optional(),
 	openRouterProviderSort: z.enum(["price", "throughput", "latency"]).optional(),
 	openRouterZdr: z.boolean().optional(),
-	kilocodeTesterWarningsDisabledUntil: z.number().optional(),
+	builderTesterWarningsDisabledUntil: z.number().optional(),
 })
 
 // Anthropic provider

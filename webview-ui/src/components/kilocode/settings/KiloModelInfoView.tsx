@@ -99,7 +99,7 @@ export const KiloModelInfoView = ({
 			try {
 				const url = getKiloUrlFromToken(
 					"https://api.kilo.ai/api/modelstats",
-					apiConfiguration.kilocodeToken ?? "",
+					apiConfiguration.builderToken ?? "",
 				)
 				const response = await fetch(url)
 

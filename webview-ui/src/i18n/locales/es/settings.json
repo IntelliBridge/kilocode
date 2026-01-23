@@ -203,7 +203,7 @@
 			},
 			"protected": {
 				"label": "Incluir archivos protegidos",
-				"description": "Permitir a Builder crear y editar archivos protegidos (como .kilocodeignore y archivos de configuración .kilocode/) sin requerir aprobación."
+				"description": "Permitir a Builder crear y editar archivos protegidos (como .builderignore y archivos de configuración .builder/) sin requerir aprobación."
 			}
 		},
 		"delete": {
@@ -743,8 +743,8 @@
 			"description": "Número máximo de archivos a incluir en los detalles del directorio de trabajo actual. Valores más altos proporcionan más contexto pero aumentan el uso de token."
 		},
 		"rooignore": {
-			"label": "Mostrar archivos .kilocodeignore en listas y búsquedas",
-			"description": "Cuando está habilitado, los archivos que coinciden con los patrones en .kilocodeignore se mostrarán en listas con un símbolo de candado. Cuando está deshabilitado, estos archivos se ocultarán completamente de las listas de archivos y búsquedas."
+			"label": "Mostrar archivos .builderignore en listas y búsquedas",
+			"description": "Cuando está habilitado, los archivos que coinciden con los patrones en .builderignore se mostrarán en listas con un símbolo de candado. Cuando está deshabilitado, estos archivos se ocultarán completamente de las listas de archivos y búsquedas."
 		},
 		"maxReadFile": {
 			"label": "Umbral de auto-truncado de lectura de archivos",
@@ -998,9 +998,9 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Habilitar herramientas personalizadas",
-			"description": "Cuando está habilitado, Kilo puede cargar y usar herramientas TypeScript/JavaScript personalizadas desde el directorio .kilocode/tools de tu proyecto o ~/.kilocode/tools para herramientas globales. Nota: estas herramientas se aprobarán automáticamente.",
+			"description": "Cuando está habilitado, Kilo puede cargar y usar herramientas TypeScript/JavaScript personalizadas desde el directorio .builder/tools de tu proyecto o ~/.builder/tools para herramientas globales. Nota: estas herramientas se aprobarán automáticamente.",
 			"toolsHeader": "Herramientas personalizadas disponibles",
-			"noTools": "No hay herramientas personalizadas cargadas. Añade archivos .ts o .js al directorio .kilocode/tools de tu proyecto o ~/.kilocode/tools para herramientas globales.",
+			"noTools": "No hay herramientas personalizadas cargadas. Añade archivos .ts o .js al directorio .builder/tools de tu proyecto o ~/.builder/tools para herramientas globales.",
 			"refreshButton": "Actualizar",
 			"refreshing": "Actualizando...",
 			"refreshSuccess": "Herramientas actualizadas correctamente",

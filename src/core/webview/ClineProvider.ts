@@ -1532,7 +1532,7 @@ export class ClineProvider
 					task.api = buildApiHandler(providerSettings)
 				}
 
-				await TelemetryService.instance.updateIdentity(providerSettings.kilocodeToken ?? "") // kilocode_change
+				await TelemetryService.instance.updateIdentity(providerSettings.builderToken ?? "") // kilocode_change
 
 				this.updateTaskApiHandlerIfNeeded(providerSettings, { forceRebuild: true })
 			} else {
@@ -1593,7 +1593,7 @@ export class ClineProvider
 		this.updateTaskApiHandlerIfNeeded(providerSettings, { forceRebuild: true })
 
 		await this.postStateToWebview()
-		await TelemetryService.instance.updateIdentity(providerSettings.kilocodeToken ?? "") // kilocode_change
+		await TelemetryService.instance.updateIdentity(providerSettings.builderToken ?? "") // kilocode_change
 
 		if (providerSettings.apiProvider) {
 			this.emit(RooCodeEventName.ProviderProfileChanged, { name, provider: providerSettings.apiProvider })
@@ -1626,7 +1626,7 @@ export class ClineProvider
 			await fs.mkdir(mcpServersDir, { recursive: true })
 		} catch (error) {
 			// Fallback to a relative path if directory creation fails
-			return path.join(os.homedir(), ".kilocode", "mcp")
+			return path.join(os.homedir(), ".builder", "mcp")
 		}
 		return mcpServersDir
 	}
@@ -1739,7 +1739,7 @@ export class ClineProvider
 		await this.upsertProviderProfile(currentApiConfigName, {
 			...apiConfiguration,
 			apiProvider: "kilocode",
-			kilocodeToken: token,
+			builderToken: token,
 		})
 
 		vscode.window.showInformationMessage("Builder successfully configured!")
@@ -1747,7 +1747,7 @@ export class ClineProvider
 		if (this.getCurrentTask()) {
 			this.getCurrentTask()!.api = buildApiHandler({
 				apiProvider: kilocode,
-				kilocodeToken: token,
+				builderToken: token,
 			})
 		}
 	}
@@ -2265,8 +2265,8 @@ export class ClineProvider
 			uiKind: vscode.UIKind[vscode.env.uiKind], // kilocode_change
 			kiloCodeWrapperProperties, // kilocode_change wrapper information
 			kilocodeDefaultModel: await getKilocodeDefaultModel(
-				apiConfiguration.kilocodeToken,
-				apiConfiguration.kilocodeOrganizationId,
+				apiConfiguration.builderToken,
+				apiConfiguration.builderOrganizationId,
 			),
 			currentTaskItem: this.getCurrentTask()?.taskId
 				? (taskHistory || []).find((item: HistoryItem) => item.id === this.getCurrentTask()?.taskId)
@@ -2551,8 +2551,8 @@ export class ClineProvider
 		return {
 			apiConfiguration: providerSettings,
 			kilocodeDefaultModel: await getKilocodeDefaultModel(
-				providerSettings.kilocodeToken,
-				providerSettings.kilocodeOrganizationId,
+				providerSettings.builderToken,
+				providerSettings.builderOrganizationId,
 			), // kilocode_change
 			lastShownAnnouncementId: stateValues.lastShownAnnouncementId,
 			customInstructions: stateValues.customInstructions,
@@ -2805,10 +2805,10 @@ export class ClineProvider
 
 		// Logout from Builder provider before resetting (same approach as ProfileView logout)
 		const { apiConfiguration, currentApiConfigName = "default" } = await this.getState()
-		if (apiConfiguration.kilocodeToken) {
+		if (apiConfiguration.builderToken) {
 			await this.upsertProviderProfile(currentApiConfigName, {
 				...apiConfiguration,
-				kilocodeToken: "",
+				builderToken: "",
 			})
 		}
 
@@ -3480,8 +3480,8 @@ export class ClineProvider
 			...getOpenRouter(),
 			...getAutoApproveSettings(),
 			// Add organization ID if available
-			...(apiConfiguration.kilocodeOrganizationId && {
-				kilocodeOrganizationId: apiConfiguration.kilocodeOrganizationId,
+			...(apiConfiguration.builderOrganizationId && {
+				builderOrganizationId: apiConfiguration.builderOrganizationId,
 			}),
 			// kilocode_change end
 			...(await this.getTaskProperties()),

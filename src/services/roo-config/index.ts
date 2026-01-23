@@ -26,7 +26,7 @@ import fsSync from "fs" // kilocode_change
  */
 export function getGlobalRooDirectory(): string {
 	const homeDir = os.homedir()
-	return path.join(homeDir, ".kilocode") // kilocode_change
+	return path.join(homeDir, ".builder") // kilocode_change
 }
 
 /**
@@ -60,12 +60,12 @@ export function getGlobalRooDirectory(): string {
  */
 export function getProjectRooDirectoryForCwd(cwd: string): string {
 	// kilocode_change start
-	const kiloDir = path.join(cwd, ".kilocode")
+	const builderDir = path.join(cwd, ".builder")
 	const rooDir = path.join(cwd, ".roo")
-	if (fsSync.existsSync(rooDir) && !fsSync.existsSync(kiloDir)) {
+	if (fsSync.existsSync(rooDir) && !fsSync.existsSync(builderDir)) {
 		return rooDir
 	}
-	return kiloDir
+	return builderDir
 	// kilocode_change end
 }
 

@@ -86,7 +86,7 @@ Kilo Code 使用一个影子 Git 仓库（独立于您的主版本控制系统�
 
 - **恢复文件和任务** - 恢复工作区文件并删除所有后续对话消息。当您希望将代码和对话完全重置回检查点的时间点时使用。此选项需要在对话框中进行确认，因为它无法撤消。
 
-             <img src="/docs/img/checkpoints/checkpoints-9.png" alt="恢复文件和任务检查点的确认对话框" width="300" />
+               <img src="/docs/img/checkpoints/checkpoints-9.png" alt="恢复文件和任务检查点的确认对话框" width="300" />
 
 ### 限制和注意事项
 
@@ -158,14 +158,14 @@ Kilo Code 使用一个影子 Git 仓库（独立于您的主版本控制系统�
 - 排除的文件不会出现在检查点差异中
 - 暂存文件更改时应用标准 Git 忽略规则
 
-#### .kilocodeignore 行为
+#### .builderignore 行为
 
-`.kilocodeignore` 文件（控制 AI 对文件的访问）与检查点跟踪是分开的：
+`.builderignore` 文件（控制 AI 对文件的访问）与检查点跟踪是分开的：
 
-- 被 `.kilocodeignore` 排除但未被 `.gitignore` 排除的文件仍将被检查点
+- 被 `.builderignore` 排除但未被 `.gitignore` 排除的文件仍将被检查点
 - 对 AI 无法访问的文件的更改仍可通过检查点恢复
 
-这种分离是故意的，因为 `.kilocodeignore` 限制了 AI 可以访问的文件，而不是应该跟踪版本历史的文件。
+这种分离是故意的，因为 `.builderignore` 限制了 AI 可以访问的文件，而不是应该跟踪版本历史的文件。
 
 #### 嵌套 Git 仓库
 

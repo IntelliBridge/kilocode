@@ -56,8 +56,8 @@ import { kilo_initializeSessionManager } from "./shared/kilocode/cli-sessions/ex
 // kilocode_change start
 async function findKilocodeTokenFromAnyProfile(provider: ClineProvider): Promise<string | undefined> {
 	const { apiConfiguration } = await provider.getState()
-	if (apiConfiguration.kilocodeToken) {
-		return apiConfiguration.kilocodeToken
+	if (apiConfiguration.builderToken) {
+		return apiConfiguration.builderToken
 	}
 
 	const profiles = await provider.providerSettingsManager.listConfig()
@@ -65,8 +65,8 @@ async function findKilocodeTokenFromAnyProfile(provider: ClineProvider): Promise
 	for (const profile of profiles) {
 		try {
 			const fullProfile = await provider.providerSettingsManager.getProfile({ name: profile.name })
-			if (fullProfile.kilocodeToken) {
-				return fullProfile.kilocodeToken
+			if (fullProfile.builderToken) {
+				return fullProfile.builderToken
 			}
 		} catch {
 			continue

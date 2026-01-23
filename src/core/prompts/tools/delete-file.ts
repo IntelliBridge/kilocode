@@ -21,7 +21,7 @@ Delete a file or directory from the workspace. This tool provides a safe alterna
 - Only deletes files/directories within the workspace
 - Requires user confirmation before deletion
 - Prevents deletion of write-protected files
-- Validates all files against .kilocodeignore rules
+- Validates all files against .builderignore rules
 - For directories: scans recursively and shows statistics (file count, directory count, total size) before deletion
 - Blocks directory deletion if any contained file is protected or ignored
 

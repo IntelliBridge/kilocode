@@ -58,7 +58,7 @@ _Kilo Code 创建和管理自定义模式的界面。_
 1. 在模式视图中点击导入模式按钮（上传图标）
 2. 选择模式的 YAML 文件
 3. 选择导入级别：
-    - **项目**：仅在当前工作区中可用（保存到 `.kilocodemodes` 文件）
+    - **项目**：仅在当前工作区中可用（保存到 `.buildermodes` 文件）
     - **全局**：在所有项目中可用（保存到全局设置）
 
 ### 导入时更改 Slug
@@ -100,7 +100,7 @@ _自定义模式创建界面，显示名称、slug、描述、保存位置、角
 您可以直接编辑配置文件来创建或修改自定义模式。此方法为您提供对所有属性的最大控制。Kilo Code 现在支持 YAML（首选）和 JSON 格式。
 
 - **全局模式**：编辑 `custom_modes.yaml`（首选）或 `custom_modes.json` 文件。通过提示标签页 > <Codicon name="gear" />（"全局提示"旁的设置菜单图标）> "编辑全局模式" 访问
-- **项目模式**：编辑项目根目录中的 `.kilocodemodes` 文件（可以是 YAML 或 JSON）。通过提示标签页 > <Codicon name="gear" />（"项目提示"旁的设置菜单图标）> "编辑项目模式" 访问
+- **项目模式**：编辑项目根目录中的 `.buildermodes` 文件（可以是 YAML 或 JSON）。通过提示标签页 > <Codicon name="gear" />（"项目提示"旁的设置菜单图标）> "编辑项目模式" 访问
 
 这些文件定义自定义模式的数组/列表。
 
@@ -281,10 +281,10 @@ YAML 现在是定义自定义模式的首选格式，因为它具有以下优势
 
 迁移过程会保留原始 JSON 文件以备回滚。
 
-### 项目模式（`.kilocodemodes`）
+### 项目模式（`.buildermodes`）
 
 - 项目特定文件不会在启动时自动迁移
-- Kilo Code 可以读取 YAML 或 JSON 格式的 `.kilocodemodes` 文件
+- Kilo Code 可以读取 YAML 或 JSON 格式的 `.buildermodes` 文件
 - 通过 UI 编辑时，JSON 文件将转换为 YAML 格式
 - 对于手动转换，您可以要求 Kilo 帮助重新格式化配置
 
@@ -322,11 +322,11 @@ YAML 现在是定义自定义模式的首选格式，因为它具有以下优势
 
 模式配置按以下顺序应用：
 
-1. **项目级模式配置**（来自 `.kilocodemodes` - YAML 或 JSON）
+1. **项目级模式配置**（来自 `.buildermodes` - YAML 或 JSON）
 2. **全局模式配置**（来自 `custom_modes.yaml`，如果未找到 YAML 则来自 `custom_modes.json`）
 3. **默认模式配置**
 
-**重要**：当 `.kilocodemodes` 和全局设置中存在相同 slug 的模式时，`.kilocodemodes` 版本会完全覆盖全局版本的所有属性。
+**重要**：当 `.buildermodes` 和全局设置中存在相同 slug 的模式时，`.buildermodes` 版本会完全覆盖全局版本的所有属性。
 
 ## 覆盖默认模式
 

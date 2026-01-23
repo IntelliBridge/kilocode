@@ -25,7 +25,7 @@ export function checkExistKey(config: ProviderSettings | undefined) {
 		config.ollamaModelId,
 		config.lmStudioModelId,
 		config.vsCodeLmModelSelector,
-		config.kilocodeModel, // kilocode_change
+		config.builderModel, // kilocode_change
 	].some((value) => value !== undefined)
 
 	return hasSecretKey || hasOtherConfig

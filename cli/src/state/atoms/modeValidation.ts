@@ -41,7 +41,7 @@ export const validateModeOnCustomModesUpdateAtom = atom(null, async (get, set) =
 	await set(setModeAtom, fallbackMode)
 
 	// Get organization name for message
-	const orgName = currentProvider.kilocodeOrganizationId ? "this organization" : "Personal"
+	const orgName = currentProvider.builderOrganizationId ? "this organization" : "Personal"
 	const cliMessage: CliMessage = generateModeFallbackMessage({
 		previousMode: currentMode,
 		newMode: fallbackMode,

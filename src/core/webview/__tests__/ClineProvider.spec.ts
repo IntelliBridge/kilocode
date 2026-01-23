@@ -565,8 +565,8 @@ describe("ClineProvider", () => {
 			apiConfiguration: {
 				// kilocode_change start
 				apiProvider: "kilocode",
-				kilocodeModel: openRouterDefaultModelId,
-				kilocodeToken: "kilocode-token",
+				builderModel: openRouterDefaultModelId,
+				builderToken: "kilocode-token",
 				// kilocode_change end
 			},
 			kilocodeDefaultModel: openRouterDefaultModelId,
@@ -2363,13 +2363,13 @@ describe("Project MCP Settings", () => {
 		})
 
 		// Check that fs.mkdir was called with the correct path
-		expect(mockedFs.mkdir).toHaveBeenCalledWith("/test/workspace/.kilocode", { recursive: true })
+		expect(mockedFs.mkdir).toHaveBeenCalledWith("/test/workspace/.builder", { recursive: true })
 
 		// Verify file was created with default content
 		expect(safeWriteJson).toHaveBeenCalledWith("/test/workspace/.roo/mcp.json", { mcpServers: {} })
 
 		// Check that openFile was called
-		expect(openFileSpy).toHaveBeenCalledWith("/test/workspace/.kilocode/mcp.json")
+		expect(openFileSpy).toHaveBeenCalledWith("/test/workspace/.builder/mcp.json")
 	})
 
 	test("handles openProjectMcpSettings when workspace is not open", async () => {
@@ -2405,7 +2405,7 @@ describe("Project MCP Settings", () => {
 		// Verify error message was shown
 		expect(vscode.window.showErrorMessage).toHaveBeenCalledWith(
 			// kilocode_change
-			expect.stringContaining("Failed to create or open .kilocode/mcp.json"),
+			expect.stringContaining("Failed to create or open .builder/mcp.json"),
 		)
 	})
 })

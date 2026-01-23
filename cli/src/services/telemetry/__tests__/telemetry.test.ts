@@ -209,7 +209,7 @@ describe("TelemetryService", () => {
 				{
 					id: "default",
 					provider: "kilocode" as const,
-					kilocodeToken: "",
+					builderToken: "",
 				},
 			],
 		}
@@ -373,10 +373,10 @@ describe("IdentityManager", () => {
 
 	it("should clear Kilocode user ID", async () => {
 		await identityManager.initialize()
-		identityManager.clearKilocodeUserId()
+		identityManager.clearBuilderUserId()
 
 		const identity = identityManager.getIdentity()
-		expect(identity?.kilocodeUserId).toBeUndefined()
+		expect(identity?.builderUserId).toBeUndefined()
 	})
 })
 

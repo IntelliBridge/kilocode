@@ -98,7 +98,7 @@ export function mapProviderToApiConfig(provider: ProviderConfig): ProviderSettin
 export function getModelIdForProvider(provider: ProviderConfig): string {
 	switch (provider.provider) {
 		case "kilocode":
-			return provider.kilocodeModel || ""
+			return provider.builderModel || ""
 		case "anthropic":
 			return provider.apiModelId || ""
 		case "openai-native":

@@ -28,7 +28,7 @@ export interface HistoryData {
 // Constants
 // ============================================================================
 
-export const HISTORY_DIR = path.join(homedir(), ".kilocode", "cli")
+export const HISTORY_DIR = path.join(homedir(), ".builder", "cli")
 export const HISTORY_FILE = path.join(HISTORY_DIR, "history.json")
 export const DEFAULT_MAX_SIZE = 500
 

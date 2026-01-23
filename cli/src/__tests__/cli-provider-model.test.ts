@@ -7,7 +7,7 @@ describe("Provider and Model CLI Options", () => {
 	describe("getModelIdKey", () => {
 		it("should return correct model field for kilocode provider", () => {
 			const field = getModelIdKey("kilocode")
-			expect(field).toBe("kilocodeModel")
+			expect(field).toBe("builderModel")
 		})
 
 		it("should return correct model field for anthropic provider", () => {
@@ -33,7 +33,7 @@ describe("Provider and Model CLI Options", () => {
 
 	describe("getModelFieldForProvider (router support)", () => {
 		it("should return model field for router-supported providers", () => {
-			expect(getModelFieldForProvider("kilocode")).toBe("kilocodeModel")
+			expect(getModelFieldForProvider("kilocode")).toBe("builderModel")
 			expect(getModelFieldForProvider("openrouter")).toBe("openRouterModelId")
 			expect(getModelFieldForProvider("ollama")).toBe("ollamaModelId")
 		})
@@ -55,8 +55,8 @@ describe("Provider and Model CLI Options", () => {
 				{
 					id: "kilocode-1",
 					provider: "kilocode",
-					kilocodeModel: "claude-sonnet-3.5",
-					kilocodeToken: "test-token",
+					builderModel: "claude-sonnet-3.5",
+					builderToken: "test-token",
 				},
 				{
 					id: "anthropic-main",
@@ -93,7 +93,7 @@ describe("Provider and Model CLI Options", () => {
 			const provider = mockConfig.providers[providerIndex]
 			const modelField = getModelIdKey("kilocode")
 
-			expect(modelField).toBe("kilocodeModel")
+			expect(modelField).toBe("builderModel")
 			expect(provider).toBeDefined()
 
 			if (provider && modelField) {
@@ -101,7 +101,7 @@ describe("Provider and Model CLI Options", () => {
 					...provider,
 					[modelField]: "claude-opus-4",
 				}
-				expect(updatedProvider.kilocodeModel).toBe("claude-opus-4")
+				expect(updatedProvider.builderModel).toBe("claude-opus-4")
 			}
 		})
 
@@ -173,7 +173,7 @@ describe("Provider and Model CLI Options", () => {
 	describe("Model Field Mapping", () => {
 		it("should handle all major providers with getModelIdKey", () => {
 			const providers: Array<{ name: ProviderName; expectedField: string }> = [
-				{ name: "kilocode", expectedField: "kilocodeModel" },
+				{ name: "kilocode", expectedField: "builderModel" },
 				{ name: "anthropic", expectedField: "apiModelId" },
 				{ name: "openai", expectedField: "openAiModelId" },
 				{ name: "openai-native", expectedField: "apiModelId" },

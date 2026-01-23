@@ -132,14 +132,14 @@ describe("parseCliChunk", () => {
 
 	it("should parse welcome event with configuration error instructions", () => {
 		const result = parseCliChunk(
-			'{"type":"welcome","metadata":{"welcomeOptions":{"instructions":["Configuration Error: config.json is incomplete","kilocodeToken is required"]}},"timestamp":1234567890}\n',
+			'{"type":"welcome","metadata":{"welcomeOptions":{"instructions":["Configuration Error: config.json is incomplete","builderToken is required"]}},"timestamp":1234567890}\n',
 		)
 		expect(result.events).toHaveLength(1)
 		expect(result.events[0]).toEqual({
 			streamEventType: "welcome",
 			worktreeBranch: undefined,
 			timestamp: 1234567890,
-			instructions: ["Configuration Error: config.json is incomplete", "kilocodeToken is required"],
+			instructions: ["Configuration Error: config.json is incomplete", "builderToken is required"],
 		})
 	})
 

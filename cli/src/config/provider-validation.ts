@@ -63,7 +63,7 @@ export function getRequiredEnvVars(providerType: string): string[] {
 
 	switch (providerType) {
 		case "kilocode":
-			required.push("KILOCODE_TOKEN", "KILOCODE_MODEL")
+			required.push("BUILDER_TOKEN", "BUILDER_MODEL")
 			break
 		case "anthropic":
 			required.push("KILO_API_KEY", "KILO_API_MODEL_ID")

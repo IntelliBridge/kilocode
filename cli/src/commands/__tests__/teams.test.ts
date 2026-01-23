@@ -22,7 +22,7 @@ describe("/teams command", () => {
 			currentProvider: {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			},
 			kilocodeDefaultModel: "test-model",
 			updateProvider: updateProviderMock,
@@ -95,7 +95,7 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileLoading = true
 
@@ -113,7 +113,7 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = {
 				user: {},
@@ -132,7 +132,7 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = {
 				user: {},
@@ -163,8 +163,8 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
-				kilocodeOrganizationId: "org-1",
+				builderToken: "test-token",
+				builderOrganizationId: "org-1",
 			}
 			mockContext.profileData = {
 				user: {},
@@ -191,13 +191,13 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 
 			await teamsCommand.handler(mockContext)
 
 			expect(updateProviderMock).toHaveBeenCalledWith("test-provider", {
-				kilocodeOrganizationId: undefined,
+				builderOrganizationId: undefined,
 			})
 
 			const successMessage = addMessageMock.mock.calls.find((call: unknown[]) => {
@@ -216,7 +216,7 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = {
 				user: {},
@@ -232,7 +232,7 @@ describe("/teams command", () => {
 			await teamsCommand.handler(mockContext)
 
 			expect(updateProviderMock).toHaveBeenCalledWith("test-provider", {
-				kilocodeOrganizationId: "org-123",
+				builderOrganizationId: "org-123",
 			})
 
 			const successMessage = addMessageMock.mock.calls.find((call: unknown[]) => {
@@ -247,11 +247,11 @@ describe("/teams command", () => {
 		})
 
 		it("should switch to organization by normalized name", async () => {
-			mockContext.args = ["select", "kilo-code"]
+			mockContext.args = ["select", "builder"]
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = {
 				user: {},
@@ -267,7 +267,7 @@ describe("/teams command", () => {
 			await teamsCommand.handler(mockContext)
 
 			expect(updateProviderMock).toHaveBeenCalledWith("test-provider", {
-				kilocodeOrganizationId: "org-456",
+				builderOrganizationId: "org-456",
 			})
 
 			const successMessage = addMessageMock.mock.calls.find((call: unknown[]) => {
@@ -286,7 +286,7 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = {
 				user: {},
@@ -302,7 +302,7 @@ describe("/teams command", () => {
 			await teamsCommand.handler(mockContext)
 
 			expect(updateProviderMock).toHaveBeenCalledWith("test-provider", {
-				kilocodeOrganizationId: "org-789",
+				builderOrganizationId: "org-789",
 			})
 
 			const successMessage = addMessageMock.mock.calls.find((call: unknown[]) => {
@@ -321,7 +321,7 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = {
 				user: {},
@@ -342,7 +342,7 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 
 			await teamsCommand.handler(mockContext)
@@ -360,7 +360,7 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 			mockContext.profileData = null
 
@@ -380,7 +380,7 @@ describe("/teams command", () => {
 			mockContext.currentProvider = {
 				id: "test-provider",
 				provider: "kilocode",
-				kilocodeToken: "test-token",
+				builderToken: "test-token",
 			}
 
 			await teamsCommand.handler(mockContext)

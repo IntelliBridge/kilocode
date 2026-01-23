@@ -548,7 +548,7 @@ export const webviewMessageHandler = async (
 				const { telemetrySetting } = state
 				const isOptedIn = getEffectiveTelemetrySetting(telemetrySetting) === "enabled" // kilocode_change
 				TelemetryService.instance.updateTelemetryState(isOptedIn)
-				await TelemetryService.instance.updateIdentity(state.apiConfiguration.kilocodeToken ?? "") // kilocode_change
+				await TelemetryService.instance.updateIdentity(state.apiConfiguration.builderToken ?? "") // kilocode_change
 			})
 
 			provider.isViewLaunched = true
@@ -923,8 +923,8 @@ export const webviewMessageHandler = async (
 					key: "kilocode",
 					options: {
 						provider: "kilocode",
-						kilocodeToken: apiConfiguration.kilocodeToken,
-						kilocodeOrganizationId: apiConfiguration.kilocodeOrganizationId,
+						builderToken: apiConfiguration.builderToken,
+						builderOrganizationId: apiConfiguration.builderOrganizationId,
 					},
 				},
 				{ key: "ollama", options: { provider: "ollama", baseUrl: apiConfiguration.ollamaBaseUrl } },
@@ -1485,7 +1485,7 @@ export const webviewMessageHandler = async (
 			}
 
 			const workspaceFolder = getCurrentCwd()
-			const rooDir = path.join(workspaceFolder, ".kilocode")
+			const rooDir = path.join(workspaceFolder, ".builder")
 			const mcpPath = path.join(rooDir, "mcp.json")
 
 			try {
@@ -2144,7 +2144,7 @@ export const webviewMessageHandler = async (
 			}
 			break
 		case "upsertApiConfiguration":
-			// kilocode_change start: check for kilocodeToken change to remove organizationId and fetch organization modes
+			// kilocode_change start: check for builderToken change to remove organizationId and fetch organization modes
 			if (message.text && message.apiConfiguration) {
 				let configToSave = message.apiConfiguration
 				let organizationChanged = false
@@ -2153,18 +2153,18 @@ export const webviewMessageHandler = async (
 					const { ...currentConfig } = await provider.providerSettingsManager.getProfile({
 						name: message.text,
 					})
-					// Only clear organization ID if we actually had a kilocode token before and it's different now
-					const hadPreviousToken = currentConfig.kilocodeToken !== undefined
-					const hasNewToken = message.apiConfiguration.kilocodeToken !== undefined
-					const tokensAreDifferent = currentConfig.kilocodeToken !== message.apiConfiguration.kilocodeToken
+					// Only clear organization ID if we actually had a builder token before and it's different now
+					const hadPreviousToken = currentConfig.builderToken !== undefined
+					const hasNewToken = message.apiConfiguration.builderToken !== undefined
+					const tokensAreDifferent = currentConfig.builderToken !== message.apiConfiguration.builderToken
 
 					if (hadPreviousToken && hasNewToken && tokensAreDifferent) {
-						configToSave = { ...message.apiConfiguration, kilocodeOrganizationId: undefined }
+						configToSave = { ...message.apiConfiguration, builderOrganizationId: undefined }
 						await updateGlobalState("hasPerformedOrganizationAutoSwitch", undefined)
 					}
 
 					organizationChanged =
-						currentConfig.kilocodeOrganizationId !== message.apiConfiguration.kilocodeOrganizationId
+						currentConfig.builderOrganizationId !== message.apiConfiguration.builderOrganizationId
 
 					if (organizationChanged) {
 						// Fetch organization-specific custom modes
@@ -2174,15 +2174,15 @@ export const webviewMessageHandler = async (
 						await flushModels(
 							{
 								provider: "kilocode",
-								kilocodeOrganizationId: message.apiConfiguration.kilocodeOrganizationId,
-								kilocodeToken: message.apiConfiguration.kilocodeToken,
+								builderOrganizationId: message.apiConfiguration.builderOrganizationId,
+								builderToken: message.apiConfiguration.builderToken,
 							},
 							true,
 						)
 						const models = await getModels({
 							provider: "kilocode",
-							kilocodeOrganizationId: message.apiConfiguration.kilocodeOrganizationId,
-							kilocodeToken: message.apiConfiguration.kilocodeToken,
+							builderOrganizationId: message.apiConfiguration.builderOrganizationId,
+							builderToken: message.apiConfiguration.builderToken,
 						})
 						provider.postMessageToWebview({
 							type: "routerModels",
@@ -2208,7 +2208,7 @@ export const webviewMessageHandler = async (
 				// kilocode_change: Reload ghost model when API provider settings change
 				vscode.commands.executeCommand("kilo-code.ghost.reload")
 			}
-			// kilocode_change end: check for kilocodeToken change to remove organizationId and fetch organization modes
+			// kilocode_change end: check for builderToken change to remove organizationId and fetch organization modes
 			break
 		case "renameApiConfiguration":
 			if (message.values && message.apiConfiguration) {
@@ -2436,14 +2436,14 @@ export const webviewMessageHandler = async (
 				if (scope === "project") {
 					const workspacePath = getWorkspacePath()
 					if (workspacePath) {
-						rulesFolderPath = path.join(workspacePath, ".kilocode", `rules-${message.slug}`)
+						rulesFolderPath = path.join(workspacePath, ".builder", `rules-${message.slug}`)
 					} else {
-						rulesFolderPath = path.join(".kilocode", `rules-${message.slug}`)
+						rulesFolderPath = path.join(".builder", `rules-${message.slug}`)
 					}
 				} else {
 					// Global scope - use OS home directory
 					const homeDir = os.homedir()
-					rulesFolderPath = path.join(homeDir, ".kilocode", `rules-${message.slug}`)
+					rulesFolderPath = path.join(homeDir, ".builder", `rules-${message.slug}`)
 				}
 
 				// Check if the rules folder exists
@@ -2700,42 +2700,42 @@ export const webviewMessageHandler = async (
 		case "fetchProfileDataRequest":
 			try {
 				const { apiConfiguration, currentApiConfigName } = await provider.getState()
-				const kilocodeToken = apiConfiguration?.kilocodeToken
+				const builderToken = apiConfiguration?.builderToken
 
-				if (!kilocodeToken) {
-					provider.log("KiloCode token not found in extension state.")
+				if (!builderToken) {
+					provider.log("Builder token not found in extension state.")
 					provider.postMessageToWebview({
 						type: "profileDataResponse",
-						payload: { success: false, error: "KiloCode API token not configured." },
+						payload: { success: false, error: "Builder API token not configured." },
 					})
 					break
 				}
 
 				// Changed to /api/profile
 				const headers: Record<string, string> = {
-					Authorization: `Bearer ${kilocodeToken}`,
+					Authorization: `Bearer ${builderToken}`,
 					"Content-Type": "application/json",
 				}
 
 				// Add X-KILOCODE-TESTER: SUPPRESS header if the setting is enabled
 				if (
-					apiConfiguration.kilocodeTesterWarningsDisabledUntil &&
-					apiConfiguration.kilocodeTesterWarningsDisabledUntil > Date.now()
+					apiConfiguration.builderTesterWarningsDisabledUntil &&
+					apiConfiguration.builderTesterWarningsDisabledUntil > Date.now()
 				) {
 					headers["X-KILOCODE-TESTER"] = "SUPPRESS"
 				}
 
-				const url = getKiloUrlFromToken("https://api.kilo.ai/api/profile", kilocodeToken)
-				const response = await axios.get<Omit<ProfileData, "kilocodeToken">>(url, { headers })
+				const url = getKiloUrlFromToken("https://api.kilo.ai/api/profile", builderToken)
+				const response = await axios.get<Omit<ProfileData, "builderToken">>(url, { headers })
 
 				// Go back to Personal when no longer part of the current set organization
 				const organizationExists = (response.data.organizations ?? []).some(
-					({ id }) => id === apiConfiguration?.kilocodeOrganizationId,
+					({ id }) => id === apiConfiguration?.builderOrganizationId,
 				)
-				if (apiConfiguration?.kilocodeOrganizationId && !organizationExists) {
+				if (apiConfiguration?.builderOrganizationId && !organizationExists) {
 					provider.upsertProviderProfile(currentApiConfigName ?? "default", {
 						...apiConfiguration,
-						kilocodeOrganizationId: undefined,
+						builderOrganizationId: undefined,
 					})
 				}
 
@@ -2745,7 +2745,7 @@ export const webviewMessageHandler = async (
 						!getGlobalState("yoloMode") &&
 						response.data.organizations &&
 						response.data.organizations.length > 0 &&
-						!apiConfiguration.kilocodeOrganizationId &&
+						!apiConfiguration.builderOrganizationId &&
 						!getGlobalState("hasPerformedOrganizationAutoSwitch")
 
 					if (shouldAutoSwitch) {
@@ -2759,7 +2759,7 @@ export const webviewMessageHandler = async (
 							text: currentApiConfigName ?? "default",
 							apiConfiguration: {
 								...apiConfiguration,
-								kilocodeOrganizationId: firstOrg.id,
+								builderOrganizationId: firstOrg.id,
 							},
 						}
 
@@ -2778,7 +2778,7 @@ export const webviewMessageHandler = async (
 
 				provider.postMessageToWebview({
 					type: "profileDataResponse",
-					payload: { success: true, data: { kilocodeToken, ...response.data } },
+					payload: { success: true, data: { builderToken: builderToken, ...response.data } },
 				})
 			} catch (error: any) {
 				const errorMessage =
@@ -2795,35 +2795,35 @@ export const webviewMessageHandler = async (
 		case "fetchBalanceDataRequest": // New handler
 			try {
 				const { apiConfiguration } = await provider.getState()
-				const { kilocodeToken, kilocodeOrganizationId } = apiConfiguration ?? {}
+				const { builderToken, builderOrganizationId } = apiConfiguration ?? {}
 
-				if (!kilocodeToken) {
-					provider.log("KiloCode token not found in extension state for balance data.")
+				if (!builderToken) {
+					provider.log("Builder token not found in extension state for balance data.")
 					provider.postMessageToWebview({
 						type: "balanceDataResponse", // New response type
-						payload: { success: false, error: "KiloCode API token not configured." },
+						payload: { success: false, error: "Builder API token not configured." },
 					})
 					break
 				}
 
 				const headers: Record<string, string> = {
-					Authorization: `Bearer ${kilocodeToken}`,
+					Authorization: `Bearer ${builderToken}`,
 					"Content-Type": "application/json",
 				}
 
-				if (kilocodeOrganizationId) {
-					headers["X-KiloCode-OrganizationId"] = kilocodeOrganizationId
+				if (builderOrganizationId) {
+					headers["X-KiloCode-OrganizationId"] = builderOrganizationId
 				}
 
 				// Add X-KILOCODE-TESTER: SUPPRESS header if the setting is enabled
 				if (
-					apiConfiguration.kilocodeTesterWarningsDisabledUntil &&
-					apiConfiguration.kilocodeTesterWarningsDisabledUntil > Date.now()
+					apiConfiguration.builderTesterWarningsDisabledUntil &&
+					apiConfiguration.builderTesterWarningsDisabledUntil > Date.now()
 				) {
 					headers["X-KILOCODE-TESTER"] = "SUPPRESS"
 				}
 
-				const url = getKiloUrlFromToken("https://api.kilo.ai/api/profile/balance", kilocodeToken)
+				const url = getKiloUrlFromToken("https://api.kilo.ai/api/profile/balance", builderToken)
 				const response = await axios.get(url, { headers })
 				provider.postMessageToWebview({
 					type: "balanceDataResponse", // New response type
@@ -2842,9 +2842,9 @@ export const webviewMessageHandler = async (
 		case "shopBuyCredits": // New handler
 			try {
 				const { apiConfiguration } = await provider.getState()
-				const kilocodeToken = apiConfiguration?.kilocodeToken
-				if (!kilocodeToken) {
-					provider.log("KiloCode token not found in extension state for buy credits.")
+				const builderToken = apiConfiguration?.builderToken
+				if (!builderToken) {
+					provider.log("Builder token not found in extension state for buy credits.")
 					break
 				}
 				const credits = message.values?.credits || 50
@@ -2854,14 +2854,14 @@ export const webviewMessageHandler = async (
 
 				const url = getKiloUrlFromToken(
 					`https://api.kilo.ai/payments/topup?origin=extension&source=${source}&amount=${credits}`,
-					kilocodeToken,
+					builderToken,
 				)
 				const response = await axios.post(
 					url,
 					{},
 					{
 						headers: {
-							Authorization: `Bearer ${kilocodeToken}`,
+							Authorization: `Bearer ${builderToken}`,
 							"Content-Type": "application/json",
 						},
 						maxRedirects: 0, // Prevent axios from following redirects automatically
@@ -3869,7 +3869,7 @@ export const webviewMessageHandler = async (
 				// Determine the commands directory based on source
 				let commandsDir: string
 				if (source === "global") {
-					const globalConfigDir = path.join(os.homedir(), ".kilocode")
+					const globalConfigDir = path.join(os.homedir(), ".builder")
 					commandsDir = path.join(globalConfigDir, "commands")
 				} else {
 					if (!vscode.workspace.workspaceFolders?.length) {
@@ -3882,7 +3882,7 @@ export const webviewMessageHandler = async (
 						vscode.window.showErrorMessage(t("common:errors.no_workspace_for_project_command"))
 						break
 					}
-					commandsDir = path.join(workspaceRoot, ".kilocode", "commands")
+					commandsDir = path.join(workspaceRoot, ".builder", "commands")
 				}
 
 				// Ensure the commands directory exists

@@ -5,7 +5,7 @@ import type { ProviderName } from "../../types/messages.js"
  * Maps each provider to its required fields that must be non-empty when selected.
  */
 export const PROVIDER_REQUIRED_FIELDS: Record<ProviderName, string[]> = {
-	kilocode: ["kilocodeToken", "kilocodeModel"],
+	kilocode: ["builderToken", "builderModel"],
 	anthropic: ["apiKey", "apiModelId"],
 	"openai-native": ["openAiNativeApiKey", "apiModelId"],
 	openrouter: ["openRouterApiKey", "openRouterModelId"],

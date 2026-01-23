@@ -19,7 +19,7 @@ interface NotificationsResponse {
  */
 export async function fetchKilocodeNotifications({
 	provider,
-	kilocodeToken,
+	builderToken,
 }: ProviderConfig): Promise<KilocodeNotification[]> {
 	if (provider !== "kilocode") {
 		logs.debug("Provider is not kilocode, skipping notification fetch", "fetchKilocodeNotifications", {
@@ -28,7 +28,7 @@ export async function fetchKilocodeNotifications({
 		return []
 	}
 
-	if (!kilocodeToken || typeof kilocodeToken !== "string") {
+	if (!builderToken || typeof builderToken !== "string") {
 		logs.debug("No kilocode token found, skipping notification fetch", "fetchKilocodeNotifications")
 		return []
 	}
@@ -39,7 +39,7 @@ export async function fetchKilocodeNotifications({
 
 	const response = await fetch(url, {
 		headers: {
-			Authorization: `Bearer ${kilocodeToken}`,
+			Authorization: `Bearer ${builderToken}`,
 			"Content-Type": "application/json",
 		},
 	})
@@ -63,7 +63,7 @@ export async function fetchKilocodeNotifications({
  * @returns true if the provider supports notifications
  */
 export function supportsNotifications(provider: ProviderConfig): boolean {
-	return provider.provider === "kilocode" && !!provider.kilocodeToken
+	return provider.provider === "kilocode" && !!provider.builderToken
 }
 
 /**

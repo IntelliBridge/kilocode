@@ -88,8 +88,8 @@ The CLI supports [Agent Skills](https://agentskills.io/), a lightweight format f
 
 Skills are discovered from:
 
-- **Global skills**: `~/.kilocode/skills/` (available in all projects)
-- **Project skills**: `.kilocode/skills/` (project-specific)
+- **Global skills**: `~/.builder/skills/` (available in all projects)
+- **Project skills**: `.builder/skills/` (project-specific)
 
 Skills can be:
 
@@ -100,7 +100,7 @@ For example:
 
 ```
 your-project/
-└── .kilocode/
+└── .builder/
     ├── skills/               # Generic skills for this project
     │   └── project-conventions/
     │       └── SKILL.md
@@ -114,7 +114,7 @@ your-project/
 1. Create the skill directory:
 
     ```bash
-    mkdir -p ~/.kilocode/skills/api-design
+    mkdir -p ~/.builder/skills/api-design
     ```
 
 2. Create a `SKILL.md` file with YAML frontmatter:
@@ -147,8 +147,8 @@ Custom commands allow you to create reusable slash commands that execute predefi
 
 Custom commands are discovered from:
 
-- **Global commands**: `~/.kilocode/commands/` (available in all projects)
-- **Project commands**: `.kilocode/commands/` (project-specific)
+- **Global commands**: `~/.builder/commands/` (available in all projects)
+- **Project commands**: `.builder/commands/` (project-specific)
 
 Commands are simple markdown files with YAML frontmatter for configuration.
 
@@ -157,7 +157,7 @@ Commands are simple markdown files with YAML frontmatter for configuration.
 1. Create the commands directory:
 
     ```bash
-    mkdir -p ~/.kilocode/commands # mkdir %USERPROFILE%\.kilocode\commands on windows
+    mkdir -p ~/.builder/commands # mkdir %USERPROFILE%\.builder\commands on windows
     ```
 
 2. Create a markdown file (e.g., `component.md`):
@@ -429,7 +429,7 @@ kilocode --parallel --auto "improve abc"
 
 ## Auto-approval settings
 
-Auto-approval allows the Kilo Code CLI to perform operations without first requiring user confirmation. These settings can either be built up over time in interactive mode, or by editing your config file using `kilocode config` or editing the file directly at `~/.kilocode/config.json`.
+Auto-approval allows the Kilo Code CLI to perform operations without first requiring user confirmation. These settings can either be built up over time in interactive mode, or by editing your config file using `kilocode config` or editing the file directly at `~/.builder/config.json`.
 
 ### Default auto-approval settings
 
@@ -667,7 +667,7 @@ kilocode --continue
 The CLI supports overriding config values with environment variables. The supported environment variables are:
 
 - `KILO_PROVIDER`: Override the active provider ID
-- For `kilocode` provider: `KILOCODE_<FIELD_NAME>` (e.g., `KILOCODE_MODEL` → `kilocodeModel`)
+- For `kilocode` provider: `KILOCODE_<FIELD_NAME>` (e.g., `BUILDER_MODEL` → `kilocodeModel`)
 - For other providers: `KILO_<FIELD_NAME>` (e.g., `KILO_API_KEY` → `apiKey`)
 
 ## Local Development

@@ -178,7 +178,7 @@ Error: File not found at path 'non_existent_file.txt'.
 
 ### Attempting to Read a Blocked File
 
-If the file is excluded by rules in a `.kilocodeignore` file:
+If the file is excluded by rules in a `.builderignore` file:
 
 **Input:**
 
@@ -191,5 +191,5 @@ If the file is excluded by rules in a `.kilocodeignore` file:
 **Simulated Output (Error):**
 
 ```
-Error: Access denied to file '.env' due to .kilocodeignore rules.
+Error: Access denied to file '.env' due to .builderignore rules.
 ```

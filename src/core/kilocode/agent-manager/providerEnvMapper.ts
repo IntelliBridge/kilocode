@@ -22,7 +22,7 @@ const getHomeDirFromEnv = (baseEnv: NodeJS.ProcessEnv): string | undefined =>
 
 const getCliConfigPath = (baseEnv: NodeJS.ProcessEnv): string => {
 	const homeDir = getHomeDirFromEnv(baseEnv) || os.homedir()
-	return path.join(homeDir, ".kilocode", "cli", "config.json")
+	return path.join(homeDir, ".builder", "cli", "config.json")
 }
 
 const readCliConfig = (filePath: string): CliConfigShape | undefined => {
@@ -54,15 +54,15 @@ const getTempDirFromEnv = (baseEnv: NodeJS.ProcessEnv): string =>
 	baseEnv.TMPDIR || baseEnv.TEMP || baseEnv.TMP || os.tmpdir()
 
 /**
- * Inject IDE Kilocode authentication into Agent Manager CLI spawns.
+ * Inject IDE Builder authentication into Agent Manager CLI spawns.
  *
- * Design choice: we only inject Kilocode auth (not BYOK providers) to avoid
+ * Design choice: we only inject Builder auth (not BYOK providers) to avoid
  * maintaining provider-specific env mappings here.
  *
  * Behavior:
  * - If the IDE's active provider is `kilocode` and a token exists, we inject:
- *   - `KILOCODE_TOKEN` (required)
- *   - `KILOCODE_ORGANIZATION_ID` (optional)
+ *   - `BUILDER_TOKEN` (required)
+ *   - `BUILDER_ORGANIZATION_ID` (optional)
  *
  * Provider selection strategy (important for older CLIs):
  * - If the user's CLI config contains a `kilocode` provider entry, we set `KILO_PROVIDER`
@@ -93,8 +93,8 @@ export const buildProviderEnvOverrides = (
 		return {}
 	}
 
-	if (!hasNonEmptyString(apiConfiguration.kilocodeToken)) {
-		log("[AgentManager] Missing Kilocode token in apiConfiguration; skipping CLI auth injection.")
+	if (!hasNonEmptyString(apiConfiguration.builderToken)) {
+		log("[AgentManager] Missing Builder token in apiConfiguration; skipping CLI auth injection.")
 		return {}
 	}
 
@@ -110,36 +110,36 @@ export const buildProviderEnvOverrides = (
 
 	if (kilocodeProviderId) {
 		overrides.KILO_PROVIDER = kilocodeProviderId
-		overrides.KILOCODE_TOKEN = apiConfiguration.kilocodeToken
+		overrides.BUILDER_TOKEN = apiConfiguration.builderToken
 	} else {
 		// Fallback: env-config mode requires model id as well.
-		if (!hasNonEmptyString(apiConfiguration.kilocodeModel)) {
-			log("[AgentManager] Missing Kilocode model in apiConfiguration; skipping CLI auth injection.")
+		if (!hasNonEmptyString(apiConfiguration.builderModel)) {
+			log("[AgentManager] Missing Builder model in apiConfiguration; skipping CLI auth injection.")
 			return {}
 		}
 
 		overrides.KILO_PROVIDER = "default"
 		overrides.KILO_PROVIDER_TYPE = "kilocode"
-		overrides.KILOCODE_TOKEN = apiConfiguration.kilocodeToken
-		overrides.KILOCODE_MODEL = apiConfiguration.kilocodeModel
+		overrides.BUILDER_TOKEN = apiConfiguration.builderToken
+		overrides.BUILDER_MODEL = apiConfiguration.builderModel
 
 		// Older CLIs will only honor env-config when no config file exists. If a user has configured
 		// another provider in the CLI, we override HOME so the CLI doesn't see their existing config.
 		if (hasCliConfigFile) {
 			const tempDir = getTempDirFromEnv(baseEnv)
-			const isolatedHome = path.join(tempDir, "kilocode-agent-manager-home")
+			const isolatedHome = path.join(tempDir, "builder-agent-manager-home")
 			// Cross-platform: Node's os.homedir() uses USERPROFILE on Windows.
 			overrides.HOME = isolatedHome
 			overrides.USERPROFILE = isolatedHome
 		}
 	}
 
-	if (hasNonEmptyString(apiConfiguration.kilocodeOrganizationId)) {
-		overrides.KILOCODE_ORGANIZATION_ID = apiConfiguration.kilocodeOrganizationId
+	if (hasNonEmptyString(apiConfiguration.builderOrganizationId)) {
+		overrides.BUILDER_ORGANIZATION_ID = apiConfiguration.builderOrganizationId
 	}
 
-	const appliedKeys = Object.keys(overrides).filter((key) => key !== "KILOCODE_TOKEN")
-	debugLog(`[AgentManager] Injecting Kilocode CLI auth env (keys: ${appliedKeys.join(", ")})`)
+	const appliedKeys = Object.keys(overrides).filter((key) => key !== "BUILDER_TOKEN")
+	debugLog(`[AgentManager] Injecting Builder CLI auth env (keys: ${appliedKeys.join(", ")})`)
 
 	return overrides
 }

@@ -11,35 +11,35 @@ import { fetchWithRetries } from "../../shared/http"
 export class OrganizationService {
 	/**
 	 * Fetches organization details from the Builder API
-	 * @param kilocodeToken - The authentication token
+	 * @param builderToken - The authentication token
 	 * @param organizationId - The organization ID
-	 * @param kilocodeTesterWarningsDisabledUntil - Timestamp for suppressing tester warnings
+	 * @param builderTesterWarningsDisabledUntil - Timestamp for suppressing tester warnings
 	 * @returns The organization object with settings
 	 */
 	public static async fetchOrganization(
-		kilocodeToken: string,
+		builderToken: string,
 		organizationId: string,
-		kilocodeTesterWarningsDisabledUntil?: number,
+		builderTesterWarningsDisabledUntil?: number,
 	): Promise<KiloOrganization | null> {
 		try {
-			if (!organizationId || !kilocodeToken) {
+			if (!organizationId || !builderToken) {
 				console.warn("[OrganizationService] Missing required parameters for fetching organization")
 				return null
 			}
 
 			const headers: Record<string, string> = {
-				Authorization: `Bearer ${kilocodeToken}`,
+				Authorization: `Bearer ${builderToken}`,
 				"Content-Type": "application/json",
 			}
 
 			headers[X_KILOCODE_ORGANIZATIONID] = organizationId
 
 			// Add X-KILOCODE-TESTER: SUPPRESS header if the setting is enabled
-			if (kilocodeTesterWarningsDisabledUntil && kilocodeTesterWarningsDisabledUntil > Date.now()) {
+			if (builderTesterWarningsDisabledUntil && builderTesterWarningsDisabledUntil > Date.now()) {
 				headers[X_KILOCODE_TESTER] = "SUPPRESS"
 			}
 
-			const url = getKiloUrlFromToken(`https://api.kilo.ai/api/organizations/${organizationId}`, kilocodeToken)
+			const url = getKiloUrlFromToken(`https://api.kilo.ai/api/organizations/${organizationId}`, builderToken)
 
 			const response = await fetchWithRetries({
 				url,

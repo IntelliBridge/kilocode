@@ -135,7 +135,7 @@ export const selectProviderAtom = atom(null, async (get, set, providerId: string
 	getTelemetryService().trackProviderChanged(
 		previousProvider,
 		providerId,
-		(provider.apiModelId as string | undefined) || (provider.kilocodeModel as string | undefined),
+		(provider.apiModelId as string | undefined) || (provider.builderModel as string | undefined),
 	)
 })
 

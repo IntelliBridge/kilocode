@@ -104,7 +104,7 @@ export interface BaseProperties {
 
 	// User Information (anonymized)
 	cliUserId: string
-	kilocodeUserId?: string
+	builderUserId?: string
 }
 
 /**

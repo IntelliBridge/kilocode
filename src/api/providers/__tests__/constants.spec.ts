@@ -20,7 +20,7 @@ describe("DEFAULT_HEADERS", () => {
 
 	it("should have correct User-Agent format", () => {
 		const userAgent = DEFAULT_HEADERS["User-Agent"]
-		expect(userAgent).toBe(`Kilo-Code/${Package.version}`)
+		expect(userAgent).toBe(`Builder/${Package.version}`)
 
 		// Verify it follows the tool_name/version pattern
 		expect(userAgent).toMatch(/^[a-zA-Z-]+\/\d+\.\d+\.\d+$/)
@@ -28,7 +28,7 @@ describe("DEFAULT_HEADERS", () => {
 
 	it("should have User-Agent with correct tool name", () => {
 		const userAgent = DEFAULT_HEADERS["User-Agent"]
-		expect(userAgent.startsWith("Kilo-Code/")).toBe(true)
+		expect(userAgent.startsWith("Builder/")).toBe(true)
 	})
 
 	it("should have User-Agent with semantic version format", () => {

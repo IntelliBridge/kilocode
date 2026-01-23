@@ -117,7 +117,7 @@ export class SimpleInstaller {
 				existingData = { customModes: [] }
 			} else if (error.name === "YAMLParseError" || error.message?.includes("YAML")) {
 				// YAML parsing error - don't overwrite the file!
-				const fileName = target === "project" ? ".kilocodemodes" : "custom-modes.yaml"
+				const fileName = target === "project" ? ".buildermodes" : "custom-modes.yaml"
 				throw new Error(
 					`Cannot install mode: The ${fileName} file contains invalid YAML. ` +
 						`Please fix the syntax errors in the file before installing new modes.`,
@@ -254,7 +254,7 @@ export class SimpleInstaller {
 				existingData = { mcpServers: {} }
 			} else if (error instanceof SyntaxError) {
 				// JSON parsing error - don't overwrite the file!
-				const fileName = target === "project" ? ".kilocode/mcp.json" : "mcp-settings.json"
+				const fileName = target === "project" ? ".builder/mcp.json" : "mcp-settings.json"
 				throw new Error(
 					`Cannot install MCP server: The ${fileName} file contains invalid JSON. ` +
 						`Please fix the syntax errors in the file before installing new servers.`,
@@ -386,7 +386,7 @@ export class SimpleInstaller {
 			if (!workspaceFolder) {
 				throw new Error("No workspace folder found")
 			}
-			return path.join(workspaceFolder.uri.fsPath, ".kilocodemodes")
+			return path.join(workspaceFolder.uri.fsPath, ".buildermodes")
 		} else {
 			const globalSettingsPath = await ensureSettingsDirectoryExists(this.context)
 			return path.join(globalSettingsPath, GlobalFileNames.customModes)
@@ -399,7 +399,7 @@ export class SimpleInstaller {
 			if (!workspaceFolder) {
 				throw new Error("No workspace folder found")
 			}
-			return path.join(workspaceFolder.uri.fsPath, ".kilocode", "mcp.json")
+			return path.join(workspaceFolder.uri.fsPath, ".builder", "mcp.json")
 		} else {
 			const globalSettingsPath = await ensureSettingsDirectoryExists(this.context)
 			return path.join(globalSettingsPath, GlobalFileNames.mcpSettings)
@@ -412,8 +412,8 @@ export class SimpleInstaller {
 	 * and creating the appropriate directory structure.
 	 *
 	 * Skills are installed to:
-	 * - Global: ~/.kilocode/skills/{skill-id}/SKILL.md
-	 * - Project: .kilocode/skills/{skill-id}/SKILL.md
+	 * - Global: ~/.builder/skills/{skill-id}/SKILL.md
+	 * - Project: .builder/skills/{skill-id}/SKILL.md
 	 */
 	private async installSkill(
 		item: SkillMarketplaceItem,
@@ -473,7 +473,7 @@ export class SimpleInstaller {
 			if (!workspaceFolder) {
 				throw new Error("No workspace folder found")
 			}
-			return path.join(workspaceFolder.uri.fsPath, ".kilocode", "skills")
+			return path.join(workspaceFolder.uri.fsPath, ".builder", "skills")
 		} else {
 			const globalDir = getGlobalRooDirectory()
 			return path.join(globalDir, "skills")

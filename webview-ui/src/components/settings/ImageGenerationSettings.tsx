@@ -16,7 +16,7 @@ interface ImageGenerationSettingsProps {
 	// kilocode_change start
 	kiloCodeImageApiKey?: string
 	setKiloCodeImageApiKey: (apiKey: string) => void
-	currentProfileKilocodeToken?: string
+	currentProfileBuilderToken?: string
 	// kilocode_change end
 }
 
@@ -32,7 +32,7 @@ export const ImageGenerationSettings = ({
 	// kilocode_change start
 	kiloCodeImageApiKey,
 	setKiloCodeImageApiKey,
-	currentProfileKilocodeToken,
+	currentProfileBuilderToken,
 	// kilocode_change end
 }: ImageGenerationSettingsProps) => {
 	const { t } = useAppTranslation()
@@ -190,10 +190,10 @@ export const ImageGenerationSettings = ({
 								type="password"
 							/>
 							<p className="text-vscode-descriptionForeground text-xs mt-1">
-								{currentProfileKilocodeToken ? (
+								{currentProfileBuilderToken ? (
 									<a
 										href="#"
-										onClick={() => handleKiloApiKeyChange(currentProfileKilocodeToken)}
+										onClick={() => handleKiloApiKeyChange(currentProfileBuilderToken)}
 										className="text-vscode-textLink-foreground hover:text-vscode-textLink-activeForeground">
 										{t("settings:experimental.IMAGE_GENERATION.kiloCodeApiKeyPaste")}
 									</a>

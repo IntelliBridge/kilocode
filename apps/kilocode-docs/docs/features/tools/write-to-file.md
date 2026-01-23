@@ -29,7 +29,7 @@ This tool writes content to a specified file, either creating a new file if it d
 - Safety Measures: Detects code omission, validates paths, and prevents truncated content
 - Editor Integration: Opens a diff view that scrolls to the first difference automatically
 - Content Preprocessing: Handles artifacts from different AI models to ensure clean content
-- Access Control: Validates against `.kilocodeignore` restrictions before making changes
+- Access Control: Validates against `.builderignore` restrictions before making changes
 - Parent Directories: May handle directory creation through system dependencies
 - Complete Replacement: Provides a fully transformed file in a single operation
 
@@ -49,7 +49,7 @@ When the `write_to_file` tool is invoked, it follows this process:
 1. **Parameter Validation**: Validates the required parameters and permissions
 
     - Checks that `path`, `content`, and `line_count` are provided
-    - Validates the file is allowed (not restricted by `.kilocodeignore`)
+    - Validates the file is allowed (not restricted by `.builderignore`)
     - Ensures the path is within the workspace boundaries
     - Tracks consecutive mistake counts for missing parameters
     - Shows specific error messages for each validation failure

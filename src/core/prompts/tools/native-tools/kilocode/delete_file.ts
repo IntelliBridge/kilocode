@@ -5,7 +5,7 @@ export default {
 	function: {
 		name: "delete_file",
 		description:
-			"Delete a file or directory from the workspace. This action is irreversible and requires user approval. For directories, all contained files are validated against protection rules and .kilocodeignore before deletion. Cannot delete write-protected files or paths outside the workspace.",
+			"Delete a file or directory from the workspace. This action is irreversible and requires user approval. For directories, all contained files are validated against protection rules and .builderignore before deletion. Cannot delete write-protected files or paths outside the workspace.",
 		strict: true,
 		parameters: {
 			type: "object",
