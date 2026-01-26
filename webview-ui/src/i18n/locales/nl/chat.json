@@ -240,7 +240,7 @@
 	"response": "Antwoord",
 	"arguments": "Argumenten",
 	"text": {
-		"rooSaid": "Kilo zei"
+		"rooSaid": "Builder zei"
 	},
 	"feedback": {
 		"youSaid": "Jij zei"
@@ -330,7 +330,7 @@
 			"tryButton": "Probeer Cloud-agents"
 		},
 		"careers": "Ook, <careersLink>we nemen aan!</careersLink>",
-		"socialLinks": "Sluit je bij ons aan op <xLink>X</xLink>, <discordLink>Discord</discordLink>, of <redditLink>r/KiloCode</redditLink> 🚀"
+		"socialLinks": "Sluit je bij ons aan op <xLink>X</xLink>, <discordLink>Discord</discordLink>, of <redditLink>r/BuilderCode</redditLink> 🚀"
 	},
 	"reasoning": {
 		"thinking": "Denkt na",

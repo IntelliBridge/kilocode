@@ -12,7 +12,7 @@
 	"lowCreditWarning": {
 		"addCredit": "Tambah Kredit",
 		"lowBalance": "Saldo Builder kamu rendah",
-		"newOrganization": "Menggunakan Kilo untuk pekerjaan?"
+		"newOrganization": "Menggunakan Builder untuk pekerjaan?"
 	},
 	"pagination": {
 		"previous": "Sebelumnya",
@@ -297,7 +297,7 @@
 	"toolCallStyle": {
 		"title": "Gaya Panggilan Tool",
 		"description": "Pilih bagaimana panggilan tool diformat dalam prompt sistem. JSON saat ini bersifat eksperimental dan sebagian besar ditujukan untuk pengguna yang tertarik berkontribusi pada pengembangannya.",
-		"automatic": "Biarkan Kilo yang memutuskan",
+		"automatic": "Biarkan Builder yang memutuskan",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -341,7 +341,7 @@
 			"title": "Ucapan-ke-Teks",
 			"description": "Speech-to-text tidak tersedia. Speech-to-text memerlukan FFmpeg dan penyedia OpenAI yang valid untuk dikonfigurasi. <moreInfoLink>Klik di sini untuk informasi lebih lanjut</moreInfoLink>.",
 			"openAiReason": "Anda memerlukan penyedia OpenAI yang valid dengan kunci API untuk menggunakan transkripsi suara.",
-			"ffmpegReason": "Anda perlu menginstal FFmpeg. <ffmpegLink>Klik di sini</ffmpegLink> agar Kilo membantu Anda menginstal FFmpeg.",
+			"ffmpegReason": "Anda perlu menginstal FFmpeg. <ffmpegLink>Klik di sini</ffmpegLink> agar Builder membantu Anda menginstal FFmpeg.",
 			"ffmpegMessage": "Bantu saya menginstal FFmpeg"
 		},
 		"misconfiguredState": "Tidak tersedia karena konfigurasi",

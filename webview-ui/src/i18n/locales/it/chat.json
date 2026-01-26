@@ -245,7 +245,7 @@
 	"response": "Risposta",
 	"arguments": "Argomenti",
 	"text": {
-		"rooSaid": "Roo ha detto"
+		"rooSaid": "Builder ha detto"
 	},
 	"feedback": {
 		"youSaid": "Hai detto"
@@ -270,7 +270,7 @@
 		"completionInstructions": "Sottoattività completata! Puoi rivedere i risultati e suggerire correzioni o prossimi passi. Se tutto sembra a posto, conferma per restituire il risultato all'attività principale."
 	},
 	"questions": {
-		"hasQuestion": "Kilo ha una domanda"
+		"hasQuestion": "Builder ha una domanda"
 	},
 	"taskCompleted": "Attività completata",
 	"modelResponseIncomplete": "Risposta del modello incompleta",
@@ -353,7 +353,7 @@
 			"tryButton": "Prova gli Agenti Cloud"
 		},
 		"careers": "Inoltre, <careersLink>stiamo assumendo!</careersLink>",
-		"socialLinks": "Unisciti a noi su <xLink>X</xLink>, <discordLink>Discord</discordLink>, o <redditLink>r/KiloCode</redditLink> 🚀"
+		"socialLinks": "Unisciti a noi su <xLink>X</xLink>, <discordLink>Discord</discordLink>, o <redditLink>r/BuilderCode</redditLink> 🚀"
 	},
 	"browser": {
 		"session": "Sessione del browser",

@@ -201,8 +201,8 @@
 	},
 	"storage": {
 		"prompt_custom_path": "Zadej vlastní cestu úložiště historie konverzací, ponech prázdné pro použití výchozího umístění",
-		"path_placeholder": "D:\\KiloCodeStorage",
-		"enter_absolute_path": "Prosím zadej absolutní cestu (např. D:\\KiloCodeStorage nebo /home/user/storage)",
+		"path_placeholder": "D:\\BuilderStorage",
+		"enter_absolute_path": "Prosím zadej absolutní cestu (např. D:\\BuilderStorage nebo /home/user/storage)",
 		"enter_valid_path": "Prosím zadej platnou cestu"
 	},
 	"input": {

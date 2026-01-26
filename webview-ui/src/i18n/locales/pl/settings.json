@@ -569,7 +569,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "Limit błędów i powtórzeń",
-			"description": "Liczba kolejnych błędów lub powtórzonych akcji przed wyświetleniem okna dialogowego 'Kilo ma problemy'. Ustaw na 0, aby wyłączyć ten mechanizm bezpieczeństwa (nigdy się nie uruchomi).",
+			"description": "Liczba kolejnych błędów lub powtórzonych akcji przed wyświetleniem okna dialogowego 'Builder ma problemy'. Ustaw na 0, aby wyłączyć ten mechanizm bezpieczeństwa (nigdy się nie uruchomi).",
 			"unlimitedDescription": "Włączono nieograniczone próby (automatyczne kontynuowanie). Okno dialogowe nigdy się nie pojawi.",
 			"warning": "⚠️ Ustawienie na 0 pozwala na nieograniczone próby, co może zużyć znaczną ilość API"
 		},
@@ -936,7 +936,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Włącz Fast Apply",
-			"description": "Gdy włączone, Builder może edytować pliki za pomocą Fast Apply ze specjalizowanymi modelami zoptymalizowanymi do modyfikacji kodu. Wymaga Kilo Gateway Provider, OpenRouter lub klucza API Morph.",
+			"description": "Gdy włączone, Builder może edytować pliki za pomocą Fast Apply ze specjalizowanymi modelami zoptymalizowanymi do modyfikacji kodu. Wymaga Builder Gateway Provider, OpenRouter lub klucza API Morph.",
 			"apiProvider": "Dostawca API",
 			"apiProviderList": {
 				"current": "Aktualny"
@@ -999,7 +999,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Włącz niestandardowe narzędzia",
-			"description": "Gdy włączone, Kilo może ładować i używać niestandardowych narzędzi TypeScript/JavaScript z katalogu .builder/tools Twojego projektu lub ~/.builder/tools dla narzędzi globalnych. Uwaga: te narzędzia będą automatycznie zatwierdzane.",
+			"description": "Gdy włączone, Builder może ładować i używać niestandardowych narzędzi TypeScript/JavaScript z katalogu .builder/tools Twojego projektu lub ~/.builder/tools dla narzędzi globalnych. Uwaga: te narzędzia będą automatycznie zatwierdzane.",
 			"toolsHeader": "Dostępne niestandardowe narzędzia",
 			"noTools": "Nie załadowano niestandardowych narzędzi. Dodaj pliki .ts lub .js do katalogu .builder/tools swojego projektu lub ~/.builder/tools dla narzędzi globalnych.",
 			"refreshButton": "Odśwież",

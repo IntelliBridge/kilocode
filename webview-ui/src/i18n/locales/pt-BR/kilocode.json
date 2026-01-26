@@ -12,7 +12,7 @@
 	"lowCreditWarning": {
 		"addCredit": "Adicionar crédito",
 		"lowBalance": "Seu saldo do Builder está baixo",
-		"newOrganization": "Usando o Kilo para trabalho?"
+		"newOrganization": "Usando o Builder para trabalho?"
 	},
 	"pagination": {
 		"previous": "Anterior",
@@ -289,7 +289,7 @@
 	"toolCallStyle": {
 		"title": "Estilo de Chamada de Ferramenta",
 		"description": "Escolha como as chamadas de ferramentas são formatadas no prompt do sistema. JSON é atualmente experimental e destinado principalmente a usuários interessados em contribuir para seu desenvolvimento.",
-		"automatic": "Deixe o Kilo decidir",
+		"automatic": "Deixe o Builder decidir",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -341,7 +341,7 @@
 			"title": "Conversão de Fala em Texto",
 			"openAiReason": "Você precisa de um provedor OpenAI válido com uma chave de API para usar a transcrição de voz.",
 			"description": "A conversão de fala para texto está indisponível. A conversão de fala para texto requer o FFmpeg e um provedor OpenAI válido configurados. <moreInfoLink>Clique aqui para mais informações</moreInfoLink>.",
-			"ffmpegReason": "Você precisa ter o FFmpeg instalado. <ffmpegLink>Clique aqui</ffmpegLink> para que o Kilo ajude você a instalar o FFmpeg.",
+			"ffmpegReason": "Você precisa ter o FFmpeg instalado. <ffmpegLink>Clique aqui</ffmpegLink> para que o Builder ajude você a instalar o FFmpeg.",
 			"ffmpegMessage": "Ajude-me a instalar o FFmpeg"
 		},
 		"misconfiguredState": "Indisponível devido à configuração",

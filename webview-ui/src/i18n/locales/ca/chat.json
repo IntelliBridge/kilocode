@@ -245,7 +245,7 @@
 	"response": "Resposta",
 	"arguments": "Arguments",
 	"text": {
-		"rooSaid": "En Kilo ha dit"
+		"rooSaid": "En Builder ha dit"
 	},
 	"feedback": {
 		"youSaid": "Has dit"
@@ -353,7 +353,7 @@
 			"tryButton": "Prova els Agents al Núvol"
 		},
 		"careers": "A més, <careersLink>estem contractant!</careersLink>",
-		"socialLinks": "Uneix-te a nosaltres a <xLink>X</xLink>, <discordLink>Discord</discordLink>, o <redditLink>r/KiloCode</redditLink> 🚀"
+		"socialLinks": "Uneix-te a nosaltres a <xLink>X</xLink>, <discordLink>Discord</discordLink>, o <redditLink>r/BuilderCode</redditLink> 🚀"
 	},
 	"browser": {
 		"session": "Sessió del navegador",

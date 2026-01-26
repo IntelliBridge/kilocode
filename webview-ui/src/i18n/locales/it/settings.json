@@ -584,7 +584,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "Limite di errori e ripetizioni",
-			"description": "Numero di errori consecutivi o azioni ripetute prima di mostrare la finestra di dialogo 'Kilo sta riscontrando problemi'. Imposta a 0 per disabilitare questo meccanismo di sicurezza (non si attiverà mai).",
+			"description": "Numero di errori consecutivi o azioni ripetute prima di mostrare la finestra di dialogo 'Builder sta riscontrando problemi'. Imposta a 0 per disabilitare questo meccanismo di sicurezza (non si attiverà mai).",
 			"unlimitedDescription": "Tentativi illimitati abilitati (procedi automaticamente). La finestra di dialogo non verrà mai visualizzata.",
 			"warning": "⚠️ L'impostazione a 0 consente tentativi illimitati che possono consumare un notevole utilizzo dell'API"
 		},
@@ -826,11 +826,11 @@
 		},
 		"outputLineLimit": {
 			"label": "Limite output terminale",
-			"description": "Mantiene le prime e ultime righe e scarta quelle centrali per rimanere sotto il limite. Abbassa per risparmiare token; alza per dare a Kilo più dettagli centrali. Kilo vede un segnaposto dove il contenuto viene saltato.<0>Scopri di più</0>"
+			"description": "Mantiene le prime e ultime righe e scarta quelle centrali per rimanere sotto il limite. Abbassa per risparmiare token; alza per dare a Builder più dettagli centrali. Builder vede un segnaposto dove il contenuto viene saltato.<0>Scopri di più</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "Limite caratteri terminale",
-			"description": "Sovrascrive il limite di righe per prevenire problemi di memoria imponendo un limite rigido alla dimensione di output. Se superato, mantiene l'inizio e la fine e mostra un segnaposto a Kilo dove il contenuto viene saltato. <0>Scopri di più</0>"
+			"description": "Sovrascrive il limite di righe per prevenire problemi di memoria imponendo un limite rigido alla dimensione di output. Se superato, mantiene l'inizio e la fine e mostra un segnaposto a Builder dove il contenuto viene saltato. <0>Scopri di più</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "Timeout integrazione shell terminale",
@@ -838,7 +838,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "Usa terminale in linea (consigliato)",
-			"description": "Esegui comandi nel terminale in linea (chat) per bypassare profili/integrazione shell per esecuzioni più veloci e affidabili. Quando disabilitato, Kilo usa il terminale VS Code con il tuo profilo shell, prompt e plugin. <0>Scopri di più</0>"
+			"description": "Esegui comandi nel terminale in linea (chat) per bypassare profili/integrazione shell per esecuzioni più veloci e affidabili. Quando disabilitato, Builder usa il terminale VS Code con il tuo profilo shell, prompt e plugin. <0>Scopri di più</0>"
 		},
 		"commandDelay": {
 			"label": "Ritardo comando terminale",
@@ -975,7 +975,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Abilita Fast Apply",
-			"description": "Quando abilitato, Builder può modificare i file utilizzando Fast Apply con modelli specializzati ottimizzati per le modifiche al codice. Richiede Kilo Gateway Provider, OpenRouter o una chiave API Morph.",
+			"description": "Quando abilitato, Builder può modificare i file utilizzando Fast Apply con modelli specializzati ottimizzati per le modifiche al codice. Richiede Builder Gateway Provider, OpenRouter o una chiave API Morph.",
 			"apiProvider": "Fornitore API",
 			"apiProviderList": {
 				"current": "Attuale"
@@ -1005,7 +1005,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Abilita strumenti personalizzati",
-			"description": "Quando abilitato, Kilo può caricare e utilizzare strumenti personalizzati TypeScript/JavaScript dalla directory .builder/tools del tuo progetto o ~/.builder/tools per strumenti globali. Nota: questi strumenti saranno automaticamente auto-approvati.",
+			"description": "Quando abilitato, Builder può caricare e utilizzare strumenti personalizzati TypeScript/JavaScript dalla directory .builder/tools del tuo progetto o ~/.builder/tools per strumenti globali. Nota: questi strumenti saranno automaticamente auto-approvati.",
 			"toolsHeader": "Strumenti personalizzati disponibili",
 			"noTools": "Nessuno strumento personalizzato caricato. Aggiungi file .ts o .js alla directory .builder/tools del tuo progetto o ~/.builder/tools per strumenti globali.",
 			"refreshButton": "Aggiorna",

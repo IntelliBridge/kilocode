@@ -12,7 +12,7 @@
 	"lowCreditWarning": {
 		"addCredit": "क्रेडिट जोड़ें",
 		"lowBalance": "आपका Builder बैलेंस कम है",
-		"newOrganization": "काम के लिए Kilo उपयोग कर रहे हैं?"
+		"newOrganization": "काम के लिए Builder उपयोग कर रहे हैं?"
 	},
 	"pagination": {
 		"previous": "पिछला",
@@ -282,7 +282,7 @@
 	"toolCallStyle": {
 		"title": "टूल कॉल स्टाइल",
 		"description": "चुनें कि सिस्टम प्रॉम्प्ट में टूल कॉल को कैसे फॉर्मेट किया जाए। JSON वर्तमान में प्रायोगिक है और मुख्य रूप से उन उपयोगकर्ताओं के लिए है जो इसके विकास में योगदान करने में रुचि रखते हैं।",
-		"automatic": "Kilo को तय करने दें",
+		"automatic": "Builder को तय करने दें",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -341,7 +341,7 @@
 			"title": "वाक्-से-पाठ",
 			"description": "स्पीच-टू-टेक्स्ट उपलब्ध नहीं है। स्पीच-टू-टेक्स्ट के लिए FFmpeg और एक वैध OpenAI प्रोवाइडर दोनों कॉन्फ़िगर होने आवश्यक हैं। <moreInfoLink>अधिक जानकारी के लिए यहाँ क्लिक करें</moreInfoLink>।",
 			"openAiReason": "वॉयस ट्रांसक्रिप्शन का उपयोग करने के लिए आपको API key के साथ एक वैध OpenAI प्रदाता की आवश्यकता है।",
-			"ffmpegReason": "आपको FFmpeg इंस्टॉल करना होगा। FFmpeg इंस्टॉल करने में Kilo की मदद के लिए <ffmpegLink>यहाँ क्लिक करें</ffmpegLink>।",
+			"ffmpegReason": "आपको FFmpeg इंस्टॉल करना होगा। FFmpeg इंस्टॉल करने में Builder की मदद के लिए <ffmpegLink>यहाँ क्लिक करें</ffmpegLink>।",
 			"ffmpegMessage": "मुझे FFmpeg इंस्टॉल करने में मदद करें"
 		},
 		"misconfiguredState": "कॉन्फ़िग की वजह से अनुपलब्ध",

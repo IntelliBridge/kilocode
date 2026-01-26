@@ -569,7 +569,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "Giới hạn lỗi và lặp lại",
-			"description": "Số lỗi liên tiếp hoặc hành động lặp lại trước khi hiển thị hộp thoại 'Kilo đang gặp sự cố'. Đặt thành 0 để tắt cơ chế an toàn này (nó sẽ không bao giờ kích hoạt).",
+			"description": "Số lỗi liên tiếp hoặc hành động lặp lại trước khi hiển thị hộp thoại 'Builder đang gặp sự cố'. Đặt thành 0 để tắt cơ chế an toàn này (nó sẽ không bao giờ kích hoạt).",
 			"unlimitedDescription": "Đã bật thử lại không giới hạn (tự động tiếp tục). Hộp thoại sẽ không bao giờ xuất hiện.",
 			"warning": "⚠️ Đặt thành 0 cho phép thử lại không giới hạn, điều này có thể tiêu tốn mức sử dụng API đáng kể"
 		},
@@ -820,11 +820,11 @@
 		},
 		"outputLineLimit": {
 			"label": "Giới hạn đầu ra của terminal",
-			"description": "Giữ lại các dòng đầu tiên và cuối cùng và loại bỏ các dòng ở giữa để ở dưới giới hạn. Giảm xuống để tiết kiệm token; tăng lên để cung cấp cho Kilo thêm chi tiết ở giữa. Kilo thấy một trình giữ chỗ nơi nội dung bị bỏ qua.<0>Tìm hiểu thêm</0>"
+			"description": "Giữ lại các dòng đầu tiên và cuối cùng và loại bỏ các dòng ở giữa để ở dưới giới hạn. Giảm xuống để tiết kiệm token; tăng lên để cung cấp cho Builder thêm chi tiết ở giữa. Builder thấy một trình giữ chỗ nơi nội dung bị bỏ qua.<0>Tìm hiểu thêm</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "Giới hạn ký tự terminal",
-			"description": "Ghi đè giới hạn dòng để tránh vấn đề bộ nhớ bằng cách áp đặt giới hạn cứng cho kích thước đầu ra. Nếu vượt quá, giữ đầu và cuối, hiển thị placeholder cho Kilo nơi nội dung bị bỏ qua. <0>Tìm hiểu thêm</0>"
+			"description": "Ghi đè giới hạn dòng để tránh vấn đề bộ nhớ bằng cách áp đặt giới hạn cứng cho kích thước đầu ra. Nếu vượt quá, giữ đầu và cuối, hiển thị placeholder cho Builder nơi nội dung bị bỏ qua. <0>Tìm hiểu thêm</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "Timeout tích hợp shell terminal",
@@ -832,7 +832,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "Sử dụng Terminal nội tuyến (được khuyến nghị)",
-			"description": "Chạy lệnh trong Terminal nội tuyến (trò chuyện) để bỏ qua hồ sơ/tích hợp shell để chạy nhanh hơn, đáng tin cậy hơn. Khi bị tắt, Kilo sử dụng terminal VS Code với hồ sơ shell, lời nhắc và plugin của bạn. <0>Tìm hiểu thêm</0>"
+			"description": "Chạy lệnh trong Terminal nội tuyến (trò chuyện) để bỏ qua hồ sơ/tích hợp shell để chạy nhanh hơn, đáng tin cậy hơn. Khi bị tắt, Builder sử dụng terminal VS Code với hồ sơ shell, lời nhắc và plugin của bạn. <0>Tìm hiểu thêm</0>"
 		},
 		"commandDelay": {
 			"label": "Delay lệnh terminal",
@@ -881,7 +881,7 @@
 	"advanced": {
 		"diff": {
 			"label": "Bật chỉnh sửa qua diff",
-			"description": "Khi được bật, Kilo sẽ có thể chỉnh sửa tệp nhanh hơn và sẽ tự động từ chối ghi toàn bộ tệp bị cắt ngắn",
+			"description": "Khi được bật, Builder sẽ có thể chỉnh sửa tệp nhanh hơn và sẽ tự động từ chối ghi toàn bộ tệp bị cắt ngắn",
 			"strategy": {
 				"label": "Chiến lược diff",
 				"options": {
@@ -969,7 +969,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Bật Fast Apply",
-			"description": "Khi được bật, Builder có thể chỉnh sửa tệp bằng Fast Apply với các mô hình chuyên biệt được tối ưu hóa cho việc sửa đổi mã. Yêu cầu Kilo Gateway Provider, OpenRouter hoặc khóa API Morph.",
+			"description": "Khi được bật, Builder có thể chỉnh sửa tệp bằng Fast Apply với các mô hình chuyên biệt được tối ưu hóa cho việc sửa đổi mã. Yêu cầu Builder Gateway Provider, OpenRouter hoặc khóa API Morph.",
 			"apiProvider": "Nhà cung cấp API",
 			"apiProviderList": {
 				"current": "Hiện tại"
@@ -999,7 +999,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Bật công cụ tùy chỉnh",
-			"description": "Khi được bật, Kilo có thể tải và sử dụng các công cụ TypeScript/JavaScript tùy chỉnh từ thư mục .builder/tools của dự án hoặc ~/.builder/tools cho các công cụ toàn cục. Lưu ý: các công cụ này sẽ được tự động phê duyệt.",
+			"description": "Khi được bật, Builder có thể tải và sử dụng các công cụ TypeScript/JavaScript tùy chỉnh từ thư mục .builder/tools của dự án hoặc ~/.builder/tools cho các công cụ toàn cục. Lưu ý: các công cụ này sẽ được tự động phê duyệt.",
 			"toolsHeader": "Công cụ tùy chỉnh có sẵn",
 			"noTools": "Không có công cụ tùy chỉnh nào được tải. Thêm tệp .ts hoặc .js vào thư mục .builder/tools của dự án hoặc ~/.builder/tools cho các công cụ toàn cục.",
 			"refreshButton": "Làm mới",

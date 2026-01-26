@@ -544,7 +544,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "錯誤和重複限制",
-			"description": "在顯示「Kilo 遇到問題」對話方塊前允許的連續錯誤或重複操作次數。設定為 0 可停用此安全機制（永不觸發）。",
+			"description": "在顯示「Builder 遇到問題」對話方塊前允許的連續錯誤或重複操作次數。設定為 0 可停用此安全機制（永不觸發）。",
 			"unlimitedDescription": "已啟用無限重試（自動繼續）。對話方塊將永遠不會出現。",
 			"warning": "⚠️ 設定為 0 允許無限重試，這可能會消耗大量 API 使用量"
 		},
@@ -821,11 +821,11 @@
 		},
 		"outputLineLimit": {
 			"label": "終端機輸出限制",
-			"description": "保留首尾行並丟棄中間行以保持在限制內。降低可節省 token；提高可為 Kilo 提供更多中間細節。Kilo 看到內容被跳過的佔位符。<0>了解更多</0>"
+			"description": "保留首尾行並丟棄中間行以保持在限制內。降低可節省 token；提高可為 Builder 提供更多中間細節。Builder 看到內容被跳過的佔位符。<0>了解更多</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "終端機字元限制",
-			"description": "透過強制限制輸出大小來覆寫行限制以防止記憶體問題。如果超出，保留開頭和結尾並向 Kilo 顯示內容被跳過的佔位符。<0>了解更多</0>"
+			"description": "透過強制限制輸出大小來覆寫行限制以防止記憶體問題。如果超出，保留開頭和結尾並向 Builder 顯示內容被跳過的佔位符。<0>了解更多</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "終端機 shell 整合逾時",
@@ -833,7 +833,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "使用內嵌終端機（建議）",
-			"description": "在內嵌終端機（聊天）中執行命令以繞過 shell 設定檔/整合，實現更快、更可靠的執行。停用時，Kilo 使用 VS Code 終端機及您的 shell 設定檔、提示和外掛程式。<0>了解更多</0>"
+			"description": "在內嵌終端機（聊天）中執行命令以繞過 shell 設定檔/整合，實現更快、更可靠的執行。停用時，Builder 使用 VS Code 終端機及您的 shell 設定檔、提示和外掛程式。<0>了解更多</0>"
 		},
 		"commandDelay": {
 			"label": "終端機命令延遲",
@@ -937,7 +937,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "啟用 Fast Apply",
-			"description": "啟用後，Builder 可使用專為程式碼修改最佳化的特殊模型進行 Fast Apply 編輯檔案。需要 Kilo Gateway Provider、OpenRouter 或 Morph API 金鑰。",
+			"description": "啟用後，Builder 可使用專為程式碼修改最佳化的特殊模型進行 Fast Apply 編輯檔案。需要 Builder Gateway Provider、OpenRouter 或 Morph API 金鑰。",
 			"apiProvider": "API 供應商",
 			"apiProviderList": {
 				"current": "目前"
@@ -1000,7 +1000,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "啟用自訂工具",
-			"description": "啟用後，Kilo 可以從專案的 .builder/tools 目錄或全域工具目錄 ~/.builder/tools 載入並使用自訂 TypeScript/JavaScript 工具。注意：這些工具將自動獲得核准。",
+			"description": "啟用後，Builder 可以從專案的 .builder/tools 目錄或全域工具目錄 ~/.builder/tools 載入並使用自訂 TypeScript/JavaScript 工具。注意：這些工具將自動獲得核准。",
 			"toolsHeader": "可用的自訂工具",
 			"noTools": "未載入自訂工具。請將 .ts 或 .js 檔案新增至專案的 .builder/tools 目錄或全域工具目錄 ~/.builder/tools。",
 			"refreshButton": "重新整理",

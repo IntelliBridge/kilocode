@@ -245,7 +245,7 @@
 	"response": "Réponse",
 	"arguments": "Arguments",
 	"text": {
-		"rooSaid": "Kilo a dit"
+		"rooSaid": "Builder a dit"
 	},
 	"feedback": {
 		"youSaid": "Tu as dit"
@@ -353,7 +353,7 @@
 			"tryButton": "Essayer les Agents Cloud"
 		},
 		"careers": "Aussi, <careersLink>on recrute !</careersLink>",
-		"socialLinks": "Rejoins-nous sur <xLink>X</xLink>, <discordLink>Discord</discordLink>, ou <redditLink>r/KiloCode</redditLink> 🚀"
+		"socialLinks": "Rejoins-nous sur <xLink>X</xLink>, <discordLink>Discord</discordLink>, ou <redditLink>r/BuilderCode</redditLink> 🚀"
 	},
 	"browser": {
 		"session": "Session du navigateur",

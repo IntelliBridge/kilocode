@@ -544,7 +544,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "Hata ve Tekrar Limiti",
-			"description": "'Kilo sorun yaşıyor' iletişim kutusunu göstermeden önceki ardışık hata veya tekrarlanan eylem sayısı. Bu güvenlik mekanizmasını devre dışı bırakmak için 0 olarak ayarlayın (asla tetiklenmez).",
+			"description": "'Builder sorun yaşıyor' iletişim kutusunu göstermeden önceki ardışık hata veya tekrarlanan eylem sayısı. Bu güvenlik mekanizmasını devre dışı bırakmak için 0 olarak ayarlayın (asla tetiklenmez).",
 			"unlimitedDescription": "Sınırsız yeniden deneme etkin (otomatik devam et). Diyalog asla görünmeyecek.",
 			"warning": "⚠️ 0'a ayarlamak, önemli API kullanımına neden olabilecek sınırsız yeniden denemeye izin verir"
 		},
@@ -821,11 +821,11 @@
 		},
 		"outputLineLimit": {
 			"label": "Terminal çıktı sınırı",
-			"description": "Sınırın altında kalmak için ilk ve son satırları tutar ve ortadakileri atar. Jetonları kaydetmek için düşürün; Kilo'ya daha fazla orta ayrıntı vermek için yükseltin. Kilo, içeriğin atlandığı yerde bir yer tutucu görür.<0>Daha fazla bilgi edinin</0>"
+			"description": "Sınırın altında kalmak için ilk ve son satırları tutar ve ortadakileri atar. Jetonları kaydetmek için düşürün; Builder'a daha fazla orta ayrıntı vermek için yükseltin. Builder, içeriğin atlandığı yerde bir yer tutucu görür.<0>Daha fazla bilgi edinin</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "Terminal karakter sınırı",
-			"description": "Çıktı boyutuna katı bir üst sınır uygulayarak bellek sorunlarını önlemek için satır sınırını geçersiz kılar. Aşılırsa, başlangıcı ve sonu tutar ve içeriğin atlandığı yerde Kilo'ya bir yer tutucu gösterir. <0>Daha fazla bilgi edinin</0>"
+			"description": "Çıktı boyutuna katı bir üst sınır uygulayarak bellek sorunlarını önlemek için satır sınırını geçersiz kılar. Aşılırsa, başlangıcı ve sonu tutar ve içeriğin atlandığı yerde Builder'a bir yer tutucu gösterir. <0>Daha fazla bilgi edinin</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "Terminal shell entegrasyon timeout",
@@ -833,7 +833,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "Satır İçi Terminal Kullan (önerilir)",
-			"description": "Daha hızlı, daha güvenilir çalıştırmalar için kabuk profillerini/entegrasyonunu atlamak için Satır İçi Terminal'de (sohbet) komutları çalıştırın. Devre dışı bırakıldığında Kilo, kabuk profiliniz, istemleriniz ve eklentilerinizle VS Code terminalini kullanır. <0>Daha fazla bilgi edinin</0>"
+			"description": "Daha hızlı, daha güvenilir çalıştırmalar için kabuk profillerini/entegrasyonunu atlamak için Satır İçi Terminal'de (sohbet) komutları çalıştırın. Devre dışı bırakıldığında Builder, kabuk profiliniz, istemleriniz ve eklentilerinizle VS Code terminalini kullanır. <0>Daha fazla bilgi edinin</0>"
 		},
 		"commandDelay": {
 			"label": "Terminal komut delay",
@@ -937,7 +937,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Fast Apply'ı etkinleştir",
-			"description": "Etkinleştirildiğinde, Builder dosyaları kod değişiklikleri için optimize edilmiş özel modellerle Fast Apply kullanarak düzenleyebilir. Kilo Gateway Provider, OpenRouter veya bir Morph API anahtarı gerektirir.",
+			"description": "Etkinleştirildiğinde, Builder dosyaları kod değişiklikleri için optimize edilmiş özel modellerle Fast Apply kullanarak düzenleyebilir. Builder Gateway Provider, OpenRouter veya bir Morph API anahtarı gerektirir.",
 			"apiProvider": "API Sağlayıcı",
 			"apiProviderList": {
 				"current": "Mevcut"
@@ -1000,7 +1000,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Özel araçları etkinleştir",
-			"description": "Etkinleştirildiğinde, Kilo projenizin .builder/tools dizininden veya global araçlar için ~/.builder/tools dizininden özel TypeScript/JavaScript araçlarını yükleyebilir ve kullanabilir. Not: bu araçlar otomatik olarak onaylanacaktır.",
+			"description": "Etkinleştirildiğinde, Builder projenizin .builder/tools dizininden veya global araçlar için ~/.builder/tools dizininden özel TypeScript/JavaScript araçlarını yükleyebilir ve kullanabilir. Not: bu araçlar otomatik olarak onaylanacaktır.",
 			"toolsHeader": "Kullanılabilir Özel Araçlar",
 			"noTools": "Özel araç yüklenmedi. Projenizin .builder/tools dizinine veya global araçlar için ~/.builder/tools dizinine .ts veya .js dosyaları ekleyin.",
 			"refreshButton": "Yenile",

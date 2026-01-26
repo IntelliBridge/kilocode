@@ -575,7 +575,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "エラーと繰り返しの制限",
-			"description": "「Kiloが問題を抱えています」ダイアログを表示するまでの連続エラーまたは繰り返しアクションの数。この安全機構を無効にするには0に設定します（トリガーされません）。",
+			"description": "「Builderが問題を抱えています」ダイアログを表示するまでの連続エラーまたは繰り返しアクションの数。この安全機構を無効にするには0に設定します（トリガーされません）。",
 			"unlimitedDescription": "無制限のリトライが有効です（自動進行）。ダイアログは表示されません。",
 			"warning": "⚠️ 0に設定すると無制限のリトライが可能になり、API使用量が大幅に増加する可能性があります"
 		},
@@ -826,11 +826,11 @@
 		},
 		"outputLineLimit": {
 			"label": "ターミナル出力制限",
-			"description": "制限内に収めるため最初と最後の行を保持し、中間を削除します。トークンを節約するには下げる；Kiloに中間の詳細を与えるには上げる。Kiloはコンテンツがスキップされた箇所にプレースホルダーを表示します。<0>詳細情報</0>"
+			"description": "制限内に収めるため最初と最後の行を保持し、中間を削除します。トークンを節約するには下げる；Builderに中間の詳細を与えるには上げる。Builderはコンテンツがスキップされた箇所にプレースホルダーを表示します。<0>詳細情報</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "ターミナル文字制限",
-			"description": "出力サイズにハードキャップを適用してメモリ問題を防ぐため、行制限を上書きします。超過した場合、最初と最後を保持し、コンテンツがスキップされた箇所にKiloにプレースホルダーを表示します。<0>詳細情報</0>"
+			"description": "出力サイズにハードキャップを適用してメモリ問題を防ぐため、行制限を上書きします。超過した場合、最初と最後を保持し、コンテンツがスキップされた箇所にBuilderにプレースホルダーを表示します。<0>詳細情報</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "ターミナルシェル統合タイムアウト",
@@ -838,7 +838,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "インラインターミナルを使用（推奨）",
-			"description": "より高速で信頼性の高い実行のため、シェルプロファイル/統合をバイパスしてインラインターミナル（チャット）でコマンドを実行します。無効にすると、Kilo はシェルプロファイル、プロンプト、プラグインと共に VS Code ターミナルを使用します。<0>詳細情報</0>"
+			"description": "より高速で信頼性の高い実行のため、シェルプロファイル/統合をバイパスしてインラインターミナル（チャット）でコマンドを実行します。無効にすると、Builder はシェルプロファイル、プロンプト、プラグインと共に VS Code ターミナルを使用します。<0>詳細情報</0>"
 		},
 		"commandDelay": {
 			"label": "ターミナルコマンド遅延",
@@ -887,7 +887,7 @@
 	"advanced": {
 		"diff": {
 			"label": "diff経由の編集を有効化",
-			"description": "有効にすると、Kiloはファイルをより迅速に編集でき、切り詰められた全ファイル書き込みを自動的に拒否します。",
+			"description": "有効にすると、Builderはファイルをより迅速に編集でき、切り詰められた全ファイル書き込みを自動的に拒否します。",
 			"strategy": {
 				"label": "Diff戦略",
 				"options": {
@@ -975,7 +975,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Fast Applyを有効化",
-			"description": "有効にすると、Builderはコード変更に最適化された専用モデルを使用してFast Applyでファイルを編集できます。Kilo Gateway Provider、OpenRouter、またはMorph APIキーが必要です。",
+			"description": "有効にすると、Builderはコード変更に最適化された専用モデルを使用してFast Applyでファイルを編集できます。Builder Gateway Provider、OpenRouter、またはMorph APIキーが必要です。",
 			"apiProvider": "APIプロバイダー",
 			"apiProviderList": {
 				"current": "現在"
@@ -1005,7 +1005,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "カスタムツールを有効化",
-			"description": "有効にすると、Kiloはプロジェクトの .builder/tools ディレクトリまたはグローバルツール用の ~/.builder/tools からカスタム TypeScript/JavaScript ツールを読み込んで使用できます。注意：これらのツールは自動的に承認されます。",
+			"description": "有効にすると、Builderはプロジェクトの .builder/tools ディレクトリまたはグローバルツール用の ~/.builder/tools からカスタム TypeScript/JavaScript ツールを読み込んで使用できます。注意：これらのツールは自動的に承認されます。",
 			"toolsHeader": "利用可能なカスタムツール",
 			"noTools": "カスタムツールが読み込まれていません。プロジェクトの .builder/tools ディレクトリまたはグローバルツール用の ~/.builder/tools に .ts または .js ファイルを追加してください。",
 			"refreshButton": "更新",

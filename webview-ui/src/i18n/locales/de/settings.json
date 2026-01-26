@@ -578,7 +578,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "Fehler- & Wiederholungslimit",
-			"description": "Anzahl aufeinanderfolgender Fehler oder wiederholter Aktionen, bevor der Dialog 'Kilo hat Probleme' angezeigt wird. Auf 0 setzen, um diesen Sicherheitsmechanismus zu deaktivieren (er wird niemals ausgelöst).",
+			"description": "Anzahl aufeinanderfolgender Fehler oder wiederholter Aktionen, bevor der Dialog 'Builder hat Probleme' angezeigt wird. Auf 0 setzen, um diesen Sicherheitsmechanismus zu deaktivieren (er wird niemals ausgelöst).",
 			"unlimitedDescription": "Unbegrenzte Wiederholungen aktiviert (automatisches Fortfahren). Der Dialog wird niemals angezeigt.",
 			"warning": "⚠️ Das Setzen auf 0 erlaubt unbegrenzte Wiederholungen, was zu erheblichem API-Verbrauch führen kann"
 		},
@@ -819,11 +819,11 @@
 		},
 		"outputLineLimit": {
 			"label": "Terminal-Ausgabelimit",
-			"description": "Behält erste und letzte Zeilen und verwirft die mittleren, um unter dem Limit zu bleiben. Niedriger für Token-Ersparnis; höher für mehr Details aus der Mitte für Kilo. Kilo sieht einen Platzhalter, wo Inhalt übersprungen wird.<0>Mehr erfahren</0>"
+			"description": "Behält erste und letzte Zeilen und verwirft die mittleren, um unter dem Limit zu bleiben. Niedriger für Token-Ersparnis; höher für mehr Details aus der Mitte für Builder. Builder sieht einen Platzhalter, wo Inhalt übersprungen wird.<0>Mehr erfahren</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "Terminal-Zeichenlimit",
-			"description": "Überschreibt das Zeilenlimit, um Speicherprobleme durch eine harte Obergrenze für die Ausgabegröße zu vermeiden. Bei Überschreitung behält es Anfang und Ende und zeigt Kilo einen Platzhalter, wo Inhalt übersprungen wird. <0>Mehr erfahren</0>"
+			"description": "Überschreibt das Zeilenlimit, um Speicherprobleme durch eine harte Obergrenze für die Ausgabegröße zu vermeiden. Bei Überschreitung behält es Anfang und Ende und zeigt Builder einen Platzhalter, wo Inhalt übersprungen wird. <0>Mehr erfahren</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "Terminal-Shell-Integrations-Timeout",
@@ -831,7 +831,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "Inline-Terminal verwenden (empfohlen)",
-			"description": "Führe Befehle im Inline-Terminal (Chat) aus, um Shell-Profile/Integration für schnellere, zuverlässigere Läufe zu umgehen. Wenn deaktiviert, nutzt Kilo das VS Code-Terminal mit deinem Shell-Profil, Prompts und Plugins. <0>Mehr erfahren</0>"
+			"description": "Führe Befehle im Inline-Terminal (Chat) aus, um Shell-Profile/Integration für schnellere, zuverlässigere Läufe zu umgehen. Wenn deaktiviert, nutzt Builder das VS Code-Terminal mit deinem Shell-Profil, Prompts und Plugins. <0>Mehr erfahren</0>"
 		},
 		"commandDelay": {
 			"label": "Terminal-Befehlsverzögerung",
@@ -935,7 +935,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Fast Apply aktivieren",
-			"description": "Wenn aktiviert, kann Builder Dateien mit Fast Apply unter Verwendung spezialisierter Modelle bearbeiten, die für Code-Modifikationen optimiert sind. Erfordert den Kilo Gateway Provider, OpenRouter oder einen Morph API-Schlüssel.",
+			"description": "Wenn aktiviert, kann Builder Dateien mit Fast Apply unter Verwendung spezialisierter Modelle bearbeiten, die für Code-Modifikationen optimiert sind. Erfordert den Builder Gateway Provider, OpenRouter oder einen Morph API-Schlüssel.",
 			"apiProvider": "API-Anbieter",
 			"apiProviderList": {
 				"current": "Aktuell"
@@ -994,7 +994,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Benutzerdefinierte Tools aktivieren",
-			"description": "Wenn aktiviert, kann Kilo benutzerdefinierte TypeScript/JavaScript Tools aus dem .builder/tools-Verzeichnis deines Projekts oder ~/.builder/tools für globale Tools laden und verwenden. Hinweis: Diese Tools werden automatisch genehmigt.",
+			"description": "Wenn aktiviert, kann Builder benutzerdefinierte TypeScript/JavaScript Tools aus dem .builder/tools-Verzeichnis deines Projekts oder ~/.builder/tools für globale Tools laden und verwenden. Hinweis: Diese Tools werden automatisch genehmigt.",
 			"toolsHeader": "Verfügbare benutzerdefinierte Tools",
 			"noTools": "Keine benutzerdefinierten Tools geladen. Füge .ts oder .js Dateien zum .builder/tools-Verzeichnis deines Projekts oder ~/.builder/tools für globale Tools hinzu.",
 			"refreshButton": "Aktualisieren",

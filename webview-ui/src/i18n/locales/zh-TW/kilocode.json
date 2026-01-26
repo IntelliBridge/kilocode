@@ -12,7 +12,7 @@
 	"lowCreditWarning": {
 		"addCredit": "添加額度",
 		"lowBalance": "你的 Builder 餘額不足",
-		"newOrganization": "將 Kilo 用於工作？"
+		"newOrganization": "將 Builder 用於工作？"
 	},
 	"invalidModel": {
 		"alphaPeriodEnded": "🎉 {{model}} 的測試期已結束！請切換到其他模型繼續使用。",
@@ -107,7 +107,7 @@
 	"toolCallStyle": {
 		"title": "工具呼叫樣式",
 		"description": "選擇系統提示中工具呼叫的格式化方式。JSON 目前為實驗性功能，主要供有興趣參與開發的使用者使用。",
-		"automatic": "讓 Kilo 決定",
+		"automatic": "讓 Builder 決定",
 		"xml": "XML",
 		"json": "JSON"
 	},

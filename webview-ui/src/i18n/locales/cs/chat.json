@@ -130,7 +130,7 @@
 		},
 		"modelAgnostic": {
 			"title": "Přines si vlastní model, bez přirážky nebo závazků",
-			"description": "Používej svůj vlastní klíč poskytovatele nebo dokonce lokální inferenci — Kilo za to neúčtuje"
+			"description": "Používej svůj vlastní klíč poskytovatele nebo dokonce lokální inferenci — Builder za to neúčtuje"
 		}
 	},
 	"selectMode": "Vyber režim pro interakci",
@@ -283,7 +283,7 @@
 	"response": "Odpověď",
 	"arguments": "Argumenty",
 	"text": {
-		"rooSaid": "Kilo řekl"
+		"rooSaid": "Builder řekl"
 	},
 	"feedback": {
 		"youSaid": "Řekl jsi"
@@ -392,7 +392,7 @@
 			"tryButton": "Vyzkoušet cloudové agenty"
 		},
 		"careers": "Také <careersLink>nabíráme!</careersLink>",
-		"socialLinks": "Připoj se k nám na <xLink>X</xLink>, <discordLink>Discord</discordLink> nebo <redditLink>r/KiloCode</redditLink> 🚀"
+		"socialLinks": "Připoj se k nám na <xLink>X</xLink>, <discordLink>Discord</discordLink> nebo <redditLink>r/BuilderCode</redditLink> 🚀"
 	},
 	"reasoning": {
 		"thinking": "Přemýšlím",

@@ -198,8 +198,8 @@
 	},
 	"storage": {
 		"prompt_custom_path": "Konuşma geçmişi için özel depolama yolunu girin, varsayılan konumu kullanmak için boş bırakın",
-		"path_placeholder": "D:\\KiloCodeStorage",
-		"enter_absolute_path": "Lütfen mutlak bir yol girin (örn. D:\\KiloCodeStorage veya /home/user/storage)",
+		"path_placeholder": "D:\\BuilderStorage",
+		"enter_absolute_path": "Lütfen mutlak bir yol girin (örn. D:\\BuilderStorage veya /home/user/storage)",
 		"enter_valid_path": "Lütfen geçerli bir yol girin"
 	},
 	"input": {

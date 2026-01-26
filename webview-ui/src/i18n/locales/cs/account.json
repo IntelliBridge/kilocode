@@ -14,7 +14,7 @@
 	"expandTask": "Rozbalit úkol",
 	"collapseTask": "Sbalit úkol",
 	"deleteFavoritedTaskWarning": "Toto trvale smaže oblíbený úkol. Jste si jisti?",
-	"cloudBenefitWalkaway": "Sledujte a ovládejte úkoly odkudkoli pomocí Kilo remote Control",
-	"remoteControl": "Kilo remote Control",
+	"cloudBenefitWalkaway": "Sledujte a ovládejte úkoly odkudkoli pomocí Builder remote Control",
+	"remoteControl": "Builder remote Control",
 	"remoteControlDescription": "Povolit sledování a interakci s úkoly v tomto workspace pomocí Builder Cloud"
 }

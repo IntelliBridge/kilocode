@@ -12,7 +12,7 @@
 	"lowCreditWarning": {
 		"addCredit": "Přidat kredit",
 		"lowBalance": "Tvůj Builder zůstatek je nízký",
-		"newOrganization": "Používáš Kilo pro práci?"
+		"newOrganization": "Používáš Builder pro práci?"
 	},
 	"pagination": {
 		"previous": "Předchozí",
@@ -216,7 +216,7 @@
 	"toolCallStyle": {
 		"title": "Styl volání nástrojů",
 		"description": "Vyber, jak jsou volání nástrojů formátována v systémovém promptu. JSON je momentálně experimentální a je určen především pro uživatele, kteří mají zájem přispět k jeho vývoji.",
-		"automatic": "Nech Kilo rozhodnout",
+		"automatic": "Nech Builder rozhodnout",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -341,7 +341,7 @@
 			"title": "Převod řeči na text",
 			"openAiReason": "Pro použití hlasové transkripce potřebujete platného poskytovatele OpenAI s API klíčem.",
 			"description": "Převod řeči na text není k dispozici. Převod řeči na text vyžaduje jak FFmpeg, tak platně nakonfigurovaného poskytovatele OpenAI. <moreInfoLink>Klikněte sem pro více informací</moreInfoLink>.",
-			"ffmpegReason": "Potřebujete nainstalovaný FFmpeg. <ffmpegLink>Klikněte zde</ffmpegLink>, aby vám Kilo pomohlo s instalací FFmpeg.",
+			"ffmpegReason": "Potřebujete nainstalovaný FFmpeg. <ffmpegLink>Klikněte zde</ffmpegLink>, aby vám Builder pomohlo s instalací FFmpeg.",
 			"ffmpegMessage": "Pomozte mi nainstalovat FFmpeg"
 		},
 		"misconfiguredState": "Nedostupné kvůli konfiguraci",

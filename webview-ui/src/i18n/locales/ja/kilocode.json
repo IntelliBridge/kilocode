@@ -112,7 +112,7 @@
 	"toolCallStyle": {
 		"title": "ツール呼び出しスタイル",
 		"description": "システムプロンプトでツール呼び出しをどのようにフォーマットするかを選択します。JSONは現在実験的であり、主にその開発に貢献することに興味のあるユーザーを対象としています。",
-		"automatic": "Kiloに任せる",
+		"automatic": "Builderに任せる",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -236,7 +236,7 @@
 			},
 			"enableSmartInlineTaskKeybinding": {
 				"label": "手動オートコンプリート ({{keybinding}})",
-				"description": "素早い修正、補完、またはリファクタリングが必要？Kiloは周囲のコンテキストを使用して即座の改善を提供し、フローを維持します。<DocsLink>ショートカットを見る</DocsLink>"
+				"description": "素早い修正、補完、またはリファクタリングが必要？Builderは周囲のコンテキストを使用して即座の改善を提供し、フローを維持します。<DocsLink>ショートカットを見る</DocsLink>"
 			},
 			"keybindingNotFound": "見つかりません",
 			"configureAutocompleteProfile": "プロファイルに移動し、プロファイルタイプがオートコンプリートのプロファイルを設定することで、任意のモデルを使用できます。",

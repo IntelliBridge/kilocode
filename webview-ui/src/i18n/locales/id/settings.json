@@ -569,7 +569,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "Batas Kesalahan & Pengulangan",
-			"description": "Jumlah kesalahan berturut-turut atau tindakan berulang sebelum menampilkan dialog 'Kilo mengalami masalah'. Atur ke 0 untuk menonaktifkan mekanisme keamanan ini (tidak akan pernah terpicu).",
+			"description": "Jumlah kesalahan berturut-turut atau tindakan berulang sebelum menampilkan dialog 'Builder mengalami masalah'. Atur ke 0 untuk menonaktifkan mekanisme keamanan ini (tidak akan pernah terpicu).",
 			"unlimitedDescription": "Percobaan ulang tak terbatas diaktifkan (lanjut otomatis). Dialog tidak akan pernah muncul.",
 			"warning": "⚠️ Mengatur ke 0 memungkinkan percobaan ulang tak terbatas yang dapat menghabiskan penggunaan API yang signifikan"
 		},
@@ -820,11 +820,11 @@
 		},
 		"outputLineLimit": {
 			"label": "Batas keluaran terminal",
-			"description": "Menyimpan baris pertama dan terakhir dan membuang yang tengah agar tetap di bawah batas. Turunkan untuk menghemat token; naikkan untuk memberi Kilo lebih banyak detail tengah. Kilo melihat placeholder di mana konten dilewati.<0>Pelajari lebih lanjut</0>"
+			"description": "Menyimpan baris pertama dan terakhir dan membuang yang tengah agar tetap di bawah batas. Turunkan untuk menghemat token; naikkan untuk memberi Builder lebih banyak detail tengah. Builder melihat placeholder di mana konten dilewati.<0>Pelajari lebih lanjut</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "Batas karakter terminal",
-			"description": "Override batas baris untuk mencegah masalah memori dengan memberlakukan cap keras pada ukuran output. Jika terlampaui, simpan awal dan akhir lalu tampilkan placeholder ke Kilo di mana konten dilewati. <0>Pelajari lebih lanjut</0>"
+			"description": "Override batas baris untuk mencegah masalah memori dengan memberlakukan cap keras pada ukuran output. Jika terlampaui, simpan awal dan akhir lalu tampilkan placeholder ke Builder di mana konten dilewati. <0>Pelajari lebih lanjut</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "Timeout integrasi shell terminal",
@@ -832,7 +832,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "Gunakan Terminal Inline (disarankan)",
-			"description": "Jalankan perintah di Terminal Inline (obrolan) untuk melewati profil/integrasi shell untuk proses lebih cepat dan andal. Saat dinonaktifkan, Kilo menggunakan terminal VS Code dengan profil shell, prompt, dan plugin Anda. <0>Pelajari lebih lanjut</0>"
+			"description": "Jalankan perintah di Terminal Inline (obrolan) untuk melewati profil/integrasi shell untuk proses lebih cepat dan andal. Saat dinonaktifkan, Builder menggunakan terminal VS Code dengan profil shell, prompt, dan plugin Anda. <0>Pelajari lebih lanjut</0>"
 		},
 		"commandDelay": {
 			"label": "Delay perintah terminal",
@@ -957,7 +957,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Aktifkan Fast Apply",
-			"description": "Ketika diaktifkan, Builder dapat mengedit file menggunakan Fast Apply dengan model khusus yang dioptimalkan untuk modifikasi kode. Memerlukan Kilo Gateway Provider, OpenRouter, atau kunci API Morph.",
+			"description": "Ketika diaktifkan, Builder dapat mengedit file menggunakan Fast Apply dengan model khusus yang dioptimalkan untuk modifikasi kode. Memerlukan Builder Gateway Provider, OpenRouter, atau kunci API Morph.",
 			"apiProvider": "Penyedia API",
 			"apiProviderList": {
 				"current": "Saat ini"
@@ -1020,7 +1020,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Aktifkan tool kustom",
-			"description": "Ketika diaktifkan, Kilo dapat memuat dan menggunakan tool kustom TypeScript/JavaScript dari direktori .builder/tools proyek kamu atau ~/.builder/tools untuk tool global. Catatan: tool ini akan otomatis disetujui.",
+			"description": "Ketika diaktifkan, Builder dapat memuat dan menggunakan tool kustom TypeScript/JavaScript dari direktori .builder/tools proyek kamu atau ~/.builder/tools untuk tool global. Catatan: tool ini akan otomatis disetujui.",
 			"toolsHeader": "Tool Kustom yang Tersedia",
 			"noTools": "Tidak ada tool kustom yang dimuat. Tambahkan file .ts atau .js ke direktori .builder/tools proyek kamu atau ~/.builder/tools untuk tool global.",
 			"refreshButton": "Refresh",

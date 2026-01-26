@@ -12,7 +12,7 @@
 	"lowCreditWarning": {
 		"addCredit": "เติมเครดิต",
 		"lowBalance": "ยอดเงิน Builder ของคุณเหลือน้อย",
-		"newOrganization": "ใช้ Kilo เพื่อการทำงาน?"
+		"newOrganization": "ใช้ Builder เพื่อการทำงาน?"
 	},
 	"pagination": {
 		"previous": "ก่อนหน้า",
@@ -112,7 +112,7 @@
 	"toolCallStyle": {
 		"title": "รูปแบบการเรียกใช้เครื่องมือ",
 		"description": "เลือกวิธีการจัดรูปแบบการเรียกใช้เครื่องมือใน system prompt JSON เป็นฟีเจอร์ทดลองและมีไว้สำหรับผู้ใช้ที่สนใจมีส่วนร่วมในการพัฒนา",
-		"automatic": "ให้ Kilo ตัดสินใจ",
+		"automatic": "ให้ Builder ตัดสินใจ",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -341,7 +341,7 @@
 			"title": "เสียงเป็นข้อความ",
 			"description": "การแปลงเสียงเป็นข้อความไม่พร้อมใช้งาน การแปลงเสียงเป็นข้อความต้องการทั้ง FFmpeg และการกำหนดค่า OpenAI provider ที่ถูกต้อง <moreInfoLink>คลิกที่นี่สำหรับข้อมูลเพิ่มเติม</moreInfoLink>",
 			"openAiReason": "คุณต้องมีผู้ให้บริการ OpenAI ที่ถูกต้องพร้อม API key เพื่อใช้งานการถอดเสียงเป็นข้อความ",
-			"ffmpegReason": "คุณจำเป็นต้องติดตั้ง FFmpeg <ffmpegLink>คลิกที่นี่</ffmpegLink> เพื่อให้ Kilo ช่วยคุณติดตั้ง FFmpeg",
+			"ffmpegReason": "คุณจำเป็นต้องติดตั้ง FFmpeg <ffmpegLink>คลิกที่นี่</ffmpegLink> เพื่อให้ Builder ช่วยคุณติดตั้ง FFmpeg",
 			"ffmpegMessage": "ช่วยฉันติดตั้ง FFmpeg"
 		},
 		"misconfiguredState": "ไม่พร้อมใช้งานเนื่องจากการตั้งค่า",

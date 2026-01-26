@@ -569,7 +569,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "Límit d'errors i repeticions",
-			"description": "Nombre d'errors consecutius o accions repetides abans de mostrar el diàleg 'En Kilo està tenint problemes'. Estableix a 0 per desactivar aquest mecanisme de seguretat (no s'activarà mai).",
+			"description": "Nombre d'errors consecutius o accions repetides abans de mostrar el diàleg 'En Builder està tenint problemes'. Estableix a 0 per desactivar aquest mecanisme de seguretat (no s'activarà mai).",
 			"unlimitedDescription": "Reintents il·limitats habilitats (procediment automàtic). El diàleg no apareixerà mai.",
 			"warning": "⚠️ Establir a 0 permet reintents il·limitats que poden consumir un ús significatiu de l'API"
 		},
@@ -819,11 +819,11 @@
 		},
 		"outputLineLimit": {
 			"label": "Límit de sortida del terminal",
-			"description": "Conserva les primeres i últimes línies i descarta les del mig per mantenir-se sota el límit. Redueix per estalviar tokens; augmenta per donar a Kilo més detalls del mig. Kilo veu un marcador on s'ha omès el contingut.<0>Aprèn-ne més</0>"
+			"description": "Conserva les primeres i últimes línies i descarta les del mig per mantenir-se sota el límit. Redueix per estalviar tokens; augmenta per donar a Builder més detalls del mig. Builder veu un marcador on s'ha omès el contingut.<0>Aprèn-ne més</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "Límit de caràcters del terminal",
-			"description": "Anul·la el límit de línies per evitar problemes de memòria imposant un límit dur a la mida de sortida. Si se supera, manté l'inici i el final i mostra un marcador a Kilo on s'ha omès el contingut. <0>Aprèn-ne més</0>"
+			"description": "Anul·la el límit de línies per evitar problemes de memòria imposant un límit dur a la mida de sortida. Si se supera, manté l'inici i el final i mostra un marcador a Builder on s'ha omès el contingut. <0>Aprèn-ne més</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "Temps d'espera d'integració del shell del terminal",
@@ -831,7 +831,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "Utilitza terminal en línia (recomanat)",
-			"description": "Executa comandes al terminal en línia (xat) per evitar perfils/integració del shell per a execucions més ràpides i fiables. Quan està desactivat, Kilo usa el terminal de VS Code amb el teu perfil de shell, prompts i connectors. <0>Aprèn-ne més</0>"
+			"description": "Executa comandes al terminal en línia (xat) per evitar perfils/integració del shell per a execucions més ràpides i fiables. Quan està desactivat, Builder usa el terminal de VS Code amb el teu perfil de shell, prompts i connectors. <0>Aprèn-ne més</0>"
 		},
 		"commandDelay": {
 			"label": "Retard de comanda del terminal",
@@ -968,7 +968,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Habilitar Fast Apply",
-			"description": "Quan està habilitat, Builder pot editar fitxers utilitzant Fast Apply amb models especialitzats optimitzats per a modificacions de codi. Requereix Kilo Gateway Provider, OpenRouter o una clau API de Morph.",
+			"description": "Quan està habilitat, Builder pot editar fitxers utilitzant Fast Apply amb models especialitzats optimitzats per a modificacions de codi. Requereix Builder Gateway Provider, OpenRouter o una clau API de Morph.",
 			"apiProvider": "Proveïdor d'API",
 			"apiProviderList": {
 				"current": "Actual"
@@ -998,7 +998,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Habilitar eines personalitzades",
-			"description": "Quan està habilitat, Kilo pot carregar i utilitzar eines TypeScript/JavaScript personalitzades des del directori .builder/tools del vostre projecte o ~/.builder/tools per a eines globals. Nota: aquestes eines s'aprovaran automàticament.",
+			"description": "Quan està habilitat, Builder pot carregar i utilitzar eines TypeScript/JavaScript personalitzades des del directori .builder/tools del vostre projecte o ~/.builder/tools per a eines globals. Nota: aquestes eines s'aprovaran automàticament.",
 			"toolsHeader": "Eines personalitzades disponibles",
 			"noTools": "No s'han carregat eines personalitzades. Afegiu fitxers .ts o .js al directori .builder/tools del vostre projecte o ~/.builder/tools per a eines globals.",
 			"refreshButton": "Actualitzar",

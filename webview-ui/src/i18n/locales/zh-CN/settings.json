@@ -569,7 +569,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "错误和重复限制",
-			"description": "在显示“Kilo遇到问题”对话框前允许的连续错误或重复操作次数。设置为 0 可禁用此安全机制（它将永远不会触发）。",
+			"description": "在显示“Builder遇到问题”对话框前允许的连续错误或重复操作次数。设置为 0 可禁用此安全机制（它将永远不会触发）。",
 			"unlimitedDescription": "已启用无限重试（自动继续）。对话框将永远不会出现。",
 			"warning": "⚠️ 设置为 0 允许无限重试，这可能会消耗大量 API 使用量"
 		},
@@ -820,11 +820,11 @@
 		},
 		"outputLineLimit": {
 			"label": "终端输出限制",
-			"description": "保留首尾行并丢弃中间行以保持在限制内。降低可节省 token；提高可为 Kilo 提供更多中间细节。Kilo 看到内容被跳过的占位符。<0>了解更多</0>"
+			"description": "保留首尾行并丢弃中间行以保持在限制内。降低可节省 token；提高可为 Builder 提供更多中间细节。Builder 看到内容被跳过的占位符。<0>了解更多</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "终端字符限制",
-			"description": "通过强制限制输出大小来覆盖行限制以防止内存问题。如果超出，保留开头和结尾并向 Kilo 显示内容被跳过的占位符。<0>了解更多</0>"
+			"description": "通过强制限制输出大小来覆盖行限制以防止内存问题。如果超出，保留开头和结尾并向 Builder 显示内容被跳过的占位符。<0>了解更多</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "终端 shell 集成超时",
@@ -832,7 +832,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "使用内联终端（推荐）",
-			"description": "在内联终端（聊天）中运行命令以绕过 shell 配置文件/集成，实现更快、更可靠的运行。禁用时，Kilo 使用 VS Code 终端及您的 shell 配置文件、提示和插件。<0>了解更多</0>"
+			"description": "在内联终端（聊天）中运行命令以绕过 shell 配置文件/集成，实现更快、更可靠的运行。禁用时，Builder 使用 VS Code 终端及您的 shell 配置文件、提示和插件。<0>了解更多</0>"
 		},
 		"commandDelay": {
 			"label": "终端命令延迟",
@@ -973,7 +973,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "启用 Fast Apply",
-			"description": "启用后 Builder 可使用专门优化的代码修改模型进行 Fast Apply 编辑文件。需要 Kilo Gateway Provider、OpenRouter 或 Morph API 密钥。",
+			"description": "启用后 Builder 可使用专门优化的代码修改模型进行 Fast Apply 编辑文件。需要 Builder Gateway Provider、OpenRouter 或 Morph API 密钥。",
 			"apiProvider": "API 提供商",
 			"apiProviderList": {
 				"current": "当前"
@@ -1003,7 +1003,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "启用自定义工具",
-			"description": "启用后 Kilo 可从项目中的 .builder/tools 目录或全局工具目录 ~/.builder/tools 加载并使用自定义 TypeScript/JavaScript 工具。注意：这些工具将自动获批。",
+			"description": "启用后 Builder 可从项目中的 .builder/tools 目录或全局工具目录 ~/.builder/tools 加载并使用自定义 TypeScript/JavaScript 工具。注意：这些工具将自动获批。",
 			"toolsHeader": "可用自定义工具",
 			"noTools": "未加载自定义工具。请向项目的 .builder/tools 目录或全局工具目录 ~/.builder/tools 添加 .ts 或 .js 文件。",
 			"refreshButton": "刷新",

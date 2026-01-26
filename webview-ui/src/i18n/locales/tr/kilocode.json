@@ -105,7 +105,7 @@
 	"toolCallStyle": {
 		"title": "Araç Çağrısı Stili",
 		"description": "Sistem isteminde araç çağrılarının nasıl biçimlendirileceğini seçin. JSON şu anda deneyseldir ve çoğunlukla geliştirilmesine katkıda bulunmak isteyen kullanıcılar için tasarlanmıştır.",
-		"automatic": "Kilo karar versin",
+		"automatic": "Builder karar versin",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -342,7 +342,7 @@
 			"openAiReason": "Ses transkripsiyonu kullanmak için API anahtarına sahip geçerli bir OpenAI sağlayıcısına ihtiyacınız var.",
 			"description": "Konuşmadan metne özelliği kullanılamıyor. Konuşmadan metne özelliği için hem FFmpeg hem de geçerli bir OpenAI sağlayıcısı yapılandırılması gerekir. <moreInfoLink>Daha fazla bilgi için buraya tıklayın</moreInfoLink>.",
 			"ffmpegMessage": "FFmpeg'i kurmama yardım et",
-			"ffmpegReason": "FFmpeg'in yüklü olması gerekiyor. FFmpeg'i yüklemeniz için Kilo'nun size yardımcı olması için <ffmpegLink>buraya tıklayın</ffmpegLink>."
+			"ffmpegReason": "FFmpeg'in yüklü olması gerekiyor. FFmpeg'i yüklemeniz için Builder'ın size yardımcı olması için <ffmpegLink>buraya tıklayın</ffmpegLink>."
 		},
 		"misconfiguredState": "Yapılandırma nedeniyle kullanılamıyor",
 		"errorState": "Hata nedeniyle kullanılamıyor",
