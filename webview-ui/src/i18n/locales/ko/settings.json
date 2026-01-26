@@ -569,7 +569,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "오류 및 반복 제한",
-			"description": "'Kilo에 문제가 발생했습니다' 대화 상자를 표시하기 전의 연속 오류 또는 반복 작업 수. 이 안전 메커니즘을 비활성화하려면 0으로 설정하세요(절대 트리거되지 않음).",
+			"description": "'Builder에 문제가 발생했습니다' 대화 상자를 표시하기 전의 연속 오류 또는 반복 작업 수. 이 안전 메커니즘을 비활성화하려면 0으로 설정하세요(절대 트리거되지 않음).",
 			"unlimitedDescription": "무제한 재시도 활성화 (자동 진행). 대화 상자가 나타나지 않습니다.",
 			"warning": "⚠️ 0으로 설정하면 무제한 재시도가 허용되어 상당한 API 사용량이 발생할 수 있습니다"
 		},
@@ -820,11 +820,11 @@
 		},
 		"outputLineLimit": {
 			"label": "터미널 출력 제한",
-			"description": "제한 내로 유지하기 위해 첫 줄과 마지막 줄을 유지하고 중간을 삭제합니다. 토큰을 절약하려면 낮추고; Kilo에게 더 많은 중간 세부 정보를 제공하려면 높입니다. Kilo는 콘텐츠가 건너뛴 곳에 자리 표시자를 봅니다.<0>자세히 알아보기</0>"
+			"description": "제한 내로 유지하기 위해 첫 줄과 마지막 줄을 유지하고 중간을 삭제합니다. 토큰을 절약하려면 낮추고; Builder에게 더 많은 중간 세부 정보를 제공하려면 높입니다. Builder는 콘텐츠가 건너뛴 곳에 자리 표시자를 봅니다.<0>자세히 알아보기</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "터미널 문자 제한",
-			"description": "출력 크기에 대한 엄격한 상한을 적용하여 메모리 문제를 방지하기 위해 줄 제한을 재정의합니다. 초과하면 시작과 끝을 유지하고 내용이 생략된 곳에 Kilo에게 자리 표시자를 표시합니다. <0>자세히 알아보기</0>"
+			"description": "출력 크기에 대한 엄격한 상한을 적용하여 메모리 문제를 방지하기 위해 줄 제한을 재정의합니다. 초과하면 시작과 끝을 유지하고 내용이 생략된 곳에 Builder에게 자리 표시자를 표시합니다. <0>자세히 알아보기</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "터미널 셸 통합 시간 초과",
@@ -832,7 +832,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "인라인 터미널 사용(권장)",
-			"description": "더 빠르고 안정적인 실행을 위해 셸 프로필/통합��� 우회하려면 인라인 터미널(채팅)에�� 명령을 실행하십시오. 비활성화하면 Kilo는 셸 프로필, 프롬프트 및 플러그인과 함께 VS Code 터미널을 사용합니다. <0>자세히 알아보기</0>"
+			"description": "더 빠르고 안정적인 실행을 위해 셸 프로필/통합��� 우회하려면 인라인 터미널(채팅)에�� 명령을 실행하십시오. 비활성화하면 Builder는 셸 프로필, 프롬프트 및 플러그인과 함께 VS Code 터미널을 사용합니다. <0>자세히 알아보기</0>"
 		},
 		"commandDelay": {
 			"label": "터미널 명령 지연",
@@ -936,7 +936,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Fast Apply 활성화",
-			"description": "활성화하면 Builder는 코드 수정에 최적화된 특수 모델을 사용하여 Fast Apply로 파일을 편집할 수 있습니다. Kilo Gateway Provider, OpenRouter 또는 Morph API 키가 필요합니다.",
+			"description": "활성화하면 Builder는 코드 수정에 최적화된 특수 모델을 사용하여 Fast Apply로 파일을 편집할 수 있습니다. Builder Gateway Provider, OpenRouter 또는 Morph API 키가 필요합니다.",
 			"apiProvider": "API 제공자",
 			"apiProviderList": {
 				"current": "현재"
@@ -999,7 +999,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "사용자 정의 도구 활성화",
-			"description": "활성화하면 Kilo가 프로젝트의 .builder/tools 디렉터리 또는 전역 도구를 위한 ~/.builder/tools에서 사용자 정의 TypeScript/JavaScript 도구를 로드하고 사용할 수 있습니다. 참고: 이러한 도구는 자동으로 자동 승인됩니다.",
+			"description": "활성화하면 Builder가 프로젝트의 .builder/tools 디렉터리 또는 전역 도구를 위한 ~/.builder/tools에서 사용자 정의 TypeScript/JavaScript 도구를 로드하고 사용할 수 있습니다. 참고: 이러한 도구는 자동으로 자동 승인됩니다.",
 			"toolsHeader": "사용 가능한 사용자 정의 도구",
 			"noTools": "로드된 사용자 정의 도구가 없습니다. 프로젝트의 .builder/tools 디렉터리 또는 전역 도구를 위한 ~/.builder/tools에 .ts 또는 .js 파일을 추가하세요.",
 			"refreshButton": "새로고침",

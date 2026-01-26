@@ -54,13 +54,13 @@
 		"activated": "Générateur de messages de commit Builder activé",
 		"gitNotFound": "⚠️ Dépôt Git introuvable ou git non disponible",
 		"gitInitError": "⚠️ Erreur d'initialisation Git : {{error}}",
-		"generating": "Kilo : Génération du message de commit...",
-		"noChanges": "Kilo : Aucun changement trouvé à analyser",
-		"generated": "Kilo : Message de commit généré !",
-		"generationFailed": "Kilo : Échec de la génération du message de commit : {{errorMessage}}",
-		"generatingFromUnstaged": "Kilo : Génération du message à partir des modifications non préparées",
-		"activationFailed": "Kilo : Échec de l'activation du générateur de messages : {{error}}",
-		"providerRegistered": "Kilo : Fournisseur de messages de commit enregistré",
+		"generating": "Builder : Génération du message de commit...",
+		"noChanges": "Builder : Aucun changement trouvé à analyser",
+		"generated": "Builder : Message de commit généré !",
+		"generationFailed": "Builder : Échec de la génération du message de commit : {{errorMessage}}",
+		"generatingFromUnstaged": "Builder : Génération du message à partir des modifications non préparées",
+		"activationFailed": "Builder : Échec de l'activation du générateur de messages : {{error}}",
+		"providerRegistered": "Builder : Fournisseur de messages de commit enregistré",
 		"errors": {
 			"noProject": "Aucun projet disponible",
 			"timeout": "La requête a expiré après 30 secondes",
@@ -154,19 +154,19 @@
 		}
 	},
 	"terminalCommandGenerator": {
-		"inputPrompt": "Kilo : Décrivez la commande que vous souhaitez générer",
+		"inputPrompt": "Builder : Décrivez la commande que vous souhaitez générer",
 		"inputPlaceholder": "par exemple, arrêter le processus en cours d'exécution sur le port 3001, trouver des fichiers volumineux, etc.",
-		"noActiveTerminal": "Kilo : Aucun terminal actif trouvé. Veuillez d'abord ouvrir un terminal.",
-		"generatingProgress": "Kilo : Génération de la commande terminal...",
-		"commandGenerated": "Kilo : Commande générée : {{command}}",
-		"generationFailed": "Kilo : Échec de la génération de la commande : {{error}}",
+		"noActiveTerminal": "Builder : Aucun terminal actif trouvé. Veuillez d'abord ouvrir un terminal.",
+		"generatingProgress": "Builder : Génération de la commande terminal...",
+		"commandGenerated": "Builder : Commande générée : {{command}}",
+		"generationFailed": "Builder : Échec de la génération de la commande : {{error}}",
 		"warningDialog": {
 			"title": "Avertissement de Sécurité du Terminal",
 			"okButton": "Je comprends",
 			"message": "Vérifiez attentivement toutes les commandes générées avant de les exécuter. Les actions effectuées dans le terminal ne peuvent pas toujours être annulées — l'exécution de commandes non vérifiées peut entraîner une perte irréversible de données ou endommager votre système. Examinez et comprenez entièrement la commande avant de continuer !",
 			"cancelButton": "Annuler"
 		},
-		"tipMessage": "Kilo : Appuyez sur {{shortcut}} pour générer des commandes de terminal"
+		"tipMessage": "Builder : Appuyez sur {{shortcut}} pour générer des commandes de terminal"
 	},
 	"seeNewChanges": {
 		"title": "Affichage des nouveaux changements",
@@ -206,7 +206,7 @@
 		}
 	},
 	"configDiscovery": {
-		"removed": "Code Kilo : Supprimé {{source}} {{configType}} : {{name}}{{modeStr}}",
-		"added": "Code Kilo : Ajouté {{source}} {{configType}} : {{name}}{{modeStr}}"
+		"removed": "Builder : Supprimé {{source}} {{configType}} : {{name}}{{modeStr}}",
+		"added": "Builder : Ajouté {{source}} {{configType}} : {{name}}{{modeStr}}"
 	}
 }

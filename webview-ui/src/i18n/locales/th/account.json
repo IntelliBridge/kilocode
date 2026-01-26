@@ -14,7 +14,7 @@
 	"expandTask": "ขยายงาน",
 	"collapseTask": "ย่องาน",
 	"deleteFavoritedTaskWarning": "การดำเนินการนี้จะลบงานที่ชื่นชอบอย่างถาวร คุณแน่ใจหรือไม่?",
-	"cloudBenefitWalkaway": "ติดตามและควบคุมงานได้จากทุกที่ด้วย Kilo remote Control",
-	"remoteControl": "Kilo remote Control",
+	"cloudBenefitWalkaway": "ติดตามและควบคุมงานได้จากทุกที่ด้วย Builder remote Control",
+	"remoteControl": "Builder remote Control",
 	"remoteControlDescription": "เปิดใช้งานการติดตามและโต้ตอบกับงานใน workspace นี้โดยใช้ Builder Cloud"
 }

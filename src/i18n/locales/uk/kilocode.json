@@ -54,13 +54,13 @@
 		"activated": "Генератор повідомлень коммітів Builder активовано",
 		"gitNotFound": "⚠️ Репозиторій Git не знайдено або git недоступний",
 		"gitInitError": "⚠️ Помилка ініціалізації Git: {{error}}",
-		"generating": "Kilo: Генерування повідомлення комміту...",
-		"noChanges": "Kilo: Змін для аналізу не знайдено",
-		"generated": "Kilo: Повідомлення комміту згенеровано!",
-		"generationFailed": "Kilo: Помилка генерації повідомлення комміту: {{errorMessage}}",
-		"generatingFromUnstaged": "Kilo: Генерація повідомлення з використанням незафіксованих змін",
-		"activationFailed": "Kilo: Не вдалося активувати генератор повідомлень: {{error}}",
-		"providerRegistered": "Kilo: Постачальник повідомлень коммітів зареєстровано",
+		"generating": "Builder: Генерування повідомлення комміту...",
+		"noChanges": "Builder: Змін для аналізу не знайдено",
+		"generated": "Builder: Повідомлення комміту згенеровано!",
+		"generationFailed": "Builder: Помилка генерації повідомлення комміту: {{errorMessage}}",
+		"generatingFromUnstaged": "Builder: Генерація повідомлення з використанням незафіксованих змін",
+		"activationFailed": "Builder: Не вдалося активувати генератор повідомлень: {{error}}",
+		"providerRegistered": "Builder: Постачальник повідомлень коммітів зареєстровано",
 		"errors": {
 			"noProject": "Проєкти відсутні",
 			"connectionFailed": "Не вдалося підключитися до розширення Builder",
@@ -154,19 +154,19 @@
 		}
 	},
 	"terminalCommandGenerator": {
-		"inputPrompt": "Kilo: Опишіть команду, яку ви хочете згенерувати",
+		"inputPrompt": "Builder: Опишіть команду, яку ви хочете згенерувати",
 		"inputPlaceholder": "напр., завершити процес на порту 3001, знайти великі файли і т.д.",
-		"noActiveTerminal": "Kilo: Не знайдено активного терміналу. Будь ласка, спочатку відкрийте термінал.",
-		"generatingProgress": "Kilo: Генерування команди терміналу...",
-		"commandGenerated": "Kilo: Згенерована команда: {{command}}",
-		"generationFailed": "Kilo: Не вдалося згенерувати команду: {{error}}",
+		"noActiveTerminal": "Builder: Не знайдено активного терміналу. Будь ласка, спочатку відкрийте термінал.",
+		"generatingProgress": "Builder: Генерування команди терміналу...",
+		"commandGenerated": "Builder: Згенерована команда: {{command}}",
+		"generationFailed": "Builder: Не вдалося згенерувати команду: {{error}}",
 		"warningDialog": {
 			"title": "Попередження щодо Безпеки Терміналу",
 			"okButton": "Я розумію",
 			"message": "Перевіряйте двічі всі згенеровані команди перед їх запуском. Дії в терміналі не завжди можна скасувати — запуск неперевірених команд може призвести до незворотної втрати даних або пошкодження системи. Перегляньте та повністю зрозумійте команду перед тим, як продовжити!",
 			"cancelButton": "Скасувати"
 		},
-		"tipMessage": "Kilo: Натисніть {{shortcut}}, щоб генерувати команди терміналу"
+		"tipMessage": "Builder: Натисніть {{shortcut}}, щоб генерувати команди терміналу"
 	},
 	"seeNewChanges": {
 		"title": "Показ нових змін",

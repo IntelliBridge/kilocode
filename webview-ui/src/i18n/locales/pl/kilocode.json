@@ -12,7 +12,7 @@
 	"lowCreditWarning": {
 		"addCredit": "Dodaj kredyt",
 		"lowBalance": "Twój stan konta Builder jest niski",
-		"newOrganization": "Używasz Kilo do pracy?"
+		"newOrganization": "Używasz Builder do pracy?"
 	},
 	"pagination": {
 		"previous": "Poprzednia",
@@ -105,7 +105,7 @@
 	"toolCallStyle": {
 		"title": "Styl Wywołań Narzędzi",
 		"description": "Wybierz sposób formatowania wywołań narzędzi w prompcie systemowym. JSON jest obecnie eksperymentalny i przeznaczony głównie dla użytkowników zainteresowanych wkładem w jego rozwój.",
-		"automatic": "Pozwól Kilo zdecydować",
+		"automatic": "Pozwól Builder zdecydować",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -229,7 +229,7 @@
 			},
 			"enableSmartInlineTaskKeybinding": {
 				"label": "Ręczne uzupełnianie ({{keybinding}})",
-				"description": "Potrzebujesz szybkiej poprawki, uzupełnienia lub refaktoryzacji? Kilo użyje otaczającego kontekstu, aby zaoferować natychmiastowe ulepszenia, utrzymując cię w przepływie. <DocsLink>Zobacz skrót</DocsLink>"
+				"description": "Potrzebujesz szybkiej poprawki, uzupełnienia lub refaktoryzacji? Builder użyje otaczającego kontekstu, aby zaoferować natychmiastowe ulepszenia, utrzymując cię w przepływie. <DocsLink>Zobacz skrót</DocsLink>"
 			},
 			"keybindingNotFound": "nie znaleziono",
 			"configureAutocompleteProfile": "Użyj dowolnego modelu, przechodząc do profili i konfigurując Profil typu Autouzupełnianie.",
@@ -342,7 +342,7 @@
 			"title": "Zamiana mowy na tekst",
 			"description": "Zamiana mowy na tekst jest niedostępna. Zamiana mowy na tekst wymaga zarówno FFmpeg, jak i skonfigurowanego prawidłowego dostawcy OpenAI. <moreInfoLink>Kliknij tutaj, aby uzyskać więcej informacji</moreInfoLink>.",
 			"openAiReason": "Aby korzystać z transkrypcji głosowej, potrzebujesz ważnego dostawcy OpenAI z kluczem API.",
-			"ffmpegReason": "Musisz mieć zainstalowany FFmpeg. <ffmpegLink>Kliknij tutaj</ffmpegLink>, aby Kilo pomógł Ci zainstalować FFmpeg.",
+			"ffmpegReason": "Musisz mieć zainstalowany FFmpeg. <ffmpegLink>Kliknij tutaj</ffmpegLink>, aby Builder pomógł Ci zainstalować FFmpeg.",
 			"ffmpegMessage": "Pomóż mi zainstalować FFmpeg"
 		},
 		"misconfiguredState": "Niedostępne z powodu konfiguracji",

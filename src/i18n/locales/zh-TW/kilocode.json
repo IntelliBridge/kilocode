@@ -54,13 +54,13 @@
 		"activated": "Builder Commit 訊息產生器已啟用",
 		"gitNotFound": "⚠️找不到 Git 儲存庫或 Git 不可用",
 		"gitInitError": "⚠️ Git 初始化錯誤：{{error}}",
-		"generating": "Kilo：正在產生 Commit 訊息...",
-		"noChanges": "Kilo：找不到可供分析的變更",
-		"generated": "Kilo：Commit 訊息已產生！",
-		"generationFailed": "Kilo：產生 Commit 訊息失敗：{{errorMessage}}",
-		"generatingFromUnstaged": "Kilo：使用未暫存的變更產生訊息",
-		"activationFailed": "Kilo：啟用訊息產生器失敗：{{error}}",
-		"providerRegistered": "Kilo：Commit 訊息提供者已註冊",
+		"generating": "Builder：正在產生 Commit 訊息...",
+		"noChanges": "Builder：找不到可供分析的變更",
+		"generated": "Builder：Commit 訊息已產生！",
+		"generationFailed": "Builder：產生 Commit 訊息失敗：{{errorMessage}}",
+		"generatingFromUnstaged": "Builder：使用未暫存的變更產生訊息",
+		"activationFailed": "Builder：啟用訊息產生器失敗：{{error}}",
+		"providerRegistered": "Builder：Commit 訊息提供者已註冊",
 		"errors": {
 			"noProject": "无可用项目",
 			"connectionFailed": "无法连接到 Builder 扩展",
@@ -154,13 +154,13 @@
 		}
 	},
 	"terminalCommandGenerator": {
-		"tipMessage": "Kilo：按下 {{shortcut}} 產生終端機指令",
-		"noActiveTerminal": "Kilo: 找不到活動的終端機。請先開啟一個終端機",
-		"inputPrompt": "Kilo：描述您想要產生的指令",
+		"tipMessage": "Builder：按下 {{shortcut}} 產生終端機指令",
+		"noActiveTerminal": "Builder: 找不到活動的終端機。請先開啟一個終端機",
+		"inputPrompt": "Builder：描述您想要產生的指令",
 		"inputPlaceholder": "例如，結束在連接埠 3001 上執行的行程，尋找大檔案等",
-		"generatingProgress": "Kilo：正在產生終端機指令...",
-		"commandGenerated": "Kilo：產生的指令：{{command}}",
-		"generationFailed": "Kilo：指令產生失敗：{{error}}",
+		"generatingProgress": "Builder：正在產生終端機指令...",
+		"commandGenerated": "Builder：產生的指令：{{command}}",
+		"generationFailed": "Builder：指令產生失敗：{{error}}",
 		"warningDialog": {
 			"title": "終端機安全警告",
 			"okButton": "我明白",
@@ -206,7 +206,7 @@
 		}
 	},
 	"configDiscovery": {
-		"removed": "Kilo代码：已删除{{source}}{{configType}}：{{name}}{{modeStr}}",
-		"added": "Kilo代码：已添加{{source}} {{configType}}：{{name}}{{modeStr}}"
+		"removed": "Builder：已删除{{source}}{{configType}}：{{name}}{{modeStr}}",
+		"added": "Builder：已添加{{source}} {{configType}}：{{name}}{{modeStr}}"
 	}
 }

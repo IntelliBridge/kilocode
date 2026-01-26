@@ -270,7 +270,7 @@
 	"response": "Respons",
 	"arguments": "Argumen",
 	"text": {
-		"rooSaid": "Kilo berkata"
+		"rooSaid": "Builder berkata"
 	},
 	"feedback": {
 		"youSaid": "Anda bilang"
@@ -360,7 +360,7 @@
 			"tryButton": "Coba Agen Cloud"
 		},
 		"careers": "Juga, <careersLink>kami sedang merekrut!</careersLink>",
-		"socialLinks": "Bergabunglah dengan kami di <xLink>X</xLink>, <discordLink>Discord</discordLink>, atau <redditLink>r/KiloRooCode</redditLink> 🚀"
+		"socialLinks": "Bergabunglah dengan kami di <xLink>X</xLink>, <discordLink>Discord</discordLink>, atau <redditLink>r/BuilderCode</redditLink> 🚀"
 	},
 	"reasoning": {
 		"thinking": "Berpikir",

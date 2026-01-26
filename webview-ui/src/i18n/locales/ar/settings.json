@@ -1044,7 +1044,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "تفعيل Fast Apply",
-			"description": "عند التفعيل، يستطيع Builder تعديل الملفات باستخدام Fast Apply مع نماذج متخصصة محسّنة لتعديلات الكود. يتطلب Kilo Gateway Provider أو OpenRouter أو مفتاح Morph API.",
+			"description": "عند التفعيل، يستطيع Builder تعديل الملفات باستخدام Fast Apply مع نماذج متخصصة محسّنة لتعديلات الكود. يتطلب Builder Gateway Provider أو OpenRouter أو مفتاح Morph API.",
 			"apiProvider": "مزود API",
 			"apiProviderList": {
 				"current": "الحالي"
@@ -1111,7 +1111,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "تفعيل الأدوات المخصصة",
-			"description": "عند التفعيل، يمكن لـ Kilo تحميل واستخدام أدوات TypeScript/JavaScript مخصصة من مجلد .builder/tools في مشروعك أو ~/.builder/tools للأدوات العامة. ملاحظة: سيتم الموافقة على هذه الأدوات تلقائياً.",
+			"description": "عند التفعيل، يمكن لـ Builder تحميل واستخدام أدوات TypeScript/JavaScript مخصصة من مجلد .builder/tools في مشروعك أو ~/.builder/tools للأدوات العامة. ملاحظة: سيتم الموافقة على هذه الأدوات تلقائياً.",
 			"toolsHeader": "الأدوات المخصصة المتاحة",
 			"noTools": "لم يتم تحميل أدوات مخصصة. أضف ملفات .ts أو .js إلى مجلد .builder/tools في مشروعك أو ~/.builder/tools للأدوات العامة.",
 			"refreshButton": "تحديث",

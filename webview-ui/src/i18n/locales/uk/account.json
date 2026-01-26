@@ -14,7 +14,7 @@
 	"expandTask": "Розгорнути завдання",
 	"collapseTask": "Згорнути завдання",
 	"deleteFavoritedTaskWarning": "Це назавжди видалить улюблене завдання. Ви впевнені?",
-	"cloudBenefitWalkaway": "Відстежуйте та керуйте завданнями звідки завгодно за допомогою Kilo remote Control",
-	"remoteControl": "Kilo remote Control",
+	"cloudBenefitWalkaway": "Відстежуйте та керуйте завданнями звідки завгодно за допомогою Builder remote Control",
+	"remoteControl": "Builder remote Control",
 	"remoteControlDescription": "Увімкнути відстеження та взаємодію з завданнями в цьому workspace за допомогою Builder Cloud"
 }

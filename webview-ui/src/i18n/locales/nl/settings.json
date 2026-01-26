@@ -569,7 +569,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "Fout- & Herhalingslimiet",
-			"description": "Aantal opeenvolgende fouten of herhaalde acties voordat het dialoogvenster 'Kilo ondervindt problemen' wordt weergegeven. Zet op 0 om dit veiligheidsmechanisme uit te schakelen (wordt nooit geactiveerd).",
+			"description": "Aantal opeenvolgende fouten of herhaalde acties voordat het dialoogvenster 'Builder ondervindt problemen' wordt weergegeven. Zet op 0 om dit veiligheidsmechanisme uit te schakelen (wordt nooit geactiveerd).",
 			"unlimitedDescription": "Onbeperkt aantal nieuwe pogingen ingeschakeld (automatisch doorgaan). Het dialoogvenster zal nooit verschijnen.",
 			"warning": "⚠️ Instellen op 0 staat onbeperkte nieuwe pogingen toe, wat aanzienlijk API-gebruik kan verbruiken"
 		},
@@ -820,11 +820,11 @@
 		},
 		"outputLineLimit": {
 			"label": "Terminaluitvoerlimiet",
-			"description": "Behoudt eerste en laatste regels en verwijdert middelste om onder de limiet te blijven. Verlaag om tokens te besparen; verhoog om Kilo meer tussendetails te geven. Kilo ziet een placeholder waar inhoud wordt overgeslagen.<0>Meer informatie</0>"
+			"description": "Behoudt eerste en laatste regels en verwijdert middelste om onder de limiet te blijven. Verlaag om tokens te besparen; verhoog om Builder meer tussendetails te geven. Builder ziet een placeholder waar inhoud wordt overgeslagen.<0>Meer informatie</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "Terminal-tekenlimiet",
-			"description": "Overschrijft de regellimiet om geheugenproblemen te voorkomen door een harde limiet op uitvoergrootte af te dwingen. Bij overschrijding behoudt het begin en einde en toont een placeholder aan Kilo waar inhoud wordt overgeslagen. <0>Meer informatie</0>"
+			"description": "Overschrijft de regellimiet om geheugenproblemen te voorkomen door een harde limiet op uitvoergrootte af te dwingen. Bij overschrijding behoudt het begin en einde en toont een placeholder aan Builder waar inhoud wordt overgeslagen. <0>Meer informatie</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "Terminal-shell-integratie timeout",
@@ -832,7 +832,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "Inline Terminal gebruiken (aanbevolen)",
-			"description": "Voer commando's uit in de Inline Terminal (chat) om shell-profielen/integratie te omzeilen voor snellere, betrouwbaardere runs. Wanneer uitgeschakeld gebruikt Kilo de VS Code-terminal met je shell-profiel, prompts en plugins. <0>Meer informatie</0>"
+			"description": "Voer commando's uit in de Inline Terminal (chat) om shell-profielen/integratie te omzeilen voor snellere, betrouwbaardere runs. Wanneer uitgeschakeld gebruikt Builder de VS Code-terminal met je shell-profiel, prompts en plugins. <0>Meer informatie</0>"
 		},
 		"commandDelay": {
 			"label": "Terminal-commandovertraging",
@@ -936,7 +936,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Fast Apply inschakelen",
-			"description": "Wanneer ingeschakeld, kan Builder bestanden bewerken met Fast Apply met gespecialiseerde modellen geoptimaliseerd voor codewijzigingen. Vereist de Kilo Gateway Provider, OpenRouter, of een Morph API-sleutel.",
+			"description": "Wanneer ingeschakeld, kan Builder bestanden bewerken met Fast Apply met gespecialiseerde modellen geoptimaliseerd voor codewijzigingen. Vereist de Builder Gateway Provider, OpenRouter, of een Morph API-sleutel.",
 			"apiProvider": "API-provider",
 			"apiProviderList": {
 				"current": "Huidig"
@@ -999,7 +999,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Aangepaste tools inschakelen",
-			"description": "Indien ingeschakeld kan Kilo aangepaste TypeScript/JavaScript-tools laden en gebruiken uit de map .builder/tools van je project of ~/.builder/tools voor globale tools. Opmerking: deze tools worden automatisch goedgekeurd.",
+			"description": "Indien ingeschakeld kan Builder aangepaste TypeScript/JavaScript-tools laden en gebruiken uit de map .builder/tools van je project of ~/.builder/tools voor globale tools. Opmerking: deze tools worden automatisch goedgekeurd.",
 			"toolsHeader": "Beschikbare aangepaste tools",
 			"noTools": "Geen aangepaste tools geladen. Voeg .ts- of .js-bestanden toe aan de map .builder/tools van je project of ~/.builder/tools voor globale tools.",
 			"refreshButton": "Vernieuwen",

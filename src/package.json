@@ -1,8 +1,8 @@
 {
-	"name": "kilo-code",
+	"name": "builder",
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
-	"publisher": "kilocode",
+	"publisher": "agile-defense",
 	"version": "4.149.0",
 	"icon": "assets/icons/logo-outline-black.png",
 	"galleryBanner": {

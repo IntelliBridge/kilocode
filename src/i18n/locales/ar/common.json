@@ -201,8 +201,8 @@
 	},
 	"storage": {
 		"prompt_custom_path": "أدخل مسار مخصص لتخزين محادثاتك، أو خلّه فاضي لاستخدام الموقع الافتراضي",
-		"path_placeholder": "D:\\KiloCodeStorage",
-		"enter_absolute_path": "رجاءً أدخل مسار مطلق (مثال: D:\\KiloCodeStorage أو /home/user/storage)",
+		"path_placeholder": "D:\\BuilderStorage",
+		"enter_absolute_path": "رجاءً أدخل مسار مطلق (مثال: D:\\BuilderStorage أو /home/user/storage)",
 		"enter_valid_path": "رجاءً أدخل مسار صحيح"
 	},
 	"input": {

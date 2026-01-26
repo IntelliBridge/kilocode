@@ -12,7 +12,7 @@
 	"lowCreditWarning": {
 		"addCredit": "Afegir crèdit",
 		"lowBalance": "El teu saldo de Builder és baix",
-		"newOrganization": "Utilitzes Kilo per a la feina?"
+		"newOrganization": "Utilitzes Builder per a la feina?"
 	},
 	"pagination": {
 		"previous": "Anterior",
@@ -222,7 +222,7 @@
 			},
 			"enableSmartInlineTaskKeybinding": {
 				"label": "Autocompleció Manual ({{keybinding}})",
-				"description": "Necessites una correcció ràpida, completació o refactorització? Kilo utilitzarà el context circumdant per oferir millores immediates, mantenint-te en el flux. <DocsLink>Veure drecera</DocsLink>"
+				"description": "Necessites una correcció ràpida, completació o refactorització? Builder utilitzarà el context circumdant per oferir millores immediates, mantenint-te en el flux. <DocsLink>Veure drecera</DocsLink>"
 			},
 			"keybindingNotFound": "no trobat",
 			"configureAutocompleteProfile": "Utilitza qualsevol model anant a perfils i configurant un Perfil del Tipus de Perfil Autocompletat.",
@@ -291,7 +291,7 @@
 	"toolCallStyle": {
 		"title": "Estil de Crida d'Eina",
 		"description": "Tria com es formaten les crides d'eina al prompt del sistema. JSON és actualment experimental i està principalment destinat a usuaris interessats a contribuir al seu desenvolupament.",
-		"automatic": "Deixa que Kilo decideixi",
+		"automatic": "Deixa que Builder decideixi",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -342,7 +342,7 @@
 			"title": "Veu a text",
 			"description": "La conversió de veu a text no està disponible. La conversió de veu a text requereix tant FFmpeg com un proveïdor d'OpenAI vàlid configurat. <moreInfoLink>Feu clic aquí per a més informació</moreInfoLink>.",
 			"openAiReason": "Necessiteu un proveïdor d'OpenAI vàlid amb una clau API per utilitzar la transcripció de veu.",
-			"ffmpegReason": "Necessites tenir instal·lat FFmpeg. <ffmpegLink>Fes clic aquí</ffmpegLink> perquè Kilo t'ajudi a instal·lar FFmpeg.",
+			"ffmpegReason": "Necessites tenir instal·lat FFmpeg. <ffmpegLink>Fes clic aquí</ffmpegLink> perquè Builder t'ajudi a instal·lar FFmpeg.",
 			"ffmpegMessage": "Ajuda'm a instal·lar FFmpeg"
 		},
 		"misconfiguredState": "No disponible per la configuració",

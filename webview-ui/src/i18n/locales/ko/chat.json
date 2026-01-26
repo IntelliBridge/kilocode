@@ -245,7 +245,7 @@
 	"response": "응답",
 	"arguments": "인수",
 	"text": {
-		"rooSaid": "킬로가 말했다"
+		"rooSaid": "Builder가 말했다"
 	},
 	"feedback": {
 		"youSaid": "당신은 말했다"
@@ -353,7 +353,7 @@
 			"tryButton": "클라우드 에이전트 사용해보기"
 		},
 		"careers": "그리고, <careersLink>채용 중입니다!</careersLink>",
-		"socialLinks": "<xLink>X</xLink>, <discordLink>Discord</discordLink>, 또는 <redditLink>r/KiloCode</redditLink>에서 만나요 🚀"
+		"socialLinks": "<xLink>X</xLink>, <discordLink>Discord</discordLink>, 또는 <redditLink>r/BuilderCode</redditLink>에서 만나요 🚀"
 	},
 	"browser": {
 		"session": "브라우저 세션",

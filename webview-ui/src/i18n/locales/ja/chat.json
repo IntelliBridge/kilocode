@@ -245,7 +245,7 @@
 	"response": "応答",
 	"arguments": "引数",
 	"text": {
-		"rooSaid": "Rooの発言"
+		"rooSaid": "Builderの発言"
 	},
 	"feedback": {
 		"youSaid": "あなたの発言"
@@ -353,7 +353,7 @@
 			"tryButton": "クラウドエージェントを試す"
 		},
 		"careers": "また、<careersLink>採用中です！</careersLink>",
-		"socialLinks": "<xLink>X</xLink>、<discordLink>Discord</discordLink>、または<redditLink>r/KiloCode</redditLink>でフォローしてください 🚀"
+		"socialLinks": "<xLink>X</xLink>、<discordLink>Discord</discordLink>、または<redditLink>r/BuilderCode</redditLink>でフォローしてください 🚀"
 	},
 	"browser": {
 		"session": "ブラウザセッション",

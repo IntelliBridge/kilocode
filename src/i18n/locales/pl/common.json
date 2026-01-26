@@ -198,8 +198,8 @@
 	},
 	"storage": {
 		"prompt_custom_path": "Wprowadź niestandardową ścieżkę przechowywania dla historii konwersacji lub pozostaw puste, aby użyć lokalizacji domyślnej",
-		"path_placeholder": "D:\\KiloCodeStorage",
-		"enter_absolute_path": "Wprowadź pełną ścieżkę (np. D:\\KiloCodeStorage lub /home/user/storage)",
+		"path_placeholder": "D:\\BuilderStorage",
+		"enter_absolute_path": "Wprowadź pełną ścieżkę (np. D:\\BuilderStorage lub /home/user/storage)",
 		"enter_valid_path": "Wprowadź prawidłową ścieżkę"
 	},
 	"input": {

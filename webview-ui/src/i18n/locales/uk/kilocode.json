@@ -12,7 +12,7 @@
 	"lowCreditWarning": {
 		"addCredit": "Додати кредит",
 		"lowBalance": "Твій баланс Builder низький",
-		"newOrganization": "Використовуєш Kilo для роботи?"
+		"newOrganization": "Використовуєш Builder для роботи?"
 	},
 	"pagination": {
 		"previous": "Попередня",
@@ -112,7 +112,7 @@
 	"toolCallStyle": {
 		"title": "Стиль виклику інструментів",
 		"description": "Виберіть, як виклики інструментів форматуються в системному промпті. JSON наразі є експериментальним і призначений переважно для користувачів, зацікавлених у внеску в його розробку.",
-		"automatic": "Нехай Kilo вирішує",
+		"automatic": "Нехай Builder вирішує",
 		"xml": "XML",
 		"json": "JSON"
 	},
@@ -341,7 +341,7 @@
 			"title": "Розпізнавання мовлення",
 			"openAiReason": "Для використання голосової транскрипції потрібен дійсний провайдер OpenAI з API-ключем.",
 			"description": "Мовлення-в-текст недоступне. Для роботи мовлення-в-текст потрібні як FFmpeg, так і налаштований дійсний постачальник OpenAI. <moreInfoLink>Натисніть тут для отримання додаткової інформації</moreInfoLink>.",
-			"ffmpegReason": "Вам потрібно встановити FFmpeg. <ffmpegLink>Натисніть тут</ffmpegLink>, щоб Kilo допоміг вам встановити FFmpeg.",
+			"ffmpegReason": "Вам потрібно встановити FFmpeg. <ffmpegLink>Натисніть тут</ffmpegLink>, щоб Builder допоміг вам встановити FFmpeg.",
 			"ffmpegMessage": "Допоможіть мені встановити FFmpeg"
 		},
 		"misconfiguredState": "Недоступно через конфігурацію",

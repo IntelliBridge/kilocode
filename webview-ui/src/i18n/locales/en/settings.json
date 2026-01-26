@@ -590,7 +590,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "Error & Repetition Limit",
-			"description": "Number of consecutive errors or repeated actions before showing 'Kilo is having trouble' dialog. Set to 0 to disable this safety mechanism (it will never trigger).",
+			"description": "Number of consecutive errors or repeated actions before showing 'Builder is having trouble' dialog. Set to 0 to disable this safety mechanism (it will never trigger).",
 			"unlimitedDescription": "Unlimited retries enabled (auto-proceed). The dialog will never appear.",
 			"warning": "⚠️ Setting to 0 allows unlimited retries which may consume significant API usage"
 		},
@@ -856,11 +856,11 @@
 		},
 		"outputLineLimit": {
 			"label": "Terminal output limit",
-			"description": "Keeps the first and last lines and drops the middle to stay under the limit. Lower to save tokens; raise to give Kilo more middle detail. Kilo sees a placeholder where the content is skipped.<0>Learn more</0>"
+			"description": "Keeps the first and last lines and drops the middle to stay under the limit. Lower to save tokens; raise to give Builder more middle detail. Builder sees a placeholder where the content is skipped.<0>Learn more</0>"
 		},
 		"outputCharacterLimit": {
 			"label": "Terminal character limit",
-			"description": "Overrides the line limit to prevent memory issues by enforcing a hard cap on output size. If exceeded, keeps the beginning and end and shows a placeholder to Kilo where content is skipped. <0>Learn more</0>"
+			"description": "Overrides the line limit to prevent memory issues by enforcing a hard cap on output size. If exceeded, keeps the beginning and end and shows a placeholder to Builder where content is skipped. <0>Learn more</0>"
 		},
 		"shellIntegrationTimeout": {
 			"label": "Terminal shell integration timeout",
@@ -868,7 +868,7 @@
 		},
 		"shellIntegrationDisabled": {
 			"label": "Use Inline Terminal (recommended)",
-			"description": "Run commands in the Inline Terminal (chat) to bypass shell profiles/integration for faster, more reliable runs. When disabled Kilo uses the VS Code terminal with your shell profile, prompts, and plugins. <0>Learn more</0>"
+			"description": "Run commands in the Inline Terminal (chat) to bypass shell profiles/integration for faster, more reliable runs. When disabled Builder uses the VS Code terminal with your shell profile, prompts, and plugins. <0>Learn more</0>"
 		},
 		"commandDelay": {
 			"label": "Terminal command delay",
@@ -976,7 +976,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Enable Fast Apply",
-			"description": "When enabled, Builder can edit files using Fast Apply with specialized models optimized for code modifications. Requires the Kilo Gateway Provider, OpenRouter, or a Morph API key.",
+			"description": "When enabled, Builder can edit files using Fast Apply with specialized models optimized for code modifications. Requires the Builder Gateway Provider, OpenRouter, or a Morph API key.",
 			"apiProvider": "API Provider",
 			"apiProviderList": {
 				"current": "Current"
@@ -1031,7 +1031,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Enable custom tools",
-			"description": "When enabled, Kilo can load and use custom TypeScript/JavaScript tools from your project's .builder/tools directory or ~/.builder/tools for global tools. Note: these tools will automatically be auto-approved.",
+			"description": "When enabled, Builder can load and use custom TypeScript/JavaScript tools from your project's .builder/tools directory or ~/.builder/tools for global tools. Note: these tools will automatically be auto-approved.",
 			"toolsHeader": "Available Custom Tools",
 			"noTools": "No custom tools loaded. Add .ts or .js files to your project's .builder/tools directory or ~/.builder/tools for global tools.",
 			"refreshButton": "Refresh",

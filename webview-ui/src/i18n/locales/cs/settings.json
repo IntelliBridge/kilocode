@@ -1001,7 +1001,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "Povolit Fast Apply",
-			"description": "Pokud je povoleno, Builder může upravovat soubory pomocí Fast Apply se specializovanými modely optimalizovanými pro úpravy kódu. Vyžaduje Kilo Gateway Provider, OpenRouter nebo klíč API Morph.",
+			"description": "Pokud je povoleno, Builder může upravovat soubory pomocí Fast Apply se specializovanými modely optimalizovanými pro úpravy kódu. Vyžaduje Builder Gateway Provider, OpenRouter nebo klíč API Morph.",
 			"apiProvider": "Poskytovatel API",
 			"apiProviderList": {
 				"current": "Aktuální"
@@ -1088,7 +1088,7 @@
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Povolit vlastní nástroje",
-			"description": "Pokud je povoleno, Kilo může načítat a používat vlastní nástroje TypeScript/JavaScript z adresáře .builder/tools vašeho projektu nebo ~/.builder/tools pro globální nástroje. Poznámka: tyto nástroje budou automaticky schváleny.",
+			"description": "Pokud je povoleno, Builder může načítat a používat vlastní nástroje TypeScript/JavaScript z adresáře .builder/tools vašeho projektu nebo ~/.builder/tools pro globální nástroje. Poznámka: tyto nástroje budou automaticky schváleny.",
 			"toolsHeader": "Dostupné vlastní nástroje",
 			"noTools": "Nejsou načteny žádné vlastní nástroje. Přidejte soubory .ts nebo .js do adresáře .builder/tools vašeho projektu nebo ~/.builder/tools pro globální nástroje.",
 			"refreshButton": "Obnovit",
